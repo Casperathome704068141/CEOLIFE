@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const steps = [
   { title: "Link accounts", description: "Connect Plaid, calendar, and email forwarding." },
-  { title: "Invite household", description: "Add brothers with appropriate roles." },
+  { title: "Add household contacts", description: "Save brothers and vendors for nudges — no extra logins required." },
   { title: "Upload first docs", description: "Drop receipts or IDs to test OCR." },
 ];
 

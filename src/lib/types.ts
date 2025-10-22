@@ -37,10 +37,13 @@ export type DocumentItem = {
 };
 
 export type ShoppingItem = {
-  id: number;
+  id: string;
   name: string;
   checked: boolean;
   owner?: string;
+  priority?: "low" | "medium" | "high";
+  isRecurring?: boolean;
+  priceTarget?: number;
 };
 
 export type BriefingInsight = {

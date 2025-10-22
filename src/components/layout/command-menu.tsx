@@ -7,11 +7,13 @@ import { useUIState } from "@/store/ui-store";
 import { useRouter } from "next/navigation";
 
 const quickActions = [
+  { label: "Send nudge", href: "/household/shopping?intent=nudge" },
   { label: "Add transaction", href: "/finance/transactions?intent=new" },
   { label: "Add bill", href: "/finance/budgets?modal=bill" },
   { label: "Scan receipt", href: "/vault/documents?intent=scan" },
   { label: "Create reminder", href: "/schedule/tasks?intent=new" },
   { label: "New automation rule", href: "/finance/rules?intent=new" },
+  { label: "Record settlement", href: "/household/split?intent=settle" },
 ];
 
 export function CommandMenu() {
@@ -24,13 +26,14 @@ export function CommandMenu() {
         event.preventDefault();
         setCommandPaletteOpen(!isCommandPaletteOpen);
       }
-      if (["a", "u", "f", "s", "r"].includes(event.key) && (event.metaKey || event.ctrlKey)) {
+      if (["a", "u", "f", "s", "r", "n"].includes(event.key) && (event.metaKey || event.ctrlKey)) {
         const actionMap: Record<string, string> = {
           a: "/finance/transactions?intent=new",
           u: "/vault/documents?intent=upload",
           f: "/finance/transactions?intent=filter",
           s: "/assistant",
           r: "/finance/rules",
+          n: "/household/shopping?intent=nudge",
         };
         const target = actionMap[event.key];
         if (target) {

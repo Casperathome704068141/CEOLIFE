@@ -14,10 +14,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Users } from "lucide-react";
 
-const roles: { label: string; value: "admin" | "family" | "guest" }[] = [
-  { label: "Admin", value: "admin" },
-  { label: "Family", value: "family" },
-  { label: "Guest", value: "guest" },
+const roles: { label: string; value: "head" | "household" | "guest" }[] = [
+  { label: "Head of Home", value: "head" },
+  { label: "Household view", value: "household" },
+  { label: "Guest snapshot", value: "guest" },
 ];
 
 export function ProfileSwitcher() {
@@ -36,7 +36,7 @@ export function ProfileSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-48 rounded-2xl border border-slate-800 bg-slate-950/95 text-slate-100">
-        <DropdownMenuLabel>Profile view</DropdownMenuLabel>
+        <DropdownMenuLabel>Perspective</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup
           value={activeProfile}
@@ -49,7 +49,7 @@ export function ProfileSwitcher() {
           ))}
         </DropdownMenuRadioGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => setActiveProfile("admin")}>Reset to Admin</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setActiveProfile("head")}>Reset to Head</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -28,7 +28,7 @@ export default function VaultDocumentsPage() {
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {documents.map((doc) => (
-          <DocCard key={doc.name} name={doc.name} type={doc.type} updatedAt={doc.date} iconName={doc.icon} tags={doc.tags} />
+          <DocCard key={doc.name} name={doc.name} type={doc.type} updatedAt={doc.date} icon={doc.icon} tags={doc.tags} />
         ))}
       </div>
       <Button variant="link" className="text-cyan-300" asChild>
