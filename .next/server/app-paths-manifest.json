@@ -1,7 +1,14 @@
 {
   "/(dashboard)/page": "app/(dashboard)/page.js",
+  "/assistant/page": "app/assistant/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/finance/overview/page": "app/finance/overview/page.js",
+  "/goals/overview/page": "app/goals/overview/page.js",
+  "/household/members/page": "app/household/members/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
   "/schedule/calendar/page": "app/schedule/calendar/page.js",
-  "/vault/documents/page": "app/vault/documents/page.js"
+  "/security/privacy/page": "app/security/privacy/page.js",
+  "/simulations/scenarios/page": "app/simulations/scenarios/page.js",
+  "/vault/documents/page": "app/vault/documents/page.js",
+  "/wellness/overview/page": "app/wellness/overview/page.js"
 }

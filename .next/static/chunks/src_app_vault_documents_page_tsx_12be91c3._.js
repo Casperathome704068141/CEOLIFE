@@ -10,7 +10,7 @@
   "static/chunks/node_modules_lucide-react_dist_esm_lucide-react_e8a320fa.js",
   "static/chunks/node_modules_lucide-react_dist_esm_lucide-react_f0b2f71f.js",
   "static/chunks/node_modules_7aa24e82._.js",
-  "static/chunks/src_components_fa7cb407._.js"
+  "static/chunks/src_0c486bda._.js"
 ],
     source: "dynamic"
 });
