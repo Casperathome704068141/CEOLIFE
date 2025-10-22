@@ -4,7 +4,7 @@ export type Bill = {
   name: string;
   amount: number;
   dueDate: string;
-  icon: LucideIcon;
+  icon: string;
 };
 
 export type ScheduleEvent = {
@@ -32,7 +32,7 @@ export type DocumentItem = {
   name: string;
   type: string;
   date: string;
-  icon: LucideIcon;
+  icon: string;
   tags?: string[];
 };
 

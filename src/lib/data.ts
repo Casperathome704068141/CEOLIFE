@@ -8,15 +8,6 @@ import type {
   BriefingInsight,
   TrendPoint,
 } from "@/lib/types";
-import {
-  CreditCard,
-  Home,
-  Plane,
-  Wifi,
-  Droplets,
-  ShieldCheck,
-  Briefcase,
-} from "lucide-react";
 
 export const netWorth = 186_430.25;
 
@@ -54,10 +45,10 @@ export const statHighlights = [
 ];
 
 export const bills: Bill[] = [
-  { name: "Rent", amount: 2_350, dueDate: "Nov 1", icon: Home },
-  { name: "Credit Card", amount: 820.45, dueDate: "Oct 28", icon: CreditCard },
-  { name: "Internet", amount: 89.99, dueDate: "Oct 30", icon: Wifi },
-  { name: "Utilities", amount: 145.5, dueDate: "Nov 3", icon: Droplets },
+  { name: "Rent", amount: 2_350, dueDate: "Nov 1", icon: "Home" },
+  { name: "Credit Card", amount: 820.45, dueDate: "Oct 28", icon: "CreditCard" },
+  { name: "Internet", amount: 89.99, dueDate: "Oct 30", icon: "Wifi" },
+  { name: "Utilities", amount: 145.5, dueDate: "Nov 3", icon: "Droplets" },
 ];
 
 export const schedule: ScheduleEvent[] = [
@@ -114,10 +105,10 @@ export const savingsGoals: SavingsGoal[] = [
 ];
 
 export const documents: DocumentItem[] = [
-  { name: "Passport - Beno.pdf", type: "ID", date: "2023-09-12", icon: Plane, tags: ["expires 2028", "travel"] },
-  { name: "Lease - Harborfront Loft.pdf", type: "Housing", date: "2024-08-01", icon: Home, tags: ["rent", "shared"] },
-  { name: "Insurance policy #9821.pdf", type: "Insurance", date: "2024-04-20", icon: ShieldCheck, tags: ["auto", "renewal"] },
-  { name: "Consulting retainer.pdf", type: "Income", date: "2024-09-15", icon: Briefcase, tags: ["cashflow"] },
+  { name: "Passport - Beno.pdf", type: "ID", date: "2023-09-12", icon: "Plane", tags: ["expires 2028", "travel"] },
+  { name: "Lease - Harborfront Loft.pdf", type: "Housing", date: "2024-08-01", icon: "Home", tags: ["rent", "shared"] },
+  { name: "Insurance policy #9821.pdf", type: "Insurance", date: "2024-04-20", icon: "ShieldCheck", tags: ["auto", "renewal"] },
+  { name: "Consulting retainer.pdf", type: "Income", date: "2024-09-15", icon: "Briefcase", tags: ["cashflow"] },
 ];
 
 export const shoppingList: ShoppingItem[] = [

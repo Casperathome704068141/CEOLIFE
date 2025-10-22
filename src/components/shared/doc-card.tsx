@@ -3,17 +3,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import * as LucideIcons from "lucide-react";
 
 interface DocCardProps {
   name: string;
   type: string;
   updatedAt: string;
-  icon: LucideIcon;
+  icon: string;
   tags?: string[];
 }
 
-export function DocCard({ name, type, updatedAt, icon: Icon, tags = [] }: DocCardProps) {
+export function DocCard({ name, type, updatedAt, icon, tags = [] }: DocCardProps) {
+  const Icon = (LucideIcons as any)[icon] || LucideIcons.File;
   return (
     <motion.div whileHover={{ scale: 1.02 }}>
       <Card className="rounded-3xl border border-slate-900/60 bg-slate-950/70 p-4">
