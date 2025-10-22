@@ -1,8 +1,27 @@
+'use client';
+
 import { PageHeader, PagePrimaryAction, PageSecondaryAction } from "@/components/layout/page-header";
 import { GoalCard } from "@/components/shared/goal-card";
-import { savingsGoals } from "@/lib/data";
+import { useCollection, useUser } from "@/firebase";
+import type { GoalDoc } from "@/lib/schemas";
+import { format } from "date-fns";
 
 export default function GoalsOverviewPage() {
+  const { user } = useUser();
+  const { data: goals, loading: goalsLoading } = useCollection<GoalDoc>('goals', {
+    query: ['ownerId', '==', user?.uid],
+  });
+
+  const formatDate = (date: any) => {
+    if (!date) return '';
+    if (date.toDate) {
+      // Firebase Timestamp
+      return format(date.toDate(), 'MMM d, yyyy');
+    }
+    // String date
+    return format(new Date(date), 'MMM d, yyyy');
+  };
+
   return (
     <div className="space-y-8">
       <PageHeader
@@ -17,16 +36,20 @@ export default function GoalsOverviewPage() {
       />
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {savingsGoals.map((goal) => (
-          <GoalCard
-            key={goal.name}
-            name={goal.name}
-            target={goal.target}
-            current={goal.current}
-            deadline={goal.deadline}
-            priority={goal.priority}
-          />
-        ))}
+        {goalsLoading ? (
+          <p>Loading goals...</p>
+        ) : (
+          goals?.map((goal) => (
+            <GoalCard
+              key={goal.id}
+              name={goal.name}
+              target={goal.target}
+              current={goal.current}
+              deadline={formatDate(goal.deadline)}
+              priority={goal.priority}
+            />
+          ))
+        )}
       </div>
     </div>
   );
