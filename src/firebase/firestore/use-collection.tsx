@@ -17,6 +17,7 @@ import {FirestorePermissionError} from '../errors';
 interface UseCollectionOptions {
   query?: [string, '==', any];
   isCollectionGroup?: boolean;
+  skip?: boolean;
 }
 
 export function useCollection<T>(path: string, options?: UseCollectionOptions) {
@@ -25,7 +26,7 @@ export function useCollection<T>(path: string, options?: UseCollectionOptions) {
   const firestore = useFirestore();
 
   const memoizedQuery = useMemo(() => {
-    if (!firestore) return null;
+    if (!firestore || options?.skip) return null;
     let colRef: Query<DocumentData>;
 
     if (options?.isCollectionGroup) {
@@ -41,7 +42,11 @@ export function useCollection<T>(path: string, options?: UseCollectionOptions) {
   }, [firestore, path, options]);
 
   useEffect(() => {
-    if (!memoizedQuery) return;
+    if (!memoizedQuery) {
+      setData([]);
+      setLoading(false);
+      return;
+    }
 
     setLoading(true);
     const unsubscribe = onSnapshot(
@@ -69,3 +74,5 @@ export function useCollection<T>(path: string, options?: UseCollectionOptions) {
 
   return {data, loading};
 }
+
+    

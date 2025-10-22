@@ -16,6 +16,7 @@ export default function VaultDocumentsPage() {
   const { user } = useUser();
   const { data: documents, loading: documentsLoading } = useCollection<DocumentDoc>('documents', {
     query: ['owner', '==', user?.uid],
+    skip: !user?.uid,
   });
 
   const formatDate = (date: any) => {
@@ -58,3 +59,5 @@ export default function VaultDocumentsPage() {
     </div>
   );
 }
+
+    

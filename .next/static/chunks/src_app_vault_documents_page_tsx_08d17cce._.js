@@ -9,8 +9,8 @@
   "static/chunks/node_modules_lucide-react_dist_esm_lucide-react_a644e23c.js",
   "static/chunks/node_modules_lucide-react_dist_esm_lucide-react_e8a320fa.js",
   "static/chunks/node_modules_lucide-react_dist_esm_lucide-react_f0b2f71f.js",
-  "static/chunks/node_modules_7aa24e82._.js",
-  "static/chunks/src_0c486bda._.js"
+  "static/chunks/node_modules_6e6a76ce._.js",
+  "static/chunks/src_8ffd8ee3._.js"
 ],
     source: "dynamic"
 });

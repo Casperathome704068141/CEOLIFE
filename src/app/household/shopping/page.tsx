@@ -11,6 +11,7 @@ export default function ShoppingPage() {
   const { user } = useUser();
   const { data: shoppingLists, loading: shoppingListsLoading } = useCollection<ShoppingListDoc>('shoppingLists', {
     query: ['ownerId', '==', user?.uid],
+    skip: !user?.uid,
   });
 
   const shoppingListItems = shoppingLists?.[0]?.items || [];
@@ -54,3 +55,5 @@ export default function ShoppingPage() {
     </div>
   );
 }
+
+    

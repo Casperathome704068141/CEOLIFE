@@ -29,15 +29,19 @@ export default function DashboardPage() {
 
   const { data: goals, loading: goalsLoading } = useCollection<GoalDoc>('goals', {
     query: ['ownerId', '==', user?.uid],
+    skip: !user?.uid,
   });
   const { data: bills, loading: billsLoading } = useCollection<BillDoc>('bills', {
     query: ['ownerId', '==', user?.uid],
+    skip: !user?.uid,
   });
   const { data: documents, loading: documentsLoading } = useCollection<DocumentDoc>('documents', {
     query: ['owner', '==', user?.uid],
+    skip: !user?.uid,
   });
   const { data: shoppingLists, loading: shoppingListsLoading } = useCollection<ShoppingListDoc>('shoppingLists', {
     query: ['ownerId', '==', user?.uid],
+    skip: !user?.uid,
   });
 
   const shoppingList = shoppingLists?.[0]?.items || [];
@@ -312,3 +316,5 @@ export default function DashboardPage() {
     </div>
   );
 }
+
+    

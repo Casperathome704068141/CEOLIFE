@@ -10,6 +10,7 @@ export default function GoalsOverviewPage() {
   const { user } = useUser();
   const { data: goals, loading: goalsLoading } = useCollection<GoalDoc>('goals', {
     query: ['ownerId', '==', user?.uid],
+    skip: !user?.uid,
   });
 
   const formatDate = (date: any) => {
@@ -54,3 +55,5 @@ export default function GoalsOverviewPage() {
     </div>
   );
 }
+
+    
