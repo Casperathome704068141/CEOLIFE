@@ -8,6 +8,7 @@ import {
 import { Header } from "@/components/layout/header";
 import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { AppProviders } from "@/components/providers/app-providers";
+import { FirebaseClientProvider } from "@/firebase/client-provider";
 
 export const metadata: Metadata = {
   title: "BENO 1017 – Chief of Staff",
@@ -35,17 +36,19 @@ export default function RootLayout({
       </head>
       <body className="font-body bg-slate-950 text-slate-100 antialiased">
         <AppProviders>
-          <SidebarProvider>
-            <Sidebar className="border-r border-slate-900/70 bg-slate-950/90">
-              <SidebarNav />
-            </Sidebar>
-            <SidebarInset>
-              <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-950 via-slate-930 to-slate-950">
-                <Header />
-                <main className="flex-1 px-4 pb-12 sm:px-6 md:px-8">{children}</main>
-              </div>
-            </SidebarInset>
-          </SidebarProvider>
+          <FirebaseClientProvider>
+            <SidebarProvider>
+              <Sidebar className="border-r border-slate-900/70 bg-slate-950/90">
+                <SidebarNav />
+              </Sidebar>
+              <SidebarInset>
+                <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-950 via-slate-930 to-slate-950">
+                  <Header />
+                  <main className="flex-1 px-4 pb-12 sm:px-6 md:px-8">{children}</main>
+                </div>
+              </SidebarInset>
+            </SidebarProvider>
+          </FirebaseClientProvider>
         </AppProviders>
       </body>
     </html>
