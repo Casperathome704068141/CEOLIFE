@@ -36,7 +36,7 @@ The script populates Firestore with a demo household, members, accounts, sample 
 
 - Dark glassmorphism palette (`slate-950` backgrounds, cyan/indigo neon accents).
 - Animated Stat tiles, briefing cards, sparkline charts, command palette (⌘K), notification tray, and profile switcher.
-- WCAG-conscious component styling with focus rings, keyboard shortcuts (⌘ + K/A/U/F/S/R), and responsive grid layout.
+- WCAG-conscious component styling with focus rings, keyboard shortcuts (⌘ + K/A/U/F/S/R/N), and responsive grid layout.
 
 ## Tooling
 
@@ -50,13 +50,24 @@ The script populates Firestore with a demo household, members, accounts, sample 
 - **Zod** schemas for runtime validation of Firebase data models.
 - **Vitest + React Testing Library** ready via Next tooling.
 
+### Keyboard shortcuts
+
+- `⌘ + K` / `Ctrl + K` — Command palette.
+- `⌘ + N` / `Ctrl + N` — Jump to nudge workflow.
+- `⌘ + A` / `Ctrl + A` — Add transaction.
+- `⌘ + U` / `Ctrl + U` — Upload to vault.
+- `⌘ + F` / `Ctrl + F` — Filter transactions.
+- `⌘ + S` / `Ctrl + S` — Open Beno assistant.
+- `⌘ + R` / `Ctrl + R` — Automations workspace.
+
 ## Feature highlights
 
 - Executive dashboard with animated tiles, schedule timeline, Beno briefing, vault inbox, and shopping assistant.
 - Full navigation skeleton per blueprint: finance suite, vault, schedule/taskboard, household manager, goals, simulations, wellness analytics, security, onboarding, and assistant chat.
-- Command palette (`⌘K`) with quick actions, notification tray, and profile role switcher.
+- Head-of-home messaging flows with WhatsApp/SMS nudges, settlements ledger, and monthly audit scaffolding.
+- Command palette (`⌘K`) with quick actions, notification tray, and profile perspective switcher.
 - Firebase data model codified via Zod schemas, Firestore + Storage security rule stubs, and index configuration.
-- Seed script creating demo household with members, accounts, transactions, bills, and goals in CAD.
+- Seed script creating demo household with members, accounts, transactions, bills, goals, docs, automations, and nudges in CAD.
 
 ## Testing & linting
 

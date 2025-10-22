@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CalendarClock } from "lucide-react";
+import { CalendarClock, type LucideIcon } from "lucide-react";
+import * as LucideIcons from "lucide-react";
 import { bills } from "@/lib/data";
 
 export function UpcomingBills() {
@@ -12,7 +13,7 @@ export function UpcomingBills() {
       <CardContent>
         <div className="space-y-4">
           {bills.map((bill) => {
-            const Icon = bill.icon;
+            const Icon = (LucideIcons[bill.icon as keyof typeof LucideIcons] as LucideIcon) ?? LucideIcons.Receipt;
             return (
               <div key={bill.name} className="flex items-center gap-4">
                 <div className="p-2 bg-muted/50 rounded-lg">

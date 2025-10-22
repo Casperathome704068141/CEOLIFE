@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type ProfileRole = "admin" | "family" | "guest";
+type ProfileRole = "head" | "household" | "guest";
 
 type UIState = {
   isCommandPaletteOpen: boolean;
@@ -14,7 +14,7 @@ type UIState = {
 export const useUIState = create<UIState>((set) => ({
   isCommandPaletteOpen: false,
   notificationsOpen: false,
-  activeProfile: "admin",
+  activeProfile: "head",
   setCommandPaletteOpen: (open) => set({ isCommandPaletteOpen: open }),
   toggleNotifications: () =>
     set((state) => ({ notificationsOpen: !state.notificationsOpen })),

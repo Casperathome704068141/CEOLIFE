@@ -49,6 +49,7 @@ export const bills: Bill[] = [
   { name: "Credit Card", amount: 820.45, dueDate: "Oct 28", icon: "CreditCard" },
   { name: "Internet", amount: 89.99, dueDate: "Oct 30", icon: "Wifi" },
   { name: "Utilities", amount: 145.5, dueDate: "Nov 3", icon: "Droplets" },
+  { name: "Wellness coach", amount: 210, dueDate: "Nov 4", icon: "HeartPulse" },
 ];
 
 export const schedule: ScheduleEvent[] = [
@@ -109,30 +110,37 @@ export const documents: DocumentItem[] = [
   { name: "Lease - Harborfront Loft.pdf", type: "Housing", date: "2024-08-01", icon: "Home", tags: ["rent", "shared"] },
   { name: "Insurance policy #9821.pdf", type: "Insurance", date: "2024-04-20", icon: "ShieldCheck", tags: ["auto", "renewal"] },
   { name: "Consulting retainer.pdf", type: "Income", date: "2024-09-15", icon: "Briefcase", tags: ["cashflow"] },
+  { name: "HydroOne statement.pdf", type: "Bill", date: "2024-10-01", icon: "Bolt", tags: ["utilities"] },
+  { name: "Brother Marcus transfer.jpg", type: "Receipt", date: "2024-09-22", icon: "Send", tags: ["shared", "split"] },
+  { name: "Wellness plan.pdf", type: "Medical", date: "2024-06-18", icon: "HeartPulse", tags: ["therapy"] },
+  { name: "Car insurance renewal.pdf", type: "Insurance", date: "2024-08-15", icon: "Car", tags: ["vehicle"] },
+  { name: "Apartment inspection checklist.pdf", type: "Housing", date: "2024-07-01", icon: "ClipboardCheck", tags: ["maintenance"] },
+  { name: "Tax receipt charitable donation.pdf", type: "Other", date: "2024-03-05", icon: "Receipt", tags: ["tax"] },
 ];
 
 export const shoppingList: ShoppingItem[] = [
-  { id: 1, name: "Steel-cut oats", checked: false, owner: "House" },
-  { id: 2, name: "Cold brew beans", checked: true, owner: "Beno" },
-  { id: 3, name: "Air filters", checked: false, owner: "Shared" },
-  { id: 4, name: "Cleaning tablets", checked: false, owner: "House" },
+  { id: "oats", name: "Steel-cut oats", checked: false, owner: "House", priority: "medium" },
+  { id: "beans", name: "Cold brew beans", checked: true, owner: "Beno", priority: "low", isRecurring: true },
+  { id: "filters", name: "Air filters", checked: false, owner: "Shared", priority: "high", priceTarget: 45 },
+  { id: "tablets", name: "Cleaning tablets", checked: false, owner: "House", priority: "medium" },
+  { id: "vitamins", name: "Omega 3 vitamins", checked: false, owner: "Wellness", priority: "high", isRecurring: true },
 ];
 
 export const briefingInsights: BriefingInsight[] = [
   {
     id: "cashflow",
     title: "Cashflow risk next Thursday",
-    detail: "Utilities + rent hit before paycheque. Projected balance dips to $1,240. Suggest moving $600 from savings buffer.",
+    detail: "Utilities + rent hit before paycheque. Projected balance dips to $1,240. Suggest moving $600 from savings buffer or nudging Marcus for transfer receipt.",
   },
   {
     id: "bill",
     title: "Credit card autopay spike",
-    detail: "$820 statement includes two flagged travel charges. Consider splitting and tagging reimbursables.",
+    detail: "$820 statement includes two flagged travel charges. Consider splitting and tagging reimbursables; nudge brothers to confirm.",
   },
   {
     id: "goal",
     title: "Goal ahead of plan",
-    detail: "Japan expedition is 3 weeks ahead. Reallocate $400 to emergency fund to stay on track.",
+    detail: "Japan expedition is 3 weeks ahead. Reallocate $400 to emergency fund and set automation for payday sweep.",
   },
 ];
 
@@ -140,11 +148,16 @@ export const vaultInboxHints = [
   {
     id: "receipts",
     title: "Parse all receipts",
-    description: "5 new uploads ready for OCR and categorization.",
+    description: "5 new uploads ready for OCR and categorization. Review flagged matches after processing.",
   },
   {
     id: "ids",
     title: "ID expiry checks",
-    description: "Two passports expire within 18 months.",
+    description: "Two passports expire within 18 months — schedule renewal routine.",
+  },
+  {
+    id: "nudges",
+    title: "Queue nudges",
+    description: "Send WhatsApp reminder for Marcus’ utility split before quiet hours.",
   },
 ];

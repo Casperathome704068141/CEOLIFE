@@ -13,18 +13,27 @@ const recurrenceSchema = z.object({
   count: z.number().int().positive().optional(),
 });
 
+const quietHoursSchema = z
+  .object({ start: z.string().regex(/^[0-2]\d:[0-5]\d$/), end: z.string().regex(/^[0-2]\d:[0-5]\d$/) })
+  .partial();
+
 export const userSchema = z.object({
   uid: z.string(),
   email: z.string().email(),
   displayName: z.string().min(1),
   photoURL: z.string().url().optional(),
-  roles: z.array(z.enum(["admin", "family", "guest"])).default(["admin"]),
+  role: z.literal("HEAD"),
   preferences: z
     .object({
       locale: z.string().default("en-CA"),
       currency: currencySchema.default("CAD"),
       theme: z.enum(["system", "light", "dark"]).default("dark"),
-      notifications: z.record(z.boolean()).default({}),
+      notifications: z
+        .object({
+          channels: z.record(z.boolean()).default({}),
+          quietHours: quietHoursSchema.optional(),
+        })
+        .default({ channels: {} }),
     })
     .default({}),
   featureFlags: z.record(z.boolean()).default({}),
@@ -32,6 +41,23 @@ export const userSchema = z.object({
     .object({
       completed: z.boolean().default(false),
       steps: z.record(z.boolean()).default({}),
+      lastVisitedRoute: z.string().optional(),
+    })
+    .default({}),
+  security: z
+    .object({
+      idleLockMinutes: z.number().int().positive().max(180).default(10),
+      passkeyRegistered: z.boolean().default(false),
+      zeroKnowledgeVault: z.boolean().default(true),
+    })
+    .default({}),
+  messaging: z
+    .object({
+      twilioSid: z.string().optional(),
+      twilioToken: z.string().optional(),
+      whatsappSender: z.string().optional(),
+      defaultCountryCode: z.string().optional(),
+      quietHours: quietHoursSchema.optional(),
     })
     .default({}),
   createdAt: timestampSchema.optional(),
@@ -40,20 +66,37 @@ export const userSchema = z.object({
 
 export const householdSchema = z.object({
   id: z.string(),
+  ownerUid: z.string(),
   name: z.string(),
   address: z.string().optional(),
-  members: z.array(z.string()),
+  members: z.array(z.string()).default([]),
   currency: currencySchema.default("CAD"),
-  sharedSettings: z.record(z.unknown()).default({}),
+  timezone: z.string().default("America/Toronto"),
+  quietHours: quietHoursSchema.optional(),
+  sharedSettings: z
+    .object({
+      messagingChannel: z.enum(["whatsapp", "sms", "email"]).optional(),
+      defaultNudgeTemplates: z.array(z.string()).default([]),
+    })
+    .default({ defaultNudgeTemplates: [] }),
   createdAt: timestampSchema.optional(),
+  updatedAt: timestampSchema.optional(),
 });
 
 export const memberSchema = z.object({
   id: z.string(),
   householdId: z.string(),
-  role: z.enum(["admin", "member", "guest"]),
+  displayName: z.string(),
+  role: z.enum(["head", "member", "guest", "service"]).default("member"),
   userRef: z.string().optional(),
   permissions: z.record(z.boolean()).default({}),
+  contact: z
+    .object({
+      phone: z.string().optional(),
+      email: z.string().email().optional(),
+      preferredChannel: z.enum(["whatsapp", "sms", "email"]).optional(),
+    })
+    .default({}),
   createdAt: timestampSchema.optional(),
 });
 
@@ -85,6 +128,15 @@ export const transactionSchema = z.object({
   attachmentRefs: z.array(z.string()).default([]),
   status: z.enum(["cleared", "pending", "flagged"]).default("pending"),
   recurrenceHint: recurrenceSchema.optional(),
+  splitParentId: z.string().optional(),
+  splits: z.array(
+    z.object({
+      id: z.string(),
+      amount: z.number(),
+      category: z.string(),
+      memo: z.string().optional(),
+    }),
+  ).default([]),
   createdAt: timestampSchema.optional(),
 });
 
@@ -158,14 +210,31 @@ export const documentSchema = z.object({
   size: z.number(),
   checksum: z.string(),
   encrypted: z.literal(true),
+  encryption: z
+    .object({
+      algorithm: z.literal("AES-GCM"),
+      keyId: z.string(),
+      wrappedKey: z.string(),
+    })
+    .optional(),
   expireDate: timestampSchema.optional(),
   tags: z.array(z.string()).default([]),
-  shareACL: z.array(z.object({ subject: z.string(), role: z.enum(["viewer", "editor", "emergency"]) })).default([]),
+  shareACL: z
+    .array(
+      z.object({
+        subject: z.string(),
+        role: z.enum(["viewer", "editor", "emergency"]),
+        expiresAt: timestampSchema.optional(),
+      }),
+    )
+    .default([]),
+  shareSubjects: z.record(z.enum(["viewer", "editor", "emergency"]).optional()).default({}),
   createdAt: timestampSchema.optional(),
 });
 
 export const eventSchema = z.object({
   id: z.string(),
+  ownerId: z.string(),
   calendarId: z.string(),
   title: z.string(),
   start: timestampSchema,
@@ -173,6 +242,8 @@ export const eventSchema = z.object({
   location: z.string().optional(),
   linkedEntities: z.array(z.string()).default([]),
   reminders: z.array(z.object({ minutesBefore: z.number().int() })).default([]),
+  snoozedUntil: timestampSchema.optional(),
+  sharedAsNudge: z.boolean().default(false),
   createdAt: timestampSchema.optional(),
 });
 
@@ -210,6 +281,8 @@ export const shoppingListSchema = z.object({
       priority: z.enum(["low", "medium", "high"]).default("medium"),
       isRecurring: z.boolean().default(false),
       priceTarget: z.number().optional(),
+      lastPurchasedAt: timestampSchema.optional(),
+      notes: z.string().optional(),
     }),
   ),
   lastAutoSuggestAt: timestampSchema.optional(),
@@ -231,6 +304,7 @@ export const simulationSchema = z.object({
 
 export const automationSchema = z.object({
   id: z.string(),
+  ownerId: z.string(),
   ownerScope: z.enum(["user", "household"]),
   trigger: z.object({
     type: z.enum(["cron", "event", "threshold", "webhook"]),
@@ -239,7 +313,17 @@ export const automationSchema = z.object({
   condition: z.record(z.unknown()).optional(),
   actions: z.array(
     z.object({
-      type: z.enum(["notify", "createTxn", "moveToGoal", "createTask", "email", "generateBriefing", "tagTransaction"]),
+      type: z.enum([
+        "notify",
+        "createTxn",
+        "moveToGoal",
+        "createTask",
+        "createEvent",
+        "email",
+        "generateBriefing",
+        "tagTransaction",
+        "sendNudge",
+      ]),
       payload: z.record(z.unknown()).default({}),
     }),
   ),
@@ -250,10 +334,81 @@ export const automationSchema = z.object({
 export const briefingSchema = z.object({
   id: z.string(),
   ownerId: z.string(),
-  type: z.enum(["morning", "evening", "weekly"]),
+  type: z.enum(["morning", "evening", "weekly", "monthlyAudit"]),
   content: z.string(),
   createdAt: timestampSchema,
   metrics: z.record(z.number()).default({}),
+  recommendations: z
+    .array(
+      z.object({
+        id: z.string(),
+        title: z.string(),
+        action: z.enum(["simulate", "createRule", "nudge", "accept"]),
+        details: z.string().optional(),
+      }),
+    )
+    .default([]),
+});
+
+export const nudgeSchema = z.object({
+  id: z.string(),
+  ownerId: z.string(),
+  toPhone: z.string(),
+  toName: z.string().optional(),
+  channel: z.enum(["whatsapp", "sms"]),
+  templateId: z.string(),
+  payload: z.record(z.unknown()),
+  attachmentUrl: z.string().url().optional(),
+  status: z.enum(["queued", "sent", "delivered", "error"]).default("queued"),
+  sentAt: timestampSchema.optional(),
+  deliveredAt: timestampSchema.optional(),
+  error: z.string().optional(),
+  createdAt: timestampSchema.optional(),
+});
+
+export const settlementSchema = z.object({
+  id: z.string(),
+  householdId: z.string(),
+  payerName: z.string(),
+  amount: z.number(),
+  currency: currencySchema,
+  date: timestampSchema,
+  method: z.string().optional(),
+  note: z.string().optional(),
+  links: z.array(z.string()).default([]),
+  attachments: z.array(z.string()).default([]),
+  createdAt: timestampSchema.optional(),
+});
+
+export const merchantRuleSchema = z.object({
+  id: z.string(),
+  ownerId: z.string(),
+  merchant: z.string(),
+  defaultCategory: z.string(),
+  notes: z.string().optional(),
+  createdAt: timestampSchema.optional(),
+  updatedAt: timestampSchema.optional(),
+});
+
+export const aggregateSnapshotSchema = z.object({
+  id: z.string(),
+  householdId: z.string(),
+  netWorth: z.number(),
+  monthlyBurn: z.number(),
+  runwayDays: z.number(),
+  budgetUtilization: z.number(),
+  updatedAt: timestampSchema,
+});
+
+export const contactSchema = z.object({
+  id: z.string(),
+  ownerId: z.string(),
+  name: z.string(),
+  phone: z.string().optional(),
+  email: z.string().email().optional(),
+  channelPreference: z.enum(["whatsapp", "sms", "email"]).optional(),
+  notes: z.string().optional(),
+  createdAt: timestampSchema.optional(),
 });
 
 export type UserDoc = z.infer<typeof userSchema>;
@@ -274,3 +429,8 @@ export type ShoppingListDoc = z.infer<typeof shoppingListSchema>;
 export type SimulationDoc = z.infer<typeof simulationSchema>;
 export type AutomationDoc = z.infer<typeof automationSchema>;
 export type BriefingDoc = z.infer<typeof briefingSchema>;
+export type NudgeDoc = z.infer<typeof nudgeSchema>;
+export type SettlementDoc = z.infer<typeof settlementSchema>;
+export type MerchantRuleDoc = z.infer<typeof merchantRuleSchema>;
+export type AggregateSnapshotDoc = z.infer<typeof aggregateSnapshotSchema>;
+export type ContactDoc = z.infer<typeof contactSchema>;

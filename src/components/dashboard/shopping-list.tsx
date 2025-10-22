@@ -11,11 +11,9 @@ import { cn } from "@/lib/utils";
 export function ShoppingList() {
   const [items, setItems] = React.useState(initialShoppingList);
 
-  const handleCheck = (id: number) => {
+  const handleCheck = (id: string) => {
     setItems(
-      items.map((item) =>
-        item.id === id ? { ...item, checked: !item.checked } : item
-      )
+      items.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item))
     );
   };
 

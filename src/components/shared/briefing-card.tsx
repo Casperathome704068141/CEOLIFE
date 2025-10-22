@@ -17,9 +17,10 @@ interface BriefingCardProps {
   onExpand?: () => void;
   onRunSimulation?: () => void;
   onCreateRule?: () => void;
+  onSendNudge?: () => void;
 }
 
-export function BriefingCard({ insights, onExpand, onRunSimulation, onCreateRule }: BriefingCardProps) {
+export function BriefingCard({ insights, onExpand, onRunSimulation, onCreateRule, onSendNudge }: BriefingCardProps) {
   return (
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
       <Card className="h-full rounded-3xl border border-slate-900/60 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950 shadow-2xl shadow-cyan-900/20">
@@ -48,6 +49,9 @@ export function BriefingCard({ insights, onExpand, onRunSimulation, onCreateRule
             </Button>
             <Button variant="secondary" className="rounded-2xl bg-indigo-500/20 text-indigo-200" onClick={onCreateRule}>
               Create automation
+            </Button>
+            <Button variant="secondary" className="rounded-2xl bg-emerald-500/20 text-emerald-200" onClick={onSendNudge}>
+              Send nudge
             </Button>
           </div>
         </CardContent>
