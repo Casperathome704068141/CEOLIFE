@@ -2,5 +2,6 @@
   "/(dashboard)/page": "app/(dashboard)/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/finance/overview/page": "app/finance/overview/page.js",
+  "/schedule/calendar/page": "app/schedule/calendar/page.js",
   "/vault/documents/page": "app/vault/documents/page.js"
 }

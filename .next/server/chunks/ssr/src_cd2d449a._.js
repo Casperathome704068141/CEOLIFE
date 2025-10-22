@@ -1643,7 +1643,7 @@ function DashboardPage() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
-                        className: "col-span-12 lg:col-span-6 rounded-3xl border border-slate-900/60 bg-slate-950/80 shadow-xl",
+                        className: "col-span-12 lg:col-span-6 rounded-3xl border border-slate-900/60 bg-slate-950/8O shadow-xl",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
                                 className: "flex flex-row items-center justify-between",
@@ -1907,7 +1907,7 @@ function DashboardPage() {
                                             name: doc.name,
                                             type: doc.type,
                                             updatedAt: doc.date,
-                                            icon: doc.icon,
+                                            iconName: doc.icon,
                                             tags: doc.tags
                                         }, doc.name, false, {
                                             fileName: "[project]/src/app/(dashboard)/page.tsx",

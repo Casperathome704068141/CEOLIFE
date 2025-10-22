@@ -145,7 +145,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="col-span-12 lg:col-span-6 rounded-3xl border border-slate-900/60 bg-slate-950/80 shadow-xl">
+        <Card className="col-span-12 lg:col-span-6 rounded-3xl border border-slate-900/60 bg-slate-950/8O shadow-xl">
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
               <CardTitle className="text-lg text-white">Vault inbox</CardTitle>
@@ -201,7 +201,7 @@ export default function DashboardPage() {
           </CardHeader>
           <CardContent className="space-y-3">
             {documents.slice(0, 3).map((doc) => (
-              <DocCard key={doc.name} name={doc.name} type={doc.type} updatedAt={doc.date} icon={doc.icon} tags={doc.tags} />
+              <DocCard key={doc.name} name={doc.name} type={doc.type} updatedAt={doc.date} iconName={doc.icon} tags={doc.tags} />
             ))}
             <Button variant="link" className="text-cyan-300" asChild>
               <Link href="/vault/documents">
