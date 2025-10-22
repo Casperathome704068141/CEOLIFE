@@ -1,0 +1,43 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isUser(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function inAcl(resourceData, userId) {
+      return resourceData.shareACL.where(a => a.subject == userId).size() > 0;
+    }
+
+    function hasRole(resourceData, role) {
+      return resourceData.roles != null && resourceData.roles[request.auth.uid] == role;
+    }
+
+    match /users/{userId} {
+      allow read, write: if isUser(userId);
+    }
+
+    match /households/{householdId} {
+      allow read: if isSignedIn() && (resource.data.members.hasAny([request.auth.uid]) || hasRole(resource.data, 'guest'));
+      allow write: if isSignedIn() && resource.data.members.hasAny([request.auth.uid]) && hasRole(resource.data, 'admin');
+
+      match /members/{memberId} {
+        allow read: if isSignedIn() && resource.data.householdId in get(/databases/$(database)/documents/users/$(request.auth.uid)).data.households;
+        allow write: if isSignedIn() && hasRole(get(/databases/$(database)/documents/households/$(householdId)).data, 'admin');
+      }
+    }
+
+    match /documents/{documentId} {
+      allow read: if isSignedIn() && (resource.data.owner == request.auth.uid || inAcl(resource.data, request.auth.uid));
+      allow write: if isSignedIn() && request.auth.uid == request.resource.data.owner;
+    }
+
+    match /{collection}/{docId} {
+      allow read, write: if isSignedIn() && (resource.data.ownerId == request.auth.uid || resource.data.owner == request.auth.uid);
+    }
+  }
+}

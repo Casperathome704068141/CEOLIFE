@@ -24,17 +24,32 @@ export type SavingsGoal = {
   target: number;
   current: number;
   description: string;
+  deadline: string;
+  priority: "high" | "medium" | "low";
 };
 
-export type Document = {
+export type DocumentItem = {
   name: string;
   type: string;
   date: string;
   icon: LucideIcon;
+  tags?: string[];
 };
 
 export type ShoppingItem = {
   id: number;
   name: string;
   checked: boolean;
+  owner?: string;
+};
+
+export type BriefingInsight = {
+  id: string;
+  title: string;
+  detail: string;
+};
+
+export type TrendPoint = {
+  label: string;
+  value: number;
 };
