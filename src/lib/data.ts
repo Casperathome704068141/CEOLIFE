@@ -1,10 +1,6 @@
 import type {
-  Bill,
   ScheduleEvent,
   CashflowData,
-  SavingsGoal,
-  DocumentItem,
-  ShoppingItem,
   BriefingInsight,
   TrendPoint,
 } from "@/lib/types";
@@ -44,14 +40,6 @@ export const statHighlights = [
   },
 ];
 
-export const bills: Bill[] = [
-  { name: "Rent", amount: 2_350, dueDate: "Nov 1", icon: "Home" },
-  { name: "Credit Card", amount: 820.45, dueDate: "Oct 28", icon: "CreditCard" },
-  { name: "Internet", amount: 89.99, dueDate: "Oct 30", icon: "Wifi" },
-  { name: "Utilities", amount: 145.5, dueDate: "Nov 3", icon: "Droplets" },
-  { name: "Wellness coach", amount: 210, dueDate: "Nov 4", icon: "HeartPulse" },
-];
-
 export const schedule: ScheduleEvent[] = [
   { time: "07:30", title: "Morning briefing", description: "Review priorities with Beno" },
   { time: "09:00", title: "Ops sync", description: "Finance + household status" },
@@ -76,54 +64,6 @@ export const sparklineData: TrendPoint[] = [
   { label: "Fri", value: 720 },
   { label: "Sat", value: 680 },
   { label: "Sun", value: 540 },
-];
-
-export const savingsGoals: SavingsGoal[] = [
-  {
-    name: "Japan expedition",
-    target: 12_000,
-    current: 7_850,
-    description: "Immersive spring 2025 trip",
-    deadline: "Mar 2025",
-    priority: "high",
-  },
-  {
-    name: "Emergency fund",
-    target: 18_000,
-    current: 12_200,
-    description: "6 months runway",
-    deadline: "Dec 2024",
-    priority: "medium",
-  },
-  {
-    name: "Home tech refresh",
-    target: 6_500,
-    current: 3_050,
-    description: "Appliances + workspace",
-    deadline: "Jun 2025",
-    priority: "low",
-  },
-];
-
-export const documents: DocumentItem[] = [
-  { name: "Passport - Beno.pdf", type: "ID", date: "2023-09-12", icon: "Plane", tags: ["expires 2028", "travel"] },
-  { name: "Lease - Harborfront Loft.pdf", type: "Housing", date: "2024-08-01", icon: "Home", tags: ["rent", "shared"] },
-  { name: "Insurance policy #9821.pdf", type: "Insurance", date: "2024-04-20", icon: "ShieldCheck", tags: ["auto", "renewal"] },
-  { name: "Consulting retainer.pdf", type: "Income", date: "2024-09-15", icon: "Briefcase", tags: ["cashflow"] },
-  { name: "HydroOne statement.pdf", type: "Bill", date: "2024-10-01", icon: "Bolt", tags: ["utilities"] },
-  { name: "Brother Marcus transfer.jpg", type: "Receipt", date: "2024-09-22", icon: "Send", tags: ["shared", "split"] },
-  { name: "Wellness plan.pdf", type: "Medical", date: "2024-06-18", icon: "HeartPulse", tags: ["therapy"] },
-  { name: "Car insurance renewal.pdf", type: "Insurance", date: "2024-08-15", icon: "Car", tags: ["vehicle"] },
-  { name: "Apartment inspection checklist.pdf", type: "Housing", date: "2024-07-01", icon: "ClipboardCheck", tags: ["maintenance"] },
-  { name: "Tax receipt charitable donation.pdf", type: "Other", date: "2024-03-05", icon: "Receipt", tags: ["tax"] },
-];
-
-export const shoppingList: ShoppingItem[] = [
-  { id: "oats", name: "Steel-cut oats", checked: false, owner: "House", priority: "medium" },
-  { id: "beans", name: "Cold brew beans", checked: true, owner: "Beno", priority: "low", isRecurring: true },
-  { id: "filters", name: "Air filters", checked: false, owner: "Shared", priority: "high", priceTarget: 45 },
-  { id: "tablets", name: "Cleaning tablets", checked: false, owner: "House", priority: "medium" },
-  { id: "vitamins", name: "Omega 3 vitamins", checked: false, owner: "Wellness", priority: "high", isRecurring: true },
 ];
 
 export const briefingInsights: BriefingInsight[] = [

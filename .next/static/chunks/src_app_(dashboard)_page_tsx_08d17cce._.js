@@ -12,7 +12,7 @@
   "static/chunks/node_modules_lucide-react_dist_esm_lucide-react_f0b2f71f.js",
   "static/chunks/node_modules_lodash_1d760160._.js",
   "static/chunks/node_modules_recharts_es6_ff9e0454._.js",
-  "static/chunks/node_modules_7d9438a3._.js"
+  "static/chunks/node_modules_55500537._.js"
 ],
     source: "dynamic"
 });

@@ -272,26 +272,14 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$c
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
-    "bills": (()=>bills),
     "briefingInsights": (()=>briefingInsights),
     "cashflowData": (()=>cashflowData),
-    "documents": (()=>documents),
     "netWorth": (()=>netWorth),
-    "savingsGoals": (()=>savingsGoals),
     "schedule": (()=>schedule),
-    "shoppingList": (()=>shoppingList),
     "sparklineData": (()=>sparklineData),
     "statHighlights": (()=>statHighlights),
     "vaultInboxHints": (()=>vaultInboxHints)
 });
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/credit-card.js [app-rsc] (ecmascript) <export default as CreditCard>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/house.js [app-rsc] (ecmascript) <export default as Home>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plane$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Plane$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/plane.js [app-rsc] (ecmascript) <export default as Plane>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wifi$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Wifi$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/wifi.js [app-rsc] (ecmascript) <export default as Wifi>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$droplets$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Droplets$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/droplets.js [app-rsc] (ecmascript) <export default as Droplets>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shield-check.js [app-rsc] (ecmascript) <export default as ShieldCheck>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/briefcase.js [app-rsc] (ecmascript) <export default as Briefcase>");
-;
 const netWorth = 186_430.25;
 const statHighlights = [
     {
@@ -326,32 +314,6 @@ const statHighlights = [
         value: "68%",
         delta: "+$1,200 allocated this week",
         trend: "up"
-    }
-];
-const bills = [
-    {
-        name: "Rent",
-        amount: 2_350,
-        dueDate: "Nov 1",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"]
-    },
-    {
-        name: "Credit Card",
-        amount: 820.45,
-        dueDate: "Oct 28",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$credit$2d$card$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CreditCard$3e$__["CreditCard"]
-    },
-    {
-        name: "Internet",
-        amount: 89.99,
-        dueDate: "Oct 30",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wifi$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Wifi$3e$__["Wifi"]
-    },
-    {
-        name: "Utilities",
-        amount: 145.5,
-        dueDate: "Nov 3",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$droplets$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Droplets$3e$__["Droplets"]
     }
 ];
 const schedule = [
@@ -438,126 +400,38 @@ const sparklineData = [
         value: 540
     }
 ];
-const savingsGoals = [
-    {
-        name: "Japan expedition",
-        target: 12_000,
-        current: 7_850,
-        description: "Immersive spring 2025 trip",
-        deadline: "Mar 2025",
-        priority: "high"
-    },
-    {
-        name: "Emergency fund",
-        target: 18_000,
-        current: 12_200,
-        description: "6 months runway",
-        deadline: "Dec 2024",
-        priority: "medium"
-    },
-    {
-        name: "Home tech refresh",
-        target: 6_500,
-        current: 3_050,
-        description: "Appliances + workspace",
-        deadline: "Jun 2025",
-        priority: "low"
-    }
-];
-const documents = [
-    {
-        name: "Passport - Beno.pdf",
-        type: "ID",
-        date: "2023-09-12",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plane$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Plane$3e$__["Plane"],
-        tags: [
-            "expires 2028",
-            "travel"
-        ]
-    },
-    {
-        name: "Lease - Harborfront Loft.pdf",
-        type: "Housing",
-        date: "2024-08-01",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"],
-        tags: [
-            "rent",
-            "shared"
-        ]
-    },
-    {
-        name: "Insurance policy #9821.pdf",
-        type: "Insurance",
-        date: "2024-04-20",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2d$check$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ShieldCheck$3e$__["ShieldCheck"],
-        tags: [
-            "auto",
-            "renewal"
-        ]
-    },
-    {
-        name: "Consulting retainer.pdf",
-        type: "Income",
-        date: "2024-09-15",
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$briefcase$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Briefcase$3e$__["Briefcase"],
-        tags: [
-            "cashflow"
-        ]
-    }
-];
-const shoppingList = [
-    {
-        id: 1,
-        name: "Steel-cut oats",
-        checked: false,
-        owner: "House"
-    },
-    {
-        id: 2,
-        name: "Cold brew beans",
-        checked: true,
-        owner: "Beno"
-    },
-    {
-        id: 3,
-        name: "Air filters",
-        checked: false,
-        owner: "Shared"
-    },
-    {
-        id: 4,
-        name: "Cleaning tablets",
-        checked: false,
-        owner: "House"
-    }
-];
 const briefingInsights = [
     {
         id: "cashflow",
         title: "Cashflow risk next Thursday",
-        detail: "Utilities + rent hit before paycheque. Projected balance dips to $1,240. Suggest moving $600 from savings buffer."
+        detail: "Utilities + rent hit before paycheque. Projected balance dips to $1,240. Suggest moving $600 from savings buffer or nudging Marcus for transfer receipt."
     },
     {
         id: "bill",
         title: "Credit card autopay spike",
-        detail: "$820 statement includes two flagged travel charges. Consider splitting and tagging reimbursables."
+        detail: "$820 statement includes two flagged travel charges. Consider splitting and tagging reimbursables; nudge brothers to confirm."
     },
     {
         id: "goal",
         title: "Goal ahead of plan",
-        detail: "Japan expedition is 3 weeks ahead. Reallocate $400 to emergency fund to stay on track."
+        detail: "Japan expedition is 3 weeks ahead. Reallocate $400 to emergency fund and set automation for payday sweep."
     }
 ];
 const vaultInboxHints = [
     {
         id: "receipts",
         title: "Parse all receipts",
-        description: "5 new uploads ready for OCR and categorization."
+        description: "5 new uploads ready for OCR and categorization. Review flagged matches after processing."
     },
     {
         id: "ids",
         title: "ID expiry checks",
-        description: "Two passports expire within 18 months."
+        description: "Two passports expire within 18 months — schedule renewal routine."
+    },
+    {
+        id: "nudges",
+        title: "Queue nudges",
+        description: "Send WhatsApp reminder for Marcus’ utility split before quiet hours."
     }
 ];
 }}),

@@ -16,6 +16,33 @@
         }
       },
       "required": ["name", "email"]
+    },
+    "goal": {
+      "title": "Goal",
+      "description": "A financial or personal goal.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "name": { "type": "string" },
+        "target": { "type": "number" },
+        "current": { "type": "number" },
+        "deadline": { "type": "string", "format": "date-time" },
+        "priority": { "type": "string", "enum": ["high", "medium", "low"] }
+      },
+      "required": ["ownerId", "name", "target", "current", "deadline", "priority"]
+    },
+    "bill": {
+      "title": "Bill",
+      "description": "A recurring or one-time bill.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "name": { "type": "string" },
+        "amount": { "type": "number" },
+        "dueDate": { "type": "string", "format": "date-time" },
+        "autopay": { "type": "boolean" }
+      },
+      "required": ["ownerId", "name", "amount", "dueDate"]
     }
   },
   "auth": {
@@ -27,6 +54,18 @@
         "$ref": "#/entities/user"
       },
       "description": "User profile information."
+    },
+    "/goals": {
+      "schema": {
+        "$ref": "#/entities/goal"
+      },
+      "description": "Collection of user goals."
+    },
+    "/bills": {
+      "schema": {
+        "$ref": "#/entities/bill"
+      },
+      "description": "Collection of user bills."
     }
   }
 }

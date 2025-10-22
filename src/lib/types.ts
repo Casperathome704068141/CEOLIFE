@@ -1,11 +1,4 @@
-import type { LucideIcon } from "lucide-react";
-
-export type Bill = {
-  name: string;
-  amount: number;
-  dueDate: string;
-  icon: string;
-};
+import type { LucideIcon } from 'lucide-react';
 
 export type ScheduleEvent = {
   time: string;
@@ -17,33 +10,6 @@ export type CashflowData = {
   month: string;
   income: number;
   expenses: number;
-};
-
-export type SavingsGoal = {
-  name: string;
-  target: number;
-  current: number;
-  description: string;
-  deadline: string;
-  priority: "high" | "medium" | "low";
-};
-
-export type DocumentItem = {
-  name: string;
-  type: string;
-  date: string;
-  icon: string;
-  tags?: string[];
-};
-
-export type ShoppingItem = {
-  id: string;
-  name: string;
-  checked: boolean;
-  owner?: string;
-  priority?: "low" | "medium" | "high";
-  isRecurring?: boolean;
-  priceTarget?: number;
 };
 
 export type BriefingInsight = {

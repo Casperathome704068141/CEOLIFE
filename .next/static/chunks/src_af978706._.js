@@ -1823,7 +1823,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$e
 const useUIState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$zustand$2f$esm$2f$react$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["create"])((set)=>({
         isCommandPaletteOpen: false,
         notificationsOpen: false,
-        activeProfile: "admin",
+        activeProfile: "head",
         setCommandPaletteOpen: (open)=>set({
                 isCommandPaletteOpen: open
             }),
@@ -1862,6 +1862,10 @@ var _s = __turbopack_context__.k.signature();
 ;
 const quickActions = [
     {
+        label: "Send nudge",
+        href: "/household/shopping?intent=nudge"
+    },
+    {
         label: "Add transaction",
         href: "/finance/transactions?intent=new"
     },
@@ -1880,6 +1884,10 @@ const quickActions = [
     {
         label: "New automation rule",
         href: "/finance/rules?intent=new"
+    },
+    {
+        label: "Record settlement",
+        href: "/household/split?intent=settle"
     }
 ];
 function CommandMenu() {
@@ -1899,14 +1907,16 @@ function CommandMenu() {
                         "u",
                         "f",
                         "s",
-                        "r"
+                        "r",
+                        "n"
                     ].includes(event.key) && (event.metaKey || event.ctrlKey)) {
                         const actionMap = {
                             a: "/finance/transactions?intent=new",
                             u: "/vault/documents?intent=upload",
                             f: "/finance/transactions?intent=filter",
                             s: "/assistant",
-                            r: "/finance/rules"
+                            r: "/finance/rules",
+                            n: "/household/shopping?intent=nudge"
                         };
                         const target = actionMap[event.key];
                         if (target) {
@@ -1943,14 +1953,14 @@ function CommandMenu() {
                         className: "text-lg"
                     }, void 0, false, {
                         fileName: "[project]/src/components/layout/command-menu.tsx",
-                        lineNumber: 56,
+                        lineNumber: 59,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CommandEmpty"], {
                         children: "No actions found."
                     }, void 0, false, {
                         fileName: "[project]/src/components/layout/command-menu.tsx",
-                        lineNumber: 57,
+                        lineNumber: 60,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CommandGroup"], {
@@ -1960,28 +1970,28 @@ function CommandMenu() {
                                 children: action.label
                             }, action.label, false, {
                                 fileName: "[project]/src/components/layout/command-menu.tsx",
-                                lineNumber: 60,
+                                lineNumber: 63,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/layout/command-menu.tsx",
-                        lineNumber: 58,
+                        lineNumber: 61,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/layout/command-menu.tsx",
-                lineNumber: 55,
+                lineNumber: 58,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/layout/command-menu.tsx",
-            lineNumber: 54,
+            lineNumber: 57,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/layout/command-menu.tsx",
-        lineNumber: 53,
+        lineNumber: 56,
         columnNumber: 5
     }, this);
 }
@@ -2266,15 +2276,15 @@ var _s = __turbopack_context__.k.signature();
 ;
 const roles = [
     {
-        label: "Admin",
-        value: "admin"
+        label: "Head of Home",
+        value: "head"
     },
     {
-        label: "Family",
-        value: "family"
+        label: "Household view",
+        value: "household"
     },
     {
-        label: "Guest",
+        label: "Guest snapshot",
         value: "guest"
     }
 ];
@@ -2328,7 +2338,7 @@ function ProfileSwitcher() {
                 className: "w-48 rounded-2xl border border-slate-800 bg-slate-950/95 text-slate-100",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuLabel"], {
-                        children: "Profile view"
+                        children: "Perspective"
                     }, void 0, false, {
                         fileName: "[project]/src/components/layout/profile-switcher.tsx",
                         lineNumber: 39,
@@ -2361,8 +2371,8 @@ function ProfileSwitcher() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
-                        onClick: ()=>setActiveProfile("admin"),
-                        children: "Reset to Admin"
+                        onClick: ()=>setActiveProfile("head"),
+                        children: "Reset to Head"
                     }, void 0, false, {
                         fileName: "[project]/src/components/layout/profile-switcher.tsx",
                         lineNumber: 52,

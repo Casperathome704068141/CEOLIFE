@@ -187,6 +187,12 @@ const bills = [
         amount: 145.5,
         dueDate: "Nov 3",
         icon: "Droplets"
+    },
+    {
+        name: "Wellness coach",
+        amount: 210,
+        dueDate: "Nov 4",
+        icon: "HeartPulse"
     }
 ];
 const schedule = [
@@ -338,61 +344,135 @@ const documents = [
         tags: [
             "cashflow"
         ]
+    },
+    {
+        name: "HydroOne statement.pdf",
+        type: "Bill",
+        date: "2024-10-01",
+        icon: "Bolt",
+        tags: [
+            "utilities"
+        ]
+    },
+    {
+        name: "Brother Marcus transfer.jpg",
+        type: "Receipt",
+        date: "2024-09-22",
+        icon: "Send",
+        tags: [
+            "shared",
+            "split"
+        ]
+    },
+    {
+        name: "Wellness plan.pdf",
+        type: "Medical",
+        date: "2024-06-18",
+        icon: "HeartPulse",
+        tags: [
+            "therapy"
+        ]
+    },
+    {
+        name: "Car insurance renewal.pdf",
+        type: "Insurance",
+        date: "2024-08-15",
+        icon: "Car",
+        tags: [
+            "vehicle"
+        ]
+    },
+    {
+        name: "Apartment inspection checklist.pdf",
+        type: "Housing",
+        date: "2024-07-01",
+        icon: "ClipboardCheck",
+        tags: [
+            "maintenance"
+        ]
+    },
+    {
+        name: "Tax receipt charitable donation.pdf",
+        type: "Other",
+        date: "2024-03-05",
+        icon: "Receipt",
+        tags: [
+            "tax"
+        ]
     }
 ];
 const shoppingList = [
     {
-        id: 1,
+        id: "oats",
         name: "Steel-cut oats",
         checked: false,
-        owner: "House"
+        owner: "House",
+        priority: "medium"
     },
     {
-        id: 2,
+        id: "beans",
         name: "Cold brew beans",
         checked: true,
-        owner: "Beno"
+        owner: "Beno",
+        priority: "low",
+        isRecurring: true
     },
     {
-        id: 3,
+        id: "filters",
         name: "Air filters",
         checked: false,
-        owner: "Shared"
+        owner: "Shared",
+        priority: "high",
+        priceTarget: 45
     },
     {
-        id: 4,
+        id: "tablets",
         name: "Cleaning tablets",
         checked: false,
-        owner: "House"
+        owner: "House",
+        priority: "medium"
+    },
+    {
+        id: "vitamins",
+        name: "Omega 3 vitamins",
+        checked: false,
+        owner: "Wellness",
+        priority: "high",
+        isRecurring: true
     }
 ];
 const briefingInsights = [
     {
         id: "cashflow",
         title: "Cashflow risk next Thursday",
-        detail: "Utilities + rent hit before paycheque. Projected balance dips to $1,240. Suggest moving $600 from savings buffer."
+        detail: "Utilities + rent hit before paycheque. Projected balance dips to $1,240. Suggest moving $600 from savings buffer or nudging Marcus for transfer receipt."
     },
     {
         id: "bill",
         title: "Credit card autopay spike",
-        detail: "$820 statement includes two flagged travel charges. Consider splitting and tagging reimbursables."
+        detail: "$820 statement includes two flagged travel charges. Consider splitting and tagging reimbursables; nudge brothers to confirm."
     },
     {
         id: "goal",
         title: "Goal ahead of plan",
-        detail: "Japan expedition is 3 weeks ahead. Reallocate $400 to emergency fund to stay on track."
+        detail: "Japan expedition is 3 weeks ahead. Reallocate $400 to emergency fund and set automation for payday sweep."
     }
 ];
 const vaultInboxHints = [
     {
         id: "receipts",
         title: "Parse all receipts",
-        description: "5 new uploads ready for OCR and categorization."
+        description: "5 new uploads ready for OCR and categorization. Review flagged matches after processing."
     },
     {
         id: "ids",
         title: "ID expiry checks",
-        description: "Two passports expire within 18 months."
+        description: "Two passports expire within 18 months — schedule renewal routine."
+    },
+    {
+        id: "nudges",
+        title: "Queue nudges",
+        description: "Send WhatsApp reminder for Marcus’ utility split before quiet hours."
     }
 ];
 }}),
