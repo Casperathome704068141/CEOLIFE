@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import type { Member } from "@/lib/household/types";
-import { useHousehold } from "@/lib/household/useHousehold";
+import { useHousehold } from "@/lib/household/useHousehold.tsx";
 
 const templates = [
   { id: "bill", label: "Bill reminder", body: (member?: Member) => `Hey ${member?.name ?? "there"}, heads up the bill is due today.` },
