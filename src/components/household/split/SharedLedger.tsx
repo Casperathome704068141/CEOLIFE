@@ -11,6 +11,7 @@ import type { LedgerEntry, Settlement } from '@/lib/household/types';
 import { RecordPaymentDialog } from './RecordPaymentDialog';
 import { SettleNowDialog } from './SettleNowDialog';
 import { NudgeDialog } from '../NudgeDialog';
+import { Dialog } from '@/components/ui/dialog';
 
 export function SharedLedger() {
   const {
