@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -463,7 +464,7 @@ export default function ScenariosPage() {
                     prev.includes(scenario.id)
                       ? prev.filter((id) => id !== scenario.id)
                       : prev.length < 3
-                        ? [...prev, scenario.id]
+                        ? [...prev, id]
                         : prev,
                   );
                 }}
