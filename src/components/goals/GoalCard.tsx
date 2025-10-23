@@ -89,7 +89,7 @@ export function GoalCard({ goal, onFund, onEdit, onSimulate, onAutoFund, onDelet
     <motion.div
       layout
       className={cn(
-        "group relative overflow-hidden rounded-3xl border border-slate-900/70 bg-slate-950/70 p-5 text-slate-100 shadow-lg transition",
+        "group relative cursor-pointer overflow-hidden rounded-3xl border border-slate-900/70 bg-slate-950/70 p-5 text-slate-100 shadow-lg transition",
         "hover:border-cyan-500/40 hover:shadow-cyan-500/20",
         className,
       )}

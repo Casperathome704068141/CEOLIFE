@@ -33,7 +33,7 @@ const navItems = [
   { href: "/vault/documents", icon: FileText, label: "Vault" },
   { href: "/schedule/calendar", icon: Calendar, label: "Schedule" },
   { href: "/household/members", icon: Users, label: "Household" },
-  { href: "/goals/overview", icon: Target, label: "Goals" },
+  { href: "/goals", icon: Target, label: "Goals" },
   { href: "/simulations/scenarios", icon: BrainCircuit, label: "Simulations" },
   { href: "/wellness/overview", icon: Activity, label: "Wellness" },
   { href: "/assistant", icon: Bot, label: "Beno" },
@@ -42,7 +42,10 @@ const navItems = [
 
 export function SidebarNav() {
   const pathname = usePathname();
-  const isActive = (path: string) => pathname === path || pathname.startsWith(`${path}/`);
+  const isActive = (path: string) => {
+    if (path === "/") return pathname === "/";
+    return pathname.startsWith(path);
+  };
 
   return (
     <>
