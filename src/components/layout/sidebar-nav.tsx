@@ -32,7 +32,7 @@ const navItems = [
   { href: "/finance/overview", icon: Wallet, label: "Finance" },
   { href: "/vault/documents", icon: FileText, label: "Vault" },
   { href: "/schedule/calendar", icon: Calendar, label: "Schedule" },
-  { href: "/household/members", icon: Users, label: "Household" },
+  { href: "/household", icon: Users, label: "Household" },
   { href: "/goals", icon: Target, label: "Goals" },
   { href: "/simulations/scenarios", icon: BrainCircuit, label: "Simulations" },
   { href: "/wellness/overview", icon: Activity, label: "Wellness" },
