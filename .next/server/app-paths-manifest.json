@@ -2,8 +2,12 @@
   "/(dashboard)/page": "app/(dashboard)/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/finance/overview/page": "app/finance/overview/page.js",
+  "/finance/transactions/page": "app/finance/transactions/page.js",
   "/goals/overview/page": "app/goals/overview/page.js",
+  "/household/medications/page": "app/household/medications/page.js",
   "/household/members/page": "app/household/members/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
   "/schedule/calendar/page": "app/schedule/calendar/page.js",
+  "/simulations/scenarios/page": "app/simulations/scenarios/page.js",
   "/vault/documents/page": "app/vault/documents/page.js"
 }

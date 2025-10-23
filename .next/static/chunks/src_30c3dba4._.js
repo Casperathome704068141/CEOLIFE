@@ -1978,13 +1978,12 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                 height: `${height}%`
                                             },
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("group flex h-full w-full flex-col justify-between rounded-2xl border px-3 py-2 text-left shadow-lg transition", CATEGORY_STYLES[event.category].chip, hoveredEventId === event.id && "ring-2 ring-white/40"),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("group flex h-full w-full cursor-pointer flex-col justify-between rounded-2xl border px-3 py-2 text-left shadow-lg transition", CATEGORY_STYLES[event.category].chip, hoveredEventId === event.id && "ring-2 ring-white/40"),
                                                     onMouseEnter: ()=>onHoverChange(event.id),
                                                     onMouseLeave: ()=>onHoverChange(null),
                                                     onFocus: ()=>onHoverChange(event.id),
                                                     onBlur: ()=>onHoverChange(null),
-                                                    onClick: ()=>onOpenEvent(event),
                                                     onContextMenu: (e)=>onContextMenu(event, e),
                                                     draggable: true,
                                                     onDragEnd: ()=>onRescheduled(event.title),
@@ -1996,7 +1995,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     children: formatTimeRange(event.start, event.end)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1050,
+                                                                    lineNumber: 1049,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2006,30 +2005,31 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                             className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("h-1.5 w-1.5 rounded-full", CATEGORY_STYLES[event.category].dot)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                            lineNumber: 1052,
+                                                                            lineNumber: 1051,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         event.source
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1051,
+                                                                    lineNumber: 1050,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1049,
+                                                            lineNumber: 1048,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-sm font-semibold leading-tight text-white",
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                    className: "text-left text-sm font-semibold leading-tight text-white",
+                                                                    onClick: ()=>onOpenEvent(event),
                                                                     children: event.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1057,
+                                                                    lineNumber: 1056,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 event.location ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2039,7 +2039,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                             className: "h-3 w-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                            lineNumber: 1060,
+                                                                            lineNumber: 1064,
                                                                             columnNumber: 29
                                                                         }, this),
                                                                         " ",
@@ -2047,13 +2047,13 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1059,
+                                                                    lineNumber: 1063,
                                                                     columnNumber: 27
                                                                 }, this) : null
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1056,
+                                                            lineNumber: 1055,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2070,7 +2070,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     children: "Snooze"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1065,
+                                                                    lineNumber: 1069,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 event.canComplete ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2084,7 +2084,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     children: "Done"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1077,
+                                                                    lineNumber: 1081,
                                                                     columnNumber: 27
                                                                 }, this) : null,
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2098,13 +2098,13 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     children: "Nudge"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1089,
+                                                                    lineNumber: 1093,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1064,
+                                                            lineNumber: 1068,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
@@ -2123,7 +2123,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     children: formatTimeRange(event.start, event.end)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1105,
+                                                                    lineNumber: 1109,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 event.location ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2133,7 +2133,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                             className: "h-3 w-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                            lineNumber: 1108,
+                                                                            lineNumber: 1112,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         " ",
@@ -2141,13 +2141,13 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1107,
+                                                                    lineNumber: 1111,
                                                                     columnNumber: 29
                                                                 }, this) : null
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1104,
+                                                            lineNumber: 1108,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2155,7 +2155,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                             children: event.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1112,
+                                                            lineNumber: 1116,
                                                             columnNumber: 25
                                                         }, this),
                                                         event.description ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2163,7 +2163,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                             children: event.description
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1114,
+                                                            lineNumber: 1118,
                                                             columnNumber: 27
                                                         }, this) : null,
                                                         event.links && event.links.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2182,7 +2182,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                                     className: "h-3 w-3"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                                    lineNumber: 1128,
+                                                                                    lineNumber: 1132,
                                                                                     columnNumber: 35
                                                                                 }, this),
                                                                                 link.type === "bill" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2193,49 +2193,49 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                                     ]
                                                                                 }, void 0, true, {
                                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                                    lineNumber: 1130,
+                                                                                    lineNumber: 1134,
                                                                                     columnNumber: 37
                                                                                 }, this) : link.type === "document" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: link.name
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                                    lineNumber: 1134,
+                                                                                    lineNumber: 1138,
                                                                                     columnNumber: 37
                                                                                 }, this) : link.type === "medication" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: link.name
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                                    lineNumber: 1136,
+                                                                                    lineNumber: 1140,
                                                                                     columnNumber: 37
                                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: link.name
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                                    lineNumber: 1138,
+                                                                                    lineNumber: 1142,
                                                                                     columnNumber: 37
                                                                                 }, this)
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                            lineNumber: 1127,
+                                                                            lineNumber: 1131,
                                                                             columnNumber: 33
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                                             className: "h-3 w-3"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                            lineNumber: 1141,
+                                                                            lineNumber: 1145,
                                                                             columnNumber: 33
                                                                         }, this)
                                                                     ]
                                                                 }, `${event.id}-${link.type}-${indexLink}`, true, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1119,
+                                                                    lineNumber: 1123,
                                                                     columnNumber: 31
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1117,
+                                                            lineNumber: 1121,
                                                             columnNumber: 27
                                                         }, this) : null,
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2252,7 +2252,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     children: "Snooze 15m"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1147,
+                                                                    lineNumber: 1151,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 event.canComplete ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2266,7 +2266,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     children: "Done"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1159,
+                                                                    lineNumber: 1163,
                                                                     columnNumber: 29
                                                                 }, this) : null,
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2280,19 +2280,19 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                     children: "Nudge"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1171,
+                                                                    lineNumber: 1175,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1146,
+                                                            lineNumber: 1150,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1103,
+                                                    lineNumber: 1107,
                                                     columnNumber: 23
                                                 }, this) : null
                                             ]
@@ -2313,7 +2313,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                         children: "Nothing scheduled for this view."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                        lineNumber: 1194,
+                                                        lineNumber: 1198,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2321,7 +2321,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                         children: "Clear filters or try Smart add to draft something fast."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                        lineNumber: 1195,
+                                                        lineNumber: 1199,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2336,14 +2336,14 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                         className: "mr-2 h-4 w-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                        lineNumber: 1200,
+                                                                        lineNumber: 1204,
                                                                         columnNumber: 29
                                                                     }, this),
                                                                     " Quick event"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                lineNumber: 1199,
+                                                                lineNumber: 1203,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2354,13 +2354,13 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                 children: "Smart add"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                lineNumber: 1202,
+                                                                lineNumber: 1206,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                        lineNumber: 1198,
+                                                        lineNumber: 1202,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
@@ -2371,7 +2371,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                         children: "No calendar connected"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                        lineNumber: 1214,
+                                                        lineNumber: 1218,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2379,7 +2379,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                         children: "Connect Google or use Smart add to start scheduling."
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                        lineNumber: 1215,
+                                                        lineNumber: 1219,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2392,7 +2392,7 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                 children: "Connect Google"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                lineNumber: 1219,
+                                                                lineNumber: 1223,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2403,25 +2403,25 @@ function Timeline({ days, events, hours, nowMarker, view, calendarIsEmpty, isGoo
                                                                 children: "Smart add"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                lineNumber: 1222,
+                                                                lineNumber: 1226,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                        lineNumber: 1218,
+                                                        lineNumber: 1222,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1191,
+                                            lineNumber: 1195,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1190,
+                                        lineNumber: 1194,
                                         columnNumber: 17
                                     }, this) : null
                                 ]
@@ -2474,12 +2474,12 @@ function MonthGrid({ events, onCreate, onOpenEvent }) {
                         }).format(new Date(Date.UTC(2024, 5, 24 + index)))
                     }, index, false, {
                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                        lineNumber: 1268,
+                        lineNumber: 1272,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                lineNumber: 1266,
+                lineNumber: 1270,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2501,7 +2501,7 @@ function MonthGrid({ events, onCreate, onOpenEvent }) {
                                         children: date.getUTCDate()
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1287,
+                                        lineNumber: 1291,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2510,13 +2510,13 @@ function MonthGrid({ events, onCreate, onOpenEvent }) {
                                         children: "Add"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1288,
+                                        lineNumber: 1292,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                lineNumber: 1286,
+                                lineNumber: 1290,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2531,7 +2531,7 @@ function MonthGrid({ events, onCreate, onOpenEvent }) {
                                                     children: event.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1305,
+                                                    lineNumber: 1309,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2541,13 +2541,13 @@ function MonthGrid({ events, onCreate, onOpenEvent }) {
                                                     }).format(new Date(event.start))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1306,
+                                                    lineNumber: 1310,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, event.id, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1297,
+                                            lineNumber: 1301,
                                             columnNumber: 19
                                         }, this)),
                                     dayEvents.length > 3 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2560,31 +2560,31 @@ function MonthGrid({ events, onCreate, onOpenEvent }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1314,
+                                        lineNumber: 1318,
                                         columnNumber: 19
                                     }, this) : null
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                lineNumber: 1295,
+                                lineNumber: 1299,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, key, true, {
                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                        lineNumber: 1281,
+                        lineNumber: 1285,
                         columnNumber: 13
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                lineNumber: 1275,
+                lineNumber: 1279,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-        lineNumber: 1265,
+        lineNumber: 1269,
         columnNumber: 5
     }, this);
 }
@@ -2606,14 +2606,14 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                     className: "h-5 w-5 text-emerald-400"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1348,
+                                    lineNumber: 1352,
                                     columnNumber: 13
                                 }, this),
                                 " Manage sync"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1347,
+                            lineNumber: 1351,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -2621,13 +2621,13 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                             children: "Connect Google then choose which calendars Beno should mirror."
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1350,
+                            lineNumber: 1354,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1346,
+                    lineNumber: 1350,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2643,7 +2643,7 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                             children: "Google account"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1357,
+                                            lineNumber: 1361,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2651,13 +2651,13 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                             children: isGoogleConnected ? "Connected as ceo@founder.hq" : "Not connected"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1358,
+                                            lineNumber: 1362,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1356,
+                                    lineNumber: 1360,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2667,13 +2667,13 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                     children: isGoogleConnected ? "Disconnect" : "Connect"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1362,
+                                    lineNumber: 1366,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1355,
+                            lineNumber: 1359,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2686,7 +2686,7 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                             children: "Calendars"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1373,
+                                            lineNumber: 1377,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2696,13 +2696,13 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                             children: "Select all"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1374,
+                                            lineNumber: 1378,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1372,
+                                    lineNumber: 1376,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2717,38 +2717,38 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                                             className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("h-3 w-3 rounded-full", calendar.color)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1385,
+                                                            lineNumber: 1389,
                                                             columnNumber: 21
                                                         }, this),
                                                         calendar.name
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1384,
+                                                    lineNumber: 1388,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
                                                     defaultChecked: calendar.id !== "family"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1388,
+                                                    lineNumber: 1392,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, calendar.id, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1380,
+                                            lineNumber: 1384,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1378,
+                                    lineNumber: 1382,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1371,
+                            lineNumber: 1375,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2761,7 +2761,7 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                             children: "Default reminder"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1396,
+                                            lineNumber: 1400,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2774,7 +2774,7 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                                     children: "15 minutes before"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1398,
+                                                    lineNumber: 1402,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2784,19 +2784,19 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                                     children: "+ Add"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1401,
+                                                    lineNumber: 1405,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1397,
+                                            lineNumber: 1401,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1395,
+                                    lineNumber: 1399,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2806,7 +2806,7 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                             children: "Conflict rule"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1407,
+                                            lineNumber: 1411,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2817,32 +2817,32 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                                     children: "15 minutes"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1409,
+                                                    lineNumber: 1413,
                                                     columnNumber: 31
                                                 }, this),
                                                 " between off-site events."
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1408,
+                                            lineNumber: 1412,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1406,
+                                    lineNumber: 1410,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1394,
+                            lineNumber: 1398,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1354,
+                    lineNumber: 1358,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -2855,14 +2855,14 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                     className: "h-3 w-3 animate-spin"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1416,
+                                    lineNumber: 1420,
                                     columnNumber: 26
                                 }, this) : null,
                                 "Refresh pulls latest Google events immediately."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1415,
+                            lineNumber: 1419,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2875,7 +2875,7 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                     children: "Cancel"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1420,
+                                    lineNumber: 1424,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2886,35 +2886,35 @@ function ManageSyncDialog({ open, onOpenChange, calendars, isGoogleConnected, on
                                         className: "h-4 w-4 animate-spin"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1432,
+                                        lineNumber: 1436,
                                         columnNumber: 28
                                     }, this) : "Save & refresh"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1427,
+                                    lineNumber: 1431,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1419,
+                            lineNumber: 1423,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1414,
+                    lineNumber: 1418,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-            lineNumber: 1345,
+            lineNumber: 1349,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-        lineNumber: 1344,
+        lineNumber: 1348,
         columnNumber: 5
     }, this);
 }
@@ -2936,14 +2936,14 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                                     className: "h-5 w-5 text-sky-300"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1460,
+                                    lineNumber: 1464,
                                     columnNumber: 13
                                 }, this),
                                 " Smart add"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1459,
+                            lineNumber: 1463,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -2951,13 +2951,13 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                             children: "Type in plain English. Beno parses time, duration, links, and reminders."
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1462,
+                            lineNumber: 1466,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1458,
+                    lineNumber: 1462,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2970,7 +2970,7 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                                     children: "What do you want to schedule?"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1468,
+                                    lineNumber: 1472,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -2980,13 +2980,13 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                                     placeholder: "Ex: Block 30m for gym tomorrow at 7am"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1469,
+                                    lineNumber: 1473,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1467,
+                            lineNumber: 1471,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2997,7 +2997,7 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                                     children: "Preview"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1477,
+                                    lineNumber: 1481,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3008,7 +3008,7 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                                             children: "Gym session"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1479,
+                                            lineNumber: 1483,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3016,7 +3016,7 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                                             children: "Tue · 7:00 – 7:30 AM · Automations"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1480,
+                                            lineNumber: 1484,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3024,25 +3024,25 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                                             children: "Reminder: 15 minutes before · Location: Home gym"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1481,
+                                            lineNumber: 1485,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1478,
+                                    lineNumber: 1482,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1476,
+                            lineNumber: 1480,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1466,
+                    lineNumber: 1470,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -3055,7 +3055,7 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                             children: "Edit in modal"
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1486,
+                            lineNumber: 1490,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3064,24 +3064,24 @@ function NlpDialog({ open, onOpenChange, text, onTextChange, onConfirm, onEdit }
                             children: "Confirm event"
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1493,
+                            lineNumber: 1497,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1485,
+                    lineNumber: 1489,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-            lineNumber: 1457,
+            lineNumber: 1461,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-        lineNumber: 1456,
+        lineNumber: 1460,
         columnNumber: 5
     }, this);
 }
@@ -3102,14 +3102,14 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                     className: "h-5 w-5 text-indigo-300"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1518,
+                                    lineNumber: 1522,
                                     columnNumber: 13
                                 }, this),
                                 " Routine builder"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1517,
+                            lineNumber: 1521,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetDescription"], {
@@ -3117,13 +3117,13 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                             children: "Define cadence, steps, and automation nudges without leaving the calendar."
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1520,
+                            lineNumber: 1524,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1516,
+                    lineNumber: 1520,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3137,7 +3137,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                     children: "Routine name"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1526,
+                                    lineNumber: 1530,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3145,13 +3145,13 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                     defaultValue: "Ops reset"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1527,
+                                    lineNumber: 1531,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1525,
+                            lineNumber: 1529,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3162,7 +3162,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                     children: "Cadence"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1530,
+                                    lineNumber: 1534,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3179,18 +3179,18 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                             children: option
                                         }, option, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1538,
+                                            lineNumber: 1542,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1531,
+                                    lineNumber: 1535,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1529,
+                            lineNumber: 1533,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3201,7 +3201,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                     children: "Steps"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1545,
+                                    lineNumber: 1549,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3214,7 +3214,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                                     children: "Audit automation queue"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1548,
+                                                    lineNumber: 1552,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3224,13 +3224,13 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                                     children: "Edit"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1549,
+                                                    lineNumber: 1553,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1547,
+                                            lineNumber: 1551,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3240,7 +3240,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                                     children: "Send summary to Emma"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1554,
+                                                    lineNumber: 1558,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3250,13 +3250,13 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                                     children: "Edit"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1555,
+                                                    lineNumber: 1559,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1553,
+                                            lineNumber: 1557,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3266,19 +3266,19 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                             children: "+ Add step"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1559,
+                                            lineNumber: 1563,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1546,
+                                    lineNumber: 1550,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1544,
+                            lineNumber: 1548,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3289,7 +3289,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                     children: "Automations"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1565,
+                                    lineNumber: 1569,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3300,7 +3300,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                             children: "Attach pre or post reminders:"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1567,
+                                            lineNumber: 1571,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3313,7 +3313,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                                     children: "Slack digest"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1569,
+                                                    lineNumber: 1573,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3323,7 +3323,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                                     children: "Email recap"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1572,
+                                                    lineNumber: 1576,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3333,31 +3333,31 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                                                     children: "Add meds"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1575,
+                                                    lineNumber: 1579,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1568,
+                                            lineNumber: 1572,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1566,
+                                    lineNumber: 1570,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1564,
+                            lineNumber: 1568,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1524,
+                    lineNumber: 1528,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetFooter"], {
@@ -3370,7 +3370,7 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                             children: "Close"
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1583,
+                            lineNumber: 1587,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3382,24 +3382,24 @@ function RoutineBuilderSheet({ open, onOpenChange, onSave }) {
                             children: "Save routine"
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1590,
+                            lineNumber: 1594,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1582,
+                    lineNumber: 1586,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-            lineNumber: 1515,
+            lineNumber: 1519,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-        lineNumber: 1514,
+        lineNumber: 1518,
         columnNumber: 5
     }, this);
 }
@@ -3420,14 +3420,14 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                     className: "h-5 w-5 text-emerald-300"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1626,
+                                    lineNumber: 1630,
                                     columnNumber: 13
                                 }, this),
                                 " Filters"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1625,
+                            lineNumber: 1629,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetDescription"], {
@@ -3435,13 +3435,13 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                             children: "Toggle by category or source. Save presets for quick switching."
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1628,
+                            lineNumber: 1632,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1624,
+                    lineNumber: 1628,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3455,7 +3455,7 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                     children: "Categories"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1634,
+                                    lineNumber: 1638,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollArea"], {
@@ -3472,14 +3472,14 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                                                 className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("h-2.5 w-2.5 rounded-full", CATEGORY_STYLES[category].legend)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                lineNumber: 1640,
+                                                                lineNumber: 1644,
                                                                 columnNumber: 23
                                                             }, this),
                                                             category
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                        lineNumber: 1639,
+                                                        lineNumber: 1643,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3487,29 +3487,29 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                                         onCheckedChange: ()=>onCategoryToggle(category)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                        lineNumber: 1648,
+                                                        lineNumber: 1652,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, category, true, {
                                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                lineNumber: 1638,
+                                                lineNumber: 1642,
                                                 columnNumber: 19
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1636,
+                                        lineNumber: 1640,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1635,
+                                    lineNumber: 1639,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1633,
+                            lineNumber: 1637,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3520,7 +3520,7 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                     children: "Sources"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1655,
+                                    lineNumber: 1659,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3532,7 +3532,7 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                                     children: source
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1659,
+                                                    lineNumber: 1663,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3540,24 +3540,24 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                                     onCheckedChange: ()=>onSourceToggle(source)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1660,
+                                                    lineNumber: 1664,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, source, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1658,
+                                            lineNumber: 1662,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1656,
+                                    lineNumber: 1660,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1654,
+                            lineNumber: 1658,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3568,7 +3568,7 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                     children: "Presets"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1666,
+                                    lineNumber: 1670,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3581,7 +3581,7 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                             children: "Clear"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1668,
+                                            lineNumber: 1672,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3591,7 +3591,7 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                             children: "Essentials"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1671,
+                                            lineNumber: 1675,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3601,25 +3601,25 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                                             children: "Family"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1674,
+                                            lineNumber: 1678,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1667,
+                                    lineNumber: 1671,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1665,
+                            lineNumber: 1669,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1632,
+                    lineNumber: 1636,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetFooter"], {
@@ -3632,7 +3632,7 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                             children: "Close"
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1681,
+                            lineNumber: 1685,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3644,24 +3644,24 @@ function FiltersSheet({ open, onOpenChange, categoryFilters, onCategoryToggle, s
                             children: "Save preset"
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1688,
+                            lineNumber: 1692,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1680,
+                    lineNumber: 1684,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-            lineNumber: 1623,
+            lineNumber: 1627,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-        lineNumber: 1622,
+        lineNumber: 1626,
         columnNumber: 5
     }, this);
 }
@@ -3683,7 +3683,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                     className: "h-5 w-5 text-indigo-300"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1722,
+                                    lineNumber: 1726,
                                     columnNumber: 13
                                 }, this),
                                 " ",
@@ -3691,7 +3691,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1721,
+                            lineNumber: 1725,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -3699,13 +3699,13 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                             children: "Title, links, reminders, and nudges all live here. No navigation required."
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1724,
+                            lineNumber: 1728,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1720,
+                    lineNumber: 1724,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3722,7 +3722,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             children: "Title"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1731,
+                                            lineNumber: 1735,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3731,13 +3731,13 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             placeholder: "What are we scheduling?"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1732,
+                                            lineNumber: 1736,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1730,
+                                    lineNumber: 1734,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3751,7 +3751,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     children: "Start"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1740,
+                                                    lineNumber: 1744,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3760,13 +3760,13 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     defaultValue: event?.start.slice(0, 16)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1741,
+                                                    lineNumber: 1745,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1739,
+                                            lineNumber: 1743,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3777,7 +3777,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     children: "End"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1748,
+                                                    lineNumber: 1752,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3786,19 +3786,19 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     defaultValue: event?.end.slice(0, 16)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1749,
+                                                    lineNumber: 1753,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1747,
+                                            lineNumber: 1751,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1738,
+                                    lineNumber: 1742,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3809,7 +3809,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             children: "Location"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1757,
+                                            lineNumber: 1761,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -3818,13 +3818,13 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             placeholder: "Optional location"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1758,
+                                            lineNumber: 1762,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1756,
+                                    lineNumber: 1760,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3835,7 +3835,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             children: "Description"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1765,
+                                            lineNumber: 1769,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$textarea$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Textarea"], {
@@ -3843,13 +3843,13 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             defaultValue: event?.description ?? "Agenda, links, prep notes..."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1766,
+                                            lineNumber: 1770,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1764,
+                                    lineNumber: 1768,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3863,7 +3863,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     children: "Recurrence"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1773,
+                                                    lineNumber: 1777,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3873,13 +3873,13 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     children: event?.category === "Automations" ? "Weekly" : "None"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1774,
+                                                    lineNumber: 1778,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1772,
+                                            lineNumber: 1776,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3890,7 +3890,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     children: "Reminders"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1779,
+                                                    lineNumber: 1783,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3903,7 +3903,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                             children: "15m before"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1781,
+                                                            lineNumber: 1785,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3913,7 +3913,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                             children: "Day prior"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1784,
+                                                            lineNumber: 1788,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3923,31 +3923,31 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                             children: "+ Add"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1787,
+                                                            lineNumber: 1791,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1780,
+                                                    lineNumber: 1784,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1778,
+                                            lineNumber: 1782,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1771,
+                                    lineNumber: 1775,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1729,
+                            lineNumber: 1733,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3961,7 +3961,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             children: "Type"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1796,
+                                            lineNumber: 1800,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3973,18 +3973,18 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     children: category
                                                 }, category, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1799,
+                                                    lineNumber: 1803,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1797,
+                                            lineNumber: 1801,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1795,
+                                    lineNumber: 1799,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3995,7 +3995,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             children: "Links"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1814,
+                                            lineNumber: 1818,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4011,14 +4011,14 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                                     className: "h-4 w-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1818,
+                                                                    lineNumber: 1822,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 " Attach document"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1817,
+                                                            lineNumber: 1821,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4028,13 +4028,13 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                             children: "Vault"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1820,
+                                                            lineNumber: 1824,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1816,
+                                                    lineNumber: 1820,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4047,14 +4047,14 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                                     className: "h-4 w-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1826,
+                                                                    lineNumber: 1830,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 " Link bill or automation"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1825,
+                                                            lineNumber: 1829,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4064,13 +4064,13 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                             children: "Finance"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1828,
+                                                            lineNumber: 1832,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1824,
+                                                    lineNumber: 1828,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4083,14 +4083,14 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                                     className: "h-4 w-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                                    lineNumber: 1834,
+                                                                    lineNumber: 1838,
                                                                     columnNumber: 21
                                                                 }, this),
                                                                 " Medication or care"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1833,
+                                                            lineNumber: 1837,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4100,25 +4100,25 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                             children: "Care"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1836,
+                                                            lineNumber: 1840,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1832,
+                                                    lineNumber: 1836,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1815,
+                                            lineNumber: 1819,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1813,
+                                    lineNumber: 1817,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4129,7 +4129,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                             children: "Share"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1843,
+                                            lineNumber: 1847,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4157,7 +4157,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                             className: "mr-2 h-3.5 w-3.5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                            lineNumber: 1857,
+                                                            lineNumber: 1861,
                                                             columnNumber: 21
                                                         }, this),
                                                         " ",
@@ -4165,30 +4165,30 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                                     ]
                                                 }, item.label, true, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 1850,
+                                                    lineNumber: 1854,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1844,
+                                            lineNumber: 1848,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1842,
+                                    lineNumber: 1846,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1794,
+                            lineNumber: 1798,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1728,
+                    lineNumber: 1732,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogFooter"], {
@@ -4205,19 +4205,19 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                         className: "mr-2 h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1871,
+                                        lineNumber: 1875,
                                         columnNumber: 15
                                     }, this),
                                     " Delete"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                lineNumber: 1866,
+                                lineNumber: 1870,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1865,
+                            lineNumber: 1869,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4229,7 +4229,7 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                     children: "Save"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1875,
+                                    lineNumber: 1879,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4238,30 +4238,30 @@ function EventModal({ open, onOpenChange, event, onSave, onDelete, onShare }) {
                                     children: "Save & nudge"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1881,
+                                    lineNumber: 1885,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1874,
+                            lineNumber: 1878,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1864,
+                    lineNumber: 1868,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-            lineNumber: 1719,
+            lineNumber: 1723,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-        lineNumber: 1718,
+        lineNumber: 1722,
         columnNumber: 5
     }, this);
 }
@@ -4284,14 +4284,14 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             className: "h-5 w-5 text-cyan-300"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1908,
+                                            lineNumber: 1912,
                                             columnNumber: 15
                                         }, this),
                                         " Bill details"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1907,
+                                    lineNumber: 1911,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetDescription"], {
@@ -4299,13 +4299,13 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                     children: "Stay on this page—mark it paid or jump to Finance when ready."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1910,
+                                    lineNumber: 1914,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1906,
+                            lineNumber: 1910,
                             columnNumber: 11
                         }, this),
                         entity?.type === "bill" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4319,7 +4319,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Bill"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1917,
+                                            lineNumber: 1921,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4327,7 +4327,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: entity.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1918,
+                                            lineNumber: 1922,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4338,7 +4338,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1919,
+                                            lineNumber: 1923,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4349,13 +4349,13 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1920,
+                                            lineNumber: 1924,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1916,
+                                    lineNumber: 1920,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4365,20 +4365,20 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Mark paid"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1923,
+                                            lineNumber: 1927,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
                                             defaultChecked: true
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1924,
+                                            lineNumber: 1928,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1922,
+                                    lineNumber: 1926,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4391,7 +4391,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Open in Finance"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1927,
+                                            lineNumber: 1931,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4402,30 +4402,30 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Close"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1934,
+                                            lineNumber: 1938,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1926,
+                                    lineNumber: 1930,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1915,
+                            lineNumber: 1919,
                             columnNumber: 13
                         }, this) : null
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1905,
+                    lineNumber: 1909,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                lineNumber: 1904,
+                lineNumber: 1908,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -4446,7 +4446,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                                 className: "h-5 w-5 text-indigo-300"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                lineNumber: 1954,
+                                                lineNumber: 1958,
                                                 columnNumber: 19
                                             }, this),
                                             " ",
@@ -4454,7 +4454,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1953,
+                                        lineNumber: 1957,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
@@ -4462,13 +4462,13 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                         children: "Vault preview stays modal. Jump to Vault only if you need full context."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1956,
+                                        lineNumber: 1960,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                lineNumber: 1952,
+                                lineNumber: 1956,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4479,7 +4479,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                         children: "Last updated"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1961,
+                                        lineNumber: 1965,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4487,7 +4487,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                         children: entity.updated
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1962,
+                                        lineNumber: 1966,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4495,13 +4495,13 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                         children: "Document preview placeholder"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1963,
+                                        lineNumber: 1967,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                lineNumber: 1960,
+                                lineNumber: 1964,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4514,7 +4514,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                         children: "Open in Vault"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1968,
+                                        lineNumber: 1972,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4525,29 +4525,29 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                         children: "Close"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                        lineNumber: 1975,
+                                        lineNumber: 1979,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                lineNumber: 1967,
+                                lineNumber: 1971,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                        lineNumber: 1951,
+                        lineNumber: 1955,
                         columnNumber: 13
                     }, this) : null
                 }, void 0, false, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1949,
+                    lineNumber: 1953,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                lineNumber: 1948,
+                lineNumber: 1952,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Sheet"], {
@@ -4565,14 +4565,14 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             className: "h-5 w-5 text-emerald-300"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 1993,
+                                            lineNumber: 1997,
                                             columnNumber: 15
                                         }, this),
                                         " Medication"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1992,
+                                    lineNumber: 1996,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetDescription"], {
@@ -4580,13 +4580,13 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                     children: "Quick card stays here. Deeper details live in Care."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 1995,
+                                    lineNumber: 1999,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 1991,
+                            lineNumber: 1995,
                             columnNumber: 11
                         }, this),
                         entity?.type === "medication" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4600,7 +4600,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Medication"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2002,
+                                            lineNumber: 2006,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4608,7 +4608,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: entity.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2003,
+                                            lineNumber: 2007,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4619,13 +4619,13 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2004,
+                                            lineNumber: 2008,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2001,
+                                    lineNumber: 2005,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4638,7 +4638,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Open in Care"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2007,
+                                            lineNumber: 2011,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4649,30 +4649,30 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Close"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2014,
+                                            lineNumber: 2018,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2006,
+                                    lineNumber: 2010,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 2000,
+                            lineNumber: 2004,
                             columnNumber: 13
                         }, this) : null
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 1990,
+                    lineNumber: 1994,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                lineNumber: 1989,
+                lineNumber: 1993,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Sheet"], {
@@ -4690,14 +4690,14 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             className: "h-5 w-5 text-rose-300"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2032,
+                                            lineNumber: 2036,
                                             columnNumber: 15
                                         }, this),
                                         " Routine summary"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2031,
+                                    lineNumber: 2035,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetDescription"], {
@@ -4705,13 +4705,13 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                     children: "Keep the routine drawer here. Navigate only if you need edits."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2034,
+                                    lineNumber: 2038,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 2030,
+                            lineNumber: 2034,
                             columnNumber: 11
                         }, this),
                         entity?.type === "routine" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4725,7 +4725,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Routine"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2041,
+                                            lineNumber: 2045,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4733,7 +4733,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: entity.name
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2042,
+                                            lineNumber: 2046,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4744,13 +4744,13 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2043,
+                                            lineNumber: 2047,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2040,
+                                    lineNumber: 2044,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4761,7 +4761,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Next steps"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2046,
+                                            lineNumber: 2050,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -4771,33 +4771,33 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                                     children: "Review automation queue"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 2048,
+                                                    lineNumber: 2052,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: "Send digest to team"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 2049,
+                                                    lineNumber: 2053,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: "Mark blockers"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                                    lineNumber: 2050,
+                                                    lineNumber: 2054,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2047,
+                                            lineNumber: 2051,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2045,
+                                    lineNumber: 2049,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4810,7 +4810,7 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Open routines"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2054,
+                                            lineNumber: 2058,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4821,30 +4821,30 @@ function LinkedEntityDrawers({ entity, onClose, onOpenDestination }) {
                                             children: "Close"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2061,
+                                            lineNumber: 2065,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2053,
+                                    lineNumber: 2057,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 2039,
+                            lineNumber: 2043,
                             columnNumber: 13
                         }, this) : null
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 2029,
+                    lineNumber: 2033,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                lineNumber: 2028,
+                lineNumber: 2032,
                 columnNumber: 7
             }, this)
         ]
@@ -4867,7 +4867,7 @@ function ContextMenuCard({ x, y, event, onOpen, onClose, onQuickAction }) {
                     children: event.title
                 }, void 0, false, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 2099,
+                    lineNumber: 2103,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4887,27 +4887,27 @@ function ContextMenuCard({ x, y, event, onOpen, onClose, onQuickAction }) {
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2108,
+                                            lineNumber: 2112,
                                             columnNumber: 55
                                         }, this),
                                         " Edit"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2108,
+                                    lineNumber: 2112,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                     className: "h-3 w-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2109,
+                                    lineNumber: 2113,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 2101,
+                            lineNumber: 2105,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4924,27 +4924,27 @@ function ContextMenuCard({ x, y, event, onOpen, onClose, onQuickAction }) {
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2118,
+                                            lineNumber: 2122,
                                             columnNumber: 55
                                         }, this),
                                         " Nudge"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2118,
+                                    lineNumber: 2122,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                     className: "h-3 w-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2119,
+                                    lineNumber: 2123,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 2111,
+                            lineNumber: 2115,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -4961,43 +4961,10 @@ function ContextMenuCard({ x, y, event, onOpen, onClose, onQuickAction }) {
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2128,
-                                            columnNumber: 55
-                                        }, this),
-                                        " Snooze 15m"
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2128,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                    className: "h-3 w-3"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2129,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 2121,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                            className: "flex items-center justify-between rounded-xl px-2 py-2 text-left transition hover:bg-slate-900/60",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "flex items-center gap-2",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$copy$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Copy$3e$__["Copy"], {
-                                            className: "h-4 w-4"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/app/schedule/calendar/page.tsx",
                                             lineNumber: 2132,
                                             columnNumber: 55
                                         }, this),
-                                        " Duplicate"
+                                        " Snooze 15m"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
@@ -5014,7 +4981,7 @@ function ContextMenuCard({ x, y, event, onOpen, onClose, onQuickAction }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 2131,
+                            lineNumber: 2125,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -5023,14 +4990,14 @@ function ContextMenuCard({ x, y, event, onOpen, onClose, onQuickAction }) {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     className: "flex items-center gap-2",
                                     children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$share$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Share2$3e$__["Share2"], {
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$copy$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Copy$3e$__["Copy"], {
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
                                             lineNumber: 2136,
                                             columnNumber: 55
                                         }, this),
-                                        " Convert to task"
+                                        " Duplicate"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
@@ -5051,6 +5018,39 @@ function ContextMenuCard({ x, y, event, onOpen, onClose, onQuickAction }) {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            className: "flex items-center justify-between rounded-xl px-2 py-2 text-left transition hover:bg-slate-900/60",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "flex items-center gap-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$share$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Share2$3e$__["Share2"], {
+                                            className: "h-4 w-4"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/schedule/calendar/page.tsx",
+                                            lineNumber: 2140,
+                                            columnNumber: 55
+                                        }, this),
+                                        " Convert to task"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/schedule/calendar/page.tsx",
+                                    lineNumber: 2140,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                    className: "h-3 w-3"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/schedule/calendar/page.tsx",
+                                    lineNumber: 2141,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/src/app/schedule/calendar/page.tsx",
+                            lineNumber: 2139,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                             className: "flex items-center justify-between rounded-xl px-2 py-2 text-left text-rose-200 transition hover:bg-rose-500/10",
                             onClick: ()=>{
                                 onClose();
@@ -5063,44 +5063,44 @@ function ContextMenuCard({ x, y, event, onOpen, onClose, onQuickAction }) {
                                             className: "h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                            lineNumber: 2145,
+                                            lineNumber: 2149,
                                             columnNumber: 55
                                         }, this),
                                         " Delete"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2145,
+                                    lineNumber: 2149,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                     className: "h-3 w-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                                    lineNumber: 2146,
+                                    lineNumber: 2150,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                            lineNumber: 2139,
+                            lineNumber: 2143,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/schedule/calendar/page.tsx",
-                    lineNumber: 2100,
+                    lineNumber: 2104,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/schedule/calendar/page.tsx",
-            lineNumber: 2098,
+            lineNumber: 2102,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/schedule/calendar/page.tsx",
-        lineNumber: 2093,
+        lineNumber: 2097,
         columnNumber: 5
     }, this);
 }
