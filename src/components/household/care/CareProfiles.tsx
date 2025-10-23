@@ -5,7 +5,7 @@ import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { useHousehold } from "@/lib/household/useHousehold";
 import type { CareProfile, Medication, Member } from "@/lib/household/types";
 import { MedicationCard } from "./MedicationCard";
