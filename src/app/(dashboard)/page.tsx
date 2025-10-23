@@ -1,11 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import {
   briefingInsights,
   sparklineData,
   statHighlights,
   vaultInboxHints,
+  medicationRegimen,
+  careTeamAppointments,
+  marketWatchlist,
 } from '@/lib/data';
 import { PageHeader, PagePrimaryAction, PageSecondaryAction } from '@/components/layout/page-header';
 import { StatTile } from '@/components/shared/stat-tile';
@@ -16,16 +20,19 @@ import { DocCard } from '@/components/shared/doc-card';
 import { VaultDropzone } from '@/components/shared/vault-dropzone';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
 import { ArrowRight, AlarmClock, Upload } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { Separator } from '@/components/ui/separator';
 import { useCollection, useUser } from '@/firebase';
 import type { BillDoc, DocumentDoc, GoalDoc, ShoppingListDoc } from '@/lib/schemas';
-import { format } from 'date-fns';
+import { format, formatDistanceToNow } from 'date-fns';
 
 export default function DashboardPage() {
   const router = useRouter();
   const { user } = useUser();
+  const [hideBalances, setHideBalances] = useState(false);
 
   const { data: goals, loading: goalsLoading } = useCollection<GoalDoc>('goals', {
     query: ['ownerId', '==', user?.uid],
@@ -45,6 +52,49 @@ export default function DashboardPage() {
   });
 
   const shoppingList = shoppingLists?.[0]?.items || [];
+
+  const totalTabsNeeded = medicationRegimen.reduce((sum, med) => sum + med.tabsNeeded, 0);
+  const totalTabsTaken = medicationRegimen.reduce((sum, med) => sum + med.tabsTaken, 0);
+  const adherence = totalTabsNeeded === 0 ? 100 : Math.round((totalTabsTaken / totalTabsNeeded) * 100);
+  const nextRefill = medicationRegimen.reduce<
+    { medication: (typeof medicationRegimen)[number]; date: Date } | null
+  >((nearest, med) => {
+    const date = new Date(med.refillDate);
+    if (!nearest || date < nearest.date) {
+      return { medication: med, date };
+    }
+    return nearest;
+  }, null);
+  const nextAppointment = careTeamAppointments.reduce<
+    { appointment: (typeof careTeamAppointments)[number]; date: Date } | null
+  >((soonest, appointment) => {
+    const date = new Date(appointment.date);
+    if (!soonest || date < soonest.date) {
+      return { appointment, date };
+    }
+    return soonest;
+  }, null);
+  const watchlistPreview = marketWatchlist.slice(0, 3);
+  const stockAllocation = marketWatchlist
+    .filter(asset => asset.type === 'stock')
+    .reduce((sum, asset) => sum + asset.allocation, 0);
+  const cryptoAllocation = marketWatchlist
+    .filter(asset => asset.type === 'crypto')
+    .reduce((sum, asset) => sum + asset.allocation, 0);
+  const trackedTotalAllocation = stockAllocation + cryptoAllocation;
+  const stockAllocationPercent =
+    trackedTotalAllocation === 0 ? 0 : Math.round((stockAllocation / trackedTotalAllocation) * 100);
+  const cryptoAllocationPercent =
+    trackedTotalAllocation === 0 ? 0 : Math.round((cryptoAllocation / trackedTotalAllocation) * 100);
+
+  const formatAssetPrice = (asset: (typeof marketWatchlist)[number]) =>
+    new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: asset.currency ?? 'USD',
+      maximumFractionDigits: asset.type === 'crypto' ? 0 : 2,
+    }).format(asset.price);
+
+  const maskValue = (value: string) => (hideBalances ? '••••' : value);
 
 
   const formatCurrency = (value: number) =>
@@ -76,6 +126,14 @@ export default function DashboardPage() {
           <>
             <PagePrimaryAction>Run evening briefing</PagePrimaryAction>
             <PageSecondaryAction>Share snapshot</PageSecondaryAction>
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-2xl border-slate-700 bg-slate-900/40 text-slate-200"
+              onClick={() => setHideBalances(prev => !prev)}
+            >
+              {hideBalances ? 'Show balances' : 'Hide balances'}
+            </Button>
           </>
         }
       />
@@ -85,8 +143,8 @@ export default function DashboardPage() {
           <StatTile
             key={stat.title}
             title={stat.title}
-            value={stat.value}
-            delta={stat.delta}
+            value={maskValue(String(stat.value))}
+            delta={hideBalances ? 'Hidden' : stat.delta}
             trend={stat.trend}
             onClick={() => router.push(stat.title === 'Net worth' ? '/finance/overview' : '/finance/transactions')}
           />
@@ -158,6 +216,161 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 xl:grid-cols-12">
+        <Card className="col-span-12 lg:col-span-5 space-y-4 rounded-3xl border border-slate-900/60 bg-slate-950/80 p-0 shadow-xl">
+          <CardHeader className="flex flex-row items-start justify-between gap-3">
+            <div>
+              <CardTitle className="text-lg text-white">Medication tracker</CardTitle>
+              <p className="text-xs text-slate-400">Keep tabs on doses, refills, and appointments for your brother.</p>
+            </div>
+            <Badge variant="secondary" className="rounded-2xl border border-cyan-500/40 bg-cyan-500/10 text-cyan-200">
+              {adherence}% today
+            </Badge>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="rounded-2xl border border-slate-900/60 bg-slate-900/60 p-4">
+              <div className="text-xs uppercase tracking-wide text-slate-400">Adherence snapshot</div>
+              <div className="mt-2 flex items-center justify-between text-sm text-slate-200">
+                <span>Tabs swallowed</span>
+                <span>
+                  {totalTabsTaken} / {totalTabsNeeded}
+                </span>
+              </div>
+              <Progress value={adherence} className="mt-3 h-2 rounded-full bg-slate-800" />
+              {nextRefill ? (
+                <p className="mt-3 text-xs text-slate-400">
+                  Next refill: {nextRefill.medication.name}{' '}
+                  {formatDistanceToNow(nextRefill.date, { addSuffix: true })}
+                </p>
+              ) : null}
+            </div>
+
+            <div className="space-y-3">
+              {medicationRegimen.map(med => (
+                <div
+                  key={med.name}
+                  className="rounded-2xl border border-slate-900/60 bg-slate-900/40 p-4"
+                >
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                    <div>
+                      <p className="text-sm font-medium text-white">{med.name}</p>
+                      <p className="text-xs text-slate-400">
+                        {med.dosage} • {med.timing}
+                      </p>
+                    </div>
+                    <Badge variant="outline" className="border-cyan-500/40 text-cyan-200">
+                      {med.tabsTaken}/{med.tabsNeeded} swallowed
+                    </Badge>
+                  </div>
+                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-400">
+                    <span>{med.tabletsRemaining} tablets left</span>
+                    <span>
+                      Refill{' '}
+                      {formatDistanceToNow(new Date(med.refillDate), { addSuffix: true })}
+                    </span>
+                  </div>
+                  {med.notes ? <p className="mt-2 text-xs text-slate-500">{med.notes}</p> : null}
+                </div>
+              ))}
+            </div>
+
+            {nextAppointment ? (
+              <div className="rounded-2xl border border-slate-900/60 bg-slate-900/60 p-4 text-sm text-slate-300">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                  <span className="font-medium text-white">Next appointment</span>
+                  <Badge variant="secondary" className="rounded-2xl bg-emerald-500/10 text-emerald-200">
+                    {format(nextAppointment.date, 'MMM d • h:mma')}
+                  </Badge>
+                </div>
+                <p className="mt-1 text-xs text-slate-400">
+                  {nextAppointment.appointment.provider} — {nextAppointment.appointment.focus}
+                </p>
+                <p className="mt-1 text-xs text-slate-500">{nextAppointment.appointment.location}</p>
+                {nextAppointment.appointment.preparation ? (
+                  <p className="mt-2 text-xs text-slate-500">
+                    Prep: {nextAppointment.appointment.preparation}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
+
+            <Button size="sm" className="rounded-2xl" asChild>
+              <Link href="/household/medications">
+                Open care log <ArrowRight className="ml-1 h-3 w-3" />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card className="col-span-12 lg:col-span-7 rounded-3xl border border-slate-900/60 bg-slate-950/80 shadow-xl">
+          <CardHeader className="flex flex-row items-center justify-between">
+            <div>
+              <CardTitle className="text-lg text-white">Market watchlist</CardTitle>
+              <p className="text-xs text-slate-400">Stocks and crypto you’re tracking to learn the market pulse.</p>
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="rounded-2xl"
+              onClick={() => router.push('/finance/investments')}
+            >
+              Manage <ArrowRight className="ml-1 h-3 w-3" />
+            </Button>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-3">
+              {watchlistPreview.map(asset => {
+                const changePositive = asset.change >= 0;
+                const changeColor = changePositive ? 'text-emerald-400' : 'text-rose-400';
+                const changeValue = `${changePositive ? '+' : ''}${asset.change.toFixed(
+                  asset.type === 'crypto' ? 0 : 2,
+                )}`;
+                return (
+                  <div
+                    key={asset.symbol}
+                    className="flex flex-col gap-3 rounded-2xl border border-slate-900/60 bg-slate-900/40 p-4 md:flex-row md:items-center md:justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <p className="text-sm font-medium text-white">{asset.symbol}</p>
+                        <Badge variant="outline" className="border-slate-800 text-slate-300">
+                          {asset.type === 'stock' ? 'Stock' : 'Crypto'}
+                        </Badge>
+                      </div>
+                      <p className="text-xs text-slate-400">{asset.name}</p>
+                    </div>
+                    <div className="flex flex-col items-start gap-1 text-sm font-medium text-white md:items-end">
+                      <span>{formatAssetPrice(asset)}</span>
+                      <span className={`${changeColor} text-xs font-semibold`}>
+                        {changeValue} ({asset.changePercent.toFixed(2)}%)
+                      </span>
+                      <span className="text-xs text-slate-400">
+                        Allocation {(asset.allocation * 100).toFixed(0)}%
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="rounded-2xl border border-slate-900/60 bg-slate-900/60 p-4">
+              <div className="flex items-center justify-between text-sm text-slate-200">
+                <span>Stocks vs crypto</span>
+                <span>
+                  {stockAllocationPercent}% / {cryptoAllocationPercent}%
+                </span>
+              </div>
+              <Progress value={stockAllocationPercent} className="mt-3 h-2 rounded-full bg-slate-800">
+                <div className="h-full rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-indigo-500" />
+              </Progress>
+              <p className="mt-3 text-xs text-slate-400">
+                Long-term learning target: keep crypto exposure below 35% while you study volatility signals.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid gap-6 xl:grid-cols-12">
         <Card className="col-span-12 lg:col-span-6 rounded-3xl border border-slate-900/60 bg-slate-950/80 shadow-xl">
           <CardHeader className="flex flex-row items-center justify-between">
             <div>
@@ -180,6 +393,7 @@ export default function DashboardPage() {
                   current={goal.current}
                   deadline={formatDate(goal.deadline)}
                   priority={goal.priority}
+                  maskValues={hideBalances}
                 />
               ))
             )}
@@ -240,7 +454,9 @@ export default function DashboardPage() {
                     <p className="font-medium text-white">{bill.name}</p>
                     <p className="text-xs text-slate-400">Due {formatDate(bill.dueDate)}</p>
                   </div>
-                  <div className="text-sm font-semibold text-cyan-200">{formatCurrency(bill.amount)}</div>
+                  <div className="text-sm font-semibold text-cyan-200">
+                    {maskValue(formatCurrency(bill.amount))}
+                  </div>
                 </div>
               ))
             )}
