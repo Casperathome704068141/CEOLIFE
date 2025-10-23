@@ -3,6 +3,9 @@ import type {
   CashflowData,
   BriefingInsight,
   TrendPoint,
+  MedicationRegimen,
+  DoctorAppointment,
+  MarketAsset,
 } from "@/lib/types";
 
 export const netWorth = 186_430.25;
@@ -99,5 +102,108 @@ export const vaultInboxHints = [
     id: "nudges",
     title: "Queue nudges",
     description: "Send WhatsApp reminder for Marcus’ utility split before quiet hours.",
+  },
+];
+
+export const medicationRegimen: MedicationRegimen[] = [
+  {
+    name: "Hydroxyurea",
+    dosage: "500 mg",
+    timing: "07:30 – with breakfast",
+    tabsNeeded: 2,
+    tabsTaken: 2,
+    tabletsRemaining: 18,
+    refillDate: "2024-01-17",
+    notes: "Log any side effects and hydrate before dose.",
+  },
+  {
+    name: "Folic acid",
+    dosage: "1 mg",
+    timing: "21:00 – after dinner",
+    tabsNeeded: 1,
+    tabsTaken: 0,
+    tabletsRemaining: 22,
+    refillDate: "2024-01-24",
+    notes: "Set reminder if evening routines shift.",
+  },
+  {
+    name: "Ibuprofen",
+    dosage: "400 mg",
+    timing: "As needed – pain episodes",
+    tabsNeeded: 1,
+    tabsTaken: 1,
+    tabletsRemaining: 8,
+    refillDate: "2023-12-10",
+    notes: "Track pain intensity in wellness journal.",
+  },
+];
+
+export const careTeamAppointments: DoctorAppointment[] = [
+  {
+    provider: "Dr. Ama Mensah",
+    focus: "Hematology follow-up",
+    date: "2024-01-21T09:30:00",
+    location: "Korle Bu Teaching Hospital – Clinic 3",
+    preparation: "Bring medication log and latest lab results.",
+  },
+  {
+    provider: "Nurse Kofi Owusu",
+    focus: "Pain management check-in",
+    date: "2024-01-28T15:00:00",
+    location: "Virtual session",
+    preparation: "Share pain episode tracker with notes.",
+  },
+];
+
+export const marketWatchlist: MarketAsset[] = [
+  {
+    symbol: "AAPL",
+    name: "Apple Inc.",
+    type: "stock",
+    price: 176.43,
+    change: 1.62,
+    changePercent: 0.93,
+    allocation: 0.24,
+    currency: "USD",
+  },
+  {
+    symbol: "MSFT",
+    name: "Microsoft",
+    type: "stock",
+    price: 328.12,
+    change: -2.47,
+    changePercent: -0.75,
+    allocation: 0.19,
+    currency: "USD",
+  },
+  {
+    symbol: "GOOGL",
+    name: "Alphabet Class A",
+    type: "stock",
+    price: 132.58,
+    change: 0.84,
+    changePercent: 0.64,
+    allocation: 0.12,
+    currency: "USD",
+  },
+  {
+    symbol: "BTC",
+    name: "Bitcoin",
+    type: "crypto",
+    price: 34980,
+    change: 245,
+    changePercent: 0.71,
+    allocation: 0.27,
+    currency: "USD",
+  },
+  {
+    symbol: "ETH",
+    name: "Ethereum",
+    type: "crypto",
+    price: 1875,
+    change: -18,
+    changePercent: -0.95,
+    allocation: 0.11,
+    currency: "USD",
   },
 ];
