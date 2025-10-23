@@ -14,7 +14,7 @@ import {
   SimResult,
 } from "./types";
 
-const COLLECTION_PATH = "simulations/scenarios";
+const COLLECTION_PATH = "simulations";
 
 async function fetchScenarios(firestore: ReturnType<typeof useFirestore>) {
   if (!firestore) return [] as Scenario[];

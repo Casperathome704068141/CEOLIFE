@@ -553,6 +553,10 @@ body {
   grid-column: span 12 / span 12;
 }
 
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .m-1 {
   margin: .25rem;
 }
@@ -863,6 +867,18 @@ body {
   height: 100svh;
 }
 
+.h-20 {
+  height: 5rem;
+}
+
+.h-72 {
+  height: 18rem;
+}
+
+.h-\[60vh\] {
+  height: 60vh;
+}
+
 .max-h-48 {
   max-height: 12rem;
 }
@@ -917,6 +933,10 @@ body {
 
 .min-h-svh {
   min-height: 100svh;
+}
+
+.min-h-\[220px\] {
+  min-height: 220px;
 }
 
 .w-0 {
@@ -1047,6 +1067,10 @@ body {
   width: 100%;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
 .min-w-0 {
   min-width: 0;
 }
@@ -1109,6 +1133,10 @@ body {
 
 .max-w-xs {
   max-width: 20rem;
+}
+
+.max-w-\[140px\] {
+  max-width: 140px;
 }
 
 .flex-1 {
@@ -1250,6 +1278,14 @@ body {
 
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-\[1fr\,1fr\,1fr\,auto\] {
+  grid-template-columns: 1fr 1fr 1fr auto;
 }
 
 .flex-row {
@@ -1711,6 +1747,22 @@ body {
   border-color: #ffffffb3;
 }
 
+.border-emerald-500\/40 {
+  border-color: #10b98166;
+}
+
+.border-emerald-500\/60 {
+  border-color: #10b98199;
+}
+
+.border-red-500\/30 {
+  border-color: #ef44444d;
+}
+
+.border-slate-900\/80 {
+  border-color: #0f172acc;
+}
+
 .border-l-transparent {
   border-left-color: #0000;
 }
@@ -2035,6 +2087,22 @@ body {
   background-color: #ffffff0d;
 }
 
+.bg-emerald-500\/40 {
+  background-color: #10b98166;
+}
+
+.bg-red-500\/10 {
+  background-color: #ef44441a;
+}
+
+.bg-slate-800\/80 {
+  background-color: #1e293bcc;
+}
+
+.bg-slate-950\/50 {
+  background-color: #02061780;
+}
+
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -2111,6 +2179,36 @@ body {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-emerald-500\/50 {
+  --tw-gradient-from: #10b98180 var(--tw-gradient-from-position);
+  --tw-gradient-to: #10b98100 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-purple-500\/40 {
+  --tw-gradient-from: #a855f766 var(--tw-gradient-from-position);
+  --tw-gradient-to: #a855f700 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-purple-500\/80 {
+  --tw-gradient-from: #a855f7cc var(--tw-gradient-from-position);
+  --tw-gradient-to: #a855f700 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-red-500\/30 {
+  --tw-gradient-from: #ef44444d var(--tw-gradient-from-position);
+  --tw-gradient-to: #ef444400 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-sky-500\/40 {
+  --tw-gradient-from: #0ea5e966 var(--tw-gradient-from-position);
+  --tw-gradient-to: #0ea5e900 var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-card {
   --tw-gradient-to: hsl(var(--card) / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), hsl(var(--card)) var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -2172,6 +2270,26 @@ body {
 
 .to-transparent {
   --tw-gradient-to: transparent var(--tw-gradient-to-position);
+}
+
+.to-cyan-500\/20 {
+  --tw-gradient-to: #06b6d433 var(--tw-gradient-to-position);
+}
+
+.to-fuchsia-500\/10 {
+  --tw-gradient-to: #d946ef1a var(--tw-gradient-to-position);
+}
+
+.to-indigo-500\/10 {
+  --tw-gradient-to: #6366f11a var(--tw-gradient-to-position);
+}
+
+.to-orange-500\/20 {
+  --tw-gradient-to: #f9731633 var(--tw-gradient-to-position);
+}
+
+.to-sky-500\/60 {
+  --tw-gradient-to: #0ea5e999 var(--tw-gradient-to-position);
 }
 
 .fill-current {
@@ -2505,6 +2623,10 @@ body {
   line-height: 1.25;
 }
 
+.leading-snug {
+  line-height: 1.375;
+}
+
 .tracking-\[0\.2em\] {
   letter-spacing: .2em;
 }
@@ -2809,6 +2931,11 @@ body {
   color: #ffffffb3;
 }
 
+.text-red-200 {
+  --tw-text-opacity: 1;
+  color: rgb(254 202 202 / var(--tw-text-opacity, 1));
+}
+
 .line-through {
   text-decoration-line: line-through;
 }
@@ -2844,6 +2971,10 @@ body {
 
 .opacity-90 {
   opacity: .9;
+}
+
+.opacity-40 {
+  opacity: .4;
 }
 
 .mix-blend-overlay {
@@ -2977,6 +3108,16 @@ body {
 
 .shadow-slate-900\/60 {
   --tw-shadow-color: #0f172a99;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-purple-900\/40 {
+  --tw-shadow-color: #581c8766;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-slate-950\/40 {
+  --tw-shadow-color: #02061766;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -3251,6 +3392,10 @@ body {
   border-color: #334155cc;
 }
 
+.hover\:border-cyan-500\/50:hover {
+  border-color: #06b6d480;
+}
+
 .hover\:bg-accent:hover {
   background-color: hsl(var(--accent));
 }
@@ -3392,6 +3537,19 @@ body {
   background-color: #0f172acc;
 }
 
+.hover\:bg-emerald-500\/20:hover {
+  background-color: #10b98133;
+}
+
+.hover\:bg-red-500\/20:hover {
+  background-color: #ef444433;
+}
+
+.hover\:bg-slate-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity, 1));
+}
+
 .hover\:text-accent-foreground:hover {
   color: hsl(var(--accent-foreground));
 }
@@ -3435,6 +3593,11 @@ body {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-red-300:hover {
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {
@@ -4275,6 +4438,10 @@ body {
     grid-template-columns: 1.4fr 1fr;
   }
 
+  .md\:grid-cols-\[1\.3fr\,1fr\] {
+    grid-template-columns: 1.3fr 1fr;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -4385,6 +4552,16 @@ body {
   .lg\:justify-between {
     justify-content: space-between;
   }
+
+  .lg\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (width >= 1280px) {
@@ -4422,6 +4599,24 @@ body {
 
   .xl\:grid-cols-\[minmax\(0\,1fr\)_340px\] {
     grid-template-columns: minmax(0, 1fr) 340px;
+  }
+
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-\[360px\,minmax\(0\,1fr\)\] {
+    grid-template-columns: 360px minmax(0, 1fr);
+  }
+}
+
+@media (width >= 1536px) {
+  .\32 xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .\32 xl\:grid-cols-\[380px\,minmax\(0\,1fr\)\] {
+    grid-template-columns: 380px minmax(0, 1fr);
   }
 }
 
