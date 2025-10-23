@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from 'react';
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/hooks/use-toast";
-import { CalendarClock, Copy, Download, Link2, Printer, Share2, Tag, XCircle } from "lucide-react";
-import type { VaultDocument } from "@/lib/vault/useVault";
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Separator } from '@/components/ui/separator';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
+import { CalendarClock, Copy, Download, Link2, Printer, Share2, Tag, XCircle } from 'lucide-react';
+import type { VaultDocument } from '@/lib/vault/useVault';
 
 interface DocViewerModalProps {
   doc: VaultDocument | null;
@@ -30,13 +30,14 @@ interface DocViewerModalProps {
 }
 
 export function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, onOpenRoute }: DocViewerModalProps) {
-  const [notes, setNotes] = useState("");
-  const [tagDraft, setTagDraft] = useState("");
+  const [notes, setNotes] = useState('');
+  const [tagDraft, setTagDraft] = useState('');
+  const { toast } = useToast();
 
   useEffect(() => {
     if (doc) {
-      setNotes(doc.extracted?.text ?? "");
-      setTagDraft("");
+      setNotes(doc.extracted?.text ?? '');
+      setTagDraft('');
     }
   }, [doc]);
 
@@ -49,17 +50,17 @@ export function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetE
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(doc.extracted?.text ?? "");
-      toast({ title: "Copied", description: "OCR text copied to clipboard." });
+      await navigator.clipboard.writeText(doc.extracted?.text ?? '');
+      toast({ title: 'Copied', description: 'OCR text copied to clipboard.' });
     } catch {
-      toast({ title: "Copy failed", description: "Unable to copy text." });
+      toast({ title: 'Copy failed', description: 'Unable to copy text.' });
     }
   };
 
-  const handleDownload = (mode: "encrypted" | "decrypted") => {
+  const handleDownload = (mode: 'encrypted' | 'decrypted') => {
     toast({
-      title: mode === "decrypted" ? "Preparing decrypted copy" : "Downloading encrypted file",
-      description: "A secure download will start shortly.",
+      title: mode === 'decrypted' ? 'Preparing decrypted copy' : 'Downloading encrypted file',
+      description: 'A secure download will start shortly.',
     });
   };
 
@@ -67,7 +68,7 @@ export function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetE
     if (!tagDraft.trim()) return;
     const updated = Array.from(new Set([...(doc.tags ?? []), tagDraft.trim()]));
     onUpdate(doc.id, { tags: updated });
-    setTagDraft("");
+    setTagDraft('');
   };
 
   return (
@@ -83,10 +84,10 @@ export function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetE
               <Button variant="secondary" className="rounded-2xl" onClick={handleCopy}>
                 <Copy className="mr-2 h-4 w-4" /> Copy text
               </Button>
-              <Button variant="secondary" className="rounded-2xl" onClick={() => handleDownload("encrypted")}>
+              <Button variant="secondary" className="rounded-2xl" onClick={() => handleDownload('encrypted')}>
                 <Download className="mr-2 h-4 w-4" /> Download
               </Button>
-              <Button variant="secondary" className="rounded-2xl" onClick={() => handleDownload("decrypted")}>
+              <Button variant="secondary" className="rounded-2xl" onClick={() => handleDownload('decrypted')}>
                 <Printer className="mr-2 h-4 w-4" /> Print (secure)
               </Button>
             </div>
@@ -159,10 +160,10 @@ export function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetE
                     <p className="text-xs text-slate-500">No structured fields captured yet.</p>
                   ) : (
                     fieldEntries.map(([key, value]) => (
-                      <div key={key} className="rounded-2xl bg-slate-900/40 p-3 text-xs text-slate-200">
+                      <div key={key} className="rounded-xl bg-slate-900/40 p-3 text-xs text-slate-200">
                         <p className="font-semibold uppercase tracking-wide text-slate-400">{key}</p>
                         <Input
-                          value={String(value ?? "")}
+                          value={String(value ?? '')}
                           className="mt-1 h-9 rounded-xl bg-slate-950/60 text-sm"
                           onChange={(event) =>
                             onUpdate(doc.id, {

@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useEffect, useMemo, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
-import { useToast } from "@/components/ui/use-toast";
-import { useHousehold } from "@/lib/household/useHousehold";
-import type { ShoppingItem } from "@/lib/household/types";
-import { PriceTargetDialog } from "./PriceTargetDialog";
-import { NudgeDialog } from "../NudgeDialog";
+import { useEffect, useMemo, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
+import { useToast } from '@/hooks/use-toast';
+import { useHousehold } from '@/lib/household/useHousehold';
+import type { ShoppingItem } from '@/lib/household/types';
+import { PriceTargetDialog } from './PriceTargetDialog';
+import { NudgeDialog } from '../NudgeDialog';
 
 export function ShoppingList() {
   const {
@@ -24,19 +24,19 @@ export function ShoppingList() {
   const { toast } = useToast();
 
   const list = shoppingLists[0];
-  const [form, setForm] = useState({ label: "", qty: "", priority: "med", recurring: false });
+  const [form, setForm] = useState({ label: '', qty: '', priority: 'med' as ShoppingItem['priority'], recurring: false });
   const [priceDialogItem, setPriceDialogItem] = useState<ShoppingItem | null>(null);
   const [nudgeMember, setNudgeMember] = useState(members[0] ?? null);
 
   useEffect(() => {
     const handleAdd = () => {
-      const input = document.getElementById("shopping-add-input");
+      const input = document.getElementById('shopping-add-input');
       if (input instanceof HTMLInputElement) {
         input.focus();
       }
     };
-    window.addEventListener("household:add-shopping", handleAdd);
-    return () => window.removeEventListener("household:add-shopping", handleAdd);
+    window.addEventListener('household:add-shopping', handleAdd);
+    return () => window.removeEventListener('household:add-shopping', handleAdd);
   }, []);
 
   const items = useMemo(() => list?.items ?? [], [list]);
@@ -55,7 +55,7 @@ export function ShoppingList() {
   return (
     <div className="space-y-4">
       <Card className="rounded-3xl border border-slate-900/60 bg-slate-950/80">
-        <CardHeader className="flex items-center justify-between">
+        <CardHeader className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <CardTitle className="text-lg text-slate-100">{list.name}</CardTitle>
             <p className="text-xs text-slate-500">Recurring essentials with price targets.</p>
@@ -65,9 +65,9 @@ export function ShoppingList() {
               variant="outline"
               className="rounded-2xl border-cyan-600/40 text-cyan-200"
               onClick={async () => {
-                if (!members[0]) return;
-                await sendShoppingList({ listId: list.id, channel: "whatsapp", to: members[0].phone ?? "" });
-                toast({ title: "List sent", description: `Shared with ${members[0].name}` });
+                if (!members[0]?.phone) return;
+                await sendShoppingList({ listId: list.id, channel: 'whatsapp', to: members[0].phone });
+                toast({ title: 'List sent', description: `Shared with ${members[0].name}` });
               }}
             >
               Send list
@@ -82,14 +82,15 @@ export function ShoppingList() {
             className="grid gap-3 md:grid-cols-4"
             onSubmit={async (event) => {
               event.preventDefault();
+              if (!form.label) return;
               await addShoppingItem({
                 listId: list.id,
                 label: form.label,
                 qty: form.qty,
-                priority: form.priority as ShoppingItem["priority"],
+                priority: form.priority,
                 recurring: form.recurring,
               });
-              setForm({ label: "", qty: "", priority: "med", recurring: false });
+              setForm({ label: '', qty: '', priority: 'med', recurring: false });
             }}
           >
             <Input
@@ -100,7 +101,7 @@ export function ShoppingList() {
               required
             />
             <Input placeholder="Qty" value={form.qty} onChange={(event) => setForm((prev) => ({ ...prev, qty: event.target.value }))} />
-            <Input placeholder="Priority (low/med/high)" value={form.priority} onChange={(event) => setForm((prev) => ({ ...prev, priority: event.target.value }))} />
+            <Input placeholder="Priority (low/med/high)" value={form.priority} onChange={(event) => setForm((prev) => ({ ...prev, priority: event.target.value as ShoppingItem['priority'] }))} />
             <Button type="submit" className="rounded-2xl bg-cyan-500/80 text-slate-950 hover:bg-cyan-400">
               Add item
             </Button>
@@ -118,9 +119,9 @@ export function ShoppingList() {
                   <div>
                     <p className="font-medium text-slate-100">{item.label}</p>
                     <p className="text-xs text-slate-500">
-                      {item.qty ? `${item.qty} • ` : ""}Priority {item.priority}
-                      {item.recurring ? " • Recurring" : ""}
-                      {item.priceTarget ? ` • Target $${item.priceTarget}` : ""}
+                      {item.qty ? `${item.qty} • ` : ''}Priority {item.priority}
+                      {item.recurring ? ' • Recurring' : ''}
+                      {item.priceTarget ? ` • Target $${item.priceTarget}` : ''}
                     </p>
                   </div>
                 </div>
@@ -136,13 +137,13 @@ export function ShoppingList() {
         </CardContent>
       </Card>
       <PriceTargetDialog
-        itemLabel={priceDialogItem?.label ?? ""}
+        itemLabel={priceDialogItem?.label ?? ''}
         open={!!priceDialogItem}
         onOpenChange={(value) => !value && setPriceDialogItem(null)}
         onSave={async (price) => {
           if (!priceDialogItem) return;
           await setShoppingPriceTarget({ listId: list.id, itemId: priceDialogItem.id, priceTarget: price });
-          toast({ title: "Price target updated", description: price ? `$${price.toFixed(2)}` : "Cleared" });
+          toast({ title: 'Price target updated', description: price ? `$${price.toFixed(2)}` : 'Cleared' });
         }}
       />
       <NudgeDialog member={nudgeMember} open={!!nudgeMember} onOpenChange={(value) => !value && setNudgeMember(null)} />

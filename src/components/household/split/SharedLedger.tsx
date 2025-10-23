@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { useEffect, useMemo, useState } from "react";
-import { format } from "date-fns";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { useToast } from "@/components/ui/use-toast";
-import { useHousehold } from "@/lib/household/useHousehold";
-import type { LedgerEntry, Settlement } from "@/lib/household/types";
-import { RecordPaymentDialog } from "./RecordPaymentDialog";
-import { SettleNowDialog } from "./SettleNowDialog";
-import { NudgeDialog } from "../NudgeDialog";
+import { useEffect, useMemo, useState } from 'react';
+import { format } from 'date-fns';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { useToast } from '@/hooks/use-toast';
+import { useHousehold } from '@/lib/household/useHousehold';
+import type { LedgerEntry, Settlement } from '@/lib/household/types';
+import { RecordPaymentDialog } from './RecordPaymentDialog';
+import { SettleNowDialog } from './SettleNowDialog';
+import { NudgeDialog } from '../NudgeDialog';
 
 export function SharedLedger() {
   const {
@@ -29,8 +29,8 @@ export function SharedLedger() {
 
   useEffect(() => {
     const handleAddPayment = () => setRecordOpen(true);
-    window.addEventListener("household:add-ledger", handleAddPayment);
-    return () => window.removeEventListener("household:add-ledger", handleAddPayment);
+    window.addEventListener('household:add-ledger', handleAddPayment);
+    return () => window.removeEventListener('household:add-ledger', handleAddPayment);
   }, []);
 
   const sortedLedger = useMemo(() => [...ledger].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()), [ledger]);
@@ -55,10 +55,10 @@ export function SharedLedger() {
             className="rounded-2xl text-xs uppercase tracking-widest text-slate-500"
             onClick={async () => {
               const csv = await exportLedger();
-              if (typeof navigator !== "undefined" && navigator.clipboard) {
+              if (typeof navigator !== 'undefined' && navigator.clipboard) {
                 await navigator.clipboard.writeText(csv);
               }
-              toast({ title: "Export copied", description: "CSV for current month" });
+              toast({ title: 'Export copied', description: 'CSV for current month' });
             }}
           >
             Export
@@ -80,13 +80,13 @@ export function SharedLedger() {
             <TableBody>
               {sortedLedger.map((entry) => (
                 <TableRow key={entry.id} className="border-slate-900/40">
-                  <TableCell className="text-slate-300">{format(new Date(entry.date), "MMM d")}</TableCell>
+                  <TableCell className="text-slate-300">{format(new Date(entry.date), 'MMM d')}</TableCell>
                   <TableCell className="font-medium text-slate-100">{entry.label}</TableCell>
-                  <TableCell className={entry.amount >= 0 ? "text-emerald-400" : "text-rose-400"}>
-                    {entry.amount >= 0 ? "+" : ""}${Math.abs(entry.amount).toFixed(2)}
+                  <TableCell className={entry.amount >= 0 ? 'text-emerald-400' : 'text-rose-400'}>
+                    {entry.amount >= 0 ? '+' : ''}${Math.abs(entry.amount).toFixed(2)}
                   </TableCell>
                   <TableCell className="text-slate-300">{entry.payer}</TableCell>
-                  <TableCell className="text-slate-500">{entry.note ?? "—"}</TableCell>
+                  <TableCell className="text-slate-500">{entry.note ?? '—'}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -102,26 +102,27 @@ export function SharedLedger() {
         ) : null}
       </CardContent>
 
-      {recordOpen ? (
+      <Dialog open={recordOpen} onOpenChange={setRecordOpen}>
         <RecordPaymentDialog
-          onSubmit={async ({ payer, amount, method, reference }) => {
-            await recordPayment({ payer, amount, method, reference, currency: "USD" });
-            toast({ title: "Payment recorded", description: `${payer} ${amount}` });
-            setNudgeMember(members[0] ?? null);
-          }}
-          onClose={() => setRecordOpen(false)}
-        />
-      ) : null}
-      {settleOpen ? (
+            onSubmit={async ({ payer, amount, method, reference }) => {
+              await recordPayment({ payer, amount, method, reference, currency: 'USD' });
+              toast({ title: 'Payment recorded', description: `${payer} ${amount}` });
+              setNudgeMember(members[0] ?? null);
+            }}
+            onClose={() => setRecordOpen(false)}
+          />
+      </Dialog>
+
+      <Dialog open={settleOpen} onOpenChange={setSettleOpen}>
         <SettleNowDialog
           onSubmit={async (payload) => {
-            await settleNow({ settlements: payload.settlements, currency: "USD" });
-            toast({ title: "Settled", description: "Balances updated" });
+            await settleNow({ settlements: payload.settlements, currency: 'USD' });
+            toast({ title: 'Settled', description: 'Balances updated' });
           }}
           onClose={() => setSettleOpen(false)}
         />
-      ) : null}
-
+      </Dialog>
+      
       <NudgeDialog member={nudgeMember} open={!!nudgeMember} onOpenChange={(value) => !value && setNudgeMember(null)} />
     </Card>
   );

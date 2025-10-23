@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import {
   Sheet,
   SheetContent,
@@ -8,16 +8,16 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import type { ShareAclPayload, VaultDocument } from "@/lib/vault/useVault";
-import { toast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
+} from '@/components/ui/sheet';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
+import { Badge } from '@/components/ui/badge';
+import type { ShareAclPayload, VaultDocument } from '@/lib/vault/useVault';
+import { useToast } from '@/hooks/use-toast';
+import { Loader2 } from 'lucide-react';
 
 interface ShareAclDrawerProps {
   context: { ids: string[]; doc?: VaultDocument } | null;
@@ -25,14 +25,15 @@ interface ShareAclDrawerProps {
   onShare: (ids: string[], payload: ShareAclPayload) => Promise<void> | void;
 }
 
-const defaultEntry = { id: "", role: "viewer" as ShareAclPayload["people"][number]["role"], expiresAt: "" };
+const defaultEntry = { id: '', role: 'viewer' as ShareAclPayload['people'][number]['role'], expiresAt: '' };
 
 export function ShareAclDrawer({ context, onClose, onShare }: ShareAclDrawerProps) {
-  const [entries, setEntries] = useState<ShareAclPayload["people"]>([]);
+  const [entries, setEntries] = useState<ShareAclPayload['people']>([]);
   const [maskSensitive, setMaskSensitive] = useState(true);
   const [link, setLink] = useState<string | null>(null);
   const [loadingLink, setLoadingLink] = useState(false);
   const [accessWindow, setAccessWindow] = useState<{ start?: string; end?: string }>({});
+  const { toast } = useToast();
 
   useEffect(() => {
     if (!context) {
@@ -51,7 +52,7 @@ export function ShareAclDrawer({ context, onClose, onShare }: ShareAclDrawerProp
   if (!context) return null;
 
   const handleAdd = () => {
-    setEntries((prev) => [...prev, { ...defaultEntry, id: "" }]);
+    setEntries((prev) => [...prev, { ...defaultEntry, id: '' }]);
   };
 
   const handleSave = async () => {
@@ -66,14 +67,14 @@ export function ShareAclDrawer({ context, onClose, onShare }: ShareAclDrawerProp
   const handleGenerateLink = async () => {
     try {
       setLoadingLink(true);
-      const response = await fetch("/api/vault/sign", { method: "POST" });
-      if (!response.ok) throw new Error("Failed to sign");
+      const response = await fetch('/api/vault/sign', { method: 'POST' });
+      if (!response.ok) throw new Error('Failed to sign');
       const data = (await response.json()) as { url: string; expiresAt: string };
       setLink(data.url);
-      toast({ title: "Secure link ready", description: `Expires ${data.expiresAt}` });
+      toast({ title: 'Secure link ready', description: `Expires ${data.expiresAt}` });
     } catch (error) {
       console.error(error);
-      toast({ title: "Link error", description: "Could not generate a secure link." });
+      toast({ title: 'Link error', description: 'Could not generate a secure link.' });
     } finally {
       setLoadingLink(false);
     }
@@ -122,17 +123,17 @@ export function ShareAclDrawer({ context, onClose, onShare }: ShareAclDrawerProp
                   <SelectItem value="emergency">Emergency access</SelectItem>
                 </SelectContent>
               </Select>
-              {entry.role === "emergency" ? (
+              {entry.role === 'emergency' ? (
                 <div className="grid grid-cols-2 gap-2">
                   <Input
                     type="datetime-local"
-                    value={accessWindow.start ?? ""}
+                    value={accessWindow.start ?? ''}
                     onChange={(event) => setAccessWindow((prev) => ({ ...prev, start: event.target.value }))}
                     className="h-10 rounded-2xl bg-slate-900/60"
                   />
                   <Input
                     type="datetime-local"
-                    value={accessWindow.end ?? ""}
+                    value={accessWindow.end ?? ''}
                     onChange={(event) => setAccessWindow((prev) => ({ ...prev, end: event.target.value }))}
                     className="h-10 rounded-2xl bg-slate-900/60"
                   />
@@ -162,7 +163,7 @@ export function ShareAclDrawer({ context, onClose, onShare }: ShareAclDrawerProp
                 onClick={handleGenerateLink}
                 disabled={loadingLink}
               >
-                {loadingLink ? <Loader2 className="h-4 w-4 animate-spin" /> : "Generate"}
+                {loadingLink ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Generate'}
               </Button>
             </div>
             {link ? (
