@@ -78,7 +78,7 @@ export interface VaultDocument {
 interface UploadOptions {
   extracted?: ScanResult["extracted"];
   suggestions?: AutoTagSuggestion;
-  links?: VaultDocument["links"];
+  links?: ScanResult["links"];
   source?: VaultDocument["source"];
 }
 
@@ -97,7 +97,7 @@ export function useVault() {
     skip: !user?.uid,
   });
 
-  const docs = useMemo(() => data.map((doc) => enrichDoc(doc)), [data]);
+  const docs = useMemo(() => (Array.isArray(data) ? data.map((doc) => enrichDoc(doc)) : []), [data]);
 
   const filteredDocs = useMemo(() => {
     const q = search.trim().toLowerCase();

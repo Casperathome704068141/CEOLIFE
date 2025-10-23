@@ -468,7 +468,8 @@ function VaultDocumentsPage() {
             'owner',
             '==',
             user?.uid
-        ]
+        ],
+        skip: !user?.uid
     });
     const formatDate = (date)=>{
         if (!date) return '';
@@ -491,28 +492,28 @@ function VaultDocumentsPage() {
                             children: "Upload document"
                         }, void 0, false, {
                             fileName: "[project]/src/app/vault/documents/page.tsx",
-                            lineNumber: 38,
+                            lineNumber: 39,
                             columnNumber: 13
                         }, void 0),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$page$2d$header$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PageSecondaryAction"], {
                             children: "Scan & auto tag"
                         }, void 0, false, {
                             fileName: "[project]/src/app/vault/documents/page.tsx",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 13
                         }, void 0)
                     ]
                 }, void 0, true)
             }, void 0, false, {
                 fileName: "[project]/src/app/vault/documents/page.tsx",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$vault$2d$dropzone$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["VaultDropzone"], {
                 onFiles: ()=>router.push('/vault/documents?intent=upload')
             }, void 0, false, {
                 fileName: "[project]/src/app/vault/documents/page.tsx",
-                lineNumber: 44,
+                lineNumber: 45,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -521,7 +522,7 @@ function VaultDocumentsPage() {
                     children: "Loading documents..."
                 }, void 0, false, {
                     fileName: "[project]/src/app/vault/documents/page.tsx",
-                    lineNumber: 48,
+                    lineNumber: 49,
                     columnNumber: 11
                 }, this) : documents?.map((doc)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$shared$2f$doc$2d$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["DocCard"], {
                         name: doc.filename,
@@ -531,12 +532,12 @@ function VaultDocumentsPage() {
                         tags: doc.tags
                     }, doc.id, false, {
                         fileName: "[project]/src/app/vault/documents/page.tsx",
-                        lineNumber: 51,
+                        lineNumber: 52,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/vault/documents/page.tsx",
-                lineNumber: 46,
+                lineNumber: 47,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -548,18 +549,18 @@ function VaultDocumentsPage() {
                     children: "Manage sharing"
                 }, void 0, false, {
                     fileName: "[project]/src/app/vault/documents/page.tsx",
-                    lineNumber: 56,
+                    lineNumber: 57,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/vault/documents/page.tsx",
-                lineNumber: 55,
+                lineNumber: 56,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/vault/documents/page.tsx",
-        lineNumber: 32,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }

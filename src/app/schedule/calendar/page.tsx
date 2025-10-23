@@ -424,7 +424,7 @@ export default function CalendarPage() {
     });
   };
 
-  const handleContextMenu = (evt: TimelineEvent, e: MouseEvent<HTMLButtonElement>) => {
+  const handleContextMenu = (evt: TimelineEvent, e: MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     setActiveContextMenu({
       x: e.clientX,
@@ -954,7 +954,7 @@ function Timeline({
   hoveredEventId: string | null;
   onQuickAction: (event: TimelineEvent, action: "snooze" | "done" | "nudge") => void;
   onOpenEvent: (event: TimelineEvent) => void;
-  onContextMenu: (event: TimelineEvent, e: MouseEvent<HTMLButtonElement>) => void;
+  onContextMenu: (event: TimelineEvent, e: MouseEvent<HTMLDivElement>) => void;
   onLinkOpen: (link: LinkedEntity) => void;
   onConnect: () => void;
   onSmartAdd: () => void;
@@ -1031,9 +1031,9 @@ function Timeline({
                     className="absolute left-3 right-3"
                     style={{ top: `${top}%`, height: `${height}%` }}
                   >
-                    <button
+                    <div
                       className={cn(
-                        "group flex h-full w-full flex-col justify-between rounded-2xl border px-3 py-2 text-left shadow-lg transition",
+                        "group flex h-full w-full cursor-pointer flex-col justify-between rounded-2xl border px-3 py-2 text-left shadow-lg transition",
                         CATEGORY_STYLES[event.category].chip,
                         hoveredEventId === event.id && "ring-2 ring-white/40"
                       )}
@@ -1041,7 +1041,6 @@ function Timeline({
                       onMouseLeave={() => onHoverChange(null)}
                       onFocus={() => onHoverChange(event.id)}
                       onBlur={() => onHoverChange(null)}
-                      onClick={() => onOpenEvent(event)}
                       onContextMenu={(e) => onContextMenu(event, e)}
                       draggable
                       onDragEnd={() => onRescheduled(event.title)}
@@ -1054,7 +1053,12 @@ function Timeline({
                         </span>
                       </div>
                       <div>
-                        <p className="text-sm font-semibold leading-tight text-white">{event.title}</p>
+                        <button
+                          className="text-left text-sm font-semibold leading-tight text-white"
+                          onClick={() => onOpenEvent(event)}
+                        >
+                          {event.title}
+                        </button>
                         {event.location ? (
                           <p className="mt-1 flex items-center gap-1 text-[11px] text-slate-100/80">
                             <MapPin className="h-3 w-3" /> {event.location}
@@ -1098,7 +1102,7 @@ function Timeline({
                           Nudge
                         </Button>
                       </div>
-                    </button>
+                    </div>
                     {hoveredEventId === event.id ? (
                       <div className="mt-2 w-full rounded-2xl border border-slate-800/70 bg-slate-950/90 p-3 text-xs text-slate-200 shadow-xl">
                         <div className="flex items-center justify-between gap-2 text-[11px] text-slate-400">
