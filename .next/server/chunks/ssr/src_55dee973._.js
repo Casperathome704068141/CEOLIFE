@@ -3776,11 +3776,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/card.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/badge.tsx [app-ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '@/components/ui/use-toast'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/use-toast.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/household/useHousehold.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$care$2f$MedicationCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/care/MedicationCard.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$care$2f$MedicationEditor$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/care/MedicationEditor.tsx [app-ssr] (ecmascript)");
@@ -3805,7 +3801,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$househo
 ;
 function CareProfiles() {
     const { careProfiles, medications, doses, appointments, members, careKpis, logDose, snoozeDose, skipDose, refillMedication, upsertMedication, addAppointment } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useHousehold"])();
-    const { toast } = useToast();
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useToast"])();
     const [editing, setEditing] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [refillMed, setRefillMed] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [nudgeTarget, setNudgeTarget] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -5095,11 +5091,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$b
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/table.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/badge.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/dialog.tsx [app-ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '@/components/ui/use-toast'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/use-toast.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/household/useHousehold.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$assets$2f$AssetEditor$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/assets/AssetEditor.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$assets$2f$WarrantyDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/assets/WarrantyDialog.tsx [app-ssr] (ecmascript)");
@@ -5121,7 +5113,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$househo
 ;
 function AssetsTable() {
     const { assets, members, addAsset, setAssetWarranty, scheduleAssetMaintenance, markAssetServiced } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useHousehold"])();
-    const { toast } = useToast();
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useToast"])();
     const [editorOpen, setEditorOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [editingAsset, setEditingAsset] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [detailsAsset, setDetailsAsset] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
@@ -6310,11 +6302,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/card.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/dialog.tsx [app-ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '@/components/ui/use-toast'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/use-toast.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/household/useHousehold.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$apartment$2f$TicketEditor$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/apartment/TicketEditor.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$apartment$2f$MetersCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/apartment/MetersCard.tsx [app-ssr] (ecmascript)");
@@ -6339,7 +6327,7 @@ const ticketStatuses = [
 ];
 function ApartmentOverview() {
     const { tickets, meterReadings, shoppingLists, addMeterReading, upsertTicket, mutateTicketStatus, addShoppingItem, members, setActiveTab } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useHousehold"])();
-    const { toast } = useToast();
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useToast"])();
     const [ticketDialogOpen, setTicketDialogOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [explainMeter, setExplainMeter] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [nudgeMember, setNudgeMember] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(members[0] ?? null);
@@ -7027,15 +7015,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$c
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/input.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/badge.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$checkbox$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/checkbox.tsx [app-ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '@/components/ui/use-toast'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/use-toast.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/household/useHousehold.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$shopping$2f$PriceTargetDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/shopping/PriceTargetDialog.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$NudgeDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/NudgeDialog.tsx [app-ssr] (ecmascript)");
-"use client";
+'use client';
 ;
 ;
 ;
@@ -7049,25 +7033,25 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$househo
 ;
 function ShoppingList() {
     const { shoppingLists, addShoppingItem, toggleShoppingItem, setShoppingPriceTarget, sendShoppingList, members } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useHousehold"])();
-    const { toast } = useToast();
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useToast"])();
     const list = shoppingLists[0];
     const [form, setForm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        label: "",
-        qty: "",
-        priority: "med",
+        label: '',
+        qty: '',
+        priority: 'med',
         recurring: false
     });
     const [priceDialogItem, setPriceDialogItem] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const [nudgeMember, setNudgeMember] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(members[0] ?? null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const handleAdd = ()=>{
-            const input = document.getElementById("shopping-add-input");
+            const input = document.getElementById('shopping-add-input');
             if (input instanceof HTMLInputElement) {
                 input.focus();
             }
         };
-        window.addEventListener("household:add-shopping", handleAdd);
-        return ()=>window.removeEventListener("household:add-shopping", handleAdd);
+        window.addEventListener('household:add-shopping', handleAdd);
+        return ()=>window.removeEventListener('household:add-shopping', handleAdd);
     }, []);
     const items = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>list?.items ?? [], [
         list
@@ -7112,7 +7096,7 @@ function ShoppingList() {
                 className: "rounded-3xl border border-slate-900/60 bg-slate-950/80",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
-                        className: "flex items-center justify-between",
+                        className: "flex flex-wrap items-center justify-between gap-3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 children: [
@@ -7145,14 +7129,14 @@ function ShoppingList() {
                                         variant: "outline",
                                         className: "rounded-2xl border-cyan-600/40 text-cyan-200",
                                         onClick: async ()=>{
-                                            if (!members[0]) return;
+                                            if (!members[0]?.phone) return;
                                             await sendShoppingList({
                                                 listId: list.id,
-                                                channel: "whatsapp",
-                                                to: members[0].phone ?? ""
+                                                channel: 'whatsapp',
+                                                to: members[0].phone
                                             });
                                             toast({
-                                                title: "List sent",
+                                                title: 'List sent',
                                                 description: `Shared with ${members[0].name}`
                                             });
                                         },
@@ -7191,6 +7175,7 @@ function ShoppingList() {
                                 className: "grid gap-3 md:grid-cols-4",
                                 onSubmit: async (event)=>{
                                     event.preventDefault();
+                                    if (!form.label) return;
                                     await addShoppingItem({
                                         listId: list.id,
                                         label: form.label,
@@ -7199,9 +7184,9 @@ function ShoppingList() {
                                         recurring: form.recurring
                                     });
                                     setForm({
-                                        label: "",
-                                        qty: "",
-                                        priority: "med",
+                                        label: '',
+                                        qty: '',
+                                        priority: 'med',
                                         recurring: false
                                     });
                                 },
@@ -7217,7 +7202,7 @@ function ShoppingList() {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 96,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -7229,7 +7214,7 @@ function ShoppingList() {
                                                 }))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                        lineNumber: 102,
+                                        lineNumber: 103,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Input"], {
@@ -7241,7 +7226,7 @@ function ShoppingList() {
                                                 }))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 104,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -7250,7 +7235,7 @@ function ShoppingList() {
                                         children: "Add item"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 105,
                                         columnNumber: 13
                                     }, this)
                                 ]
@@ -7278,7 +7263,7 @@ function ShoppingList() {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                                        lineNumber: 112,
+                                                        lineNumber: 113,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7288,33 +7273,33 @@ function ShoppingList() {
                                                                 children: item.label
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                                                lineNumber: 119,
+                                                                lineNumber: 120,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "text-xs text-slate-500",
                                                                 children: [
-                                                                    item.qty ? `${item.qty} • ` : "",
+                                                                    item.qty ? `${item.qty} • ` : '',
                                                                     "Priority ",
                                                                     item.priority,
-                                                                    item.recurring ? " • Recurring" : "",
-                                                                    item.priceTarget ? ` • Target $${item.priceTarget}` : ""
+                                                                    item.recurring ? ' • Recurring' : '',
+                                                                    item.priceTarget ? ` • Target $${item.priceTarget}` : ''
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                                                lineNumber: 120,
+                                                                lineNumber: 121,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                                        lineNumber: 118,
+                                                        lineNumber: 119,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                                lineNumber: 111,
+                                                lineNumber: 112,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -7326,7 +7311,7 @@ function ShoppingList() {
                                                         children: "Recurring"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                                        lineNumber: 128,
+                                                        lineNumber: 129,
                                                         columnNumber: 37
                                                     }, this) : null,
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -7337,24 +7322,24 @@ function ShoppingList() {
                                                         children: "Price target"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                                        lineNumber: 129,
+                                                        lineNumber: 130,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                                lineNumber: 127,
+                                                lineNumber: 128,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, item.id, true, {
                                         fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 111,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                                lineNumber: 108,
+                                lineNumber: 109,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -7370,7 +7355,7 @@ function ShoppingList() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$shopping$2f$PriceTargetDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PriceTargetDialog"], {
-                itemLabel: priceDialogItem?.label ?? "",
+                itemLabel: priceDialogItem?.label ?? '',
                 open: !!priceDialogItem,
                 onOpenChange: (value)=>!value && setPriceDialogItem(null),
                 onSave: async (price)=>{
@@ -7381,13 +7366,13 @@ function ShoppingList() {
                         priceTarget: price
                     });
                     toast({
-                        title: "Price target updated",
-                        description: price ? `$${price.toFixed(2)}` : "Cleared"
+                        title: 'Price target updated',
+                        description: price ? `$${price.toFixed(2)}` : 'Cleared'
                     });
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                lineNumber: 138,
+                lineNumber: 139,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$NudgeDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["NudgeDialog"], {
@@ -7396,7 +7381,7 @@ function ShoppingList() {
                 onOpenChange: (value)=>!value && setNudgeMember(null)
             }, void 0, false, {
                 fileName: "[project]/src/components/household/shopping/ShoppingList.tsx",
-                lineNumber: 148,
+                lineNumber: 149,
                 columnNumber: 7
             }, this)
         ]
@@ -7744,16 +7729,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/card.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/table.tsx [app-ssr] (ecmascript)");
-(()=>{
-    const e = new Error("Cannot find module '@/components/ui/use-toast'");
-    e.code = 'MODULE_NOT_FOUND';
-    throw e;
-})();
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/use-toast.ts [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/household/useHousehold.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$split$2f$RecordPaymentDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/split/RecordPaymentDialog.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$split$2f$SettleNowDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/split/SettleNowDialog.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$NudgeDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/household/NudgeDialog.tsx [app-ssr] (ecmascript)");
-"use client";
+'use client';
 ;
 ;
 ;
@@ -7767,14 +7748,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$househo
 ;
 function SharedLedger() {
     const { ledger, settlements, recordPayment, settleNow, exportLedger, members } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$household$2f$useHousehold$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useHousehold"])();
-    const { toast } = useToast();
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useToast"])();
     const [recordOpen, setRecordOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [settleOpen, setSettleOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [nudgeMember, setNudgeMember] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(members[0] ?? null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         const handleAddPayment = ()=>setRecordOpen(true);
-        window.addEventListener("household:add-ledger", handleAddPayment);
-        return ()=>window.removeEventListener("household:add-ledger", handleAddPayment);
+        window.addEventListener('household:add-ledger', handleAddPayment);
+        return ()=>window.removeEventListener('household:add-ledger', handleAddPayment);
     }, []);
     const sortedLedger = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>[
             ...ledger
@@ -7840,12 +7821,12 @@ function SharedLedger() {
                                 className: "rounded-2xl text-xs uppercase tracking-widest text-slate-500",
                                 onClick: async ()=>{
                                     const csv = await exportLedger();
-                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
+                                    if (typeof navigator !== 'undefined' && navigator.clipboard) {
                                         await navigator.clipboard.writeText(csv);
                                     }
                                     toast({
-                                        title: "Export copied",
-                                        description: "CSV for current month"
+                                        title: 'Export copied',
+                                        description: 'CSV for current month'
                                     });
                                 },
                                 children: "Export"
@@ -7929,7 +7910,7 @@ function SharedLedger() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TableCell"], {
                                                     className: "text-slate-300",
-                                                    children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(entry.date), "MMM d")
+                                                    children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(new Date(entry.date), 'MMM d')
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/household/split/SharedLedger.tsx",
                                                     lineNumber: 83,
@@ -7944,9 +7925,9 @@ function SharedLedger() {
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TableCell"], {
-                                                    className: entry.amount >= 0 ? "text-emerald-400" : "text-rose-400",
+                                                    className: entry.amount >= 0 ? 'text-emerald-400' : 'text-rose-400',
                                                     children: [
-                                                        entry.amount >= 0 ? "+" : "",
+                                                        entry.amount >= 0 ? '+' : '',
                                                         "$",
                                                         Math.abs(entry.amount).toFixed(2)
                                                     ]
@@ -7965,7 +7946,7 @@ function SharedLedger() {
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TableCell"], {
                                                     className: "text-slate-500",
-                                                    children: entry.note ?? "—"
+                                                    children: entry.note ?? '—'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/household/split/SharedLedger.tsx",
                                                     lineNumber: 89,
@@ -8031,51 +8012,67 @@ function SharedLedger() {
                 lineNumber: 68,
                 columnNumber: 7
             }, this),
-            recordOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$split$2f$RecordPaymentDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RecordPaymentDialog"], {
-                onSubmit: async ({ payer, amount, method, reference })=>{
-                    await recordPayment({
-                        payer,
-                        amount,
-                        method,
-                        reference,
-                        currency: "USD"
-                    });
-                    toast({
-                        title: "Payment recorded",
-                        description: `${payer} ${amount}`
-                    });
-                    setNudgeMember(members[0] ?? null);
-                },
-                onClose: ()=>setRecordOpen(false)
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Dialog, {
+                open: recordOpen,
+                onOpenChange: setRecordOpen,
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$split$2f$RecordPaymentDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RecordPaymentDialog"], {
+                    onSubmit: async ({ payer, amount, method, reference })=>{
+                        await recordPayment({
+                            payer,
+                            amount,
+                            method,
+                            reference,
+                            currency: 'USD'
+                        });
+                        toast({
+                            title: 'Payment recorded',
+                            description: `${payer} ${amount}`
+                        });
+                        setNudgeMember(members[0] ?? null);
+                    },
+                    onClose: ()=>setRecordOpen(false)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/household/split/SharedLedger.tsx",
+                    lineNumber: 106,
+                    columnNumber: 9
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/household/split/SharedLedger.tsx",
-                lineNumber: 106,
-                columnNumber: 9
-            }, this) : null,
-            settleOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$split$2f$SettleNowDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SettleNowDialog"], {
-                onSubmit: async (payload)=>{
-                    await settleNow({
-                        settlements: payload.settlements,
-                        currency: "USD"
-                    });
-                    toast({
-                        title: "Settled",
-                        description: "Balances updated"
-                    });
-                },
-                onClose: ()=>setSettleOpen(false)
+                lineNumber: 105,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Dialog, {
+                open: settleOpen,
+                onOpenChange: setSettleOpen,
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$split$2f$SettleNowDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["SettleNowDialog"], {
+                    onSubmit: async (payload)=>{
+                        await settleNow({
+                            settlements: payload.settlements,
+                            currency: 'USD'
+                        });
+                        toast({
+                            title: 'Settled',
+                            description: 'Balances updated'
+                        });
+                    },
+                    onClose: ()=>setSettleOpen(false)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/household/split/SharedLedger.tsx",
+                    lineNumber: 117,
+                    columnNumber: 9
+                }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/household/split/SharedLedger.tsx",
                 lineNumber: 116,
-                columnNumber: 9
-            }, this) : null,
+                columnNumber: 7
+            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$household$2f$NudgeDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["NudgeDialog"], {
                 member: nudgeMember,
                 open: !!nudgeMember,
                 onOpenChange: (value)=>!value && setNudgeMember(null)
             }, void 0, false, {
                 fileName: "[project]/src/components/household/split/SharedLedger.tsx",
-                lineNumber: 125,
+                lineNumber: 126,
                 columnNumber: 7
             }, this)
         ]

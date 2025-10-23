@@ -1,3 +1,5 @@
+'use client';
+
 import { MembersGrid } from "@/components/household/MembersGrid";
 import { CareProfiles } from "@/components/household/care/CareProfiles";
 import { AssetsTable } from "@/components/household/assets/AssetsTable";
