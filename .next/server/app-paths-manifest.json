@@ -3,9 +3,11 @@
   "/api/goals/funding-accounts/route": "app/api/goals/funding-accounts/route.js",
   "/api/goals/route": "app/api/goals/route.js",
   "/api/goals/suggestions/route": "app/api/goals/suggestions/route.js",
+  "/api/simulations/apply/route": "app/api/simulations/apply/route.js",
   "/api/simulations/presets/route": "app/api/simulations/presets/route.js",
   "/assistant/page": "app/assistant/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/finance/overview/page": "app/finance/overview/page.js",
   "/goals/page": "app/goals/page.js",
   "/simulations/scenarios/page": "app/simulations/scenarios/page.js"
 }

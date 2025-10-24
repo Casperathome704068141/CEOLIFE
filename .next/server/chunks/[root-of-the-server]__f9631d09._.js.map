@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["file:///home/user/studio/src/app/api/simulations/apply/route.ts"],"sourcesContent":["import { NextRequest, NextResponse } from \"next/server\";\nimport { PlanChangeSummary } from \"@/lib/sim/types\";\n\nexport async function POST(request: NextRequest) {\n  const body = (await request.json()) as PlanChangeSummary;\n  // In a real implementation we would persist to Firestore or call backend services.\n  // For now we simply echo the payload to confirm the request was received.\n  return NextResponse.json({ ok: true, applied: body });\n}\n"],"names":[],"mappings":";;;AAAA;;AAGO,eAAe,KAAK,OAAoB;IAC7C,MAAM,OAAQ,MAAM,QAAQ,IAAI;IAChC,mFAAmF;IACnF,0EAA0E;IAC1E,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QAAE,IAAI;QAAM,SAAS;IAAK;AACrD","debugId":null}}]
+}
