@@ -2626,7 +2626,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__XCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-x.js [app-client] (ecmascript) <export default as XCircle>");
 ;
 var _s = __turbopack_context__.k.signature();
-"use client";
+'use client';
 ;
 ;
 ;
@@ -2640,13 +2640,14 @@ var _s = __turbopack_context__.k.signature();
 ;
 function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, onOpenRoute }) {
     _s();
-    const [notes, setNotes] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    const [tagDraft, setTagDraft] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [notes, setNotes] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const [tagDraft, setTagDraft] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"])();
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "DocViewerModal.useEffect": ()=>{
             if (doc) {
-                setNotes(doc.extracted?.text ?? "");
-                setTagDraft("");
+                setNotes(doc.extracted?.text ?? '');
+                setTagDraft('');
             }
         }
     }["DocViewerModal.useEffect"], [
@@ -2663,22 +2664,22 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
     if (!doc) return null;
     const handleCopy = async ()=>{
         try {
-            await navigator.clipboard.writeText(doc.extracted?.text ?? "");
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                title: "Copied",
-                description: "OCR text copied to clipboard."
+            await navigator.clipboard.writeText(doc.extracted?.text ?? '');
+            toast({
+                title: 'Copied',
+                description: 'OCR text copied to clipboard.'
             });
         } catch  {
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                title: "Copy failed",
-                description: "Unable to copy text."
+            toast({
+                title: 'Copy failed',
+                description: 'Unable to copy text.'
             });
         }
     };
     const handleDownload = (mode)=>{
-        (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-            title: mode === "decrypted" ? "Preparing decrypted copy" : "Downloading encrypted file",
-            description: "A secure download will start shortly."
+        toast({
+            title: mode === 'decrypted' ? 'Preparing decrypted copy' : 'Downloading encrypted file',
+            description: 'A secure download will start shortly.'
         });
     };
     const handleAddTag = ()=>{
@@ -2690,7 +2691,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
         onUpdate(doc.id, {
             tags: updated
         });
-        setTagDraft("");
+        setTagDraft('');
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
         open: Boolean(doc),
@@ -2706,20 +2707,20 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                             children: doc.filename
                         }, void 0, false, {
                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                            lineNumber: 77,
+                            lineNumber: 78,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                             children: "Securely decrypted on the client. Close to wipe from memory."
                         }, void 0, false, {
                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                            lineNumber: 78,
+                            lineNumber: 79,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                    lineNumber: 76,
+                    lineNumber: 77,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2740,58 +2741,58 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                    lineNumber: 84,
+                                                    lineNumber: 85,
                                                     columnNumber: 17
                                                 }, this),
                                                 " Copy text"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 84,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                             variant: "secondary",
                                             className: "rounded-2xl",
-                                            onClick: ()=>handleDownload("encrypted"),
+                                            onClick: ()=>handleDownload('encrypted'),
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$download$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Download$3e$__["Download"], {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                    lineNumber: 87,
+                                                    lineNumber: 88,
                                                     columnNumber: 17
                                                 }, this),
                                                 " Download"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 87,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                             variant: "secondary",
                                             className: "rounded-2xl",
-                                            onClick: ()=>handleDownload("decrypted"),
+                                            onClick: ()=>handleDownload('decrypted'),
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$printer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Printer$3e$__["Printer"], {
                                                     className: "mr-2 h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                    lineNumber: 90,
+                                                    lineNumber: 91,
                                                     columnNumber: 17
                                                 }, this),
                                                 " Print (secure)"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                            lineNumber: 89,
+                                            lineNumber: 90,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 83,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tabs"], {
@@ -2806,7 +2807,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                     children: "Document"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                    lineNumber: 95,
+                                                    lineNumber: 96,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsTrigger"], {
@@ -2814,13 +2815,13 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                     children: "OCR text"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                    lineNumber: 96,
+                                                    lineNumber: 97,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                            lineNumber: 94,
+                                            lineNumber: 95,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -2833,17 +2834,17 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                     children: "Encrypted file preview placeholder."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                    lineNumber: 100,
+                                                    lineNumber: 101,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 100,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 99,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$tabs$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TabsContent"], {
@@ -2863,24 +2864,24 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                 className: "h-[420px] rounded-2xl bg-slate-900/40"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 105,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                            lineNumber: 103,
+                                            lineNumber: 104,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 94,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                            lineNumber: 81,
+                            lineNumber: 82,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollArea"], {
@@ -2895,7 +2896,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                 children: "Details"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 121,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2906,7 +2907,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 122,
                                                 columnNumber: 17
                                             }, this),
                                             doc.expireDate ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2916,7 +2917,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                         className: "h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 124,
+                                                        lineNumber: 125,
                                                         columnNumber: 21
                                                     }, this),
                                                     " Expires ",
@@ -2924,7 +2925,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 124,
                                                 columnNumber: 19
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
                                                 variant: "ghost",
@@ -2935,27 +2936,27 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                         className: "mr-2 h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 128,
+                                                        lineNumber: 129,
                                                         columnNumber: 21
                                                     }, this),
                                                     " Set expiry"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 127,
+                                                lineNumber: 128,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 120,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "border-slate-800"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 133,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -2965,7 +2966,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                 children: "Tags"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 134,
+                                                lineNumber: 135,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2978,12 +2979,12 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                         ]
                                                     }, tag, true, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 137,
+                                                        lineNumber: 138,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 136,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2996,7 +2997,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                         className: "h-9 rounded-xl bg-slate-900/60"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 143,
+                                                        lineNumber: 144,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3008,33 +3009,33 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                                 className: "mr-1 h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                                lineNumber: 150,
+                                                                lineNumber: 151,
                                                                 columnNumber: 21
                                                             }, this),
                                                             " Add"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 149,
+                                                        lineNumber: 150,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 142,
+                                                lineNumber: 143,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 133,
+                                        lineNumber: 134,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "border-slate-800"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 155,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3044,7 +3045,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                 children: "Extracted fields"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 156,
+                                                lineNumber: 157,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3054,21 +3055,21 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                     children: "No structured fields captured yet."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                    lineNumber: 159,
+                                                    lineNumber: 160,
                                                     columnNumber: 21
                                                 }, this) : fieldEntries.map(([key, value])=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "rounded-2xl bg-slate-900/40 p-3 text-xs text-slate-200",
+                                                        className: "rounded-xl bg-slate-900/40 p-3 text-xs text-slate-200",
                                                         children: [
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                 className: "font-semibold uppercase tracking-wide text-slate-400",
                                                                 children: key
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                                lineNumber: 163,
+                                                                lineNumber: 164,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
-                                                                value: String(value ?? ""),
+                                                                value: String(value ?? ''),
                                                                 className: "mt-1 h-9 rounded-xl bg-slate-950/60 text-sm",
                                                                 onChange: (event)=>onUpdate(doc.id, {
                                                                         extracted: {
@@ -3081,31 +3082,31 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                                     })
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                                lineNumber: 164,
+                                                                lineNumber: 165,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, key, true, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 163,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 157,
+                                                lineNumber: 158,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 156,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "border-slate-800"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 184,
+                                        lineNumber: 185,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3116,7 +3117,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                 children: "Linked entities"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 186,
+                                                lineNumber: 187,
                                                 columnNumber: 17
                                             }, this),
                                             doc.links ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3131,14 +3132,14 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                                 className: "mr-2 h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                                lineNumber: 195,
+                                                                lineNumber: 196,
                                                                 columnNumber: 25
                                                             }, this),
                                                             " Open in Finance"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 190,
+                                                        lineNumber: 191,
                                                         columnNumber: 23
                                                     }, this) : null,
                                                     doc.links.eventId ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3150,14 +3151,14 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                                 className: "mr-2 h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                                lineNumber: 204,
+                                                                lineNumber: 205,
                                                                 columnNumber: 25
                                                             }, this),
                                                             " Open in Schedule"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 199,
+                                                        lineNumber: 200,
                                                         columnNumber: 23
                                                     }, this) : null,
                                                     doc.links.medId ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3169,27 +3170,27 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                                 className: "mr-2 h-4 w-4"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                                lineNumber: 213,
+                                                                lineNumber: 214,
                                                                 columnNumber: 25
                                                             }, this),
                                                             " Open in Care"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 208,
+                                                        lineNumber: 209,
                                                         columnNumber: 23
                                                     }, this) : null
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 188,
+                                                lineNumber: 189,
                                                 columnNumber: 19
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                 className: "text-xs text-slate-500",
                                                 children: "No links yet."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 218,
+                                                lineNumber: 219,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3201,27 +3202,27 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                         className: "mr-2 h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 221,
+                                                        lineNumber: 222,
                                                         columnNumber: 19
                                                     }, this),
                                                     " Manage links"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 220,
+                                                lineNumber: 221,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 185,
+                                        lineNumber: 186,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {
                                         className: "border-slate-800"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 224,
+                                        lineNumber: 225,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3232,7 +3233,7 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                 children: "Sharing"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 226,
+                                                lineNumber: 227,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3244,14 +3245,14 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                         className: "mr-2 h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 228,
+                                                        lineNumber: 229,
                                                         columnNumber: 19
                                                     }, this),
                                                     " Manage sharing"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 227,
+                                                lineNumber: 228,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3263,52 +3264,56 @@ function DocViewerModal({ doc, onClose, onUpdate, onLink, onShare, onSetExpiry, 
                                                         className: "mr-2 h-4 w-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                        lineNumber: 235,
+                                                        lineNumber: 236,
                                                         columnNumber: 19
                                                     }, this),
                                                     " Close & purge cache"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                                lineNumber: 230,
+                                                lineNumber: 231,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                        lineNumber: 225,
+                                        lineNumber: 226,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                                lineNumber: 118,
+                                lineNumber: 119,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                            lineNumber: 117,
+                            lineNumber: 118,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-                    lineNumber: 80,
+                    lineNumber: 81,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-            lineNumber: 75,
+            lineNumber: 76,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/vault/DocViewerModal.tsx",
-        lineNumber: 74,
+        lineNumber: 75,
         columnNumber: 5
     }, this);
 }
-_s(DocViewerModal, "CmHvWc6CbzVBD1vY3/LRv2NKggI=");
+_s(DocViewerModal, "Z1nUJSR7kk/CfdvIpIsMeXt2CVs=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"]
+    ];
+});
 _c = DocViewerModal;
 var _c;
 __turbopack_context__.k.register(_c, "DocViewerModal");
@@ -4235,7 +4240,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
 ;
 var _s = __turbopack_context__.k.signature();
-"use client";
+'use client';
 ;
 ;
 ;
@@ -4247,9 +4252,9 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 const defaultEntry = {
-    id: "",
-    role: "viewer",
-    expiresAt: ""
+    id: '',
+    role: 'viewer',
+    expiresAt: ''
 };
 function ShareAclDrawer({ context, onClose, onShare }) {
     _s();
@@ -4258,6 +4263,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
     const [link, setLink] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [loadingLink, setLoadingLink] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [accessWindow, setAccessWindow] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"])();
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ShareAclDrawer.useEffect": ()=>{
             if (!context) {
@@ -4281,7 +4287,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                 ...prev,
                 {
                     ...defaultEntry,
-                    id: ""
+                    id: ''
                 }
             ]);
     };
@@ -4296,21 +4302,21 @@ function ShareAclDrawer({ context, onClose, onShare }) {
     const handleGenerateLink = async ()=>{
         try {
             setLoadingLink(true);
-            const response = await fetch("/api/vault/sign", {
-                method: "POST"
+            const response = await fetch('/api/vault/sign', {
+                method: 'POST'
             });
-            if (!response.ok) throw new Error("Failed to sign");
+            if (!response.ok) throw new Error('Failed to sign');
             const data = await response.json();
             setLink(data.url);
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                title: "Secure link ready",
+            toast({
+                title: 'Secure link ready',
                 description: `Expires ${data.expiresAt}`
             });
         } catch (error) {
             console.error(error);
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                title: "Link error",
-                description: "Could not generate a secure link."
+            toast({
+                title: 'Link error',
+                description: 'Could not generate a secure link.'
             });
         } finally{
             setLoadingLink(false);
@@ -4329,7 +4335,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                             children: "Manage sharing"
                         }, void 0, false, {
                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                            lineNumber: 86,
+                            lineNumber: 87,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetDescription"], {
@@ -4340,13 +4346,13 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                            lineNumber: 87,
+                            lineNumber: 88,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                    lineNumber: 85,
+                    lineNumber: 86,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4363,7 +4369,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                 children: "Person"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                lineNumber: 95,
+                                                lineNumber: 96,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -4372,13 +4378,13 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                 children: entry.role
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                lineNumber: 96,
+                                                lineNumber: 97,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 95,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
@@ -4391,7 +4397,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                         className: "h-10 rounded-2xl bg-slate-900/60"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                        lineNumber: 100,
+                                        lineNumber: 101,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Select"], {
@@ -4407,12 +4413,12 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                     placeholder: "Viewer"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 118,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                lineNumber: 116,
+                                                lineNumber: 117,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectContent"], {
@@ -4423,7 +4429,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                         children: "Viewer"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                        lineNumber: 120,
+                                                        lineNumber: 121,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -4431,7 +4437,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                         children: "Editor"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                        lineNumber: 121,
+                                                        lineNumber: 122,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$select$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SelectItem"], {
@@ -4439,27 +4445,27 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                         children: "Emergency access"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 123,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 120,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 111,
                                         columnNumber: 15
                                     }, this),
-                                    entry.role === "emergency" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    entry.role === 'emergency' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "grid grid-cols-2 gap-2",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
                                                 type: "datetime-local",
-                                                value: accessWindow.start ?? "",
+                                                value: accessWindow.start ?? '',
                                                 onChange: (event)=>setAccessWindow((prev)=>({
                                                             ...prev,
                                                             start: event.target.value
@@ -4467,12 +4473,12 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                 className: "h-10 rounded-2xl bg-slate-900/60"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                lineNumber: 127,
+                                                lineNumber: 128,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Input"], {
                                                 type: "datetime-local",
-                                                value: accessWindow.end ?? "",
+                                                value: accessWindow.end ?? '',
                                                 onChange: (event)=>setAccessWindow((prev)=>({
                                                             ...prev,
                                                             end: event.target.value
@@ -4480,19 +4486,19 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                 className: "h-10 rounded-2xl bg-slate-900/60"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                lineNumber: 133,
+                                                lineNumber: 134,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                        lineNumber: 126,
+                                        lineNumber: 127,
                                         columnNumber: 17
                                     }, this) : null
                                 ]
                             }, index, true, {
                                 fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                lineNumber: 93,
+                                lineNumber: 94,
                                 columnNumber: 13
                             }, this)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4502,7 +4508,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                             children: "Add person"
                         }, void 0, false, {
                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                            lineNumber: 143,
+                            lineNumber: 144,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4515,7 +4521,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                             children: "Mask sensitive fields"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 149,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4523,13 +4529,13 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                             children: "Hide account numbers and IDs when sharing."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                            lineNumber: 149,
+                                            lineNumber: 150,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 148,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -4537,13 +4543,13 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                     onCheckedChange: setMaskSensitive
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                    lineNumber: 151,
+                                    lineNumber: 152,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                            lineNumber: 146,
+                            lineNumber: 147,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4559,7 +4565,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                     children: "Secure view link"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                    lineNumber: 156,
+                                                    lineNumber: 157,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4567,13 +4573,13 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                     children: "Generate a time-boxed read-only link."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                    lineNumber: 157,
+                                                    lineNumber: 158,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                            lineNumber: 155,
+                                            lineNumber: 156,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4585,18 +4591,18 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                                 className: "h-4 w-4 animate-spin"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                                lineNumber: 165,
+                                                lineNumber: 166,
                                                 columnNumber: 32
-                                            }, this) : "Generate"
+                                            }, this) : 'Generate'
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                            lineNumber: 159,
+                                            lineNumber: 160,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                    lineNumber: 154,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, this),
                                 link ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4604,19 +4610,19 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                                     children: link
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                                    lineNumber: 169,
+                                    lineNumber: 170,
                                     columnNumber: 15
                                 }, this) : null
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                            lineNumber: 153,
+                            lineNumber: 154,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                    lineNumber: 91,
+                    lineNumber: 92,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetFooter"], {
@@ -4629,7 +4635,7 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                             children: "Cancel"
                         }, void 0, false, {
                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                            lineNumber: 174,
+                            lineNumber: 175,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4638,28 +4644,32 @@ function ShareAclDrawer({ context, onClose, onShare }) {
                             children: "Save changes"
                         }, void 0, false, {
                             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                            lineNumber: 177,
+                            lineNumber: 178,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-                    lineNumber: 173,
+                    lineNumber: 174,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-            lineNumber: 84,
+            lineNumber: 85,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/vault/ShareAclDrawer.tsx",
-        lineNumber: 83,
+        lineNumber: 84,
         columnNumber: 5
     }, this);
 }
-_s(ShareAclDrawer, "gVxwcBKQUmztRdmsxHOPt6tUjWU=");
+_s(ShareAclDrawer, "czi0IFmg5SDD04JslSl8EtXmfJw=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"]
+    ];
+});
 _c = ShareAclDrawer;
 var _c;
 __turbopack_context__.k.register(_c, "ShareAclDrawer");
@@ -5167,7 +5177,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$vault$2f$crypto$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/vault/crypto.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/hooks/use-toast.ts [app-client] (ecmascript)");
 var _s = __turbopack_context__.k.signature();
-"use client";
+'use client';
 ;
 ;
 ;
@@ -5175,19 +5185,20 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const STORAGE_ROOT = "vault";
-const KEY_STORAGE_KEY = "ceolife-vault-key";
+const STORAGE_ROOT = 'vault';
+const KEY_STORAGE_KEY = 'ceolife-vault-key';
 function useVault() {
     _s();
     const { user } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$auth$2f$use$2d$user$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"])();
     const firestore = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useFirestore"])();
     const app = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useFirebaseApp"])();
     const [filters, setFilters] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({});
-    const [search, setSearch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    const { data = [], loading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$firestore$2f$use$2d$collection$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCollection"])("documents", {
+    const [search, setSearch] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
+    const { toast } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"])();
+    const { data = [], loading } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$firestore$2f$use$2d$collection$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCollection"])('documents', {
         query: [
-            "ownerId",
-            "==",
+            'ownerId',
+            '==',
             user?.uid
         ],
         skip: !user?.uid
@@ -5206,31 +5217,31 @@ function useVault() {
                 "useVault.useMemo[filteredDocs]": (doc)=>{
                     const matchesSearch = q ? doc.filename.toLowerCase().includes(q) || doc.tags?.some({
                         "useVault.useMemo[filteredDocs]": (tag)=>tag.toLowerCase().includes(q)
-                    }["useVault.useMemo[filteredDocs]"]) || (doc.extracted?.text ?? "").toLowerCase().includes(q) : true;
-                    const matchesTypes = filters.types?.length ? filters.types.includes((doc.type ?? "other").toLowerCase()) : true;
+                    }["useVault.useMemo[filteredDocs]"]) || (doc.extracted?.text ?? '').toLowerCase().includes(q) : true;
+                    const matchesTypes = filters.types?.length ? filters.types.includes((doc.type ?? 'other').toLowerCase()) : true;
                     const matchesTags = filters.tags?.length ? filters.tags.every({
                         "useVault.useMemo[filteredDocs]": (tag)=>doc.tags?.map({
                                 "useVault.useMemo[filteredDocs]": (t)=>t.toLowerCase()
                             }["useVault.useMemo[filteredDocs]"]).includes(tag.toLowerCase())
                     }["useVault.useMemo[filteredDocs]"]) : true;
-                    const matchesSource = filters.source?.length ? filters.source.includes(doc.source ?? "upload") : true;
+                    const matchesSource = filters.source?.length ? filters.source.includes(doc.source ?? 'upload') : true;
                     let matchesExpiry = true;
                     if (filters.expiry) {
                         const date = extractDate(doc.expireDate);
                         if (!date) {
-                            matchesExpiry = filters.expiry === "active";
+                            matchesExpiry = filters.expiry === 'active';
                         } else {
                             const now = new Date();
                             const diff = (date.getTime() - now.getTime()) / (1000 * 60 * 60 * 24);
-                            if (filters.expiry === "expired") matchesExpiry = diff < 0;
-                            if (filters.expiry === "90") matchesExpiry = diff <= 90 && diff >= 0;
-                            if (filters.expiry === "active") matchesExpiry = diff > 90 || diff >= 0;
+                            if (filters.expiry === 'expired') matchesExpiry = diff < 0;
+                            if (filters.expiry === '90') matchesExpiry = diff <= 90 && diff >= 0;
+                            if (filters.expiry === 'active') matchesExpiry = diff > 90 || diff >= 0;
                         }
                     }
                     let matchesLinked = true;
                     if (filters.linkedStatus) {
                         const hasLinks = Boolean(doc.links?.billId || doc.links?.txnId || doc.links?.eventId || doc.links?.medId);
-                        matchesLinked = filters.linkedStatus === "linked" ? hasLinks : !hasLinks;
+                        matchesLinked = filters.linkedStatus === 'linked' ? hasLinks : !hasLinks;
                     }
                     return matchesSearch && matchesTypes && matchesTags && matchesSource && matchesExpiry && matchesLinked;
                 }
@@ -5259,9 +5270,9 @@ function useVault() {
     const upload = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "useVault.useCallback[upload]": async (files, options)=>{
             if (!user?.uid || !firestore || !app) {
-                (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                    title: "Not ready",
-                    description: "Sign in to upload documents."
+                toast({
+                    title: 'Not ready',
+                    description: 'Sign in to upload documents.'
                 });
                 return;
             }
@@ -5271,9 +5282,9 @@ function useVault() {
                 const encrypted = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$vault$2f$crypto$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["encryptFile"])(file, key);
                 const storageRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ref"])(storage, `${STORAGE_ROOT}/${user.uid}/${Date.now()}-${file.name}`);
                 await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$storage$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["uploadBytes"])(storageRef, new Uint8Array(encrypted.cipher));
-                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(firestore, "documents"), {
+                await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["collection"])(firestore, 'documents'), {
                     filename: file.name,
-                    type: options?.suggestions?.type ?? "other",
+                    type: options?.suggestions?.type ?? 'other',
                     size: file.size,
                     checksum: encrypted.checksum,
                     encrypted: true,
@@ -5282,11 +5293,11 @@ function useVault() {
                     shareACL: [],
                     links: options?.links ?? {},
                     extracted: options?.extracted ?? null,
-                    ocrStatus: options?.extracted ? "done" : "queued",
+                    ocrStatus: options?.extracted ? 'done' : 'queued',
                     createdAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])(),
                     updatedAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])(),
                     ownerId: user.uid,
-                    source: options?.source ?? "upload"
+                    source: options?.source ?? 'upload'
                 });
             }
         }
@@ -5294,18 +5305,19 @@ function useVault() {
         app,
         firestore,
         getEncryptionKey,
-        user?.uid
+        user?.uid,
+        toast
     ]);
     const scanAndAutoTag = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "useVault.useCallback[scanAndAutoTag]": async (file)=>{
             const formData = new FormData();
-            formData.append("file", file);
-            const response = await fetch("/api/vault/ocr", {
-                method: "POST",
+            formData.append('file', file);
+            const response = await fetch('/api/vault/ocr', {
+                method: 'POST',
                 body: formData
             });
             if (!response.ok) {
-                throw new Error("OCR failed");
+                throw new Error('OCR failed');
             }
             const data = await response.json();
             return data;
@@ -5314,7 +5326,7 @@ function useVault() {
     const updateDocPartial = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "useVault.useCallback[updateDocPartial]": async (id, payload)=>{
             if (!firestore) return;
-            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["updateDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(firestore, "documents", id), {
+            await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["updateDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(firestore, 'documents', id), {
                 ...payload,
                 updatedAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])()
             });
@@ -5328,19 +5340,20 @@ function useVault() {
             const batch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["writeBatch"])(firestore);
             ids.forEach({
                 "useVault.useCallback[deleteDoc]": (id)=>{
-                    batch.update((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(firestore, "documents", id), {
+                    batch.update((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(firestore, 'documents', id), {
                         deletedAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])()
                     });
                 }
             }["useVault.useCallback[deleteDoc]"]);
             await batch.commit();
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                title: "Documents moved to trash",
-                description: "Undo via history within 7 days."
+            toast({
+                title: 'Documents moved to trash',
+                description: 'Undo via history within 7 days.'
             });
         }
     }["useVault.useCallback[deleteDoc]"], [
-        firestore
+        firestore,
+        toast
     ]);
     const linkEntities = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "useVault.useCallback[linkEntities]": async (id, links)=>{
@@ -5367,7 +5380,7 @@ function useVault() {
             const batch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["writeBatch"])(firestore);
             ids.forEach({
                 "useVault.useCallback[shareAcl]": (id)=>{
-                    batch.update((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(firestore, "documents", id), {
+                    batch.update((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(firestore, 'documents', id), {
                         shareACL: payload.people,
                         shareMask: payload.maskSensitive,
                         shareWindow: payload.window ?? null,
@@ -5376,13 +5389,14 @@ function useVault() {
                 }
             }["useVault.useCallback[shareAcl]"]);
             await batch.commit();
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                title: "Sharing updated",
-                description: "Recipients will receive secure notifications."
+            toast({
+                title: 'Sharing updated',
+                description: 'Recipients will receive secure notifications.'
             });
         }
     }["useVault.useCallback[shareAcl]"], [
-        firestore
+        firestore,
+        toast
     ]);
     const moveToFolder = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "useVault.useCallback[moveToFolder]": async (ids, folder)=>{
@@ -5390,20 +5404,21 @@ function useVault() {
             const batch = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["writeBatch"])(firestore);
             ids.forEach({
                 "useVault.useCallback[moveToFolder]": (id)=>{
-                    batch.update((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(firestore, "documents", id), {
+                    batch.update((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["doc"])(firestore, 'documents', id), {
                         folder,
                         updatedAt: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["serverTimestamp"])()
                     });
                 }
             }["useVault.useCallback[moveToFolder]"]);
             await batch.commit();
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                title: "Moved",
+            toast({
+                title: 'Moved',
                 description: `Moved ${ids.length} item(s) to ${folder}.`
             });
         }
     }["useVault.useCallback[moveToFolder]"], [
-        firestore
+        firestore,
+        toast
     ]);
     const toggleTag = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "useVault.useCallback[toggleTag]": async (id, tag)=>{
@@ -5428,12 +5443,14 @@ function useVault() {
     ]);
     const refresh = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
         "useVault.useCallback[refresh]": ()=>{
-            (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toast"])({
-                title: "Refreshed",
-                description: "Listening for live updates."
+            toast({
+                title: 'Refreshed',
+                description: 'Listening for live updates.'
             });
         }
-    }["useVault.useCallback[refresh]"], []);
+    }["useVault.useCallback[refresh]"], [
+        toast
+    ]);
     return {
         docs,
         filteredDocs,
@@ -5454,20 +5471,21 @@ function useVault() {
         refresh
     };
 }
-_s(useVault, "BklRDp72irFQf3ZjMCnja1zyn6I=", false, function() {
+_s(useVault, "862PTParcMocDmJ25YHDludASo0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$auth$2f$use$2d$user$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useUser"],
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useFirestore"],
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$provider$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useFirebaseApp"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$use$2d$toast$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useToast"],
         __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$firebase$2f$firestore$2f$use$2d$collection$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCollection"]
     ];
 });
 function extractDate(value) {
     if (!value) return null;
     if (value instanceof Date) return value;
-    if (typeof value === "string") return new Date(value);
+    if (typeof value === 'string') return new Date(value);
     if (value instanceof __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Timestamp"]) return value.toDate();
-    if (typeof value.toDate === "function") return value.toDate();
+    if (typeof value.toDate === 'function') return value.toDate();
     return null;
 }
 function enrichDoc(doc) {
@@ -5476,9 +5494,9 @@ function enrichDoc(doc) {
     const expiry = extractDate(doc.expireDate);
     return {
         ...doc,
-        createdAtFormatted: created ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(created, "MMM d, yyyy") : "Just now",
-        updatedAtFormatted: updated ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(updated, "MMM d, yyyy") : "Just now",
-        expireDateFormatted: expiry ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(expiry, "MMM d, yyyy") : undefined
+        createdAtFormatted: created ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(created, 'MMM d, yyyy') : 'Just now',
+        updatedAtFormatted: updated ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(updated, 'MMM d, yyyy') : 'Just now',
+        expireDateFormatted: expiry ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(expiry, 'MMM d, yyyy') : undefined
     };
 }
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {

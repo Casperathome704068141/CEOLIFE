@@ -9,5 +9,9 @@
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/finance/overview/page": "app/finance/overview/page.js",
   "/goals/page": "app/goals/page.js",
-  "/simulations/scenarios/page": "app/simulations/scenarios/page.js"
+  "/onboarding/page": "app/onboarding/page.js",
+  "/schedule/calendar/page": "app/schedule/calendar/page.js",
+  "/security/privacy/page": "app/security/privacy/page.js",
+  "/simulations/scenarios/page": "app/simulations/scenarios/page.js",
+  "/vault/documents/page": "app/vault/documents/page.js"
 }
