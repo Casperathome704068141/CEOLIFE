@@ -390,4 +390,3 @@ export type CanvasContext = {
   scenarios: ScenarioPreview[];
   explain: string[];
 };
-

@@ -31,4 +31,3 @@ export function formatRelative(value: string | Date) {
   const hours = Math.round(minutes / 60);
   return hours > 0 ? `in ${hours}h` : `${Math.abs(hours)}h ago`;
 }
-

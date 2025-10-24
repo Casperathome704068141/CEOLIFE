@@ -6,4 +6,3 @@ export async function GET() {
   const overview = overviewSchema.parse(getOverview());
   return NextResponse.json({ overview });
 }
-

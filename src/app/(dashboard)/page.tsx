@@ -9,7 +9,6 @@ import { GoalCard } from "@/components/shared/goal-card";
 import {
   briefingInsights,
   cashflowData,
-  statHighlights,
 } from "@/lib/data";
 import {
   Bot,
@@ -31,9 +30,13 @@ import {
 import { Sparkline } from "@/components/shared/sparkline";
 import { useCollection, useUser } from "@/firebase";
 import { DocumentDoc, EventDoc, GoalDoc, ShoppingListDoc } from "@/lib/schemas";
+import { useBridge } from "@/lib/hooks/useBridge";
+import { formatCurrency, formatPercent } from "@/lib/ui/format";
 
 export default function DashboardPage() {
   const { user } = useUser();
+  const { overview } = useBridge();
+
   const { data: goals, loading: goalsLoading } = useCollection<GoalDoc>(
     "goals",
     {
@@ -60,6 +63,42 @@ export default function DashboardPage() {
     });
 
   const shoppingListItems = shoppingLists?.[0]?.items || [];
+
+  const statHighlights = overview ? [
+      {
+        title: "Net worth",
+        value: formatCurrency(overview.netWorth),
+        delta: "+$4.3K vs last month", // Placeholder
+        trend: "up" as const,
+      },
+      {
+        title: "Cash on hand",
+        value: formatCurrency(overview.cashOnHand.amount),
+        delta: `Burn runway ${overview.cashOnHand.runwayDays} days`,
+        trend: "neutral" as const,
+      },
+      {
+        title: "Next bills",
+        value: formatCurrency(overview.nextBills.total),
+        delta: `${overview.nextBills.count} due within 5 days`,
+        trend: "down" as const,
+      },
+      {
+        title: "Monthly burn",
+        value: formatCurrency(overview.monthlyBurn.actual),
+        delta: `${formatPercent(
+          (overview.monthlyBurn.actual / overview.monthlyBurn.target - 1) * 100
+        )} vs target`,
+        trend: "down" as const,
+      },
+      {
+        title: "Savings progress",
+        value: formatPercent(overview.savingsProgress.percent),
+        delta: `+${formatCurrency(overview.savingsProgress.delta, "USD")} allocated`,
+        trend: "up" as const,
+      },
+    ]
+    : [];
 
   return (
     <div className="space-y-8">
