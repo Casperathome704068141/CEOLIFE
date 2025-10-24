@@ -1,17 +1,7 @@
 {
   "/(dashboard)/page": "app/(dashboard)/page.js",
-  "/api/goals/funding-accounts/route": "app/api/goals/funding-accounts/route.js",
-  "/api/goals/route": "app/api/goals/route.js",
-  "/api/goals/suggestions/route": "app/api/goals/suggestions/route.js",
-  "/api/simulations/apply/route": "app/api/simulations/apply/route.js",
-  "/api/simulations/presets/route": "app/api/simulations/presets/route.js",
-  "/assistant/page": "app/assistant/page.js",
+  "/api/onboarding/detect/route": "app/api/onboarding/detect/route.js",
+  "/api/onboarding/preview/route": "app/api/onboarding/preview/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/finance/overview/page": "app/finance/overview/page.js",
-  "/goals/page": "app/goals/page.js",
-  "/onboarding/page": "app/onboarding/page.js",
-  "/schedule/calendar/page": "app/schedule/calendar/page.js",
-  "/security/privacy/page": "app/security/privacy/page.js",
-  "/simulations/scenarios/page": "app/simulations/scenarios/page.js",
-  "/vault/documents/page": "app/vault/documents/page.js"
+  "/onboarding/page": "app/onboarding/page.js"
 }

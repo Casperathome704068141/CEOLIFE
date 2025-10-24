@@ -2,7 +2,6 @@
 
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { immer } from "zustand/middleware/immer";
 import { Setup, SetupData, StepKey, StepOrder } from "./validators";
 
 export type DrawerState = {
@@ -77,15 +76,15 @@ export interface OnboardingStore {
 
 export const useOnboardingStore = create<OnboardingStore>()(
   devtools(
-    immer((set, get) => ({
+    (set, get) => ({
       setup: blankSetup,
       drawer: { open: false },
       preview: emptyPreview,
       loading: false,
       focusedStepIndex: 0,
       setSetup: (setup) =>
-        set((state) => {
-          state.setup = {
+        set((state) => ({
+          setup: {
             ...setup,
             steps: { ...setup.steps },
             data: {
@@ -93,8 +92,8 @@ export const useOnboardingStore = create<OnboardingStore>()(
               contacts: ensureContacts(setup.data.contacts),
             },
             progress: computeProgress(setup.steps),
-          };
-        }),
+          },
+        })),
       loadFromServer: (incoming) =>
         set((state) => {
           const next: Setup = {
@@ -111,45 +110,52 @@ export const useOnboardingStore = create<OnboardingStore>()(
           } as Setup;
           next.progress = computeProgress(next.steps);
           next.data.contacts = ensureContacts(next.data.contacts);
-          state.setup = next;
+          return { setup: next };
         }),
       openDrawer: (step) =>
-        set((state) => {
-          state.drawer = { open: true, step };
-          state.focusedStepIndex = StepOrder.indexOf(step);
-        }),
+        set((state) => ({
+          drawer: { open: true, step },
+          focusedStepIndex: StepOrder.indexOf(step),
+        })),
       closeDrawer: () =>
-        set((state) => {
-          state.drawer = { open: false };
-        }),
+        set(() => ({
+          drawer: { open: false },
+        })),
       updateStepCompletion: (step, completed) =>
         set((state) => {
-          state.setup.steps[step] = completed;
-          state.setup.progress = computeProgress(state.setup.steps);
+          const newSteps = { ...state.setup.steps, [step]: completed };
+          return {
+            setup: {
+              ...state.setup,
+              steps: newSteps,
+              progress: computeProgress(newSteps),
+            },
+          };
         }),
       updateData: (step, data) =>
         set((state) => {
-          state.setup = {
+          const newSetup = {
             ...state.setup,
             data: { ...state.setup.data, ...data },
           };
-          state.setup.steps[step] = true;
-          state.setup.progress = computeProgress(state.setup.steps);
+          newSetup.steps[step] = true;
+          newSetup.progress = computeProgress(newSetup.steps);
+          return { setup: newSetup };
         }),
       setPreview: (preview) =>
-        set((state) => {
-          state.preview = { ...state.preview, ...preview };
-        }),
+        set((state) => ({
+          preview: { ...state.preview, ...preview },
+        })),
       nextStep: () =>
-        set((state) => {
-          state.focusedStepIndex = (state.focusedStepIndex + 1) % StepOrder.length;
-        }),
+        set((state) => ({
+          focusedStepIndex: (state.focusedStepIndex + 1) % StepOrder.length,
+        })),
       prevStep: () =>
-        set((state) => {
-          state.focusedStepIndex =
-            (state.focusedStepIndex - 1 + StepOrder.length) % StepOrder.length;
-        }),
-    }))
+        set((state) => ({
+          focusedStepIndex:
+            (state.focusedStepIndex - 1 + StepOrder.length) % StepOrder.length,
+        })),
+    })
   )
 );
 
