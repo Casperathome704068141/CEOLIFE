@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo, useRef, useState, useEffect } from "react";
@@ -238,7 +239,8 @@ export default function PulsePage() {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [handleRefresh, onlyWatchlist, setOnlyWatchlist]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onlyWatchlist, setOnlyWatchlist]);
 
   return (
     <div className="space-y-6">

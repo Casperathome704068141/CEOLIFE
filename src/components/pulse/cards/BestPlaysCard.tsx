@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -56,7 +57,7 @@ export function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrie
                       <Tooltip
                         labelFormatter={(label) => label}
                         formatter={(value: number) => [value.toFixed(2), "Value"]}
-                        contentStyle={{ fontSize: 12 }}
+                        contentStyle={{ fontSize: 12, backgroundColor: "hsl(var(--background))", border: "1px solid hsl(var(--border))" }}
                       />
                       <Area
                         type="monotone"

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useWatchlist } from "@/lib/pulse/useWatchlist";
@@ -6,13 +7,15 @@ import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { usePreferences } from "@/lib/pulse/usePreferences";
 
 interface Props {
   onSelect?: (id: string) => void;
 }
 
 export function WatchlistBar({ onSelect }: Props) {
-  const { items, remove, onlyWatchlist, setOnlyWatchlist } = useWatchlist();
+  const { items, remove } = useWatchlist();
+  const { onlyWatchlist, setOnlyWatchlist } = usePreferences();
 
   return (
     <div className="flex flex-col gap-3 rounded-2xl border border-border/60 bg-background/60 p-4">

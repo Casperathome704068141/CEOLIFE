@@ -1,8 +1,10 @@
+
 "use client";
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendsPayload } from "@/lib/pulse/types";
 import { ResponsiveContainer, LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   trends: TrendsPayload;
@@ -44,7 +46,7 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
                 <CartesianGrid strokeDasharray="3 3" className="stroke-border/50" />
                 <XAxis dataKey="t" stroke="hsl(var(--muted-foreground))" fontSize={12} />
                 <YAxis stroke="hsl(var(--muted-foreground))" fontSize={12} />
-                <Tooltip cursor={{ strokeDasharray: "3 3" }} contentStyle={{ fontSize: 12 }} />
+                <Tooltip cursor={{ strokeDasharray: "3 3" }} contentStyle={{ fontSize: 12, backgroundColor: "hsl(var(--background))", border: "1px solid hsl(var(--border))" }} />
                 {labels.map((label, index) => (
                   <Line
                     key={label}
@@ -102,8 +104,9 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
       </CardContent>
       <CardFooter className="flex items-center justify-between text-xs text-muted-foreground">
         <span>Trends overlay on each card when you pin items to the watchlist.</span>
-        <button
-          type="button"
+        <Button
+          variant="ghost"
+          size="sm"
           className="text-primary"
           onClick={() =>
             onAddToBrief({
@@ -113,7 +116,7 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
           }
         >
           Add to Beno brief
-        </button>
+        </Button>
       </CardFooter>
     </Card>
   );

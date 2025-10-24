@@ -1,9 +1,5 @@
-import { Inputs } from "./valueScore.types";
 
-// The Inputs type is kept in a sidecar file to avoid circular imports when
-// consumed by server routes and UI components.
-
-export type ValueScoreInputs = Inputs;
+import { ValueScoreInputs } from "./valueScore.types";
 
 export function valueScore(i: ValueScoreInputs) {
   const edge = i.marketAvgImplied - i.implied;
@@ -25,4 +21,3 @@ export function valueScoreBand(score: number) {
   if (score >= 3) return { label: "caution", className: "text-amber-400" };
   return { label: "neutral", className: "text-slate-400" };
 }
-

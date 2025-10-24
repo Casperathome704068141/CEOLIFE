@@ -1,3 +1,4 @@
+
 import { NextRequest } from "next/server";
 import { WatchlistItem } from "@/lib/pulse/types";
 
