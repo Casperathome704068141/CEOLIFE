@@ -900,6 +900,10 @@ body {
   height: 100svh;
 }
 
+.h-1 {
+  height: .25rem;
+}
+
 .max-h-48 {
   max-height: 12rem;
 }
@@ -1323,6 +1327,10 @@ body {
 
 .grid-cols-\[1fr\,1fr\,1fr\,auto\] {
   grid-template-columns: 1fr 1fr 1fr auto;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -3069,6 +3077,16 @@ body {
 
 .text-white\/70 {
   color: #ffffffb3;
+}
+
+.text-indigo-400 {
+  --tw-text-opacity: 1;
+  color: rgb(129 140 248 / var(--tw-text-opacity, 1));
+}
+
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity, 1));
 }
 
 .line-through {

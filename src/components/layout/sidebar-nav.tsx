@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -18,7 +19,6 @@ import {
   FileText,
   Home,
   LifeBuoy,
-  Shield,
   Settings,
   ShoppingCart,
   Target,
@@ -36,7 +36,7 @@ const navItems = [
   { href: "/goals", icon: Target, label: "Goals" },
   { href: "/simulations/scenarios", icon: BrainCircuit, label: "Simulations" },
   { href: "/assistant", icon: Bot, label: "Beno" },
-  { href: "/security/privacy", icon: Shield, label: "Security" },
+  { href: "/pulse", icon: Activity, label: "Pulse" },
 ];
 
 export function SidebarNav() {
