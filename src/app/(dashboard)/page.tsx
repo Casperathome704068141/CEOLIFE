@@ -9,7 +9,6 @@ import { GoalCard } from "@/components/shared/goal-card";
 import {
   briefingInsights,
   cashflowData,
-  schedule,
   statHighlights,
 } from "@/lib/data";
 import {
@@ -31,7 +30,7 @@ import {
 } from "@/components/ui/card";
 import { Sparkline } from "@/components/shared/sparkline";
 import { useCollection, useUser } from "@/firebase";
-import { GoalDoc } from "@/lib/schemas";
+import { DocumentDoc, EventDoc, GoalDoc } from "@/lib/schemas";
 
 export default function DashboardPage() {
   const { user } = useUser();
@@ -42,6 +41,19 @@ export default function DashboardPage() {
       skip: !user?.uid,
     }
   );
+  const { data: events, loading: eventsLoading } = useCollection<EventDoc>(
+    "events",
+    {
+      query: ["ownerId", "==", user?.uid],
+      skip: !user?.uid,
+    }
+  );
+  const { data: documents, loading: documentsLoading } =
+    useCollection<DocumentDoc>("documents", {
+      query: ["ownerId", "==", user?.uid],
+      skip: !user?.uid,
+    });
+
   return (
     <div className="space-y-8">
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-5">
@@ -81,27 +93,31 @@ export default function DashboardPage() {
               </Button>
             </CardHeader>
             <CardContent className="space-y-3">
-              {schedule.map((event) => (
-                <div
-                  key={event.title}
-                  className="flex items-center gap-3 rounded-2xl bg-slate-900/60 p-3"
-                >
-                  <div className="rounded-xl bg-slate-800/80 p-2 text-xs text-slate-300">
-                    <p>{event.time.split(" ")[0]}</p>
-                    <p className="-mt-1 font-bold">
-                      {event.time.split(" ")[1]}
-                    </p>
+              {eventsLoading ? (
+                <p className="text-slate-400">Loading schedule...</p>
+              ) : (
+                events?.map((event) => (
+                  <div
+                    key={event.id}
+                    className="flex items-center gap-3 rounded-2xl bg-slate-900/60 p-3"
+                  >
+                    <div className="rounded-xl bg-slate-800/80 p-2 text-xs text-slate-300">
+                      <p>{event.time.split(" ")[0]}</p>
+                      <p className="-mt-1 font-bold">
+                        {event.time.split(" ")[1]}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-white">
+                        {event.title}
+                      </p>
+                      <p className="text-xs text-slate-400">
+                        {event.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-white">
-                      {event.title}
-                    </p>
-                    <p className="text-xs text-slate-400">
-                      {event.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                ))
+              )}
             </CardContent>
           </Card>
         </div>
@@ -120,13 +136,23 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <VaultDropzone onFiles={() => {}} />
-              <DocCard
-                name="Q3-2024-report.pdf"
-                type="Finance"
-                updatedAt="2h ago"
-                icon="File"
-                tags={["quarterly", "draft"]}
-              />
+              {documentsLoading ? (
+                <p className="text-slate-400">Loading documents...</p>
+              ) : (
+                documents?.slice(0, 1).map((doc) => (
+                  <DocCard
+                    key={doc.id}
+                    name={doc.filename}
+                    type={doc.type}
+                    updatedAt={
+                      (doc.updatedAt as any)?.toDate?.().toLocaleDateString() ??
+                      "N/A"
+                    }
+                    icon="File"
+                    tags={doc.tags}
+                  />
+                ))
+              )}
             </CardContent>
           </Card>
         </div>
@@ -188,18 +214,22 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {goals?.map((goal) => (
-          <GoalCard
-            key={goal.id}
-            name={goal.name}
-            target={goal.target}
-            current={goal.current}
-            deadline={
-              (goal.deadline as any)?.toDate?.().toLocaleDateString() ?? "N/A"
-            }
-            priority={goal.priority}
-          />
-        ))}
+        {goalsLoading ? (
+          <p className="text-slate-400">Loading goals...</p>
+        ) : (
+          goals?.map((goal) => (
+            <GoalCard
+              key={goal.id}
+              name={goal.name}
+              target={goal.target}
+              current={goal.current}
+              deadline={
+                (goal.deadline as any)?.toDate?.().toLocaleDateString() ?? "N/A"
+              }
+              priority={goal.priority}
+            />
+          ))
+        )}
       </div>
     </div>
   );

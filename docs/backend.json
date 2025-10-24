@@ -43,6 +43,33 @@
         "autopay": { "type": "boolean" }
       },
       "required": ["ownerId", "name", "amount", "dueDate"]
+    },
+    "event": {
+      "title": "Event",
+      "description": "A calendar event or appointment.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "start": { "type": "string", "format": "date-time" },
+        "end": { "type": "string", "format": "date-time" },
+        "time": { "type": "string" }
+      },
+      "required": ["ownerId", "title", "start", "end", "time"]
+    },
+    "document": {
+      "title": "Document",
+      "description": "A document stored in the vault.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "filename": { "type": "string" },
+        "type": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["ownerId", "filename", "type"]
     }
   },
   "auth": {
@@ -66,6 +93,18 @@
         "$ref": "#/entities/bill"
       },
       "description": "Collection of user bills."
+    },
+    "/events": {
+      "schema": {
+        "$ref": "#/entities/event"
+      },
+      "description": "Collection of calendar events."
+    },
+    "/documents": {
+      "schema": {
+        "$ref": "#/entities/document"
+      },
+      "description": "Collection of user documents."
     }
   }
 }
