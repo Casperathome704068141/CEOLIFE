@@ -1,3 +1,4 @@
+
 import { NextRequest } from "next/server";
 import { Preferences, PreferencesUpdate } from "@/lib/pulse/types";
 

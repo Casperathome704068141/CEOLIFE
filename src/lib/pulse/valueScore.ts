@@ -1,5 +1,5 @@
 
-import { ValueScoreInputs } from "./valueScore.types";
+import { Inputs as ValueScoreInputs } from "./valueScore.types";
 
 export function valueScore(i: ValueScoreInputs) {
   const edge = i.marketAvgImplied - i.implied;

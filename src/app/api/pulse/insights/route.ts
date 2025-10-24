@@ -1,3 +1,4 @@
+
 import { NextRequest } from "next/server";
 import { Play, TrendsPayload } from "@/lib/pulse/types";
 

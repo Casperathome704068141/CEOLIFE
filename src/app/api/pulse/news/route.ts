@@ -1,3 +1,4 @@
+
 import { NextRequest } from "next/server";
 import { Article } from "@/lib/pulse/types";
 

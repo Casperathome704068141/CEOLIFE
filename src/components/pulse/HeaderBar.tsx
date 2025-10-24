@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -22,7 +23,7 @@ export function HeaderBar({ onRefresh, onCustomize, onViewTrends }: Props) {
         <div>
           <h1 className="text-3xl font-semibold tracking-tight">Pulse</h1>
           <p className="text-sm text-muted-foreground">
-            Sports, odds, news & weather — live.
+            Sports, Odds, News & Weather in one place.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

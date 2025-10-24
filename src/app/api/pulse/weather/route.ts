@@ -1,3 +1,4 @@
+
 import { NextRequest } from "next/server";
 import { Forecast } from "@/lib/pulse/types";
 
