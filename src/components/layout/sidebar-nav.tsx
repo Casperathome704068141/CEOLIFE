@@ -35,7 +35,6 @@ const navItems = [
   { href: "/household", icon: Users, label: "Household" },
   { href: "/goals", icon: Target, label: "Goals" },
   { href: "/simulations/scenarios", icon: BrainCircuit, label: "Simulations" },
-  { href: "/wellness/overview", icon: Activity, label: "Wellness" },
   { href: "/assistant", icon: Bot, label: "Beno" },
   { href: "/security/privacy", icon: Shield, label: "Security" },
 ];
