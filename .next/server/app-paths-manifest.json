@@ -1,7 +1,21 @@
 {
   "/(dashboard)/page": "app/(dashboard)/page.js",
+  "/api/household/apartment/meters/route": "app/api/household/apartment/meters/route.js",
+  "/api/household/apartment/tickets/route": "app/api/household/apartment/tickets/route.js",
+  "/api/household/assets/route": "app/api/household/assets/route.js",
+  "/api/household/care/appointments/route": "app/api/household/care/appointments/route.js",
+  "/api/household/care/doses/route": "app/api/household/care/doses/route.js",
+  "/api/household/care/medications/route": "app/api/household/care/medications/route.js",
+  "/api/household/care/profiles/route": "app/api/household/care/profiles/route.js",
+  "/api/household/members/route": "app/api/household/members/route.js",
+  "/api/household/shopping/route": "app/api/household/shopping/route.js",
+  "/api/household/split/ledger/route": "app/api/household/split/ledger/route.js",
+  "/api/household/split/settlements/route": "app/api/household/split/settlements/route.js",
   "/api/onboarding/detect/route": "app/api/onboarding/detect/route.js",
   "/api/onboarding/preview/route": "app/api/onboarding/preview/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/onboarding/page": "app/onboarding/page.js"
+  "/household/page": "app/household/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
+  "/pulse/page": "app/pulse/page.js",
+  "/security/privacy/page": "app/security/privacy/page.js"
 }
