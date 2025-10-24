@@ -30,8 +30,18 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Sparkline } from "@/components/shared/sparkline";
+import { useCollection, useUser } from "@/firebase";
+import { GoalDoc } from "@/lib/schemas";
 
 export default function DashboardPage() {
+  const { user } = useUser();
+  const { data: goals, loading: goalsLoading } = useCollection<GoalDoc>(
+    "goals",
+    {
+      query: ["ownerId", "==", user?.uid],
+      skip: !user?.uid,
+    }
+  );
   return (
     <div className="space-y-8">
       <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-5">
@@ -178,30 +188,19 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <GoalCard
-          name="Japan Expedition"
-          target={12000}
-          current={8200}
-          deadline="Mar 2025"
-          priority="high"
-        />
-        <GoalCard
-          name="Home Office Refresh"
-          target={4500}
-          current={1200}
-          deadline="Dec 2024"
-          priority="medium"
-        />
-        <GoalCard
-          name="Emergency Fund Top-up"
-          target={20000}
-          current={16500}
-          deadline="N/A"
-          priority="high"
-        />
+        {goals?.map((goal) => (
+          <GoalCard
+            key={goal.id}
+            name={goal.name}
+            target={goal.target}
+            current={goal.current}
+            deadline={
+              (goal.deadline as any)?.toDate?.().toLocaleDateString() ?? "N/A"
+            }
+            priority={goal.priority}
+          />
+        ))}
       </div>
     </div>
   );
 }
-
-    
