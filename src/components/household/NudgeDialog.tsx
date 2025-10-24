@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import type { Member } from "@/lib/household/types";
-import { useHousehold } from "@/lib/household/useHousehold.tsx";
+import { useHousehold } from "@/lib/household/useHousehold";
 
 const templates = [
   { id: "bill", label: "Bill reminder", body: (member?: Member) => `Hey ${member?.name ?? "there"}, heads up the bill is due today.` },
