@@ -70,6 +70,29 @@
         "tags": { "type": "array", "items": { "type": "string" } }
       },
       "required": ["ownerId", "filename", "type"]
+    },
+    "shoppingList": {
+      "title": "Shopping List",
+      "description": "A list of items to purchase.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "name": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "label": { "type": "string" },
+              "qty": { "type": "number" },
+              "priority": { "type": "string", "enum": ["high", "medium", "low"] }
+            },
+            "required": ["id", "label"]
+          }
+        }
+      },
+      "required": ["ownerId", "name", "items"]
     }
   },
   "auth": {
@@ -105,6 +128,12 @@
         "$ref": "#/entities/document"
       },
       "description": "Collection of user documents."
+    },
+    "/shoppingLists": {
+      "schema": {
+        "$ref": "#/entities/shoppingList"
+      },
+      "description": "User shopping lists."
     }
   }
 }

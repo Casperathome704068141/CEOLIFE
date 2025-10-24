@@ -30,7 +30,7 @@ import {
 } from "@/components/ui/card";
 import { Sparkline } from "@/components/shared/sparkline";
 import { useCollection, useUser } from "@/firebase";
-import { DocumentDoc, EventDoc, GoalDoc } from "@/lib/schemas";
+import { DocumentDoc, EventDoc, GoalDoc, ShoppingListDoc } from "@/lib/schemas";
 
 export default function DashboardPage() {
   const { user } = useUser();
@@ -53,6 +53,13 @@ export default function DashboardPage() {
       query: ["ownerId", "==", user?.uid],
       skip: !user?.uid,
     });
+  const { data: shoppingLists, loading: shoppingListsLoading } =
+    useCollection<ShoppingListDoc>("shoppingLists", {
+      query: ["ownerId", "==", user?.uid],
+      skip: !user?.uid,
+    });
+
+  const shoppingListItems = shoppingLists?.[0]?.items || [];
 
   return (
     <div className="space-y-8">
@@ -172,18 +179,18 @@ export default function DashboardPage() {
             </Button>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div className="flex items-center justify-between rounded-2xl bg-slate-900/60 p-3">
-              <p className="text-sm text-white">Steel-cut oats</p>
-              <Button variant="secondary" size="sm" className="rounded-full">
-                Add to list
-              </Button>
-            </div>
-            <div className="flex items-center justify-between rounded-2xl bg-slate-900/60 p-3">
-              <p className="text-sm text-white">Air filters (2-pack)</p>
-              <Button variant="secondary" size="sm" className="rounded-full">
-                Add to list
-              </Button>
-            </div>
+            {shoppingListsLoading ? (
+              <p className="text-slate-400">Loading shopping list...</p>
+            ) : (
+              shoppingListItems.slice(0, 2).map((item) => (
+                <div key={item.id} className="flex items-center justify-between rounded-2xl bg-slate-900/60 p-3">
+                  <p className="text-sm text-white">{item.label}</p>
+                  <Button variant="secondary" size="sm" className="rounded-full">
+                    Add to list
+                  </Button>
+                </div>
+              ))
+            )}
           </CardContent>
         </Card>
 
