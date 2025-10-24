@@ -31,40 +31,49 @@ export function WeatherCard({ forecasts, games, onAddToBrief }: Props) {
             const relatedGames = (forecast.relatedGameIds ?? [])
               .map((id) => gameLookup.get(id))
               .filter(Boolean) as Game[];
+
             return (
-              <div key={forecast.city} className="space-y-2 rounded-xl border border-border/60 bg-background/80 p-4">
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <div>
-                  <p className="text-sm font-semibold">{forecast.city}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {new Date(forecast.when).toLocaleString([], { weekday: "short", hour: "2-digit", minute: "2-digit" })}
-                  </p>
-                </div>
-                <Badge variant="secondary" className="gap-1">
-                  <Thermometer className="h-3 w-3" /> {forecast.temp}°
-                </Badge>
-              </div>
-              <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
-                <span className="flex items-center gap-1">
-                  <Wind className="h-3 w-3" /> {forecast.wind} mph
-                </span>
-                <span className="flex items-center gap-1">
-                  <Umbrella className="h-3 w-3" /> {(forecast.rainProb * 100).toFixed(0)}% rain
-                </span>
-                <span>{forecast.note}</span>
-              </div>
-              {relatedGames.length ? (
-                <div className="space-y-1 text-xs text-muted-foreground">
-                  {relatedGames.map((game) => (
-                    <p key={game.id}>
-                      Impact → {game.away.name} @ {game.home.name}: watch adjustments for wind & surface.
+              <div
+                key={forecast.city}
+                className="space-y-2 rounded-xl border border-border/60 bg-background/80 p-4"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <p className="text-sm font-semibold">{forecast.city}</p>
+                    <p className="text-xs text-muted-foreground">
+                      {new Date(forecast.when).toLocaleString([], {
+                        weekday: "short",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
                     </p>
-                  ))}
+                  </div>
+                  <Badge variant="secondary" className="gap-1">
+                    <Thermometer className="h-3 w-3" /> {forecast.temp}°
+                  </Badge>
                 </div>
-              ) : null}
-            </div>
-          );
-        })}
+                <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <Wind className="h-3 w-3" /> {forecast.wind} mph
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Umbrella className="h-3 w-3" /> {(forecast.rainProb * 100).toFixed(0)}% rain
+                  </span>
+                  <span>{forecast.note}</span>
+                </div>
+                {relatedGames.length ? (
+                  <div className="space-y-1 text-xs text-muted-foreground">
+                    {relatedGames.map((game) => (
+                      <p key={game.id}>
+                        Impact → {game.away.name} @ {game.home.name}: watch adjustments for wind & surface.
+                      </p>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })
+        )}
       </CardContent>
       <CardFooter className="flex items-center justify-between text-xs text-muted-foreground">
         <span>Atmospherics blend local radar with market overlays.</span>
