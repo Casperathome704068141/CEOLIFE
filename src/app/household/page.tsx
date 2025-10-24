@@ -9,7 +9,7 @@ import { SharedLedger } from "@/components/household/split/SharedLedger";
 import { HouseholdTabs, type HouseholdTabItem } from "@/components/household/Tabs";
 import { PageHeader } from "@/components/layout/page-header";
 import { Button } from "@/components/ui/button";
-import { HouseholdProvider, useHousehold } from "@/lib/household/useHousehold.tsx";
+import { HouseholdProvider, useHousehold } from "@/lib/household/useHousehold";
 
 function HouseholdPageContent() {
   const { setActiveTab } = useHousehold();
