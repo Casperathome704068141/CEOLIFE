@@ -1,271 +1,207 @@
+
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { AttentionQueue } from "@/components/bridge/AttentionQueue";
-import { OperationalCanvas } from "@/components/bridge/OperationalCanvas";
-import { TelemetryRail } from "@/components/bridge/TelemetryRail";
-import { OmniBox } from "@/components/bridge/OmniBox";
-import { KPITiles } from "@/components/bridge/KPITiles";
-import { OpsSprintBar } from "@/components/bridge/OpsSprintBar";
-import { ImpactPanel } from "@/components/bridge/ImpactPanel";
-import { EntityDrawers, EntityDrawerState } from "@/components/bridge/EntityDrawers";
-import { useImpactGuard } from "@/lib/hooks/useImpactGuard";
-import { useLiveQuery } from "@/lib/hooks/useLiveQuery";
-import { useToast } from "@/hooks/use-toast";
-import { QueueItem, Overview, CanvasContext, Command, ImpactPlan } from "@/lib/graph/types";
+import { StatTile } from "@/components/shared/stat-tile";
+import { BriefingCard } from "@/components/shared/briefing-card";
+import { VaultDropzone } from "@/components/shared/vault-dropzone";
+import { DocCard } from "@/components/shared/doc-card";
+import { GoalCard } from "@/components/shared/goal-card";
+import {
+  briefingInsights,
+  cashflowData,
+  schedule,
+  statHighlights,
+} from "@/lib/data";
+import {
+  Bot,
+  Calendar,
+  ChevronRight,
+  FileText,
+  PackageCheck,
+  Target,
+  Wallet,
+} from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Sparkline } from "@/components/shared/sparkline";
 
-async function fetchOverview(): Promise<Overview> {
-  const response = await fetch("/api/bridge/overview");
-  if (!response.ok) throw new Error("Failed to load overview");
-  const data = await response.json();
-  return data.overview;
-}
-
-async function fetchQueue(filter: string): Promise<QueueItem[]> {
-  const response = await fetch(`/api/bridge/queue?filter=${filter}`);
-  if (!response.ok) throw new Error("Failed to load queue");
-  const data = await response.json();
-  return data.items as QueueItem[];
-}
-
-async function fetchContext(id?: string | null): Promise<CanvasContext | null> {
-  if (!id) return null;
-  const response = await fetch(`/api/bridge/context?id=${id}`);
-  if (!response.ok) return null;
-  const data = await response.json();
-  return data.context as CanvasContext;
-}
-
-function buildCommandForItem(item: QueueItem): Command | null {
-  const idempotencyKey = crypto.randomUUID();
-  switch (item.kind) {
-    case "bill":
-      return {
-        type: "bill.markPaid",
-        payload: {
-          billId: item.links?.[0]?.entityId ?? item.id,
-          amount: 182,
-        },
-        idempotencyKey,
-      };
-    case "goalUnderfunded":
-      return {
-        type: "goal.allocate",
-        payload: {
-          goalId: item.links?.[0]?.entityId ?? item.id,
-          amount: 300,
-        },
-        idempotencyKey,
-      };
-    case "doseOverdue":
-      return {
-        type: "dose.log",
-        payload: {
-          medicationId: item.links?.[0]?.entityId ?? item.id,
-          doseId: item.links?.[1]?.entityId ?? item.id,
-        },
-        idempotencyKey,
-      };
-    case "refill":
-      return {
-        type: "refill.request",
-        payload: {
-          medicationId: item.links?.[0]?.entityId ?? item.id,
-        },
-        idempotencyKey,
-      };
-    default:
-      return {
-        type: "event.create",
-        payload: {
-          title: item.title,
-          startsAt: new Date().toISOString(),
-        },
-        idempotencyKey,
-      };
-  }
-}
-
-export default function CommandBridgePage() {
-  const [filter, setFilter] = useState("all");
-  const [selectedItem, setSelectedItem] = useState<QueueItem | null>(null);
-  const [mode, setMode] = useState<"monitor" | "focus">("monitor");
-  const [sprintRemaining, setSprintRemaining] = useState(25 * 60);
-  const [sprintComplete, setSprintComplete] = useState(0);
-  const [drawer, setDrawer] = useState<EntityDrawerState>(null);
-  const [impactPlan, setImpactPlan] = useState<ImpactPlan | null>(null);
-  const [pendingCommand, setPendingCommand] = useState<Command | null>(null);
-
-  const { toast } = useToast();
-  const { preview, commit } = useImpactGuard();
-
-  useLiveQuery();
-
-  const { data: overview } = useQuery({ queryKey: ["bridge", "overview"], queryFn: fetchOverview });
-  const { data: queueItems } = useQuery({ queryKey: ["bridge", "queue", filter], queryFn: () => fetchQueue(filter) });
-  const { data: context } = useQuery({
-    queryKey: ["bridge", "context", selectedItem?.id],
-    queryFn: () => fetchContext(selectedItem?.id ?? null),
-    enabled: Boolean(selectedItem?.id),
-  });
-
-  const visibleQueue = useMemo(() => queueItems ?? [], [queueItems]);
-
-  useEffect(() => {
-    if (mode === "focus") {
-      const timer = setInterval(() => {
-        setSprintRemaining(prev => Math.max(0, prev - 1));
-      }, 1000);
-      return () => clearInterval(timer);
-    }
-  }, [mode]);
-
-  useEffect(() => {
-    if (mode === "monitor") {
-      setSprintRemaining(25 * 60);
-      setSprintComplete(0);
-    }
-  }, [mode]);
-
-  useEffect(() => {
-    if (!selectedItem && visibleQueue.length > 0) {
-      setSelectedItem(visibleQueue[0]);
-    }
-  }, [visibleQueue, selectedItem]);
-
-  const handleQueueAction = async (
-    action: QueueItem["actions"][number],
-    item: QueueItem
-  ) => {
-    switch (action) {
-      case "Accept": {
-        const command = buildCommandForItem(item);
-        if (!command) return;
-        try {
-          const plan = await preview({
-            intent: command.type.includes("bill")
-              ? "bill.pay"
-              : command.type.includes("goal")
-              ? "goal.allocate"
-              : command.type.includes("dose")
-              ? "dose.log"
-              : command.type.includes("refill")
-              ? "refill.request"
-              : "event.create",
-            entityId: item.id,
-            patch: command.payload,
-          });
-          setImpactPlan(plan);
-          setPendingCommand({ ...command, signedImpactPlan: plan });
-        } catch (error) {
-          toast({ description: "Unable to prepare impact plan", variant: "destructive" });
-        }
-        break;
-      }
-      case "Open": {
-        setDrawer({
-          title: item.title,
-          body: (
-            <div className="space-y-3">
-              <p className="text-slate-200">{item.detail}</p>
-              <p className="text-xs text-slate-500">Priority score {item.priorityScore}</p>
-              {context && (
-                <div className="space-y-2 text-xs text-slate-400">
-                  <p>Explain</p>
-                  <ul className="list-disc pl-4">
-                    {context.explain.map((line, idx) => (
-                      <li key={idx}>{line}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          ),
-        });
-        break;
-      }
-      case "Simulate": {
-        setImpactPlan(prev => prev);
-        break;
-      }
-      case "Explain": {
-        toast({ description: item.detail });
-        break;
-      }
-      case "Nudge": {
-        toast({ description: "Nudge scheduled" });
-        break;
-      }
-      case "Schedule": {
-        toast({ description: "Added to schedule" });
-        break;
-      }
-      case "Ignore": {
-        toast({ description: "Ignored for 7 days" });
-        break;
-      }
-      default:
-        break;
-    }
-  };
-
-  const handleCommit = async () => {
-    if (!pendingCommand) return;
-    try {
-      await commit(pendingCommand);
-      toast({ description: "Action committed" });
-      setImpactPlan(null);
-      setPendingCommand(null);
-      setSprintComplete(count => count + 1);
-    } catch (error) {
-      toast({ description: "Command failed", variant: "destructive" });
-    }
-  };
-
+export default function DashboardPage() {
   return (
-    <div className="flex flex-col gap-6">
-      <OpsSprintBar
-        mode={mode}
-        onModeChange={setMode}
-        remainingSeconds={sprintRemaining}
-        completed={sprintComplete}
-        total={mode === "focus" ? 5 : visibleQueue.length}
-      />
-      <OmniBox />
-      <KPITiles overview={overview} onSelectMetric={metric => toast({ description: `Switched to ${metric}` })} />
-      <div className="grid gap-4 xl:grid-cols-[35%_45%_20%]">
-        <div className="xl:h-[780px]">
-          <AttentionQueue
-            items={visibleQueue}
-            filter={filter}
-            focusMode={mode === "focus"}
-            onFilterChange={value => setFilter(value)}
-            selectedId={selectedItem?.id}
-            onSelect={item => setSelectedItem(item)}
-            onAction={handleQueueAction}
+    <div className="space-y-8">
+      <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-5">
+        {statHighlights.map((stat, index) => (
+          <StatTile
+            key={stat.title}
+            title={stat.title}
+            value={stat.value}
+            delta={stat.delta}
+            trend={stat.trend}
+            icon={
+              [
+                <Wallet key="wallet" />,
+                <Wallet key="wallet" />,
+                <Calendar key="calendar" />,
+                <Wallet key="wallet" />,
+                <Target key="target" />,
+              ][index]
+            }
           />
-        </div>
-        <div className="relative xl:h-[780px]">
-          <OperationalCanvas
-            item={selectedItem}
-            context={context}
-            onSimulate={() => toast({ description: "Scenario simulation queued" })}
-            onNudgePerson={() => toast({ description: "Nudge sent" })}
-          />
-          <ImpactPanel
-            plan={impactPlan}
-            onCommit={handleCommit}
-            onCancel={() => {
-              setImpactPlan(null);
-              setPendingCommand(null);
-            }}
-          />
-        </div>
-        <TelemetryRail overview={overview} mode={mode} onMetricSelect={metric => toast({ description: `Focused on ${metric}` })} />
+        ))}
       </div>
-      <EntityDrawers state={drawer} onOpenChange={open => !open && setDrawer(null)} />
+
+      <div className="grid gap-6 lg:grid-cols-[2fr_1fr]">
+        <div className="space-y-6">
+          <BriefingCard insights={briefingInsights} />
+
+          <Card className="rounded-3xl border border-slate-900/60 bg-slate-950/70">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <CardTitle className="flex items-center gap-2 text-lg font-semibold text-white">
+                <Calendar className="h-5 w-5 text-cyan-300" /> Today’s schedule
+              </CardTitle>
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/schedule/calendar">
+                  Open calendar <ChevronRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {schedule.map((event) => (
+                <div
+                  key={event.title}
+                  className="flex items-center gap-3 rounded-2xl bg-slate-900/60 p-3"
+                >
+                  <div className="rounded-xl bg-slate-800/80 p-2 text-xs text-slate-300">
+                    <p>{event.time.split(" ")[0]}</p>
+                    <p className="-mt-1 font-bold">
+                      {event.time.split(" ")[1]}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-white">
+                      {event.title}
+                    </p>
+                    <p className="text-xs text-slate-400">
+                      {event.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="space-y-6">
+          <Card className="h-full rounded-3xl border border-slate-900/60 bg-slate-950/70">
+            <CardHeader className="flex flex-row items-center justify-between">
+              <CardTitle className="flex items-center gap-2 text-lg font-semibold text-white">
+                <FileText className="h-5 w-5 text-cyan-300" /> Vault inbox
+              </CardTitle>
+              <Button variant="ghost" size="sm" asChild>
+                <Link href="/vault/documents">
+                  Open vault <ChevronRight className="ml-1 h-4 w-4" />
+                </Link>
+              </Button>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <VaultDropzone onFiles={() => {}} />
+              <DocCard
+                name="Q3-2024-report.pdf"
+                type="Finance"
+                updatedAt="2h ago"
+                icon="File"
+                tags={["quarterly", "draft"]}
+              />
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        <Card className="rounded-3xl border border-slate-900/60 bg-slate-950/70">
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle className="flex items-center gap-2 text-lg font-semibold text-white">
+              <PackageCheck className="h-5 w-5 text-cyan-300" /> Shopping
+              assistant
+            </CardTitle>
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/household/shopping">
+                Open shopping <ChevronRight className="ml-1 h-4 w-4" />
+              </Link>
+            </Button>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex items-center justify-between rounded-2xl bg-slate-900/60 p-3">
+              <p className="text-sm text-white">Steel-cut oats</p>
+              <Button variant="secondary" size="sm" className="rounded-full">
+                Add to list
+              </Button>
+            </div>
+            <div className="flex items-center justify-between rounded-2xl bg-slate-900/60 p-3">
+              <p className="text-sm text-white">Air filters (2-pack)</p>
+              <Button variant="secondary" size="sm" className="rounded-full">
+                Add to list
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="rounded-3xl border border-slate-900/60 bg-slate-950/70">
+          <CardHeader className="flex flex-row items-center justify-between">
+            <CardTitle className="flex items-center gap-2 text-lg font-semibold text-white">
+              <Bot className="h-5 w-5 text-cyan-300" /> Beno AI
+            </CardTitle>
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/assistant">
+                Open assistant <ChevronRight className="ml-1 h-4 w-4" />
+              </Link>
+            </Button>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <Sparkline
+              data={cashflowData.map((d) => ({
+                label: d.month,
+                value: d.income - d.expenses,
+              }))}
+              dataKey="value"
+            />
+            <p className="text-xs text-slate-400">
+              Cashflow anomaly detected. Review transactions from last week.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <GoalCard
+          name="Japan Expedition"
+          target={12000}
+          current={8200}
+          deadline="Mar 2025"
+          priority="high"
+        />
+        <GoalCard
+          name="Home Office Refresh"
+          target={4500}
+          current={1200}
+          deadline="Dec 2024"
+          priority="medium"
+        />
+        <GoalCard
+          name="Emergency Fund Top-up"
+          target={20000}
+          current={16500}
+          deadline="N/A"
+          priority="high"
+        />
+      </div>
     </div>
   );
 }
 
+    

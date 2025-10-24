@@ -207,3 +207,68 @@ export const marketWatchlist: MarketAsset[] = [
     currency: "USD",
   },
 ];
+
+export const bills = [
+  {
+    name: 'Netflix',
+    dueDate: '25th Oct',
+    amount: 15.99,
+    icon: 'Youtube',
+  },
+  {
+    name: 'Gym Membership',
+    dueDate: '1st Nov',
+    amount: 40.0,
+    icon: 'Heart',
+  },
+  {
+    name: 'Car Insurance',
+    dueDate: '5th Nov',
+    amount: 150.0,
+    icon: 'Car',
+  },
+];
+
+export const savingsGoals = [
+  {
+    name: 'New Car',
+    target: 30000,
+    current: 12500,
+    description: 'Saving for a new electric vehicle.',
+  },
+  {
+    name: 'Vacation Fund',
+    target: 5000,
+    current: 4200,
+    description: 'Trip to Japan in 2025.',
+  },
+];
+
+export const documents = [
+  {
+    name: 'Passport.pdf',
+    type: 'Identification',
+    date: '2023-01-15',
+    icon: 'File',
+  },
+  {
+    name: 'Car_Insurance.pdf',
+    type: 'Insurance',
+    date: '2023-09-01',
+    icon: 'File',
+  },
+  {
+    name: 'House_Lease.pdf',
+    type: 'Contract',
+    date: '2022-08-01',
+    icon: 'File',
+  },
+];
+
+export const shoppingList = [
+  { id: '1', name: 'Milk', checked: false },
+  { id: '2', name: 'Bread', checked: true },
+  { id: '3', name: 'Eggs', checked: false },
+];
+
+    
