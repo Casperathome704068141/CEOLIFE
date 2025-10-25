@@ -1338,6 +1338,10 @@ body {
   list-style-type: disc;
 }
 
+.auto-rows-min {
+  grid-auto-rows: min-content;
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
@@ -1440,6 +1444,10 @@ body {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -2788,6 +2796,11 @@ body {
 .text-xs {
   font-size: .75rem;
   line-height: 1rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .font-bold {
@@ -4858,6 +4871,10 @@ body {
     grid-template-columns: 320px 1fr;
   }
 
+  .lg\:grid-cols-\[minmax\(0\,1\.2fr\)_minmax\(0\,1fr\)\] {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -4936,6 +4953,10 @@ body {
 
   .xl\:grid-cols-\[minmax\(0\,1fr\)_340px\] {
     grid-template-columns: minmax(0, 1fr) 340px;
+  }
+
+  .xl\:grid-cols-\[minmax\(0\,1\.2fr\)_minmax\(0\,1fr\)_minmax\(0\,0\.9fr\)\] {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, .9fr);
   }
 
   .xl\:flex-col {

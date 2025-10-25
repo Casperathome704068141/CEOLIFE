@@ -546,6 +546,8 @@ function pushQueueItem(item) {
     queueState.sort((a, b)=>b.priorityScore - a.priorityScore);
 }
 function getOverview() {
+    // This function will now compute the overview from the event log in a real scenario.
+    // For now, we'll just return the mutable state.
     return overviewState;
 }
 function getQueue(filter) {

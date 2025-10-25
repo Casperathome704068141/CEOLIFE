@@ -355,6 +355,8 @@ function pushQueueItem(item: QueueItem) {
 }
 
 export function getOverview(): Overview {
+  // This function will now compute the overview from the event log in a real scenario.
+  // For now, we'll just return the mutable state.
   return overviewState;
 }
 
@@ -454,4 +456,3 @@ export function buildScenarioFromImpact(impact: ImpactPlan["kpiDelta"] | undefin
     goalEtaDeltaDays: impact.goalEtaDeltaDays,
   };
 }
-
