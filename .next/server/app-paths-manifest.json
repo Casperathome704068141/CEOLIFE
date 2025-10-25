@@ -4,5 +4,18 @@
   "/api/goals/funding-accounts/route": "app/api/goals/funding-accounts/route.js",
   "/api/goals/route": "app/api/goals/route.js",
   "/api/goals/suggestions/route": "app/api/goals/suggestions/route.js",
-  "/goals/page": "app/goals/page.js"
+  "/api/household/apartment/meters/route": "app/api/household/apartment/meters/route.js",
+  "/api/household/apartment/tickets/route": "app/api/household/apartment/tickets/route.js",
+  "/api/household/assets/route": "app/api/household/assets/route.js",
+  "/api/household/care/appointments/route": "app/api/household/care/appointments/route.js",
+  "/api/household/care/doses/route": "app/api/household/care/doses/route.js",
+  "/api/household/care/medications/route": "app/api/household/care/medications/route.js",
+  "/api/household/care/profiles/route": "app/api/household/care/profiles/route.js",
+  "/api/household/members/route": "app/api/household/members/route.js",
+  "/api/household/shopping/route": "app/api/household/shopping/route.js",
+  "/api/household/split/ledger/route": "app/api/household/split/ledger/route.js",
+  "/api/household/split/settlements/route": "app/api/household/split/settlements/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/goals/page": "app/goals/page.js",
+  "/household/page": "app/household/page.js"
 }

@@ -55,5 +55,4 @@ export default function ShoppingPage() {
     </div>
   );
 }
-
     
