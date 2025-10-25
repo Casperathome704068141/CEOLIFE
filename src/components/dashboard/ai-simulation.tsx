@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -5,23 +6,35 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { BrainCircuit, Wand2 } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { forecastLifeScenario } from "@/ai/flows/forecast-life-scenarios";
+import { useToast } from "@/hooks/use-toast";
 
 export function AiSimulation() {
   const [scenario, setScenario] = React.useState("");
   const [result, setResult] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
+  const { toast } = useToast();
 
-  const handleSimulate = () => {
+  const handleSimulate = async () => {
     if (!scenario) return;
     setIsLoading(true);
     setResult("");
-    // In a real app, this would call the forecastLifeScenario AI flow
-    setTimeout(() => {
+    try {
+      const response = await forecastLifeScenario({
+        scenarioDescription: scenario,
+        currentSavings: 12000,
+        monthlyIncome: 6800,
+        monthlyExpenses: 5200,
+      });
       setResult(
-        `Simulating scenario: "${scenario}"\n\nFinancial Impact: Your monthly savings would decrease by approximately $300. Your timeline to reach the 'New Car' goal would be extended by 8 months.\n\nTime Impact: You would have approximately 10 fewer hours of free time per week for the duration of the diploma.`
+        `Financial Impact: ${response.financialImpactSummary}\n\nCashflow Projection: ${response.cashflowProjection}`
       );
+    } catch (error) {
+      toast({ variant: "destructive", title: "Simulation failed" });
+      console.error(error);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   return (

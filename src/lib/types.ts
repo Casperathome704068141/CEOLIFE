@@ -1,3 +1,4 @@
+
 export type ScheduleEvent = {
   time: string;
   title: string;
@@ -43,7 +44,7 @@ export type DoctorAppointment = {
 export type MarketAsset = {
   symbol: string;
   name: string;
-  type: 'stock' | 'crypto';
+  type: "stock" | "crypto";
   price: number;
   change: number;
   changePercent: number;

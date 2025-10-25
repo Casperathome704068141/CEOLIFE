@@ -1,43 +1,81 @@
-import { PageHeader, PagePrimaryAction, PageSecondaryAction } from "@/components/layout/page-header";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Slider } from "@/components/ui/slider";
-import { Button } from "@/components/ui/button";
+
+"use client";
+
+import { useSimulations } from "@/lib/sim/useSimulations";
+import { ScenarioEditor } from "@/components/sim/ScenarioEditor";
+import { ScenarioToolbar } from "@/components/sim/ScenarioToolbar";
+import { useState } from "react";
+import { MonteCarloResult, Scenario, ScenarioParameters, SimResult } from "@/lib/sim/types";
+import { useToast } from "@/hooks/use-toast";
+
+const DEFAULT_PARAMS: ScenarioParameters = {
+  horizonMonths: 18,
+  incomeDeltaPct: 0,
+  discretionaryDeltaPct: 0,
+  rentDeltaPct: 0,
+};
 
 export default function ForecastsPage() {
-  return (
-    <div className="space-y-8">
-      <PageHeader
-        title="Forecast scenarios"
-        description="Adjust assumptions to see projected balance and gap automations."
-        actions={
-          <>
-            <PagePrimaryAction>Save scenario</PagePrimaryAction>
-            <PageSecondaryAction>Create automation</PageSecondaryAction>
-          </>
-        }
-      />
+  const { scenarios, createScenario, updateScenario, deleteScenario, run, runMonteCarlo } = useSimulations();
+  const [currentParams, setCurrentParams] = useState<ScenarioParameters>(DEFAULT_PARAMS);
+  const [result, setResult] = useState<SimResult | undefined>();
+  const [selectedScenario, setSelectedScenario] = useState<Scenario | null>(null);
+  const { toast } = useToast();
 
-      <Card className="rounded-3xl border border-slate-900/60 bg-slate-950/80 shadow-xl">
-        <CardHeader>
-          <CardTitle className="text-lg text-white">Assumption sliders</CardTitle>
-          <p className="text-xs text-slate-400">Income growth, rent change, and travel plan toggles.</p>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div>
-            <p className="text-sm text-white">Income change</p>
-            <Slider defaultValue={[5]} max={20} step={1} className="mt-2" />
-          </div>
-          <div>
-            <p className="text-sm text-white">Rent adjustment</p>
-            <Slider defaultValue={[2]} max={15} step={1} className="mt-2" />
-          </div>
-          <div>
-            <p className="text-sm text-white">Travel fund</p>
-            <Slider defaultValue={[30]} max={50} step={5} className="mt-2" />
-          </div>
-          <Button className="rounded-2xl">Simulate impact</Button>
-        </CardContent>
-      </Card>
+  const handleRun = async () => {
+    try {
+      const sim = await run({ params: currentParams });
+      setResult(sim);
+    } catch (error) {
+      toast({ variant: "destructive", title: "Simulation failed" });
+    }
+  };
+
+  const handleSave = async () => {
+    if (selectedScenario) {
+      await updateScenario({
+        id: selectedScenario.id,
+        data: { name: selectedScenario.name, params: currentParams, results: result },
+      });
+    } else {
+      const id = await createScenario({ name: "New Scenario", params: currentParams });
+      const newScenario = scenarios.find(s => s.id === id);
+      if (newScenario) setSelectedScenario(newScenario);
+    }
+  };
+
+  return (
+    <div className="space-y-6">
+      <ScenarioToolbar
+        onNew={() => {
+          setSelectedScenario(null);
+          setCurrentParams(DEFAULT_PARAMS);
+          setResult(undefined);
+        }}
+        onPreset={() => {}}
+        onImport={() => {}}
+        onShare={() => {}}
+        onSave={handleSave}
+        canSave={!!result}
+      />
+      <ScenarioEditor
+        scenario={selectedScenario}
+        params={currentParams}
+        assumptions={{}}
+        shocks={[]}
+        result={result}
+        onParamsChange={setCurrentParams}
+        onRun={handleRun}
+        onOpenAssumptions={() => {}}
+        onOpenShocks={() => {}}
+        onOpenDebtPlanner={() => {}}
+        onOpenCompare={() => {}}
+        onOpenApplyPlan={() => {}}
+        onRunMonteCarlo={async () => {}}
+        onUseMedianPath={() => {}}
+        onApplySensitivity={() => {}}
+      />
     </div>
   );
 }
+
