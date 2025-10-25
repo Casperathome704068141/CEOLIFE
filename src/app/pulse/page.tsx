@@ -259,7 +259,7 @@ export default function PulsePage() {
         />
       </div>
       <Bento>
-        <div className="space-y-6">
+        <div className="flex flex-col gap-6">
           {sportsQuery.isLoading ? (
             <Skeleton className="h-96 w-full rounded-2xl" />
           ) : (
@@ -275,7 +275,7 @@ export default function PulsePage() {
           )}
           <LiveScoreCard games={games} onAddToBrief={handleAddToBrief} />
         </div>
-        <div className="space-y-6">
+        <div className="flex flex-col gap-6">
           {oddsQuery.isLoading ? (
             <Skeleton className="h-80 w-full rounded-2xl" />
           ) : (
@@ -295,7 +295,7 @@ export default function PulsePage() {
             onAddToBrief={handleAddToBrief}
           />
         </div>
-        <div className="space-y-6">
+        <div className="flex flex-col gap-6">
           <NewsCard onAddToBrief={handleAddToBrief} />
           <WeatherCard forecasts={forecasts} games={games} onAddToBrief={handleAddToBrief} />
           <DisclaimerCard />

@@ -33,14 +33,14 @@ export function NewsCard({ onAddToBrief }: Props) {
   });
 
   return (
-    <Card className="h-full">
-      <CardHeader>
-        <CardTitle className="flex items-center justify-between text-base">
+    <Card className="flex h-full flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur">
+      <CardHeader className="gap-3">
+        <CardTitle className="flex flex-wrap items-center justify-between gap-3 text-base">
           <span>Headline radar</span>
           <Badge variant="outline">News</Badge>
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="flex-1 space-y-4">
         <Tabs value={category} onValueChange={(value) => setCategory(value as Article["category"])}>
           <TabsList className="grid grid-cols-2 gap-2 md:grid-cols-5">
             {categories.map((cat) => (
@@ -58,8 +58,8 @@ export function NewsCard({ onAddToBrief }: Props) {
               <p className="text-sm text-muted-foreground">No news items available.</p>
             ) : (
               articles.map((article) => (
-                <div key={article.id} className="space-y-2 rounded-xl border border-border/60 bg-background/80 p-3">
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                <div key={article.id} className="space-y-2 rounded-xl border border-border/60 bg-background/80 p-3 shadow-sm">
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
                     <span>{article.source}</span>
                     <span>{new Date(article.publishedAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
                   </div>
@@ -74,7 +74,7 @@ export function NewsCard({ onAddToBrief }: Props) {
           </div>
         </ScrollArea>
       </CardContent>
-      <CardFooter className="flex items-center justify-between text-xs text-muted-foreground">
+      <CardFooter className="flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
         <span>Pulse aggregates Reuters, AP, Bing and NewsAPI feeds.</span>
         <Button
           variant="ghost"

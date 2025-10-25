@@ -17,14 +17,14 @@ export function WeatherCard({ forecasts, games, onAddToBrief }: Props) {
   const gameLookup = new Map(games.map((game) => [game.id, game] as const));
 
   return (
-    <Card className="h-full">
-      <CardHeader>
-        <CardTitle className="flex items-center justify-between text-base">
+    <Card className="flex h-full flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur">
+      <CardHeader className="gap-3">
+        <CardTitle className="flex flex-wrap items-center justify-between gap-3 text-base">
           <span>Weather snapshot</span>
           <Badge variant="outline">Weather</Badge>
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="flex-1 space-y-4">
         {forecasts.length === 0 ? (
           <p className="text-sm text-muted-foreground">No weather signals linked to current filters.</p>
         ) : (
@@ -36,7 +36,7 @@ export function WeatherCard({ forecasts, games, onAddToBrief }: Props) {
             return (
               <div
                 key={forecast.city}
-                className="space-y-2 rounded-xl border border-border/60 bg-background/80 p-4"
+                className="space-y-3 rounded-xl border border-border/60 bg-background/80 p-4 shadow-sm"
               >
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
@@ -76,7 +76,7 @@ export function WeatherCard({ forecasts, games, onAddToBrief }: Props) {
           })
         )}
       </CardContent>
-      <CardFooter className="flex items-center justify-between text-xs text-muted-foreground">
+      <CardFooter className="flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
         <span>Atmospherics blend local radar with market overlays.</span>
         <Button
           variant="ghost"

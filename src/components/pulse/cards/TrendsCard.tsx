@@ -28,19 +28,19 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
   const colors = ["#38bdf8", "#22d3ee", "#a855f7", "#f97316"];
 
   return (
-    <Card className="col-span-full">
-      <CardHeader>
-        <CardTitle className="flex flex-wrap items-center justify-between gap-2 text-base">
+    <Card className="col-span-full flex h-full flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur">
+      <CardHeader className="gap-3">
+        <CardTitle className="flex flex-wrap items-center justify-between gap-3 text-base">
           <span>Trends intelligence</span>
           <span className="text-xs text-muted-foreground">Line moves • Sentiment • Momentum</span>
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="flex-1 space-y-6">
         {trends.lineMoves.length === 0 ? (
           <p className="text-sm text-muted-foreground">Trends will populate as leagues with activity are selected.</p>
         ) : null}
         {chartData.length > 0 ? (
-          <div className="h-64 w-full overflow-hidden rounded-xl border border-border/60 bg-background/80 p-4">
+          <div className="h-64 w-full overflow-hidden rounded-xl border border-border/60 bg-background/80 p-4 shadow-sm">
             <ResponsiveContainer>
               <LineChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" className="stroke-border/50" />
@@ -62,9 +62,9 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
           </div>
         ) : null}
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-xl border border-border/60 bg-background/80 p-4">
+          <div className="space-y-3 rounded-xl border border-border/60 bg-background/80 p-4 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Momentum heat</p>
-            <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
               {trends.momentumHeat.map((item) => (
                 <div
                   key={`${item.id}-${item.label}`}
@@ -79,9 +79,9 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
               ))}
             </div>
           </div>
-          <div className="rounded-xl border border-border/60 bg-background/80 p-4">
+          <div className="space-y-3 rounded-xl border border-border/60 bg-background/80 p-4 shadow-sm">
             <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Sentiment split</p>
-            <div className="mt-3 space-y-3">
+            <div className="space-y-3">
               {trends.sentiment.map((row) => (
                 <div key={row.league} className="space-y-1">
                   <div className="flex items-center justify-between text-xs text-muted-foreground">
@@ -103,7 +103,7 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
           </div>
         </div>
       </CardContent>
-      <CardFooter className="flex items-center justify-between text-xs text-muted-foreground">
+      <CardFooter className="flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
         <span>Trends overlay on each card when you pin items to the watchlist.</span>
         <Button
           variant="ghost"

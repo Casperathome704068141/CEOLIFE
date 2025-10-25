@@ -27,16 +27,16 @@ export function LiveScoreCard({ games, onAddToBrief }: Props) {
   const liveGames = games.filter((game) => game.status === "live");
 
   return (
-    <Card className="h-full">
-      <CardHeader>
-        <CardTitle className="flex items-center justify-between text-base">
+    <Card className="flex h-full flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur">
+      <CardHeader className="gap-3">
+        <CardTitle className="flex flex-wrap items-center justify-between gap-3 text-base">
           <span>Live scoreboard</span>
           <Badge variant="outline" className="gap-1">
             <Activity className="h-3 w-3" /> 60s auto-refresh
           </Badge>
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className="flex-1 space-y-3">
         {liveGames.length === 0 ? (
           <p className="text-sm text-muted-foreground">No live events right now.</p>
         ) : (
@@ -46,7 +46,7 @@ export function LiveScoreCard({ games, onAddToBrief }: Props) {
               <motion.div
                 key={game.id}
                 layout
-                className="rounded-xl border border-border/60 bg-background/80 p-4"
+                className="space-y-2 rounded-xl border border-border/60 bg-background/80 p-4 shadow-sm"
                 initial={{ opacity: 0.8 }}
                 animate={{ opacity: 1 }}
               >
@@ -70,7 +70,7 @@ export function LiveScoreCard({ games, onAddToBrief }: Props) {
           })
         )}
       </CardContent>
-      <CardFooter className="flex items-center justify-between text-xs text-muted-foreground">
+      <CardFooter className="flex flex-wrap items-center justify-between gap-3 text-xs text-muted-foreground">
         <span>Live feeds merge scoreboard, drive charts and sentiment pulses.</span>
         <Button
           variant="ghost"
