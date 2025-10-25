@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -27,16 +28,30 @@ import { CommandMenu } from "@/components/layout/command-menu";
 import { NotificationsTray } from "@/components/layout/notifications-tray";
 import { ProfileSwitcher } from "@/components/layout/profile-switcher";
 import { useUIState } from "@/store/ui-store";
+import { useAuth } from "@/firebase";
+import { signOut } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 export function Header() {
   const userAvatar = PlaceHolderImages.find((img) => img.id === "user-avatar-1");
   const { setCommandPaletteOpen } = useUIState();
   const [isDark, setIsDark] = useState(true);
+  const auth = useAuth();
+  const router = useRouter();
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
     document.documentElement.classList.toggle("light", !isDark);
   }, [isDark]);
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      router.push("/login");
+    } catch (error) {
+      console.error("Error signing out", error);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b border-slate-800/80 bg-slate-950/80 px-4 backdrop-blur-md sm:px-6 md:px-8">
@@ -112,7 +127,7 @@ export function Header() {
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={handleSignOut}>
               <LogOut className="mr-2 h-4 w-4" />
               <span>Log out</span>
             </DropdownMenuItem>

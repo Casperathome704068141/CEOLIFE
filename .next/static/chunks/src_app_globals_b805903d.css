@@ -565,6 +565,10 @@ body {
   grid-column: 1 / -1;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
 .m-1 {
   margin: .25rem;
 }
@@ -931,6 +935,10 @@ body {
 
 .h-svh {
   height: 100svh;
+}
+
+.h-\[calc\(100vh_-_8rem\)\] {
+  height: calc(100vh - 8rem);
 }
 
 .max-h-48 {
@@ -1364,6 +1372,10 @@ body {
 
 .grid-cols-\[1fr\,1fr\,1fr\,auto\] {
   grid-template-columns: 1fr 1fr 1fr auto;
+}
+
+.grid-rows-\[auto\,1fr\] {
+  grid-template-rows: auto 1fr;
 }
 
 .flex-row {
@@ -4875,6 +4887,10 @@ body {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   }
 
+  .lg\:grid-cols-\[280px\,1fr\] {
+    grid-template-columns: 280px 1fr;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -4919,6 +4935,10 @@ body {
     grid-column: span 8 / span 8;
   }
 
+  .xl\:block {
+    display: block;
+  }
+
   .xl\:flex {
     display: flex;
   }
@@ -4957,6 +4977,10 @@ body {
 
   .xl\:grid-cols-\[minmax\(0\,1\.2fr\)_minmax\(0\,1fr\)_minmax\(0\,0\.9fr\)\] {
     grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, .9fr);
+  }
+
+  .xl\:grid-cols-\[280px\,1fr\,200px\] {
+    grid-template-columns: 280px 1fr 200px;
   }
 
   .xl\:flex-col {
