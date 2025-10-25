@@ -1333,7 +1333,7 @@ function LiveScoreCard({ games, onAddToBrief }) {
                             opacity: 1
                         },
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-wrap items-center justify-between gap-3",
+                            className: "flex flex-wrap items-start justify-between gap-3",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     children: [
@@ -2074,7 +2074,7 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-3 grid gap-3 md:grid-cols-[2fr_1fr]",
+                                className: "mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 items-center",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-24 w-full",
@@ -2703,7 +2703,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                         className: "space-y-2 rounded-xl border border-border/60 bg-background/80 p-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-wrap items-center justify-between gap-3",
+                                className: "flex flex-wrap items-start justify-between gap-3",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
@@ -2799,13 +2799,6 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
                                         lineNumber: 60,
                                         columnNumber: 19
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: forecast.note
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                        lineNumber: 63,
-                                        columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
@@ -2813,8 +2806,16 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                 lineNumber: 56,
                                 columnNumber: 17
                             }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-xs text-muted-foreground",
+                                children: forecast.note
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
+                                lineNumber: 64,
+                                columnNumber: 17
+                            }, this),
                             relatedGames.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "space-y-1 text-xs text-muted-foreground",
+                                className: "space-y-1 pt-2 text-xs text-muted-foreground",
                                 children: relatedGames.map((game)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: [
                                             "Impact → ",
@@ -3018,7 +3019,8 @@ function TrendsCard({ trends, onAddToBrief }) {
                                             type: "monotone",
                                             dataKey: label,
                                             strokeWidth: 2,
-                                            stroke: colors[index % colors.length]
+                                            stroke: colors[index % colors.length],
+                                            name: label
                                         }, label, false, {
                                             fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
                                             lineNumber: 51,
@@ -3051,7 +3053,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                         children: "Momentum heat"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 65,
+                                        lineNumber: 66,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3066,7 +3068,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                         children: item.label
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 75,
+                                                        lineNumber: 76,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3077,24 +3079,24 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 76,
+                                                        lineNumber: 77,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, `${item.id}-${item.label}`, true, {
                                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                lineNumber: 68,
+                                                lineNumber: 69,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 66,
+                                        lineNumber: 67,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                lineNumber: 64,
+                                lineNumber: 65,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3105,7 +3107,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                         children: "Sentiment split"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 82,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3120,7 +3122,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                                 children: row.league
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                                lineNumber: 87,
+                                                                lineNumber: 88,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3131,13 +3133,13 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                                lineNumber: 88,
+                                                                lineNumber: 89,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 87,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3149,12 +3151,12 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                            lineNumber: 91,
+                                                            lineNumber: 92,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 91,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3166,30 +3168,30 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 96,
+                                                        lineNumber: 97,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, row.league, true, {
                                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                lineNumber: 85,
+                                                lineNumber: 86,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 84,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                lineNumber: 81,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                        lineNumber: 63,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, this)
                 ]
@@ -3205,7 +3207,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                         children: "Trends overlay on each card when you pin items to the watchlist."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                        lineNumber: 106,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -3219,13 +3221,13 @@ function TrendsCard({ trends, onAddToBrief }) {
                         children: "Add to Beno brief"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                        lineNumber: 107,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                lineNumber: 105,
+                lineNumber: 106,
                 columnNumber: 7
             }, this)
         ]

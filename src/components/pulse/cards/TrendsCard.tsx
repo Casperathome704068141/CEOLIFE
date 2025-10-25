@@ -30,7 +30,7 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
   return (
     <Card className="col-span-full">
       <CardHeader>
-        <CardTitle className="flex items-center justify-between text-base">
+        <CardTitle className="flex flex-wrap items-center justify-between gap-2 text-base">
           <span>Trends intelligence</span>
           <span className="text-xs text-muted-foreground">Line moves • Sentiment • Momentum</span>
         </CardTitle>

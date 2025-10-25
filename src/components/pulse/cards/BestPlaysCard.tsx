@@ -44,7 +44,7 @@ export function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrie
                 </div>
                 <Badge className={band.className}>{play.valueScore.toFixed(1)}</Badge>
               </div>
-              <div className="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
+              <div className="mt-3 grid grid-cols-1 items-center gap-3 md:grid-cols-2">
                 <div className="h-24 w-full">
                   <ResponsiveContainer>
                     <AreaChart data={play.sparkline}>
