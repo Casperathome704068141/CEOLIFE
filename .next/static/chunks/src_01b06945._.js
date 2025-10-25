@@ -43,21 +43,21 @@ function HeaderBar({ onRefresh, onCustomize, onViewTrends }) {
                             children: "Pulse"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                            lineNumber: 23,
+                            lineNumber: 24,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-sm text-muted-foreground",
-                            children: "Sports, odds, news & weather — live."
+                            children: "Sports, Odds, News & Weather in one place."
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                            lineNumber: 24,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                    lineNumber: 22,
+                    lineNumber: 23,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -72,14 +72,14 @@ function HeaderBar({ onRefresh, onCustomize, onViewTrends }) {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                                    lineNumber: 30,
+                                    lineNumber: 31,
                                     columnNumber: 13
                                 }, this),
                                 " Refresh"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                            lineNumber: 29,
+                            lineNumber: 30,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -91,14 +91,14 @@ function HeaderBar({ onRefresh, onCustomize, onViewTrends }) {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                                    lineNumber: 33,
+                                    lineNumber: 34,
                                     columnNumber: 13
                                 }, this),
                                 " Customize sources"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -110,31 +110,31 @@ function HeaderBar({ onRefresh, onCustomize, onViewTrends }) {
                                     className: "h-4 w-4"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                                    lineNumber: 36,
+                                    lineNumber: 37,
                                     columnNumber: 13
                                 }, this),
                                 " View trends"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-            lineNumber: 21,
+            lineNumber: 22,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/pulse/HeaderBar.tsx",
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 5
     }, this);
 }
@@ -255,7 +255,7 @@ const LeagueFilter = /*#__PURE__*/ _s((0, __TURBOPACK__imported__module__$5b$pro
                                 children: "Filter leagues"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                                lineNumber: 23,
+                                lineNumber: 24,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -263,13 +263,13 @@ const LeagueFilter = /*#__PURE__*/ _s((0, __TURBOPACK__imported__module__$5b$pro
                                 children: "Personalize the dashboard to focus on the competitions that matter right now."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                                lineNumber: 26,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                        lineNumber: 22,
+                        lineNumber: 23,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -282,18 +282,18 @@ const LeagueFilter = /*#__PURE__*/ _s((0, __TURBOPACK__imported__module__$5b$pro
                                 children: option.label
                             }, option.id, false, {
                                 fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                                lineNumber: 32,
+                                lineNumber: 33,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                        lineNumber: 30,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                lineNumber: 21,
+                lineNumber: 22,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -312,25 +312,25 @@ const LeagueFilter = /*#__PURE__*/ _s((0, __TURBOPACK__imported__module__$5b$pro
                                 children: "ON"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                                lineNumber: 60,
+                                lineNumber: 61,
                                 columnNumber: 25
                             }, this) : null
                         ]
                     }, league, true, {
                         fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                        lineNumber: 48,
+                        lineNumber: 49,
                         columnNumber: 13
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-                lineNumber: 44,
+                lineNumber: 45,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/LeagueFilter.tsx",
-        lineNumber: 20,
+        lineNumber: 21,
         columnNumber: 5
     }, this);
 }, "ZgtzKTA7al9l3wvcxRQZRku8un4=", false, function() {
@@ -644,6 +644,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$b
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/switch.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/label.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$usePreferences$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/pulse/usePreferences.ts [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -653,9 +654,11 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function WatchlistBar({ onSelect }) {
     _s();
-    const { items, remove, onlyWatchlist, setOnlyWatchlist } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$useWatchlist$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useWatchlist"])();
+    const { items, remove } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$useWatchlist$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useWatchlist"])();
+    const { onlyWatchlist, setOnlyWatchlist } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$usePreferences$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePreferences"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex flex-col gap-3 rounded-2xl border border-border/60 bg-background/60 p-4",
         children: [
@@ -669,7 +672,7 @@ function WatchlistBar({ onSelect }) {
                                 children: "Watchlist"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                                lineNumber: 21,
+                                lineNumber: 24,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -677,13 +680,13 @@ function WatchlistBar({ onSelect }) {
                                 children: "Track live opportunities you pinned. Syncs with your account preferences."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                                lineNumber: 24,
+                                lineNumber: 27,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                        lineNumber: 20,
+                        lineNumber: 23,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -695,7 +698,7 @@ function WatchlistBar({ onSelect }) {
                                 onCheckedChange: (value)=>setOnlyWatchlist(value)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                                lineNumber: 29,
+                                lineNumber: 32,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Label"], {
@@ -704,19 +707,19 @@ function WatchlistBar({ onSelect }) {
                                 children: "Only watchlist"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                                lineNumber: 34,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                        lineNumber: 28,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                lineNumber: 19,
+                lineNumber: 22,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollArea"], {
@@ -729,7 +732,7 @@ function WatchlistBar({ onSelect }) {
                             children: "No tracked items yet."
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                            lineNumber: 42,
+                            lineNumber: 45,
                             columnNumber: 13
                         }, this) : items.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "button",
@@ -740,7 +743,7 @@ function WatchlistBar({ onSelect }) {
                                         children: item.label
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 54,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -755,23 +758,23 @@ function WatchlistBar({ onSelect }) {
                                             className: "h-3 w-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                                            lineNumber: 61,
+                                            lineNumber: 64,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                                        lineNumber: 52,
+                                        lineNumber: 55,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, item.id, true, {
                                 fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                                lineNumber: 45,
+                                lineNumber: 48,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                        lineNumber: 40,
+                        lineNumber: 43,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollBar"], {
@@ -779,25 +782,26 @@ function WatchlistBar({ onSelect }) {
                         className: "mt-2"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                        lineNumber: 67,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-                lineNumber: 39,
+                lineNumber: 42,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/WatchlistBar.tsx",
-        lineNumber: 18,
+        lineNumber: 21,
         columnNumber: 5
     }, this);
 }
-_s(WatchlistBar, "i1ZES4OPsm+lpORgchFUm87JFW8=", false, function() {
+_s(WatchlistBar, "ISQ99cj95zH0sIEF0YpXwJhrFsE=", false, function() {
     return [
-        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$useWatchlist$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useWatchlist"]
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$useWatchlist$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useWatchlist"],
+        __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$usePreferences$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePreferences"]
     ];
 });
 _c = WatchlistBar;
@@ -825,7 +829,7 @@ function Bento({ className, children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/pulse/Bento.tsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 5
     }, this);
 }
@@ -995,7 +999,7 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                             children: "Schedule radar"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                            lineNumber: 45,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1003,18 +1007,18 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                             children: "Sports"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                            lineNumber: 46,
+                            lineNumber: 47,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                    lineNumber: 44,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                lineNumber: 43,
+                lineNumber: 44,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1033,7 +1037,7 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                 children: section.title
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                lineNumber: 57,
+                                                lineNumber: 58,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1044,13 +1048,13 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                lineNumber: 60,
+                                                lineNumber: 61,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 57,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1062,7 +1066,7 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                 children: "No fixtures in this window."
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                lineNumber: 65,
+                                                lineNumber: 66,
                                                 columnNumber: 25
                                             }, this) : visible.map((game)=>{
                                                 const tracked = trackedIds.has(game.id);
@@ -1100,7 +1104,7 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                            lineNumber: 82,
+                                                                            lineNumber: 83,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1110,21 +1114,21 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                                     children: game.league
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                                    lineNumber: 86,
+                                                                                    lineNumber: 87,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: "•"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                                    lineNumber: 87,
+                                                                                    lineNumber: 88,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$2f$format$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["format"])(start, "eee, MMM d p")
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                                    lineNumber: 88,
+                                                                                    lineNumber: 89,
                                                                                     columnNumber: 33
                                                                                 }, this),
                                                                                 game.venueCity ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -1133,14 +1137,14 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                                             children: "•"
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                                            lineNumber: 91,
+                                                                                            lineNumber: 92,
                                                                                             columnNumber: 37
                                                                                         }, this),
                                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                                             children: game.venueCity
                                                                                         }, void 0, false, {
                                                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                                            lineNumber: 92,
+                                                                                            lineNumber: 93,
                                                                                             columnNumber: 37
                                                                                         }, this)
                                                                                     ]
@@ -1148,13 +1152,13 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                            lineNumber: 85,
+                                                                            lineNumber: 86,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                    lineNumber: 81,
+                                                                    lineNumber: 82,
                                                                     columnNumber: 29
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1169,12 +1173,12 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                                 }
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                                lineNumber: 99,
+                                                                                lineNumber: 100,
                                                                                 columnNumber: 33
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                            lineNumber: 98,
+                                                                            lineNumber: 99,
                                                                             columnNumber: 31
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1187,32 +1191,32 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                                     className: "h-4 w-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                                    lineNumber: 110,
+                                                                                    lineNumber: 111,
                                                                                     columnNumber: 44
                                                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$plus$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Plus$3e$__["Plus"], {
                                                                                     className: "h-4 w-4"
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                                    lineNumber: 110,
+                                                                                    lineNumber: 111,
                                                                                     columnNumber: 76
                                                                                 }, this),
                                                                                 " Track"
                                                                             ]
                                                                         }, void 0, true, {
                                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                            lineNumber: 104,
+                                                                            lineNumber: 105,
                                                                             columnNumber: 31
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                    lineNumber: 97,
+                                                                    lineNumber: 98,
                                                                     columnNumber: 29
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                            lineNumber: 80,
+                                                            lineNumber: 81,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1222,7 +1226,7 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                             children: expandedId === game.id ? "Hide detail" : "View context"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                            lineNumber: 114,
+                                                            lineNumber: 115,
                                                             columnNumber: 27
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -1249,7 +1253,7 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                        lineNumber: 129,
+                                                                        lineNumber: 130,
                                                                         columnNumber: 33
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1259,7 +1263,7 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                        lineNumber: 132,
+                                                                        lineNumber: 133,
                                                                         columnNumber: 33
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1269,35 +1273,35 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                        lineNumber: 133,
+                                                                        lineNumber: 134,
                                                                         columnNumber: 33
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                                lineNumber: 123,
+                                                                lineNumber: 124,
                                                                 columnNumber: 31
                                                             }, this) : null
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                            lineNumber: 121,
+                                                            lineNumber: 122,
                                                             columnNumber: 27
                                                         }, this)
                                                     ]
                                                 }, game.id, true, {
                                                     fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                                    lineNumber: 71,
+                                                    lineNumber: 72,
                                                     columnNumber: 29
                                                 }, this);
                                             })
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                            lineNumber: 63,
+                                            lineNumber: 64,
                                             columnNumber: 21
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 63,
                                         columnNumber: 19
                                     }, this)
                                 ]
@@ -1305,12 +1309,12 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                         })()
                     }, section.title, false, {
                         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                        lineNumber: 51,
+                        lineNumber: 52,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                lineNumber: 49,
+                lineNumber: 50,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -1320,7 +1324,7 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                         children: "Track games to sync alerts and weather overlays."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                        lineNumber: 152,
+                        lineNumber: 153,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1334,19 +1338,19 @@ function ScheduleCard({ games, trackedIds, onTrack, onUntrack, onlyWatchlist, on
                         children: "Add to Beno brief"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                        lineNumber: 153,
+                        lineNumber: 154,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-                lineNumber: 151,
+                lineNumber: 152,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/cards/ScheduleCard.tsx",
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 5
     }, this);
 }
@@ -1402,7 +1406,7 @@ function LiveScoreCard({ games, onAddToBrief }) {
                             children: "Live scoreboard"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                            lineNumber: 32,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1413,25 +1417,25 @@ function LiveScoreCard({ games, onAddToBrief }) {
                                     className: "h-3 w-3"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                                    lineNumber: 34,
+                                    lineNumber: 35,
                                     columnNumber: 13
                                 }, this),
                                 " 60s auto-refresh"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                            lineNumber: 33,
+                            lineNumber: 34,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                    lineNumber: 31,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1441,7 +1445,7 @@ function LiveScoreCard({ games, onAddToBrief }) {
                     children: "No live events right now."
                 }, void 0, false, {
                     fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                    lineNumber: 40,
+                    lineNumber: 41,
                     columnNumber: 11
                 }, this) : liveGames.map((game)=>{
                     const close = isCloseGame(game);
@@ -1472,7 +1476,7 @@ function LiveScoreCard({ games, onAddToBrief }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                                            lineNumber: 54,
+                                            lineNumber: 55,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1486,13 +1490,13 @@ function LiveScoreCard({ games, onAddToBrief }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                                            lineNumber: 57,
+                                            lineNumber: 58,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                                    lineNumber: 53,
+                                    lineNumber: 54,
                                     columnNumber: 19
                                 }, this),
                                 close ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1503,31 +1507,31 @@ function LiveScoreCard({ games, onAddToBrief }) {
                                             className: "h-3 w-3"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                                            lineNumber: 63,
+                                            lineNumber: 64,
                                             columnNumber: 23
                                         }, this),
                                         " Close game"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                                    lineNumber: 62,
+                                    lineNumber: 63,
                                     columnNumber: 21
                                 }, this) : null
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                            lineNumber: 52,
+                            lineNumber: 53,
                             columnNumber: 17
                         }, this)
                     }, game.id, false, {
                         fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                        lineNumber: 45,
+                        lineNumber: 46,
                         columnNumber: 15
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                lineNumber: 38,
+                lineNumber: 39,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -1537,7 +1541,7 @@ function LiveScoreCard({ games, onAddToBrief }) {
                         children: "Live feeds merge scoreboard, drive charts and sentiment pulses."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                        lineNumber: 73,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1551,19 +1555,19 @@ function LiveScoreCard({ games, onAddToBrief }) {
                         children: "Add to Beno brief"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                        lineNumber: 74,
+                        lineNumber: 75,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-                lineNumber: 72,
+                lineNumber: 73,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/cards/LiveScoreCard.tsx",
-        lineNumber: 29,
+        lineNumber: 30,
         columnNumber: 5
     }, this);
 }
@@ -1789,7 +1793,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                             children: "Top odds & value plays"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                            lineNumber: 26,
+                            lineNumber: 27,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -1797,18 +1801,18 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                             children: "Odds"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                            lineNumber: 27,
+                            lineNumber: 28,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                    lineNumber: 25,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -1818,7 +1822,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                     children: "No edges found under the active filters."
                 }, void 0, false, {
                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                    lineNumber: 32,
+                    lineNumber: 33,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Table"], {
                     children: [
@@ -1829,7 +1833,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                         children: "Pick"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                        lineNumber: 37,
+                                        lineNumber: 38,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1837,7 +1841,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                         children: "Implied"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                        lineNumber: 38,
+                                        lineNumber: 39,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1845,7 +1849,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                         children: "Market avg"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                        lineNumber: 39,
+                                        lineNumber: 40,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1853,7 +1857,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                         children: "Delta"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                        lineNumber: 40,
+                                        lineNumber: 41,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1861,7 +1865,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                         children: "Value score"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 42,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableHead"], {
@@ -1869,18 +1873,18 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                         children: "Actions"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 43,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                lineNumber: 36,
+                                lineNumber: 37,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableBody"], {
@@ -1897,7 +1901,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                                     children: row.selection
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                    lineNumber: 52,
+                                                    lineNumber: 53,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1909,13 +1913,13 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                    lineNumber: 53,
+                                                    lineNumber: 54,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                            lineNumber: 51,
+                                            lineNumber: 52,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
@@ -1926,7 +1930,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                            lineNumber: 57,
+                                            lineNumber: 58,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
@@ -1937,7 +1941,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                            lineNumber: 58,
+                                            lineNumber: 59,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
@@ -1948,7 +1952,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                            lineNumber: 59,
+                                            lineNumber: 60,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
@@ -1958,12 +1962,12 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                                 children: row.valueScore.toFixed(2)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                lineNumber: 61,
+                                                lineNumber: 62,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                            lineNumber: 60,
+                                            lineNumber: 61,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$table$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["TableCell"], {
@@ -1981,14 +1985,14 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                                                     className: "mr-1 h-4 w-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                                    lineNumber: 66,
+                                                                    lineNumber: 67,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 " Explain"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                            lineNumber: 65,
+                                                            lineNumber: 66,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -1998,7 +2002,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                                             children: "Track"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                            lineNumber: 68,
+                                                            lineNumber: 69,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2010,20 +2014,20 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                                                     className: "mr-1 h-4 w-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                                    lineNumber: 72,
+                                                                    lineNumber: 73,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 " Alert"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                            lineNumber: 71,
+                                                            lineNumber: 72,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                    lineNumber: 64,
+                                                    lineNumber: 65,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2038,36 +2042,36 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                                    lineNumber: 75,
+                                                    lineNumber: 76,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                            lineNumber: 63,
+                                            lineNumber: 64,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, row.id, true, {
                                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                                    lineNumber: 50,
+                                    lineNumber: 51,
                                     columnNumber: 17
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                            lineNumber: 45,
+                            lineNumber: 46,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                    lineNumber: 34,
+                    lineNumber: 35,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                lineNumber: 30,
+                lineNumber: 31,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -2077,7 +2081,7 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                         children: "Edges refresh from partner feeds every minute."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                        lineNumber: 89,
+                        lineNumber: 90,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2091,19 +2095,19 @@ function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief }) {
                         children: "Add to Beno brief"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                        lineNumber: 90,
+                        lineNumber: 91,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-                lineNumber: 88,
+                lineNumber: 89,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/cards/OddsValueCard.tsx",
-        lineNumber: 23,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 }
@@ -2153,7 +2157,7 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                             children: "Best plays insight"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                            lineNumber: 24,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2161,18 +2165,18 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                             children: "AI blend"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                            lineNumber: 25,
+                            lineNumber: 26,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                    lineNumber: 23,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                lineNumber: 22,
+                lineNumber: 23,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2182,7 +2186,7 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                     children: "No value plays surfaced for the current filters."
                 }, void 0, false, {
                     fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                    lineNumber: 30,
+                    lineNumber: 31,
                     columnNumber: 11
                 }, this) : plays.map((play)=>{
                     const band = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$valueScore$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["valueScoreBand"])(play.valueScore);
@@ -2200,7 +2204,7 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                 children: play.pick
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                lineNumber: 39,
+                                                lineNumber: 40,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2215,13 +2219,13 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                lineNumber: 40,
+                                                lineNumber: 41,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                        lineNumber: 38,
+                                        lineNumber: 39,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2229,13 +2233,13 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                         children: play.valueScore.toFixed(1)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                        lineNumber: 44,
+                                        lineNumber: 45,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                lineNumber: 37,
+                                lineNumber: 38,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2261,7 +2265,7 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                                     stopOpacity: 0.8
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                                    lineNumber: 52,
+                                                                    lineNumber: 53,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
@@ -2270,18 +2274,18 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                                     stopOpacity: 0.1
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                                    lineNumber: 53,
+                                                                    lineNumber: 54,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                            lineNumber: 51,
+                                                            lineNumber: 52,
                                                             columnNumber: 25
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                        lineNumber: 50,
+                                                        lineNumber: 51,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -2291,11 +2295,13 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                                 "Value"
                                                             ],
                                                         contentStyle: {
-                                                            fontSize: 12
+                                                            fontSize: 12,
+                                                            backgroundColor: "hsl(var(--background))",
+                                                            border: "1px solid hsl(var(--border))"
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                        lineNumber: 56,
+                                                        lineNumber: 57,
                                                         columnNumber: 23
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Area$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Area"], {
@@ -2306,23 +2312,23 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                         strokeWidth: 2
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                        lineNumber: 61,
+                                                        lineNumber: 62,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                lineNumber: 49,
+                                                lineNumber: 50,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                            lineNumber: 48,
+                                            lineNumber: 49,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 48,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2335,18 +2341,18 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                 ]
                                             }, line, true, {
                                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                lineNumber: 73,
+                                                lineNumber: 74,
                                                 columnNumber: 21
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 72,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                lineNumber: 46,
+                                lineNumber: 47,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2361,7 +2367,7 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                 className: "mr-1 h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                lineNumber: 79,
+                                                lineNumber: 80,
                                                 columnNumber: 19
                                             }, this),
                                             " ",
@@ -2369,7 +2375,7 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 79,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2381,32 +2387,32 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                                                 className: "mr-1 h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 83,
                                                 columnNumber: 19
                                             }, this),
                                             " Set alert"
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                                lineNumber: 77,
+                                lineNumber: 78,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, play.id, true, {
                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 15
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                lineNumber: 28,
+                lineNumber: 29,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -2416,7 +2422,7 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                         children: "Summaries combine odds, weather and form context."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                        lineNumber: 91,
+                        lineNumber: 92,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2430,19 +2436,19 @@ function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
                         children: "Add to Beno brief"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                        lineNumber: 92,
+                        lineNumber: 93,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-                lineNumber: 90,
+                lineNumber: 91,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/cards/BestPlaysCard.tsx",
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 5
     }, this);
 }
@@ -2585,7 +2591,7 @@ function NewsCard({ onAddToBrief }) {
                             children: "Headline radar"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                            lineNumber: 38,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2593,18 +2599,18 @@ function NewsCard({ onAddToBrief }) {
                             children: "News"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                    lineNumber: 37,
+                    lineNumber: 38,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                lineNumber: 36,
+                lineNumber: 37,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2621,17 +2627,17 @@ function NewsCard({ onAddToBrief }) {
                                     children: cat
                                 }, cat, false, {
                                     fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                    lineNumber: 46,
+                                    lineNumber: 47,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                            lineNumber: 44,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                        lineNumber: 43,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScrollArea"], {
@@ -2643,14 +2649,14 @@ function NewsCard({ onAddToBrief }) {
                                 children: "Loading headlines..."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 15
                             }, this) : articles.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-sm text-muted-foreground",
                                 children: "No news items available."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                lineNumber: 57,
+                                lineNumber: 58,
                                 columnNumber: 15
                             }, this) : articles.map((article)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "space-y-2 rounded-xl border border-border/60 bg-background/80 p-3",
@@ -2662,7 +2668,7 @@ function NewsCard({ onAddToBrief }) {
                                                     children: article.source
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                                    lineNumber: 62,
+                                                    lineNumber: 63,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2672,13 +2678,13 @@ function NewsCard({ onAddToBrief }) {
                                                     })
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                                    lineNumber: 63,
+                                                    lineNumber: 64,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                            lineNumber: 61,
+                                            lineNumber: 62,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2686,7 +2692,7 @@ function NewsCard({ onAddToBrief }) {
                                             children: article.title
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                            lineNumber: 65,
+                                            lineNumber: 66,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2694,7 +2700,7 @@ function NewsCard({ onAddToBrief }) {
                                             children: article.summary
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                            lineNumber: 66,
+                                            lineNumber: 67,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2705,29 +2711,29 @@ function NewsCard({ onAddToBrief }) {
                                             children: "Read"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                            lineNumber: 67,
+                                            lineNumber: 68,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, article.id, true, {
                                     fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                    lineNumber: 60,
+                                    lineNumber: 61,
                                     columnNumber: 17
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                            lineNumber: 53,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                lineNumber: 42,
+                lineNumber: 43,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -2737,7 +2743,7 @@ function NewsCard({ onAddToBrief }) {
                         children: "Pulse aggregates Reuters, AP, Bing and NewsAPI feeds."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -2751,13 +2757,13 @@ function NewsCard({ onAddToBrief }) {
                         children: "Add to Beno brief"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                        lineNumber: 78,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                lineNumber: 76,
+                lineNumber: 77,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
@@ -2772,20 +2778,20 @@ function NewsCard({ onAddToBrief }) {
                                     children: preview?.title
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 96,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                                     children: preview?.source
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                                    lineNumber: 96,
+                                    lineNumber: 97,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                            lineNumber: 94,
+                            lineNumber: 95,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2793,24 +2799,24 @@ function NewsCard({ onAddToBrief }) {
                             children: preview?.summary
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                            lineNumber: 98,
+                            lineNumber: 99,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                    lineNumber: 93,
+                    lineNumber: 94,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-                lineNumber: 92,
+                lineNumber: 93,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/cards/NewsCard.tsx",
-        lineNumber: 35,
+        lineNumber: 36,
         columnNumber: 5
     }, this);
 }
@@ -2863,7 +2869,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                             children: "Weather snapshot"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                            lineNumber: 22,
+                            lineNumber: 23,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2871,18 +2877,18 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                             children: "Weather"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                            lineNumber: 23,
+                            lineNumber: 24,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                    lineNumber: 21,
+                    lineNumber: 22,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                lineNumber: 20,
+                lineNumber: 21,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -2892,7 +2898,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                     children: "No weather signals linked to current filters."
                 }, void 0, false, {
                     fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 11
                 }, this) : forecasts.map((forecast)=>{
                     const relatedGames = (forecast.relatedGameIds ?? []).map((id)=>gameLookup.get(id)).filter(Boolean);
@@ -2909,7 +2915,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                                 children: forecast.city
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                                lineNumber: 42,
+                                                lineNumber: 43,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2921,13 +2927,13 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                                 })
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                                lineNumber: 43,
+                                                lineNumber: 44,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                        lineNumber: 41,
+                                        lineNumber: 42,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Badge"], {
@@ -2938,7 +2944,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                                 className: "h-3 w-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                                lineNumber: 52,
+                                                lineNumber: 53,
                                                 columnNumber: 21
                                             }, this),
                                             " ",
@@ -2947,13 +2953,13 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                        lineNumber: 51,
+                                        lineNumber: 52,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                lineNumber: 40,
+                                lineNumber: 41,
                                 columnNumber: 17
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2966,7 +2972,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                                 className: "h-3 w-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                                lineNumber: 57,
+                                                lineNumber: 58,
                                                 columnNumber: 21
                                             }, this),
                                             " ",
@@ -2975,7 +2981,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                        lineNumber: 56,
+                                        lineNumber: 57,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2985,7 +2991,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                                 className: "h-3 w-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                                lineNumber: 60,
+                                                lineNumber: 61,
                                                 columnNumber: 21
                                             }, this),
                                             " ",
@@ -2994,20 +3000,20 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 60,
                                         columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: forecast.note
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                        lineNumber: 62,
+                                        lineNumber: 63,
                                         columnNumber: 19
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                lineNumber: 55,
+                                lineNumber: 56,
                                 columnNumber: 17
                             }, this),
                             relatedGames.length ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3022,24 +3028,24 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                                         ]
                                     }, game.id, true, {
                                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                        lineNumber: 67,
+                                        lineNumber: 68,
                                         columnNumber: 23
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                                lineNumber: 65,
+                                lineNumber: 66,
                                 columnNumber: 19
                             }, this) : null
                         ]
                     }, forecast.city, true, {
                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 15
                     }, this);
                 })
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                lineNumber: 26,
+                lineNumber: 27,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -3049,7 +3055,7 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                         children: "Atmospherics blend local radar with market overlays."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                        lineNumber: 79,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3063,19 +3069,19 @@ function WeatherCard({ forecasts, games, onAddToBrief }) {
                         children: "Add to Beno brief"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                        lineNumber: 80,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-                lineNumber: 78,
+                lineNumber: 79,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/cards/WeatherCard.tsx",
-        lineNumber: 19,
+        lineNumber: 20,
         columnNumber: 5
     }, this);
 }
@@ -3103,7 +3109,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/recharts/es6/cartesian/YAxis.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/recharts/es6/component/Tooltip.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$CartesianGrid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/recharts/es6/cartesian/CartesianGrid.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-client] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -3137,7 +3145,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                             children: "Trends intelligence"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                            lineNumber: 32,
+                            lineNumber: 34,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3145,18 +3153,18 @@ function TrendsCard({ trends, onAddToBrief }) {
                             children: "Line moves • Sentiment • Momentum"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                            lineNumber: 33,
+                            lineNumber: 35,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                    lineNumber: 31,
+                    lineNumber: 33,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                lineNumber: 30,
+                lineNumber: 32,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardContent"], {
@@ -3167,7 +3175,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                         children: "Trends will populate as leagues with activity are selected."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                        lineNumber: 38,
+                        lineNumber: 40,
                         columnNumber: 11
                     }, this) : null,
                     chartData.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3181,7 +3189,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                         className: "stroke-border/50"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 44,
+                                        lineNumber: 46,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$XAxis$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["XAxis"], {
@@ -3190,7 +3198,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                         fontSize: 12
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 45,
+                                        lineNumber: 47,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["YAxis"], {
@@ -3198,7 +3206,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                         fontSize: 12
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 46,
+                                        lineNumber: 48,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$Tooltip$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Tooltip"], {
@@ -3206,11 +3214,13 @@ function TrendsCard({ trends, onAddToBrief }) {
                                             strokeDasharray: "3 3"
                                         },
                                         contentStyle: {
-                                            fontSize: 12
+                                            fontSize: 12,
+                                            backgroundColor: "hsl(var(--background))",
+                                            border: "1px solid hsl(var(--border))"
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 47,
+                                        lineNumber: 49,
                                         columnNumber: 17
                                     }, this),
                                     labels.map((label, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Line$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Line"], {
@@ -3220,23 +3230,23 @@ function TrendsCard({ trends, onAddToBrief }) {
                                             stroke: colors[index % colors.length]
                                         }, label, false, {
                                             fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                            lineNumber: 49,
+                                            lineNumber: 51,
                                             columnNumber: 19
                                         }, this))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                lineNumber: 43,
+                                lineNumber: 45,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                            lineNumber: 42,
+                            lineNumber: 44,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                        lineNumber: 41,
+                        lineNumber: 43,
                         columnNumber: 11
                     }, this) : null,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3250,7 +3260,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                         children: "Momentum heat"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 63,
+                                        lineNumber: 65,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3265,7 +3275,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                         children: item.label
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 73,
+                                                        lineNumber: 75,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3276,24 +3286,24 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 74,
+                                                        lineNumber: 76,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, `${item.id}-${item.label}`, true, {
                                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                lineNumber: 66,
+                                                lineNumber: 68,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 64,
+                                        lineNumber: 66,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                lineNumber: 62,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3304,7 +3314,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                         children: "Sentiment split"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 80,
+                                        lineNumber: 82,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3319,7 +3329,7 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                                 children: row.league
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                                lineNumber: 85,
+                                                                lineNumber: 87,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -3330,13 +3340,13 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                                lineNumber: 86,
+                                                                lineNumber: 88,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 84,
+                                                        lineNumber: 86,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3348,12 +3358,12 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                            lineNumber: 89,
+                                                            lineNumber: 91,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 88,
+                                                        lineNumber: 90,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3365,36 +3375,36 @@ function TrendsCard({ trends, onAddToBrief }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                        lineNumber: 94,
+                                                        lineNumber: 96,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, row.league, true, {
                                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                                lineNumber: 83,
+                                                lineNumber: 85,
                                                 columnNumber: 17
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 83,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                                lineNumber: 79,
+                                lineNumber: 81,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                        lineNumber: 61,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                lineNumber: 36,
+                lineNumber: 38,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CardFooter"], {
@@ -3404,11 +3414,12 @@ function TrendsCard({ trends, onAddToBrief }) {
                         children: "Trends overlay on each card when you pin items to the watchlist."
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                        lineNumber: 104,
+                        lineNumber: 106,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                        type: "button",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                        variant: "ghost",
+                        size: "sm",
                         className: "text-primary",
                         onClick: ()=>onAddToBrief({
                                 title: "Trend digest",
@@ -3417,19 +3428,19 @@ function TrendsCard({ trends, onAddToBrief }) {
                         children: "Add to Beno brief"
                     }, void 0, false, {
                         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                        lineNumber: 105,
+                        lineNumber: 107,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-                lineNumber: 103,
+                lineNumber: 105,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/pulse/cards/TrendsCard.tsx",
-        lineNumber: 29,
+        lineNumber: 31,
         columnNumber: 5
     }, this);
 }
@@ -3463,25 +3474,25 @@ function DisclaimerCard() {
                     children: "Analytics only"
                 }, void 0, false, {
                     fileName: "[project]/src/components/pulse/cards/DisclaimerCard.tsx",
-                    lineNumber: 7,
+                    lineNumber: 8,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     children: "For information & entertainment only. No wagering or financial advice. Data may be delayed or inaccurate. Check your local laws."
                 }, void 0, false, {
                     fileName: "[project]/src/components/pulse/cards/DisclaimerCard.tsx",
-                    lineNumber: 8,
+                    lineNumber: 9,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/pulse/cards/DisclaimerCard.tsx",
-            lineNumber: 6,
+            lineNumber: 7,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/pulse/cards/DisclaimerCard.tsx",
-        lineNumber: 5,
+        lineNumber: 6,
         columnNumber: 5
     }, this);
 }
@@ -3635,20 +3646,20 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                             children: "Customize sources"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 111,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$dialog$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                             children: "Choose which providers and leagues fuel your Pulse dashboard. Changes sync to your preferences instantly."
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 112,
+                            lineNumber: 113,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                    lineNumber: 110,
+                    lineNumber: 111,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3661,7 +3672,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                     children: "Providers"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 119,
+                                    lineNumber: 120,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3674,7 +3685,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                     children: group
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 125,
+                                                    lineNumber: 126,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3688,7 +3699,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                                     children: provider
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                                    lineNumber: 131,
+                                                                    lineNumber: 132,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3696,41 +3707,41 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                                     onCheckedChange: ()=>handleToggleProvider(group, provider)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                                    lineNumber: 132,
+                                                                    lineNumber: 133,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, provider, true, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 130,
+                                                            lineNumber: 131,
                                                             columnNumber: 25
                                                         }, this);
                                                     })
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 127,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, group, true, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 124,
+                                            lineNumber: 125,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 122,
+                                    lineNumber: 123,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 118,
+                            lineNumber: 119,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 144,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3740,7 +3751,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                     children: "Leagues"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 146,
+                                    lineNumber: 147,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3754,24 +3765,24 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                             children: league
                                         }, league, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 153,
+                                            lineNumber: 154,
                                             columnNumber: 19
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 149,
+                                    lineNumber: 150,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 145,
+                            lineNumber: 146,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 170,
+                            lineNumber: 171,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3784,7 +3795,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                             children: "Units"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 173,
+                                            lineNumber: 174,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3800,7 +3811,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                             children: option
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 179,
+                                                            lineNumber: 180,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3808,24 +3819,24 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                             onCheckedChange: ()=>handleUnitsChange(option)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 180,
+                                                            lineNumber: 181,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, option, true, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 178,
+                                                    lineNumber: 179,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 177,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 173,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3835,7 +3846,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                             children: "Time zone"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 189,
+                                            lineNumber: 190,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3847,7 +3858,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                             children: tz
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 195,
+                                                            lineNumber: 196,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3855,35 +3866,35 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                             onCheckedChange: ()=>handleTzChange(tz)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 196,
+                                                            lineNumber: 197,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, tz, true, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 194,
+                                                    lineNumber: 195,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 192,
+                                            lineNumber: 193,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 188,
+                                    lineNumber: 189,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 171,
+                            lineNumber: 172,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 205,
+                            lineNumber: 206,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -3893,7 +3904,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                     children: "Automations"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 207,
+                                    lineNumber: 208,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3901,7 +3912,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                     children: "Enable “auto-pin my favorite teams” to automatically track your most watched clubs across Pulse."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 210,
+                                    lineNumber: 211,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3914,7 +3925,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                     children: "Auto-pin favorite teams"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 216,
+                                                    lineNumber: 217,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3922,13 +3933,13 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                     children: "Uses your existing assistant preferences to pin games as they go live."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 217,
+                                                    lineNumber: 218,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 215,
+                                            lineNumber: 216,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -3938,25 +3949,25 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                             className: "opacity-60"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 221,
+                                            lineNumber: 222,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 214,
+                                    lineNumber: 215,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 206,
+                            lineNumber: 207,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                    lineNumber: 117,
+                    lineNumber: 118,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3969,7 +3980,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                             children: "Cancel"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 226,
+                            lineNumber: 227,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -3978,24 +3989,24 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                             children: pending ? "Saving..." : "Save preferences"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 229,
+                            lineNumber: 230,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                    lineNumber: 225,
+                    lineNumber: 226,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-            lineNumber: 109,
+            lineNumber: 110,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-        lineNumber: 100,
+        lineNumber: 101,
         columnNumber: 5
     }, this);
 }
@@ -4017,13 +4028,11 @@ __turbopack_context__.s({
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/dialog.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$dialog$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@radix-ui/react-dialog/dist/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$pulse$2f$valueScore$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/pulse/valueScore.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$badge$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/badge.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$scroll$2d$area$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/scroll-area.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/separator.tsx [app-client] (ecmascript)");
 "use client";
-;
 ;
 ;
 ;
@@ -4047,7 +4056,7 @@ function ExplainValueDialog({ row, open, onOpenChange }) {
                             lineNumber: 24,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$dialog$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                             children: "Understand why this edge is surfacing: implied probabilities, market consensus, context overlays and model weighting."
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/ExplainValueDialog.tsx",
@@ -4397,7 +4406,6 @@ __turbopack_context__.s({
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/dialog.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$dialog$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@radix-ui/react-dialog/dist/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$input$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/input.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$label$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/label.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-client] (ecmascript)");
@@ -4405,7 +4413,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$s
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
-;
 ;
 ;
 ;
@@ -4444,7 +4451,7 @@ function AlertRuleDialog({ open, onOpenChange, context, onSave }) {
                             lineNumber: 52,
                             columnNumber: 11
                         }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$dialog$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                             children: "Trigger rules when value spikes, lines move quickly or games near kickoff."
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/AlertRuleDialog.tsx",
@@ -5125,9 +5132,9 @@ function PulsePage() {
             return ({
                 "PulsePage.useEffect": ()=>window.removeEventListener("keydown", handler)
             })["PulsePage.useEffect"];
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         }
     }["PulsePage.useEffect"], [
-        handleRefresh,
         onlyWatchlist,
         setOnlyWatchlist
     ]);
@@ -5142,7 +5149,7 @@ function PulsePage() {
                     })
             }, void 0, false, {
                 fileName: "[project]/src/app/pulse/page.tsx",
-                lineNumber: 245,
+                lineNumber: 247,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5151,7 +5158,7 @@ function PulsePage() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$LeagueFilter$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LeagueFilter"], {}, void 0, false, {
                         fileName: "[project]/src/app/pulse/page.tsx",
-                        lineNumber: 251,
+                        lineNumber: 253,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$WatchlistBar$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WatchlistBar"], {
@@ -5161,13 +5168,13 @@ function PulsePage() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/src/app/pulse/page.tsx",
-                        lineNumber: 252,
+                        lineNumber: 254,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/pulse/page.tsx",
-                lineNumber: 250,
+                lineNumber: 252,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$Bento$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Bento"], {
@@ -5179,7 +5186,7 @@ function PulsePage() {
                                 className: "h-96 w-full rounded-2xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 262,
+                                lineNumber: 264,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$cards$2f$ScheduleCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ScheduleCard"], {
                                 games: games,
@@ -5191,7 +5198,7 @@ function PulsePage() {
                                 focusedId: focusedWatchId
                             }, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 264,
+                                lineNumber: 266,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$cards$2f$LiveScoreCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["LiveScoreCard"], {
@@ -5199,13 +5206,13 @@ function PulsePage() {
                                 onAddToBrief: handleAddToBrief
                             }, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 274,
+                                lineNumber: 276,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/pulse/page.tsx",
-                        lineNumber: 260,
+                        lineNumber: 262,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5215,7 +5222,7 @@ function PulsePage() {
                                 className: "h-80 w-full rounded-2xl"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 278,
+                                lineNumber: 280,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$cards$2f$OddsValueCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["OddsValueCard"], {
                                 rows: filteredOdds,
@@ -5229,7 +5236,7 @@ function PulsePage() {
                                 onAddToBrief: handleAddToBrief
                             }, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 280,
+                                lineNumber: 282,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$cards$2f$BestPlaysCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["BestPlaysCard"], {
@@ -5244,13 +5251,13 @@ function PulsePage() {
                                 onAddToBrief: handleAddToBrief
                             }, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 288,
+                                lineNumber: 290,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/pulse/page.tsx",
-                        lineNumber: 276,
+                        lineNumber: 278,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5260,7 +5267,7 @@ function PulsePage() {
                                 onAddToBrief: handleAddToBrief
                             }, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 297,
+                                lineNumber: 299,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$cards$2f$WeatherCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["WeatherCard"], {
@@ -5269,24 +5276,24 @@ function PulsePage() {
                                 onAddToBrief: handleAddToBrief
                             }, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 298,
+                                lineNumber: 300,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$cards$2f$DisclaimerCard$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DisclaimerCard"], {}, void 0, false, {
                                 fileName: "[project]/src/app/pulse/page.tsx",
-                                lineNumber: 299,
+                                lineNumber: 301,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/pulse/page.tsx",
-                        lineNumber: 296,
+                        lineNumber: 298,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/pulse/page.tsx",
-                lineNumber: 259,
+                lineNumber: 261,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5296,12 +5303,12 @@ function PulsePage() {
                     onAddToBrief: handleAddToBrief
                 }, void 0, false, {
                     fileName: "[project]/src/app/pulse/page.tsx",
-                    lineNumber: 303,
+                    lineNumber: 305,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/pulse/page.tsx",
-                lineNumber: 302,
+                lineNumber: 304,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$modals$2f$CustomizeSourcesDialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CustomizeSourcesDialog"], {
@@ -5311,7 +5318,7 @@ function PulsePage() {
                 onSave: handleCustomizeSave
             }, void 0, false, {
                 fileName: "[project]/src/app/pulse/page.tsx",
-                lineNumber: 305,
+                lineNumber: 307,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$modals$2f$ExplainValueDialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ExplainValueDialog"], {
@@ -5320,7 +5327,7 @@ function PulsePage() {
                 onOpenChange: (open)=>!open && setExplainRow(undefined)
             }, void 0, false, {
                 fileName: "[project]/src/app/pulse/page.tsx",
-                lineNumber: 311,
+                lineNumber: 313,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$modals$2f$AlertRuleDialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AlertRuleDialog"], {
@@ -5332,13 +5339,13 @@ function PulsePage() {
                 onSave: handleAlertSave
             }, void 0, false, {
                 fileName: "[project]/src/app/pulse/page.tsx",
-                lineNumber: 316,
+                lineNumber: 318,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/pulse/page.tsx",
-        lineNumber: 244,
+        lineNumber: 246,
         columnNumber: 5
     }, this);
 }

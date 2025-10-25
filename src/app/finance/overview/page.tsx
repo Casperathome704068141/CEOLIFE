@@ -5,8 +5,12 @@ import { Badge } from "@/components/ui/badge";
 import { Sparkline } from "@/components/shared/sparkline";
 import { cashflowData, sparklineData, marketWatchlist } from "@/lib/data";
 import Link from "next/link";
+import { useBridge } from "@/lib/hooks/useBridge";
+import { formatCurrency, formatPercent } from "@/lib/ui/format";
 
 export default function FinanceOverviewPage() {
+  const { overview } = useBridge();
+
   return (
     <div className="space-y-8">
       <PageHeader
@@ -36,7 +40,9 @@ export default function FinanceOverviewPage() {
         <Card className="rounded-3xl border border-slate-900/60 bg-slate-950/80 shadow-xl">
           <CardHeader>
             <CardTitle className="text-lg text-white">MTD burn vs plan</CardTitle>
-            <p className="text-xs text-slate-400">Beno projects +8% variance. Adjust budgets or simulate cuts.</p>
+            {overview ? (
+              <p className="text-xs text-slate-400">Beno projects {formatPercent(overview.monthlyBurn.actual / overview.monthlyBurn.target - 1, 0)} variance. Adjust budgets or simulate cuts.</p>
+            ) : <p className="text-xs text-slate-400">Loading projection...</p>}
           </CardHeader>
           <CardContent>
             <Sparkline data={sparklineData} dataKey="value" />
@@ -67,11 +73,7 @@ export default function FinanceOverviewPage() {
             {marketWatchlist.slice(0, 3).map(asset => {
               const changePositive = asset.change >= 0;
               const changeColor = changePositive ? "text-emerald-400" : "text-rose-400";
-              const formattedPrice = new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: asset.currency ?? "USD",
-                maximumFractionDigits: asset.type === "crypto" ? 0 : 2,
-              }).format(asset.price);
+              const formattedPrice = formatCurrency(asset.price, asset.currency);
 
               return (
                 <div

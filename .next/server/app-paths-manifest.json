@@ -15,7 +15,14 @@
   "/api/household/shopping/route": "app/api/household/shopping/route.js",
   "/api/household/split/ledger/route": "app/api/household/split/ledger/route.js",
   "/api/household/split/settlements/route": "app/api/household/split/settlements/route.js",
+  "/api/pulse/insights/route": "app/api/pulse/insights/route.js",
+  "/api/pulse/news/route": "app/api/pulse/news/route.js",
+  "/api/pulse/odds/route": "app/api/pulse/odds/route.js",
+  "/api/pulse/preferences/route": "app/api/pulse/preferences/route.js",
+  "/api/pulse/sports/route": "app/api/pulse/sports/route.js",
+  "/api/pulse/watchlist/route": "app/api/pulse/watchlist/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/goals/page": "app/goals/page.js",
-  "/household/page": "app/household/page.js"
+  "/household/page": "app/household/page.js",
+  "/pulse/page": "app/pulse/page.js"
 }
