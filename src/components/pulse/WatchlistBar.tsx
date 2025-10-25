@@ -8,6 +8,7 @@ import { X } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { usePreferences } from "@/lib/pulse/usePreferences";
+import { cn } from "@/lib/utils";
 
 interface Props {
   onSelect?: (id: string) => void;
@@ -18,8 +19,8 @@ export function WatchlistBar({ onSelect }: Props) {
   const { onlyWatchlist, setOnlyWatchlist } = usePreferences();
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-border/60 bg-background/60 p-4">
-      <div className="flex flex-wrap items-center justify-between gap-2">
+    <div className="flex flex-col gap-4 rounded-2xl border border-border/60 bg-background/60 p-4 backdrop-blur">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
             Watchlist
@@ -28,7 +29,7 @@ export function WatchlistBar({ onSelect }: Props) {
             Track live opportunities you pinned. Syncs with your account preferences.
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <Switch
             id="watchlist-toggle"
             checked={onlyWatchlist}
@@ -49,7 +50,10 @@ export function WatchlistBar({ onSelect }: Props) {
                 key={item.id}
                 type="button"
                 onClick={() => onSelect?.(item.id)}
-                className="group flex items-center gap-2 rounded-full border border-border/60 bg-background/80 px-3 py-1 text-xs shadow-sm transition hover:border-primary/40 hover:text-primary"
+                className={cn(
+                  "group flex items-center gap-2 rounded-full border border-border/60 bg-background/80 px-3 py-1 text-xs shadow-sm transition",
+                  "hover:border-primary/40 hover:text-primary"
+                )}
               >
                 <span>{item.label}</span>
                 <Button

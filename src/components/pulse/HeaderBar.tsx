@@ -14,13 +14,13 @@ interface Props {
 export function HeaderBar({ onRefresh, onCustomize, onViewTrends }: Props) {
   return (
     <motion.header
-      className="flex flex-col gap-4 rounded-2xl border border-border/60 bg-background/60 p-6 backdrop-blur"
+      className="flex flex-col gap-6 rounded-2xl border border-border/60 bg-background/60 p-6 backdrop-blur"
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
     >
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
+      <div className="flex flex-wrap items-start justify-between gap-6">
+        <div className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight">Pulse</h1>
           <p className="text-sm text-muted-foreground">
             Sports, Odds, News & Weather in one place.
