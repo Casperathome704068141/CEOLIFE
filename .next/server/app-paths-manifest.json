@@ -1,3 +1,8 @@
 {
-  "/(dashboard)/page": "app/(dashboard)/page.js"
+  "/(dashboard)/page": "app/(dashboard)/page.js",
+  "/api/bridge/overview/route": "app/api/bridge/overview/route.js",
+  "/api/goals/funding-accounts/route": "app/api/goals/funding-accounts/route.js",
+  "/api/goals/route": "app/api/goals/route.js",
+  "/api/goals/suggestions/route": "app/api/goals/suggestions/route.js",
+  "/goals/page": "app/goals/page.js"
 }
