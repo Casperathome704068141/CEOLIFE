@@ -54,6 +54,7 @@ export function TrendsCard({ trends, onAddToBrief }: Props) {
                     dataKey={label}
                     strokeWidth={2}
                     stroke={colors[index % colors.length]}
+                    name={label}
                   />
                 ))}
               </LineChart>

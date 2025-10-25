@@ -38,7 +38,7 @@ export function WeatherCard({ forecasts, games, onAddToBrief }: Props) {
                 key={forecast.city}
                 className="space-y-2 rounded-xl border border-border/60 bg-background/80 p-4"
               >
-                <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="text-sm font-semibold">{forecast.city}</p>
                     <p className="text-xs text-muted-foreground">
@@ -60,10 +60,10 @@ export function WeatherCard({ forecasts, games, onAddToBrief }: Props) {
                   <span className="flex items-center gap-1">
                     <Umbrella className="h-3 w-3" /> {(forecast.rainProb * 100).toFixed(0)}% rain
                   </span>
-                  <span>{forecast.note}</span>
                 </div>
+                <p className="text-xs text-muted-foreground">{forecast.note}</p>
                 {relatedGames.length ? (
-                  <div className="space-y-1 text-xs text-muted-foreground">
+                  <div className="space-y-1 pt-2 text-xs text-muted-foreground">
                     {relatedGames.map((game) => (
                       <p key={game.id}>
                         Impact → {game.away.name} @ {game.home.name}: watch adjustments for wind & surface.

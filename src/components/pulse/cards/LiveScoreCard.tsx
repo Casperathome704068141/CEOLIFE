@@ -50,7 +50,7 @@ export function LiveScoreCard({ games, onAddToBrief }: Props) {
                 initial={{ opacity: 0.8 }}
                 animate={{ opacity: 1 }}
               >
-                <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <p className="text-sm font-medium">
                       {game.away.name} {game.live?.awayScore} — {game.home.name} {game.live?.homeScore}

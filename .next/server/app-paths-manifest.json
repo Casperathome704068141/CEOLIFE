@@ -25,5 +25,6 @@
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/goals/page": "app/goals/page.js",
   "/household/page": "app/household/page.js",
+  "/page": "app/page.js",
   "/pulse/page": "app/pulse/page.js"
 }
