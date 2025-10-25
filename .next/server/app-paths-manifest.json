@@ -1,5 +1,6 @@
 {
   "/(dashboard)/page": "app/(dashboard)/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/bridge/overview/route": "app/api/bridge/overview/route.js",
   "/api/goals/funding-accounts/route": "app/api/goals/funding-accounts/route.js",
   "/api/goals/route": "app/api/goals/route.js",
@@ -27,5 +28,6 @@
   "/household/page": "app/household/page.js",
   "/login/page": "app/login/page.js",
   "/page": "app/page.js",
-  "/pulse/page": "app/pulse/page.js"
+  "/pulse/page": "app/pulse/page.js",
+  "/vault/documents/page": "app/vault/documents/page.js"
 }

@@ -1,0 +1,1 @@
+src/app/household/apartment/page.tsx
