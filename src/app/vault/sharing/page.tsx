@@ -1,13 +1,20 @@
+
+"use client";
+
 import { PageHeader, PagePrimaryAction } from "@/components/layout/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useCollection, useUser } from "@/firebase";
+import { ContactDoc } from "@/lib/schemas";
 
-const collaborators = [
-  { email: "marcus@family.ca", role: "Viewer" },
-  { email: "luis@family.ca", role: "Editor" },
-];
 
 export default function VaultSharingPage() {
+  const { user } = useUser();
+  const { data: contacts, loading } = useCollection<ContactDoc>('contacts', {
+    query: ['ownerId', '==', user?.uid],
+    skip: !user?.uid,
+  });
+
   return (
     <div className="space-y-8">
       <PageHeader
@@ -21,17 +28,19 @@ export default function VaultSharingPage() {
           <CardTitle className="text-lg text-white">Access list</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 text-sm text-slate-300">
-          {collaborators.map((collaborator) => (
-            <div key={collaborator.email} className="flex items-center justify-between rounded-2xl bg-slate-900/60 px-4 py-3">
-              <div>
-                <p className="font-medium text-white">{collaborator.email}</p>
-                <p className="text-xs text-slate-400">{collaborator.role}</p>
+          {loading ? <p className="text-slate-400">Loading collaborators...</p> : (
+            contacts?.map((contact) => (
+              <div key={contact.id} className="flex items-center justify-between rounded-2xl bg-slate-900/60 px-4 py-3">
+                <div>
+                  <p className="font-medium text-white">{contact.name}</p>
+                  <p className="text-xs text-slate-400">{contact.phone}</p>
+                </div>
+                <Button size="sm" variant="secondary" className="rounded-2xl">
+                  Manage
+                </Button>
               </div>
-              <Button size="sm" variant="secondary" className="rounded-2xl">
-                Manage
-              </Button>
-            </div>
-          ))}
+            ))
+          )}
         </CardContent>
       </Card>
     </div>

@@ -21,6 +21,7 @@
   "/api/pulse/preferences/route": "app/api/pulse/preferences/route.js",
   "/api/pulse/sports/route": "app/api/pulse/sports/route.js",
   "/api/pulse/watchlist/route": "app/api/pulse/watchlist/route.js",
+  "/assistant/page": "app/assistant/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/goals/page": "app/goals/page.js",
   "/household/page": "app/household/page.js",

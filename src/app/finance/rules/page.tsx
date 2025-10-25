@@ -1,23 +1,20 @@
+
+"use client";
+
 import { PageHeader, PagePrimaryAction, PageSecondaryAction } from "@/components/layout/page-header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useCollection, useUser } from "@/firebase";
+import { AutomationDoc } from "@/lib/schemas";
 
-const sampleRules = [
-  {
-    id: "rule-1",
-    title: "Dining > 90% before 25th",
-    trigger: "threshold",
-    action: "Notify + suggest transfer",
-  },
-  {
-    id: "rule-2",
-    title: "OCR receipt contains 'Uber'",
-    trigger: "event",
-    action: "Auto tag to Travel",
-  },
-];
 
 export default function RulesPage() {
+  const { user } = useUser();
+  const { data: rules, loading } = useCollection<AutomationDoc>('automations', {
+    query: ['ownerId', '==', user?.uid],
+    skip: !user?.uid,
+  });
+
   return (
     <div className="space-y-8">
       <PageHeader
@@ -36,20 +33,22 @@ export default function RulesPage() {
           <CardTitle className="text-lg text-white">Active rules</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {sampleRules.map((rule) => (
-            <div key={rule.id} className="rounded-2xl border border-slate-900/60 bg-slate-900/60 p-4 text-sm text-slate-300">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-medium text-white">{rule.title}</p>
-                  <p className="text-xs text-slate-400">Trigger {rule.trigger}</p>
+          {loading ? <p className="text-slate-400">Loading rules...</p> : (
+            rules?.map((rule) => (
+              <div key={rule.id} className="rounded-2xl border border-slate-900/60 bg-slate-900/60 p-4 text-sm text-slate-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-medium text-white">{rule.id}</p>
+                    <p className="text-xs text-slate-400">Trigger: {rule.trigger.type}</p>
+                  </div>
+                  <Button size="sm" variant="secondary" className="rounded-2xl">
+                    Configure
+                  </Button>
                 </div>
-                <Button size="sm" variant="secondary" className="rounded-2xl">
-                  Configure
-                </Button>
+                <p className="mt-2 text-xs text-slate-400">Actions: {rule.actions.map(a => a.type).join(', ')}</p>
               </div>
-              <p className="mt-2 text-xs text-slate-400">Action: {rule.action}</p>
-            </div>
-          ))}
+            ))
+          )}
         </CardContent>
       </Card>
     </div>
