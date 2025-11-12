@@ -1,102 +1,75 @@
-/**
- * @fileoverview Firestore Security Rules for the application.
- *
- * Core Philosophy:
- * This ruleset enforces a user-ownership model where users can only access their own data,
- * with public read access to the goals and bills collections.
- *
- * Data Structure:
- * - /users/{userId}: Stores user profile information.
- * - /goals/{goalId}: Stores financial and personal goals. Each goal has an `ownerId` field.
- * - /bills/{billId}: Stores recurring and one-time bills. Each bill has an `ownerId` field.
- *
- * Key Security Decisions:
- * - Users can only read and write their own user documents.
- * - Users can create goals and bills, but the `ownerId` must match their UID.
- * - Goals and bills are readable by anyone, but only the owner can modify or delete them.
- * - Listing of user documents is denied to prevent enumeration.
- *
- * Denormalization for Authorization:
- * - The `goal` and `bill` entities include an `ownerId` field, denormalizing the user relationship
- *   directly into the document. This is crucial for efficient authorization checks without requiring
- *   additional `get()` calls.
- */
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    /**
-     * @description Controls access to user profile information.
-     * @path /users/{userId}
-     * @allow (create) - Authenticated user with matching UID can create their profile.
-     * @allow (get) - Authenticated user can read their own profile.
-     * @allow (update) - Authenticated user can update their own profile.
-     * @allow (delete) - Authenticated user can delete their own profile.
-     * @deny (list) - Listing all user documents is prohibited.
-     * @deny (create) - Unauthenticated user cannot create a profile.
-     * @deny (update) - Authenticated user cannot update another user's profile.
-     * @deny (delete) - Authenticated user cannot delete another user's profile.
-     * @principle Enforces document ownership for all operations.
-     */
+    // Helper function to check if a user is a member of a household.
+    function isHouseholdMember(householdId) {
+      let household = get(/databases/$(database)/documents/households/$(householdId));
+      return request.auth.uid in household.data.members;
+    }
+
+    // Users can read and write their own user document.
     match /users/{userId} {
-      allow get: if isSignedIn() && isOwner(userId);
-      allow list: if false;
-      allow create: if isSignedIn() && isOwner(userId);
-      allow update: if isSignedIn() && isExistingOwner(userId);
-      allow delete: if isSignedIn() && isExistingOwner(userId);
+      allow read, write: if request.auth.uid == userId;
     }
 
-    /**
-     * @description Controls access to the goals collection.
-     * @path /goals/{goalId}
-     * @allow (get) - Any user can read a goal.
-     * @allow (list) - Any user can list goals.
-     * @allow (create) - Authenticated user can create a goal with a matching ownerId.
-     * @allow (update) - Only the owner can update a goal.
-     * @allow (delete) - Only the owner can delete a goal.
-     * @deny (create) - Authenticated user cannot create a goal with a mismatched ownerId.
-     * @deny (update) - Unauthenticated user cannot update a goal.
-     * @deny (delete) - Unauthenticated user cannot delete a goal.
-     * @principle Allows public read access with owner-only writes, enforcing ownership during create.
-     */
+    // Members of a household can read the household document.
+    // Only the owner of the household can update it.
+    match /households/{householdId} {
+      allow read: if isHouseholdMember(householdId);
+      allow write: if get(/databases/$(database)/documents/households/$(householdId)).data.ownerId == request.auth.uid;
+    }
+
+    // Rules for collections that are tied to a household.
     match /goals/{goalId} {
-      allow get, list: if true;
-      allow create: if isSignedIn() && request.resource.data.ownerId == request.auth.uid;
-      allow update: if isSignedIn() && isExistingOwner(resource.data.ownerId);
-      allow delete: if isSignedIn() && isExistingOwner(resource.data.ownerId);
+      allow read, write: if isHouseholdMember(resource.data.householdId);
+    }
+    match /shoppingLists/{listId} {
+      allow read, write: if isHouseholdMember(resource.data.householdId);
+    }
+    match /events/{eventId} {
+      allow read, write: if isHouseholdMember(resource.data.householdId);
+    }
+    match /assets/{assetId} {
+      allow read, write: if isHouseholdMember(resource.data.householdId);
+    }
+    match /medications/{medicationId} {
+        allow read, write: if isHouseholdMember(resource.data.householdId);
     }
 
-    /**
-     * @description Controls access to the bills collection.
-     * @path /bills/{billId}
-     * @allow (get) - Any user can read a bill.
-     * @allow (list) - Any user can list bills.
-     * @allow (create) - Authenticated user can create a bill with a matching ownerId.
-     * @allow (update) - Only the owner can update a bill.
-     * @allow (delete) - Only the owner can delete a bill.
-     * @deny (create) - Authenticated user cannot create a bill with a mismatched ownerId.
-     * @deny (update) - Unauthenticated user cannot update a bill.
-     * @deny (delete) - Unauthenticated user cannot delete a bill.
-     * @principle Allows public read access with owner-only writes, enforcing ownership during create.
-     */
-    match /bills/{billId} {
-      allow get, list: if true;
-      allow create: if isSignedIn() && request.resource.data.ownerId == request.auth.uid;
-      allow update: if isSignedIn() && isExistingOwner(resource.data.ownerId);
-      allow delete: if isSignedIn() && isExistingOwner(resource.data.ownerId);
+
+    // Rules for collections that are personal to a user.
+    match /budgets/{budgetId} {
+      allow read, write: if request.auth.uid == resource.data.userId;
     }
-  }
+    match /debts/{debtId} {
+        allow read, write: if request.auth.uid == resource.data.userId;
+    }
+    match /forecasts/{forecastId} {
+        allow read, write: if request.auth.uid == resource.data.userId;
+    }
+    match /investments/{investmentId} {
+        allow read, write: if request.auth.uid == resource.data.userId;
+    }
+    match /transactions/{transactionId} {
+        allow read, write: if request.auth.uid == resource.data.userId;
+    }
+     match /tasks/{taskId} {
+      allow read, write: if request.auth.uid == resource.data.userId;
+    }
+    match /routines/{routineId} {
+        allow read, write: if request.auth.uid == resource.data.userId;
+    }
+    match /simulations/{simId} {
+        allow read, write: if request.auth.uid == resource.data.userId;
+    }
 
-  // Helper functions
-  function isSignedIn() {
-    return request.auth != null;
-  }
 
-  function isOwner(userId) {
-    return request.auth.uid == userId;
-  }
-
-  function isExistingOwner(userId) {
-    return isSignedIn() && isOwner(userId) && resource != null;
+    // Documents can be owned by a user and shared with others.
+    match /documents/{documentId} {
+      allow read: if request.auth.uid == resource.data.ownerId || resource.data.shareSubjects[request.auth.uid] != null;
+      allow create: if request.auth.uid == request.resource.data.ownerId;
+      allow update, delete: if request.auth.uid == resource.data.ownerId;
+    }
   }
 }
