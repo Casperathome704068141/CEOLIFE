@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Bot, LogIn } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -9,7 +9,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/firebase';
-import { signInWithEmailAndPassword, signInAnonymously } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useUser } from '@/firebase';
+import { FirebaseError } from 'firebase/app';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -18,21 +20,49 @@ export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
   const auth = useAuth();
+  const { user } = useUser();
+
+  useEffect(() => {
+    if (user) {
+      router.replace('/');
+    }
+  }, [router, user]);
+
+  const resolveErrorMessage = (error: unknown) => {
+    if (error instanceof FirebaseError) {
+      switch (error.code) {
+        case 'auth/invalid-credential':
+        case 'auth/wrong-password':
+          return 'The password you entered is incorrect.';
+        case 'auth/user-not-found':
+          return 'No account exists for this email. Ask an administrator to invite you.';
+        case 'auth/invalid-email':
+          return 'The email address is malformed. Please double-check and try again.';
+        case 'auth/user-disabled':
+          return 'This account has been disabled. Contact support to reinstate access.';
+        default:
+          return error.message;
+      }
+    }
+    if (error instanceof Error) {
+      return error.message;
+    }
+    return 'Please verify your credentials and try again.';
+  };
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
     setLoading(true);
     try {
-      // For demo purposes, we will use anonymous sign-in.
-      // In a real app, you would use signInWithEmailAndPassword.
-      await signInAnonymously(auth);
+      await signInWithEmailAndPassword(auth, email, password);
       toast({ title: 'Login successful', description: 'Welcome back.' });
       router.push('/');
     } catch (error) {
       console.error(error);
+      const message = resolveErrorMessage(error);
       toast({
         title: 'Login failed',
-        description: 'Please check your credentials.',
+        description: message,
         variant: 'destructive',
       });
     } finally {
@@ -83,8 +113,9 @@ export default function LoginPage() {
           </form>
         </CardContent>
         <CardFooter className="flex flex-col gap-3 text-center text-xs text-slate-500">
-          <p>
-            This is a demo application. Any email and password will work.
+          <p>Only approved crew members can access this console.</p>
+          <p className="text-[11px] text-slate-600">
+            Ask your administrator to provision your credentials in Firebase Authentication.
           </p>
         </CardFooter>
       </Card>

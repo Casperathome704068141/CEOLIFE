@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   LifeBuoy,
   LogOut,
@@ -28,7 +28,7 @@ import { CommandMenu } from "@/components/layout/command-menu";
 import { NotificationsTray } from "@/components/layout/notifications-tray";
 import { ProfileSwitcher } from "@/components/layout/profile-switcher";
 import { useUIState } from "@/store/ui-store";
-import { useAuth } from "@/firebase";
+import { useAuth, useUser } from "@/firebase";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 
@@ -38,6 +38,25 @@ export function Header() {
   const [isDark, setIsDark] = useState(true);
   const auth = useAuth();
   const router = useRouter();
+  const { user } = useUser();
+
+  const { displayName, email, initials, photoURL } = useMemo(() => {
+    const fallbackEmail = "crew@ceolife.app";
+    const candidateName = user?.displayName ?? user?.email ?? "Mission Specialist";
+    const derivedInitials = candidateName
+      .split(" ")
+      .map((part) => part.charAt(0))
+      .join("")
+      .slice(0, 2)
+      .toUpperCase();
+
+    return {
+      displayName: candidateName,
+      email: user?.email ?? fallbackEmail,
+      initials: derivedInitials || "MS",
+      photoURL: user?.photoURL ?? userAvatar?.imageUrl ?? undefined,
+    };
+  }, [user, userAvatar]);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
@@ -97,22 +116,18 @@ export function Header() {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-10 w-10 rounded-full border border-slate-800 bg-slate-900/80">
               <Avatar className="h-10 w-10">
-                {userAvatar ? (
-                  <AvatarImage
-                    src={userAvatar.imageUrl}
-                    alt="User Avatar"
-                    data-ai-hint={userAvatar.imageHint}
-                  />
+                {photoURL ? (
+                  <AvatarImage src={photoURL} alt={displayName} />
                 ) : null}
-                <AvatarFallback>B</AvatarFallback>
+                <AvatarFallback>{initials}</AvatarFallback>
               </Avatar>
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-60 rounded-2xl border border-slate-800 bg-slate-950/95 text-slate-100" align="end" forceMount>
             <DropdownMenuLabel className="font-normal">
               <div className="flex flex-col space-y-1">
-                <p className="text-sm font-medium leading-none">Beno</p>
-                <p className="text-xs leading-none text-muted-foreground">beno@example.com</p>
+                <p className="text-sm font-medium leading-none">{displayName}</p>
+                <p className="text-xs leading-none text-muted-foreground">{email}</p>
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />

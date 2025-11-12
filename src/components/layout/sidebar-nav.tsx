@@ -27,16 +27,36 @@ import {
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-const navItems = [
-  { href: "/", icon: Home, label: "Dashboard" },
-  { href: "/finance/overview", icon: Wallet, label: "Finance" },
-  { href: "/vault/documents", icon: FileText, label: "Vault" },
-  { href: "/schedule/calendar", icon: Calendar, label: "Schedule" },
-  { href: "/household", icon: Users, label: "Household" },
-  { href: "/goals", icon: Target, label: "Goals" },
-  { href: "/simulations/scenarios", icon: BrainCircuit, label: "Simulations" },
-  { href: "/assistant", icon: Bot, label: "Beno" },
-  { href: "/pulse", icon: Activity, label: "Pulse" },
+type NavSection = {
+  heading: string;
+  items: Array<{ href: string; icon: typeof Home; label: string; badge?: string }>;
+};
+
+const navSections: NavSection[] = [
+  {
+    heading: "Command",
+    items: [
+      { href: "/", icon: Home, label: "Mission control" },
+      { href: "/assistant", icon: Bot, label: "BENO copilot" },
+    ],
+  },
+  {
+    heading: "Operations",
+    items: [
+      { href: "/finance/overview", icon: Wallet, label: "Finance" },
+      { href: "/schedule/calendar", icon: Calendar, label: "Schedule" },
+      { href: "/household", icon: Users, label: "Household" },
+      { href: "/goals", icon: Target, label: "Goals" },
+    ],
+  },
+  {
+    heading: "Systems",
+    items: [
+      { href: "/vault/documents", icon: FileText, label: "Vault" },
+      { href: "/simulations/scenarios", icon: BrainCircuit, label: "Simulations" },
+      { href: "/pulse", icon: Activity, label: "Pulse" },
+    ],
+  },
 ];
 
 export function SidebarNav() {
@@ -58,23 +78,41 @@ export function SidebarNav() {
         </div>
       </SidebarHeader>
       <SidebarContent className="p-2">
-        <SidebarMenu>
-          {navItems.map((item) => (
-            <SidebarMenuItem key={item.href}>
-              <SidebarMenuButton
-                asChild
-                isActive={isActive(item.href)}
-                tooltip={item.label}
-                className="rounded-2xl text-sm font-medium"
-              >
-                <Link href={item.href} className="flex items-center gap-2">
-                  <item.icon className="h-4 w-4" />
-                  <span>{item.label}</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          ))}
-        </SidebarMenu>
+        {navSections.map((section) => (
+          <div key={section.heading} className="space-y-1">
+            <p className="px-3 text-[11px] uppercase tracking-[0.3em] text-slate-500/70">
+              {section.heading}
+            </p>
+            <SidebarMenu>
+              {section.items.map((item) => (
+                <SidebarMenuItem key={item.href}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={isActive(item.href)}
+                    tooltip={item.label}
+                    className="group rounded-2xl text-sm font-medium transition hover:border-slate-700/80"
+                  >
+                    <Link href={item.href} className="flex w-full items-center justify-between gap-2">
+                      <span className="flex items-center gap-2">
+                        <span
+                          className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900/60 text-slate-400 transition-colors group-data-[active=true]:bg-cyan-500/15 group-data-[active=true]:text-cyan-300"
+                        >
+                          <item.icon className="h-4 w-4" />
+                        </span>
+                        <span className="text-slate-200 group-data-[active=true]:text-white">{item.label}</span>
+                      </span>
+                      {item.badge ? (
+                        <span className="rounded-full bg-slate-900/60 px-2 py-1 text-[10px] uppercase tracking-wide text-cyan-300/80">
+                          {item.badge}
+                        </span>
+                      ) : null}
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </div>
+        ))}
       </SidebarContent>
       <SidebarFooter>
         <SidebarSeparator />
