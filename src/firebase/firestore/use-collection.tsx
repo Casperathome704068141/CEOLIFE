@@ -26,21 +26,29 @@ export function useCollection<T>(path: string, options?: UseCollectionOptions) {
   const [loading, setLoading] = useState(true);
   const firestore = useFirestore();
 
+  const {query: queryOptions, isCollectionGroup, skip} = options ?? {};
+
   const memoizedQuery = useMemo(() => {
-    if (!firestore || options?.skip) return null;
-    let colRef: Query<DocumentData>;
+    if (!firestore || skip) return null;
 
-    if (options?.isCollectionGroup) {
-      colRef = collectionGroup(firestore, path);
-    } else {
-      colRef = collection(firestore, path);
+    const collectionReference: Query<DocumentData> = isCollectionGroup
+      ? collectionGroup(firestore, path)
+      : collection(firestore, path);
+
+    if (queryOptions) {
+      return query(collectionReference, where(...queryOptions));
     }
 
-    if (options?.query) {
-      return query(colRef, where(...options.query));
-    }
-    return colRef;
-  }, [firestore, path, options]);
+    return collectionReference;
+  }, [
+    firestore,
+    path,
+    isCollectionGroup,
+    skip,
+    queryOptions?.[0],
+    queryOptions?.[1],
+    queryOptions?.[2],
+  ]);
 
   useEffect(() => {
     if (!memoizedQuery) {
@@ -73,8 +81,6 @@ export function useCollection<T>(path: string, options?: UseCollectionOptions) {
         } else {
           console.error('Firestore listener error', serverError);
         }
-
-        unsubscribe();
       }
     );
 
