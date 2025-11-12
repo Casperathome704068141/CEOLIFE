@@ -9,6 +9,7 @@ import {
   query,
   where,
   collectionGroup,
+  FirestoreError,
 } from 'firebase/firestore';
 import {useFirestore} from '@/firebase';
 import {errorEmitter} from '../error-emitter';
@@ -59,13 +60,21 @@ export function useCollection<T>(path: string, options?: UseCollectionOptions) {
         setData(result);
         setLoading(false);
       },
-      async serverError => {
-        const permissionError = new FirestorePermissionError({
-          path,
-          operation: 'list',
-        });
-        errorEmitter.emit('permission-error', permissionError);
+      (serverError: FirestoreError) => {
         setLoading(false);
+        setData([]);
+
+        if (serverError?.code === 'permission-denied') {
+          const permissionError = new FirestorePermissionError({
+            path,
+            operation: 'list',
+          });
+          errorEmitter.emit('permission-error', permissionError);
+        } else {
+          console.error('Firestore listener error', serverError);
+        }
+
+        unsubscribe();
       }
     );
 
