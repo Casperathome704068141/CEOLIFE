@@ -49,7 +49,7 @@ export default function PulsePage() {
     queryKey: ['pulse', 'odds', leagues],
     queryFn: () => fetch(`/api/pulse/odds?leagues=${leagues}`).then((res) => res.json()),
   });
-  const insightsQuery = useQuery<{ bestPlays: Play[] }>({
+  const insightsQuery = useQuery<{ bestPlays: Play[], trends: any }>({
     queryKey: ['pulse', 'insights', leagues],
     queryFn: () => fetch(`/api/pulse/insights?leagues=${leagues}`).then((res) => res.json()),
   });
@@ -141,13 +141,8 @@ export default function PulsePage() {
           <WeatherCard forecasts={weatherQuery.data?.forecasts ?? []} games={games ?? []} onAddToBrief={handleAddToBrief} />
           <DisclaimerCard />
         </div>
-        <div className="col-span-1 space-y-8">
+        <div className="col-span-1 lg:col-span-3">
           <TrendsCard trends={insightsQuery.data?.trends ?? { lineMoves: [], momentumHeat: [], sentiment: [] }} onAddToBrief={handleAddToBrief} />
-          <div className="rounded-2xl border border-border/60 bg-background/60 p-4 text-sm text-muted-foreground">
-            <p className="font-semibold text-foreground">Review mode</p>
-            <p>Route flagged market changes to Finance Terminal cashflow view for reconciliation.</p>
-            {hasError && <p className="text-amber-400">Some feeds failed to load. Retry above.</p>}
-          </div>
         </div>
       </Bento>
 
