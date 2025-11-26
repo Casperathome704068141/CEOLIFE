@@ -1,9 +1,10 @@
+
 "use client";
 
 import { useCallback } from "react";
-import { addDoc, collection, deleteDoc, doc, getDocs, orderBy, query, updateDoc } from "firebase/firestore";
+import { collection, doc, addDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { useFirestore } from "@/firebase";
+import { useFirestore, useCollection, useUser } from "@/firebase";
 import {
   MonteCarloRequest,
   MonteCarloResult,
@@ -16,32 +17,23 @@ import {
 
 const COLLECTION_PATH = "simulations";
 
-async function fetchScenarios(firestore: ReturnType<typeof useFirestore>) {
-  if (!firestore) return [] as Scenario[];
-  const col = collection(firestore, COLLECTION_PATH);
-  const snapshot = await getDocs(query(col, orderBy("updatedAt", "desc")));
-  return snapshot.docs.map((document) => ({
-    id: document.id,
-    ...(document.data() as Omit<Scenario, "id">),
-  }));
-}
-
 export function useSimulations() {
   const firestore = useFirestore();
   const queryClient = useQueryClient();
+  const { user } = useUser();
 
-  const scenariosQuery = useQuery({
-    queryKey: ["simulations", "scenarios"],
-    queryFn: () => fetchScenarios(firestore),
-    enabled: Boolean(firestore),
+  const { data: scenarios = [], isLoading } = useCollection<Scenario>(COLLECTION_PATH, {
+    query: ['ownerId', '==', user?.uid],
+    skip: !user?.uid,
   });
 
   const createScenario = useMutation({
     mutationFn: async (input: { name: string; preset?: Scenario["preset"]; params: ScenarioParameters }) => {
-      if (!firestore) throw new Error("Firestore not ready");
+      if (!firestore || !user?.uid) throw new Error("Firestore not ready");
       const col = collection(firestore, COLLECTION_PATH);
       const now = Date.now();
       const docRef = await addDoc(col, {
+        ownerId: user.uid,
         name: input.name,
         preset: input.preset ?? "custom",
         params: input.params,
@@ -112,8 +104,8 @@ export function useSimulations() {
   }, []);
 
   return {
-    scenarios: scenariosQuery.data ?? [],
-    isLoading: scenariosQuery.isLoading,
+    scenarios: scenarios ?? [],
+    isLoading,
     createScenario: createScenario.mutateAsync,
     updateScenario: updateScenario.mutateAsync,
     deleteScenario: deleteScenario.mutateAsync,

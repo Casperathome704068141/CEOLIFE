@@ -112,6 +112,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$date$2d$fns$
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$core$2f$sse$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/core/sse.ts [app-route] (ecmascript)");
 ;
 ;
+// These would be hydrated from a Firestore query in a real app
+const allBills = [];
+const allGoals = [];
+const allTransactions = [];
 const overviewState = {
     netWorth: 185000,
     cashOnHand: {
@@ -546,9 +550,46 @@ function pushQueueItem(item) {
     queueState.sort((a, b)=>b.priorityScore - a.priorityScore);
 }
 function getOverview() {
-    // This function will now compute the overview from the event log in a real scenario.
-    // For now, we'll just return the mutable state.
-    return overviewState;
+    const now = new Date();
+    const nextBills = allBills.filter((bill)=>bill.dueDate >= now).sort((a, b)=>a.dueDate.getTime() - b.dueDate.getTime());
+    const savingsProgress = allGoals.length ? allGoals.reduce((sum, goal)=>sum + goal.current, 0) / allGoals.reduce((sum, goal)=>sum + goal.target, 0) : 0;
+    const topGoals = allGoals.sort((a, b)=>b.priority.localeCompare(a.priority)).slice(0, 3).map((goal)=>({
+            id: goal.id,
+            name: goal.name,
+            percent: Math.round(goal.current / goal.target * 100),
+            eta: goal.deadline.toISOString()
+        }));
+    return {
+        netWorth: 185000,
+        cashOnHand: {
+            amount: 42000,
+            runwayDays: 128
+        },
+        nextBills: {
+            count: nextBills.length,
+            total: nextBills.reduce((sum, bill)=>sum + bill.amount, 0),
+            soonest: nextBills[0]?.dueDate.toString() ?? now.toISOString()
+        },
+        monthlyBurn: {
+            actual: 6400,
+            target: 6000
+        },
+        savingsProgress: {
+            percent: Math.round(savingsProgress * 100),
+            delta: 3
+        },
+        adherence: {
+            percent30d: 92,
+            onHandDays: 16
+        },
+        goals: {
+            top: topGoals
+        },
+        pulse: {
+            games: 3,
+            bestValueScore: 7.6
+        }
+    };
 }
 function getQueue(filter) {
     const normalized = filter?.toLowerCase();
