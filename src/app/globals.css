@@ -135,3 +135,13 @@
 .rbc-today {
     @apply bg-slate-900/40;
 }
+
+/* Utility to hide scrollbars for dense workspaces */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
