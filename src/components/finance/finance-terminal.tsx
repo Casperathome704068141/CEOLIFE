@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import { Download, Filter, MoreHorizontal, Plus, RefreshCw, Search } from "lucide-react";
+import React, { useMemo, useState } from "react";
+import { Download, Filter, MoreHorizontal, Plus, RefreshCw, Search, ToggleLeft, ToggleRight } from "lucide-react";
+import { calculateUnifiedLifeScore } from "@/lib/hooks/useUnifiedLifeScore";
+import { useBridge } from "@/lib/hooks/useBridge";
 
 const transactions = [
   { id: "tx_01", date: "Today, 09:41", merchant: "AWS Web Services", category: "Infrastructure", amount: -64.2, status: "posted", tag: "biz" },
@@ -19,7 +21,12 @@ const accounts = [
 ];
 
 export function FinanceTerminal() {
+  const { overview, goals, events } = useBridge();
   const [viewMode, setViewMode] = useState<"all" | "income" | "expense">("all");
+  const [cashflowMode, setCashflowMode] = useState<"velocity" | "net">("velocity");
+  const [reviewMode, setReviewMode] = useState(true);
+
+  const lifeScore = useMemo(() => calculateUnifiedLifeScore({ overview, goals, events }), [overview, goals, events]);
 
   const filteredTransactions = transactions.filter((tx) => {
     if (viewMode === "income") return tx.amount > 0;
@@ -45,7 +52,7 @@ export function FinanceTerminal() {
         <div className="flex h-full items-center justify-between">
           <div>
             <h1 className="text-xl font-bold text-white tracking-tight">Finance Terminal</h1>
-            <p className="text-xs text-gray-500">LEDGER INTEGRITY: 100%</p>
+            <p className="text-xs text-gray-500">LEDGER INTEGRITY: 100% · Unified Life Score {lifeScore.score}</p>
           </div>
           <div className="flex items-center gap-2 text-[11px] uppercase text-gray-400">
             <button
@@ -124,19 +131,37 @@ export function FinanceTerminal() {
               </button>
             ))}
           </div>
-          <h3 className="mb-4 text-xs font-bold uppercase text-gray-500">Cashflow Velocity</h3>
-          <div className="flex h-[80%] items-end justify-between border-b border-l border-[#27272A] px-4 pb-4">
-            {[40, 65, 34, 78, 56, 90, 81, 45, 67, 88, 50, 70].map((h, i) => (
-              <div
-                key={i}
-                className="group relative mx-1 w-full bg-gray-800 transition-all hover:bg-blue-500"
-                style={{ height: `${h}%` }}
+          <div className="flex items-center justify-between">
+            <h3 className="mb-4 text-xs font-bold uppercase text-gray-500">Interactive Cashflow</h3>
+            <div className="flex items-center gap-2 text-[11px] uppercase text-gray-500">
+              <span className="rounded-full border border-[#27272A] px-2 py-1">{cashflowMode === "velocity" ? "Velocity" : "Net"} mode</span>
+              <button
+                className="flex items-center gap-2 rounded border border-[#27272A] bg-[#0f0f10] px-3 py-1 text-[11px] text-gray-400 transition hover:border-blue-500 hover:text-white"
+                onClick={() => setCashflowMode((prev) => (prev === "velocity" ? "net" : "velocity"))}
               >
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 rounded border border-gray-700 bg-gray-800 px-2 py-1 text-[10px] opacity-0 transition group-hover:opacity-100">
-                  ${h * 120}
+                {cashflowMode === "velocity" ? <ToggleRight size={14} /> : <ToggleLeft size={14} />}
+                Switch
+              </button>
+            </div>
+          </div>
+          <div className="flex h-[80%] flex-col gap-4 border-b border-l border-[#27272A] px-4 pb-4">
+            <div className="flex flex-1 items-end justify-between">
+              {[40, 65, 34, 78, 56, 90, 81, 45, 67, 88, 50, 70].map((h, i) => (
+                <div
+                  key={i}
+                  className={`group relative mx-1 w-full ${cashflowMode === "velocity" ? "bg-gray-800" : h > 55 ? "bg-emerald-600" : "bg-rose-700"} transition-all hover:bg-blue-500`}
+                  style={{ height: `${h}%` }}
+                >
+                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 rounded border border-gray-700 bg-gray-800 px-2 py-1 text-[10px] opacity-0 transition group-hover:opacity-100">
+                    {cashflowMode === "velocity" ? `Runway ${(h / 100 * 30).toFixed(1)}d` : `$${(h - 50) * 200}`}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="flex items-center justify-between rounded-xl border border-[#27272A] bg-[#080808] px-3 py-2 text-[11px] text-gray-300">
+              <span>Auto-fit burn to keep runway above 90d. Review mode accelerates life score by +{lifeScore.breakdown.finance.toFixed(0)}%</span>
+              <button className="rounded-full border border-blue-500/60 bg-blue-600/20 px-3 py-1 text-blue-200">Run auto-fit</button>
+            </div>
           </div>
         </div>
 
@@ -159,7 +184,12 @@ export function FinanceTerminal() {
               </button>
             </div>
             <div className="ml-auto flex items-center gap-2 text-[11px] font-semibold uppercase text-gray-400">
-              <span className="rounded-full border border-[#27272A] px-2 py-1">Review Mode</span>
+              <button
+                className={`rounded-full border px-2 py-1 ${reviewMode ? "border-blue-400 text-blue-200" : "border-[#27272A]"}`}
+                onClick={() => setReviewMode((prev) => !prev)}
+              >
+                Review Mode
+              </button>
               <span className="rounded-full border border-[#27272A] px-2 py-1 text-amber-400">Uncategorized: 2</span>
             </div>
           </div>
@@ -201,6 +231,7 @@ export function FinanceTerminal() {
                 <div className={`col-span-2 text-right font-mono ${tx.amount > 0 ? "text-green-500" : "text-white"}`}>
                   {tx.amount > 0 ? "+" : ""}
                   {tx.amount.toFixed(2)}
+                  {reviewMode && <span className="ml-2 rounded border border-[#27272A] px-1 text-[10px] text-amber-300">flag</span>}
                 </div>
                 <div className="col-span-2 text-center">
                   {tx.status === "pending" ? (

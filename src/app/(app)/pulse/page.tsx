@@ -67,6 +67,8 @@ export default function PulsePage() {
   });
 
   const games = onlyWatchlist ? gamesQuery.data?.games.filter((g) => watchlistIds.has(g.id)) : gamesQuery.data?.games;
+  const isLoading = gamesQuery.isLoading || oddsQuery.isLoading || insightsQuery.isLoading;
+  const hasError = gamesQuery.isError || oddsQuery.isError || insightsQuery.isError;
 
   const handleAddToBrief = async (payload: { title: string; body: string }) => {
     toast({ title: 'Added to Briefing', description: payload.title });
@@ -75,30 +77,56 @@ export default function PulsePage() {
   return (
     <div className="space-y-6">
       <HeaderBar
-        onRefresh={() => {}}
+        onRefresh={() => {
+          gamesQuery.refetch();
+          oddsQuery.refetch();
+          insightsQuery.refetch();
+        }}
         onCustomize={() => setDialog('customize')}
         onViewTrends={() => setDialog('trends')}
       />
       <WatchlistBar onSelect={(id) => setFocusedId(id)} />
       <LeagueFilter />
+      <div className="grid gap-3 rounded-2xl border border-border/60 bg-background/60 p-4 text-sm text-muted-foreground sm:grid-cols-3">
+        <div className="flex items-center gap-3 rounded-xl border border-border/50 bg-background/70 px-3 py-2">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">Unified Life Score aware</p>
+          <span className="rounded-full border border-border/70 px-2 py-1 text-[10px] uppercase">Cashflow + Pulse synced</span>
+        </div>
+        <div className="flex items-center gap-2 rounded-xl border border-border/50 bg-background/70 px-3 py-2 text-xs">
+          <span className="rounded-full bg-emerald-500/20 px-2 py-1 text-emerald-200">{watchlistIds.size} tracked</span>
+          <span className="rounded-full bg-cyan-500/20 px-2 py-1 text-cyan-100">{selectedLeagues.length} leagues</span>
+          <span className="rounded-full bg-amber-500/20 px-2 py-1 text-amber-100">{dateRange} horizon</span>
+        </div>
+        <div className="flex items-center justify-end gap-2 text-xs">
+          {hasError ? <span className="text-amber-300">Network jitter - retrying…</span> : <span>Signals live refreshed</span>}
+        </div>
+      </div>
       <Bento>
         <div className="col-span-1 space-y-8 lg:col-span-2">
-          <ScheduleCard
-            games={games ?? []}
-            trackedIds={watchlistIds}
-            onTrack={(game) => addToWatchlist({ id: game.id, type: 'game', league: game.league, label: `${game.away.name} @ ${game.home.name}` })}
-            onUntrack={(game) => {}}
-            onlyWatchlist={onlyWatchlist}
-            onAddToBrief={handleAddToBrief}
-            focusedId={focusedId}
-          />
-          <OddsValueCard
-            rows={oddsQuery.data?.odds ?? []}
-            onExplain={(row) => setExplainContext(row)}
-            onTrack={(row) => addToWatchlist({ id: row.gameId, type: 'game', league: row.league, label: row.selection })}
-            onAlert={(row) => setAlertContext({ id: row.id, label: row.selection, league: row.league })}
-            onAddToBrief={handleAddToBrief}
-          />
+          {isLoading ? (
+            <div className="rounded-2xl border border-border/60 bg-background/60 p-6 text-center text-sm text-muted-foreground">
+              Fetching live lines and weather...
+            </div>
+          ) : (
+            <>
+              <ScheduleCard
+                games={games ?? []}
+                trackedIds={watchlistIds}
+                onTrack={(game) => addToWatchlist({ id: game.id, type: 'game', league: game.league, label: `${game.away.name} @ ${game.home.name}` })}
+                onUntrack={(game) => {}}
+                onlyWatchlist={onlyWatchlist}
+                onAddToBrief={handleAddToBrief}
+                focusedId={focusedId}
+              />
+              <OddsValueCard
+                rows={oddsQuery.data?.odds ?? []}
+                onExplain={(row) => setExplainContext(row)}
+                onTrack={(row) => addToWatchlist({ id: row.gameId, type: 'game', league: row.league, label: row.selection })}
+                onAlert={(row) => setAlertContext({ id: row.id, label: row.selection, league: row.league })}
+                onAddToBrief={handleAddToBrief}
+              />
+            </>
+          )}
         </div>
         <div className="col-span-1 space-y-8">
           <BestPlaysCard
@@ -112,6 +140,14 @@ export default function PulsePage() {
           <NewsCard onAddToBrief={handleAddToBrief} />
           <WeatherCard forecasts={weatherQuery.data?.forecasts ?? []} games={games ?? []} onAddToBrief={handleAddToBrief} />
           <DisclaimerCard />
+        </div>
+        <div className="col-span-1 space-y-8">
+          <TrendsCard trends={insightsQuery.data?.trends ?? { lineMoves: [], momentumHeat: [], sentiment: [] }} onAddToBrief={handleAddToBrief} />
+          <div className="rounded-2xl border border-border/60 bg-background/60 p-4 text-sm text-muted-foreground">
+            <p className="font-semibold text-foreground">Review mode</p>
+            <p>Route flagged market changes to Finance Terminal cashflow view for reconciliation.</p>
+            {hasError && <p className="text-amber-400">Some feeds failed to load. Retry above.</p>}
+          </div>
         </div>
       </Bento>
 
@@ -132,7 +168,6 @@ export default function PulsePage() {
         onOpenChange={() => setExplainContext(null)}
         row={explainContext}
       />
-       <TrendsCard trends={insightsQuery.data?.trends ?? {lineMoves: [], momentumHeat: [], sentiment: []}} onAddToBrief={handleAddToBrief} />
     </div>
   );
 }
