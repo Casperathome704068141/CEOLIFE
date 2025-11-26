@@ -9,6 +9,7 @@ import { Progress } from '@/components/ui/progress';
 import { formatCurrency, formatPercent } from '@/lib/ui/format';
 import {
   Activity,
+  ArrowRight,
   ArrowUpRight,
   Bell,
   Bolt,
@@ -17,22 +18,43 @@ import {
   FileText,
   Flame,
   Inbox,
+  Layers,
+  LineChart,
+  HeartPulse,
   Radar,
   Rocket,
   Sparkles,
+  Target,
   Timer,
   Wallet,
 } from 'lucide-react';
 import { useUIState } from '@/store/ui-store';
 import Link from 'next/link';
+import { calculateUnifiedLifeScore } from '@/lib/hooks/useUnifiedLifeScore';
 
 export default function DashboardPageContent() {
   const { overview, goals, events, documents, shoppingLists, loading } = useBridge();
   const { setCommandPaletteOpen } = useUIState();
 
-  const lifeScore = 82;
+  const unifiedScore = useMemo(
+    () => calculateUnifiedLifeScore({ overview, goals, events }),
+    [overview, goals, events]
+  );
   const nextEvent = useMemo(() => events?.[0], [events]);
   const shoppingListItems = shoppingLists?.[0]?.items || [];
+
+  const accentRing =
+    unifiedScore.status === 'optimal'
+      ? 'border-emerald-500/40'
+      : unifiedScore.status === 'steady'
+        ? 'border-sky-400/40'
+        : 'border-amber-400/50';
+  const accentBlur =
+    unifiedScore.status === 'optimal'
+      ? 'border-emerald-500/30'
+      : unifiedScore.status === 'steady'
+        ? 'border-sky-400/30'
+        : 'border-amber-400/40';
 
   const capitalTiles = overview
     ? [
@@ -42,8 +64,103 @@ export default function DashboardPageContent() {
       ]
     : [];
 
+  const navLinks = [
+    { label: 'Pulse', href: '/pulse', icon: HeartPulse },
+    { label: 'Chronos', href: '/schedule/calendar', icon: Timer },
+    { label: 'Finance Terminal', href: '/finance/overview', icon: Wallet },
+    { label: 'Vault', href: '/vault', icon: Layers },
+    { label: 'Simulations', href: '/simulations', icon: LineChart },
+  ];
+
   return (
     <div className="space-y-6">
+      <div className="flex flex-col gap-3 rounded-3xl border border-slate-900/70 bg-slate-950/70 p-4 shadow-lg shadow-slate-950/60 md:flex-row md:items-center md:justify-between">
+        <div className="space-y-1">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-slate-500">Unified navigation</p>
+          <div className="flex flex-wrap items-center gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group flex items-center gap-2 rounded-full border border-slate-800/80 bg-slate-900/70 px-3 py-1 text-xs text-slate-200 transition hover:border-cyan-500/40 hover:text-white"
+              >
+                <link.icon className="h-4 w-4 text-cyan-300 transition group-hover:scale-110" /> {link.label}
+                <ArrowRight className="h-3 w-3 text-slate-500 group-hover:text-cyan-300" />
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300">
+          <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/70 px-3 py-1 font-medium text-white">
+            <Activity className="h-4 w-4 text-emerald-300" /> Unified Life Score
+            <span className="rounded-full border border-slate-800/60 bg-slate-950/80 px-2 py-0.5 text-xs text-emerald-200">
+              {unifiedScore.status}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/70 px-3 py-1 text-xs text-slate-300">
+            <Sparkles className="h-4 w-4 text-amber-300" />
+            <span>Auto-focus engines synced</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid gap-4 lg:grid-cols-3">
+        <Card className="lg:col-span-2 border border-slate-900/70 bg-slate-950/80">
+          <CardHeader className="flex flex-col gap-2 pb-2 sm:flex-row sm:items-center sm:justify-between">
+            <CardTitle className="flex items-center gap-2 text-sm text-slate-200">
+              <LineChart className="h-4 w-4 text-cyan-300" /> Unified Life Score trajectory
+            </CardTitle>
+            <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-slate-400">
+              <span className="rounded-full border border-slate-800 px-2 py-1">Energy-aware</span>
+              <span className="rounded-full border border-slate-800 px-2 py-1">Auto-balancing</span>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-3 text-sm text-slate-200">
+            <div className="grid gap-3 md:grid-cols-2">
+              {Object.entries(unifiedScore.breakdown).map(([domain, score]) => (
+                <div key={domain} className="space-y-1 rounded-2xl border border-slate-900 bg-slate-900/70 p-3">
+                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-slate-500">
+                    <span>{domain}</span>
+                    <span className="text-slate-300">{score}%</span>
+                  </div>
+                  <Progress value={score} className="h-2" />
+                  <p className="text-[12px] text-slate-400">Adaptive weights from runway, focus adherence, and mission progress.</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap items-center gap-2 text-[12px] text-slate-300">
+              <span className="rounded-full border border-slate-800 bg-slate-900/70 px-2 py-1">Next unlock: +2 pts if burn meets target</span>
+              <span className="rounded-full border border-slate-800 bg-slate-900/70 px-2 py-1">Chronos synced with energy map</span>
+              <span className="rounded-full border border-slate-800 bg-slate-900/70 px-2 py-1">Finance terminal review mode active</span>
+            </div>
+          </CardContent>
+        </Card>
+        <Card className="border border-slate-900/70 bg-slate-950/80">
+          <CardHeader className="pb-2">
+            <CardTitle className="flex items-center gap-2 text-sm text-slate-200">
+              <Target className="h-4 w-4 text-emerald-300" /> Command Stack
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3 text-sm text-slate-200">
+            <p className="text-slate-400">Latest automations wired into the OS. Drag to reprioritize execution.</p>
+            <div className="space-y-2">
+              {[
+                'Auto-fit backlog by energy curve',
+                'Cashflow review mode pinned to Finance',
+                'Pulse signals routed to Morning Brief',
+              ].map((item) => (
+                <div key={item} className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2">
+                  <span>{item}</span>
+                  <Button size="sm" variant="ghost" className="h-8 rounded-full border border-slate-800 px-2 text-xs text-cyan-200">
+                    <ArrowRight className="h-3 w-3" />
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       <div className="grid gap-4 xl:grid-cols-3">
         <Card className="border border-slate-900/70 bg-slate-950/80">
           <CardHeader className="pb-2">
@@ -53,18 +170,18 @@ export default function DashboardPageContent() {
           </CardHeader>
           <CardContent className="flex items-center justify-between gap-4">
             <div className="relative flex h-32 w-32 items-center justify-center">
-              <div className="absolute inset-0 rounded-full border-4 border-emerald-500/40" />
-              <div className="absolute inset-2 rounded-full border border-emerald-500/30 blur" />
-              <div className="text-4xl font-bold text-white">{lifeScore}</div>
+              <div className={`absolute inset-0 rounded-full border-4 ${accentRing}`} />
+              <div className={`absolute inset-2 rounded-full border ${accentBlur} blur`} />
+              <div className="text-4xl font-bold text-white">{unifiedScore.score}</div>
             </div>
             <div className="space-y-2 text-sm text-slate-300">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-emerald-300">Optimal</p>
-              <p>Theme color driven by Unified Life Score.</p>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-emerald-300">Unified Life Score</p>
+              <p>Live composite from capital, time, health, and mission telemetry.</p>
               <div className="flex flex-wrap gap-2 text-[11px] uppercase text-slate-400">
-                <span className="rounded-full border border-emerald-500/50 px-2 py-1">Finance 30%</span>
-                <span className="rounded-full border border-emerald-500/50 px-2 py-1">Time 30%</span>
-                <span className="rounded-full border border-emerald-500/50 px-2 py-1">Health 25%</span>
-                <span className="rounded-full border border-emerald-500/50 px-2 py-1">Mission 15%</span>
+                <span className="rounded-full border border-emerald-500/50 px-2 py-1">Finance {unifiedScore.breakdown.finance}%</span>
+                <span className="rounded-full border border-emerald-500/50 px-2 py-1">Time {unifiedScore.breakdown.time}%</span>
+                <span className="rounded-full border border-emerald-500/50 px-2 py-1">Health {unifiedScore.breakdown.health}%</span>
+                <span className="rounded-full border border-emerald-500/50 px-2 py-1">Mission {unifiedScore.breakdown.mission}%</span>
               </div>
             </div>
           </CardContent>
