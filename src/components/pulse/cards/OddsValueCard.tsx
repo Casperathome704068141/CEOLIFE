@@ -21,7 +21,7 @@ export function OddsValueCard({ rows, onExplain, onTrack, onAlert, onAddToBrief 
   const sorted = [...rows].sort((a, b) => b.valueScore - a.valueScore);
 
   return (
-    <Card className="flex h-full flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur">
+    <Card className="flex flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur">
       <CardHeader className="gap-3">
         <CardTitle className="flex flex-wrap items-center justify-between gap-3 text-base">
           <span>Top odds & value plays</span>
