@@ -11,7 +11,7 @@ export function Bento({ className, children }: Props) {
   return (
     <div
       className={cn(
-        "grid auto-rows-min grid-cols-1 gap-8 lg:grid-cols-3",
+        "grid auto-rows-auto grid-cols-1 gap-8 lg:grid-cols-3",
         className
       )}
     >

@@ -14,7 +14,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$
 ;
 function Bento({ className, children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("grid auto-rows-min grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)_minmax(0,0.9fr)]", className),
+        className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("grid auto-rows-min grid-cols-1 gap-8 lg:grid-cols-3", className),
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/pulse/Bento.tsx",
@@ -934,7 +934,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 function BestPlaysCard({ plays, onAlert, onTrack, trackedIds, onAddToBrief }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
-        className: "flex h-full flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur",
+        className: "flex flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
                 className: "gap-3",
@@ -1275,7 +1275,7 @@ function isCloseGame(game) {
 function LiveScoreCard({ games, onAddToBrief }) {
     const liveGames = games.filter((game)=>game.status === "live");
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Card"], {
-        className: "flex h-full flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur",
+        className: "flex flex-col rounded-2xl border-border/60 bg-background/60 backdrop-blur",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$card$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CardHeader"], {
                 className: "gap-3",
@@ -5042,54 +5042,20 @@ function PulsePage() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "col-span-1 space-y-8",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$cards$2f$TrendsCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TrendsCard"], {
-                                trends: insightsQuery.data?.trends ?? {
-                                    lineMoves: [],
-                                    momentumHeat: [],
-                                    sentiment: []
-                                },
-                                onAddToBrief: handleAddToBrief
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/(app)/pulse/page.tsx",
-                                lineNumber: 145,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "rounded-2xl border border-border/60 bg-background/60 p-4 text-sm text-muted-foreground",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "font-semibold text-foreground",
-                                        children: "Review mode"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/(app)/pulse/page.tsx",
-                                        lineNumber: 147,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        children: "Route flagged market changes to Finance Terminal cashflow view for reconciliation."
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/(app)/pulse/page.tsx",
-                                        lineNumber: 148,
-                                        columnNumber: 13
-                                    }, this),
-                                    hasError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-amber-400",
-                                        children: "Some feeds failed to load. Retry above."
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/(app)/pulse/page.tsx",
-                                        lineNumber: 149,
-                                        columnNumber: 26
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/app/(app)/pulse/page.tsx",
-                                lineNumber: 146,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                        className: "col-span-1 lg:col-span-3",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$cards$2f$TrendsCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["TrendsCard"], {
+                            trends: insightsQuery.data?.trends ?? {
+                                lineMoves: [],
+                                momentumHeat: [],
+                                sentiment: []
+                            },
+                            onAddToBrief: handleAddToBrief
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/(app)/pulse/page.tsx",
+                            lineNumber: 145,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
                         fileName: "[project]/src/app/(app)/pulse/page.tsx",
                         lineNumber: 144,
                         columnNumber: 9
@@ -5107,7 +5073,7 @@ function PulsePage() {
                 onSave: ()=>{}
             }, void 0, false, {
                 fileName: "[project]/src/app/(app)/pulse/page.tsx",
-                lineNumber: 154,
+                lineNumber: 149,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$modals$2f$CustomizeSourcesDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["CustomizeSourcesDialog"], {
@@ -5117,7 +5083,7 @@ function PulsePage() {
                 onSave: ()=>{}
             }, void 0, false, {
                 fileName: "[project]/src/app/(app)/pulse/page.tsx",
-                lineNumber: 160,
+                lineNumber: 155,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$pulse$2f$modals$2f$ExplainValueDialog$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ExplainValueDialog"], {
@@ -5126,7 +5092,7 @@ function PulsePage() {
                 row: explainContext
             }, void 0, false, {
                 fileName: "[project]/src/app/(app)/pulse/page.tsx",
-                lineNumber: 166,
+                lineNumber: 161,
                 columnNumber: 7
             }, this)
         ]
