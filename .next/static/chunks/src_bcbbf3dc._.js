@@ -4066,7 +4066,17 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
     _s();
     const [pending, setPending] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [draft, setDraft] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(preferences);
-    const merged = draft ?? preferences;
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CustomizeSourcesDialog.useEffect": ()=>{
+            if (open && preferences) {
+                setDraft(preferences);
+            }
+        }
+    }["CustomizeSourcesDialog.useEffect"], [
+        open,
+        preferences
+    ]);
+    const merged = draft;
     const handleToggleProvider = (group, provider)=>{
         if (!merged) return;
         const selected = new Set(merged.providers[group]);
@@ -4127,6 +4137,40 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
             setPending(false);
         }
     };
+    if (!merged) {
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
+            open: open,
+            onOpenChange: (next)=>{
+                if (!next) {
+                    setDraft(preferences);
+                }
+                onOpenChange(next);
+            },
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogContent"], {
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogHeader"], {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogTitle"], {
+                        children: "Loading Preferences..."
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
+                        lineNumber: 119,
+                        columnNumber: 13
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
+                    lineNumber: 118,
+                    columnNumber: 11
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
+                lineNumber: 117,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
+            lineNumber: 108,
+            columnNumber: 8
+        }, this);
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dialog$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Dialog"], {
         open: open,
         onOpenChange: (next)=>{
@@ -4144,20 +4188,20 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                             children: "Customize sources"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 112,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$dialog$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DialogDescription"], {
                             children: "Choose which providers and leagues fuel your Pulse dashboard. Changes sync to your preferences instantly."
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 113,
+                            lineNumber: 139,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                    lineNumber: 111,
+                    lineNumber: 137,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4170,7 +4214,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                     children: "Providers"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 120,
+                                    lineNumber: 146,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4183,7 +4227,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                     children: group
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 152,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4197,7 +4241,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                                     children: provider
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                                    lineNumber: 132,
+                                                                    lineNumber: 158,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -4205,41 +4249,41 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                                     onCheckedChange: ()=>handleToggleProvider(group, provider)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                                    lineNumber: 133,
+                                                                    lineNumber: 159,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, provider, true, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 131,
+                                                            lineNumber: 157,
                                                             columnNumber: 25
                                                         }, this);
                                                     })
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 153,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, group, true, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 151,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 149,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 119,
+                            lineNumber: 145,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 145,
+                            lineNumber: 171,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4249,7 +4293,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                     children: "Leagues"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 173,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4263,24 +4307,24 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                             children: league
                                         }, league, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 154,
+                                            lineNumber: 180,
                                             columnNumber: 19
                                         }, this);
                                     })
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 150,
+                                    lineNumber: 176,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 146,
+                            lineNumber: 172,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 171,
+                            lineNumber: 197,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4293,7 +4337,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                             children: "Units"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 174,
+                                            lineNumber: 200,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4309,7 +4353,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                             children: option
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 180,
+                                                            lineNumber: 206,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -4317,24 +4361,24 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                             onCheckedChange: ()=>handleUnitsChange(option)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 181,
+                                                            lineNumber: 207,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, option, true, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 179,
+                                                    lineNumber: 205,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 203,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 173,
+                                    lineNumber: 199,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4344,7 +4388,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                             children: "Time zone"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 190,
+                                            lineNumber: 216,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4356,7 +4400,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                             children: tz
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 196,
+                                                            lineNumber: 222,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -4364,35 +4408,35 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                             onCheckedChange: ()=>handleTzChange(tz)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                            lineNumber: 197,
+                                                            lineNumber: 223,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, tz, true, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 195,
+                                                    lineNumber: 221,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 193,
+                                            lineNumber: 219,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 189,
+                                    lineNumber: 215,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 172,
+                            lineNumber: 198,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$separator$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Separator"], {}, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 206,
+                            lineNumber: 232,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -4402,7 +4446,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                     children: "Automations"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 208,
+                                    lineNumber: 234,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4410,7 +4454,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                     children: "Enable “auto-pin my favorite teams” to automatically track your most watched clubs across Pulse."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 211,
+                                    lineNumber: 237,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4423,7 +4467,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                     children: "Auto-pin favorite teams"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 217,
+                                                    lineNumber: 243,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -4431,13 +4475,13 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                                     children: "Uses your existing assistant preferences to pin games as they go live."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                                    lineNumber: 218,
+                                                    lineNumber: 244,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 216,
+                                            lineNumber: 242,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$switch$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Switch"], {
@@ -4447,25 +4491,25 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                                             className: "opacity-60"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                            lineNumber: 222,
+                                            lineNumber: 248,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                                    lineNumber: 215,
+                                    lineNumber: 241,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 207,
+                            lineNumber: 233,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                    lineNumber: 118,
+                    lineNumber: 144,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -4478,7 +4522,7 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                             children: "Cancel"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 227,
+                            lineNumber: 253,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
@@ -4487,28 +4531,28 @@ function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave }) {
                             children: pending ? "Saving..." : "Save preferences"
                         }, void 0, false, {
                             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                            lineNumber: 230,
+                            lineNumber: 256,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-                    lineNumber: 226,
+                    lineNumber: 252,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-            lineNumber: 110,
+            lineNumber: 136,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/pulse/modals/CustomizeSourcesDialog.tsx",
-        lineNumber: 101,
+        lineNumber: 127,
         columnNumber: 5
     }, this);
 }
-_s(CustomizeSourcesDialog, "H4wcsIR8z2crf7en0fn1iXoGzpg=");
+_s(CustomizeSourcesDialog, "xaVNy+hcjtrPjx26oYA5ojPYBPw=");
 _c = CustomizeSourcesDialog;
 var _c;
 __turbopack_context__.k.register(_c, "CustomizeSourcesDialog");

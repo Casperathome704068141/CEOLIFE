@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { Separator } from "@/components/ui/separator";
@@ -39,7 +39,13 @@ export function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave
   const [pending, setPending] = useState(false);
   const [draft, setDraft] = useState<Preferences | undefined>(preferences);
 
-  const merged = draft ?? preferences;
+  useEffect(() => {
+    if (open && preferences) {
+      setDraft(preferences);
+    }
+  }, [open, preferences]);
+
+  const merged = draft;
 
   const handleToggleProvider = (group: keyof Preferences["providers"], provider: string) => {
     if (!merged) return;
@@ -96,6 +102,26 @@ export function CustomizeSourcesDialog({ open, onOpenChange, preferences, onSave
       setPending(false);
     }
   };
+  
+  if (!merged) {
+    return (
+       <Dialog
+        open={open}
+        onOpenChange={(next) => {
+          if (!next) {
+            setDraft(preferences);
+          }
+          onOpenChange(next);
+        }}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Loading Preferences...</DialogTitle>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    )
+  }
 
   return (
     <Dialog
