@@ -1,6 +1,10 @@
 {
+  "/(app)/finance/overview/page": "app/(app)/finance/overview/page.js",
+  "/(app)/schedule/calendar/page": "app/(app)/schedule/calendar/page.js",
+  "/(app)/vault/documents/page": "app/(app)/vault/documents/page.js",
   "/api/bridge/overview/route": "app/api/bridge/overview/route.js",
   "/dashboard/page": "app/dashboard/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/login/page": "app/login/page.js",
   "/page": "app/page.js"
 }
