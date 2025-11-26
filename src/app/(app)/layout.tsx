@@ -1,14 +1,8 @@
-
 "use client";
 
-import {
-  SidebarProvider,
-  Sidebar,
-  SidebarInset,
-} from "@/components/ui/sidebar";
-import { Header } from "@/components/layout/header";
-import { SidebarNav } from "@/components/layout/sidebar-nav";
 import { AuthGate } from "@/components/auth/auth-gate";
+import { CommandRail } from "@/components/layout/command-rail";
+import { HudBar } from "@/components/layout/hud-bar";
 
 export default function AppLayout({
   children,
@@ -17,19 +11,15 @@ export default function AppLayout({
 }>) {
   return (
     <AuthGate>
-      <SidebarProvider>
-        <Sidebar className="border-r border-slate-900/70 bg-slate-950/90">
-          <SidebarNav />
-        </Sidebar>
-        <SidebarInset>
-          <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-950 via-slate-930/80 to-slate-950">
-            <Header />
-            <main className="flex-1 px-4 pb-12 sm:px-6 md:px-10">
-              <div className="mx-auto w-full max-w-7xl space-y-8 pb-6">{children}</div>
-            </main>
-          </div>
-        </SidebarInset>
-      </SidebarProvider>
+      <div className="relative flex min-h-screen bg-slate-950 text-slate-50">
+        <CommandRail />
+        <div className="flex flex-1 flex-col pl-16">
+          <HudBar />
+          <main className="flex-1 px-4 pb-12 pt-6 sm:px-6 md:px-10">
+            <div className="mx-auto w-full max-w-7xl space-y-8 pb-10">{children}</div>
+          </main>
+        </div>
+      </div>
     </AuthGate>
   );
 }

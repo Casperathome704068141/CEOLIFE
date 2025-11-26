@@ -1,62 +1,200 @@
-
 'use client';
 
-import { PageHeader } from '@/components/layout/page-header';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { useCollection, useUser } from '@/firebase';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { Flame, Lock, Radar, ShieldCheck, Sparkles, Timer, Zap } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 
-const localizer = momentLocalizer(moment);
+const hours = Array.from({ length: 12 }, (_, i) => `${i + 7}:00`);
 
-type CalendarEvent = {
-  id: string;
-  title: string;
-  start: Date;
-  end: Date;
+const demoBlocks = [
+  { id: 'block-1', title: 'Deep Work: Product Spec', start: '09:00', end: '11:00', energy: 'high', protected: true },
+  { id: 'block-2', title: 'Finance Sync', start: '13:00', end: '14:00', energy: 'medium', protected: false },
+  { id: 'block-3', title: 'Inbox Zero', start: '16:00', end: '17:00', energy: 'low', protected: false },
+];
+
+const backlog = {
+  high: [
+    { id: 'task-1', title: 'Design Corpus Engine cards', duration: '90m' },
+    { id: 'task-2', title: 'Refine investment sweep rule', duration: '45m' },
+  ],
+  medium: [
+    { id: 'task-3', title: 'Prep weekly review briefing', duration: '30m' },
+    { id: 'task-4', title: 'Draft outreach emails (5)', duration: '40m' },
+  ],
+  low: [
+    { id: 'task-5', title: 'Hydration + walk', duration: '20m' },
+    { id: 'task-6', title: 'Archive docs in Vault', duration: '25m' },
+  ],
 };
 
 export default function CalendarPage() {
-  const { user } = useUser();
-  const { data: events, loading } = useCollection('events', {
-    query: ['ownerId', '==', user?.uid],
-    skip: !user,
-  });
+  const [energyOverlay, setEnergyOverlay] = useState(true);
+  const [autoFitSuggested, setAutoFitSuggested] = useState(false);
 
-  const calendarEvents: CalendarEvent[] = useMemo(() => {
-    if (!events) return [];
-    return events.map((event: any) => ({
-      id: event.id,
-      title: event.title,
-      start: new Date(event.start.seconds * 1000),
-      end: new Date(event.end.seconds * 1000),
-    }));
-  }, [events]);
+  const energyCurve = useMemo(() => [90, 80, 70, 60, 55, 45, 60, 70, 80, 65, 50, 40], []);
 
   return (
     <div className="space-y-6">
-      <PageHeader title="Calendar" description="Your schedule at a glance." />
-      <div className="h-[calc(100vh-16rem)] rounded-3xl border border-slate-900/60 bg-slate-950/80 p-4">
-        {loading ? (
-          <div className="flex h-full items-center justify-center text-slate-400">Loading events...</div>
-        ) : (
-          <Calendar
-            localizer={localizer}
-            events={calendarEvents}
-            startAccessor="start"
-            endAccessor="end"
-            views={['month', 'week', 'day']}
-            defaultView="week"
-            style={{ color: '#fff' }}
-            eventPropGetter={() => ({
-              style: {
-                backgroundColor: 'hsl(var(--primary))',
-                borderColor: 'hsl(var(--primary))',
-              },
-            })}
-          />
-        )}
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p className="text-[11px] uppercase tracking-[0.3em] text-slate-500">Chronos Engine</p>
+          <h1 className="text-2xl font-semibold text-white">Schedule // Energy Management</h1>
+          <p className="text-sm text-slate-400">Drag backlog tasks onto time blocks. Protect what matters. Let Auto-Fit do the rest.</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <Button variant="outline" className="rounded-full border-cyan-500/40 bg-cyan-500/10 text-cyan-200">
+            <Lock className="mr-2 h-4 w-4" /> Protect Block
+          </Button>
+          <Button variant="secondary" className="rounded-full bg-emerald-500/20 text-emerald-200 hover:bg-emerald-500/30">
+            <Sparkles className="mr-2 h-4 w-4" /> Auto-Fit
+          </Button>
+          <Button
+            variant="ghost"
+            className="rounded-full border border-slate-700/80 bg-slate-900/70 text-slate-100"
+            onClick={() => setEnergyOverlay((prev) => !prev)}
+          >
+            <Radar className="mr-2 h-4 w-4" /> Energy Overlay
+          </Button>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-12 gap-4">
+        <Card className="col-span-12 lg:col-span-3 border border-slate-900/70 bg-slate-950/70">
+          <CardContent className="space-y-4 p-4">
+            <div className="flex items-center justify-between">
+              <p className="text-[11px] uppercase tracking-[0.25em] text-slate-500">Energy Curve</p>
+              <div className="flex items-center gap-1 text-[11px] text-emerald-400">
+                <Zap className="h-4 w-4" /> Peak: 09:00
+              </div>
+            </div>
+            <div className="grid grid-cols-4 gap-2 text-center text-xs text-slate-400">
+              <div className="rounded-xl bg-slate-900/70 p-2">Sleep Score 78</div>
+              <div className="rounded-xl bg-slate-900/70 p-2">RHR 58</div>
+              <div className="rounded-xl bg-slate-900/70 p-2">HRV 74</div>
+              <div className="rounded-xl bg-slate-900/70 p-2">Meals synced</div>
+            </div>
+            <div className="relative h-64 overflow-hidden rounded-2xl border border-slate-900/80 bg-slate-950/80">
+              <div className="absolute inset-0 flex items-end gap-1 px-3 pb-3">
+                {energyCurve.map((value, idx) => (
+                  <div
+                    key={idx}
+                    className="w-full rounded-t bg-gradient-to-t from-cyan-500/10 via-cyan-400/30 to-emerald-400/40"
+                    style={{ height: `${value}%` }}
+                  />
+                ))}
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/20 to-slate-950" />
+              <div className="absolute bottom-2 left-2 text-[10px] uppercase tracking-[0.2em] text-slate-500">Projected focus</div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="col-span-12 lg:col-span-6 border border-slate-900/70 bg-slate-950/80">
+          <CardContent className="relative h-full space-y-3 p-4">
+            <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.25em] text-slate-400">
+              <span>Time-Block Grid</span>
+              <span className="flex items-center gap-2 text-emerald-300">
+                <ShieldCheck className="h-4 w-4" /> Protected blocks respected
+              </span>
+            </div>
+            <div className="relative h-[520px] overflow-hidden rounded-2xl border border-slate-900/80 bg-slate-950/70">
+              {energyOverlay && (
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-emerald-500/10 via-amber-500/10 to-rose-500/15" />
+              )}
+              <div className="absolute inset-0 grid grid-cols-1 md:grid-cols-2">
+                <div className="relative flex flex-col border-r border-slate-900/60 p-4">
+                  {hours.map((hour) => (
+                    <div key={hour} className="flex items-start gap-3 border-b border-slate-900/60 py-2 text-xs text-slate-500 last:border-b-0">
+                      <span className="w-12 text-right font-mono">{hour}</span>
+                      <div className="flex-1 rounded-xl border border-dashed border-slate-800/70 p-2 text-[11px] text-slate-600">
+                        Free slot
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="relative hidden flex-col border-l border-slate-900/60 p-4 md:flex">
+                  {demoBlocks.map((block) => (
+                    <div
+                      key={block.id}
+                      className="mb-3 rounded-2xl border border-cyan-500/30 bg-cyan-500/10 p-3 text-sm text-slate-50 shadow-[0_10px_30px_rgba(14,165,233,0.15)]"
+                    >
+                      <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-cyan-200">
+                        <span>
+                          {block.start} - {block.end}
+                        </span>
+                        <span className="flex items-center gap-1 text-emerald-300">
+                          <Flame className="h-3 w-3" /> {block.energy}
+                        </span>
+                      </div>
+                      <p className="mt-1 text-base font-semibold text-white">{block.title}</p>
+                      <div className="mt-2 flex items-center gap-2 text-[11px] text-slate-400">
+                        {block.protected ? (
+                          <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-emerald-200">Protected</span>
+                        ) : (
+                          <span className="rounded-full border border-amber-500/40 bg-amber-500/10 px-2 py-1 text-amber-200">Mutable</span>
+                        )}
+                        <span className="rounded-full border border-slate-800 px-2 py-1">Complete & Log</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="absolute inset-x-4 bottom-3 flex items-center justify-between rounded-xl border border-slate-800/80 bg-slate-900/80 px-3 py-2 text-[11px] text-slate-300">
+                <span className="flex items-center gap-2">
+                  <Timer className="h-4 w-4 text-cyan-300" /> Next protected block in 42m
+                </span>
+                <div className="flex items-center gap-2">
+                  <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-emerald-200">Energy optimal</span>
+                  <span className="rounded-full border border-amber-500/40 bg-amber-500/10 px-2 py-1 text-amber-200">Conflict risk low</span>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="col-span-12 lg:col-span-3 border border-slate-900/70 bg-slate-950/70">
+          <CardContent className="flex h-full flex-col gap-4 p-4">
+            <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.25em] text-slate-500">
+              <span>Task Backlog</span>
+              <Button
+                variant="ghost"
+                className="h-8 rounded-full border border-emerald-500/40 bg-emerald-500/10 text-emerald-200"
+                onClick={() => setAutoFitSuggested(true)}
+              >
+                <Sparkles className="mr-2 h-4 w-4" /> Auto-Optimize
+              </Button>
+            </div>
+            <div className="space-y-4 overflow-y-auto pr-2 scrollbar-hide">
+              {Object.entries(backlog).map(([effort, tasks]) => (
+                <div key={effort} className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-slate-400">
+                    <span className="h-2 w-2 rounded-full bg-slate-500" /> {effort} effort
+                  </div>
+                  <div className="space-y-2">
+                    {tasks.map((task) => (
+                      <div
+                        key={task.id}
+                        className="rounded-2xl border border-slate-800 bg-slate-900/80 p-3 text-sm text-slate-100 shadow-inner shadow-slate-900"
+                      >
+                        <div className="flex items-center justify-between">
+                          <p className="font-semibold">{task.title}</p>
+                          <span className="rounded-full border border-slate-700 px-2 py-1 text-[11px] text-slate-300">{task.duration}</span>
+                        </div>
+                        <p className="mt-1 text-[12px] text-slate-400">Drag to grid to acknowledge time cost.</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {autoFitSuggested && (
+              <div className="rounded-2xl border border-cyan-500/40 bg-cyan-500/10 p-3 text-xs text-cyan-100">
+                AI suggests scheduling "Design Corpus Engine cards" tomorrow 09:30 when energy is 88%.
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
