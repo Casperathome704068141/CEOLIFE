@@ -10,32 +10,12 @@ import { Bot, Calendar, ChevronRight, FileText, PackageCheck, Target, Wallet } f
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useCollection, useUser } from '@/firebase';
-import { DocumentDoc, EventDoc, GoalDoc, ShoppingListDoc } from '@/lib/schemas';
-import { useBridge } from '@/lib/hooks/useBridge';
 import { formatCurrency, formatPercent } from '@/lib/ui/format';
 import { AiSimulation } from '@/components/dashboard/ai-simulation';
+import { useBridge } from '@/lib/hooks/useBridge';
 
 export default function DashboardPageContent() {
-  const { user } = useUser();
-  const { overview } = useBridge();
-
-  const { data: goals, loading: goalsLoading } = useCollection<GoalDoc>('goals', {
-    query: ['ownerId', '==', user?.uid],
-    skip: !user?.uid,
-  });
-  const { data: events, loading: eventsLoading } = useCollection<EventDoc>('events', {
-    query: ['ownerId', '==', user?.uid],
-    skip: !user?.uid,
-  });
-  const { data: documents, loading: documentsLoading } = useCollection<DocumentDoc>('documents', {
-    query: ['ownerId', '==', user?.uid],
-    skip: !user?.uid,
-  });
-  const { data: shoppingLists, loading: shoppingListsLoading } = useCollection<ShoppingListDoc>('shoppingLists', {
-    query: ['ownerId', '==', user?.uid],
-    skip: !user?.uid,
-  });
+  const { overview, goals, events, documents, shoppingLists, loading } = useBridge();
 
   const shoppingListItems = shoppingLists?.[0]?.items || [];
 
@@ -62,7 +42,7 @@ export default function DashboardPageContent() {
         {
           title: 'Monthly burn',
           value: formatCurrency(overview.monthlyBurn.actual),
-          delta: `${formatPercent((overview.monthlyBurn.actual / overview.monthlyBurn.target - 1) * 100)} vs target`,
+          delta: `${formatPercent(((overview.monthlyBurn.actual / Math.max(1, overview.monthlyBurn.target)) - 1) * 100)} vs target`,
           trend: 'down' as const,
         },
         {
@@ -113,7 +93,7 @@ export default function DashboardPageContent() {
               </Button>
             </CardHeader>
             <CardContent className="space-y-3">
-              {eventsLoading ? (
+              {loading.events ? (
                 <p className="text-slate-400">Loading schedule...</p>
               ) : (
                 events?.map((event) => (
@@ -151,14 +131,14 @@ export default function DashboardPageContent() {
             </CardHeader>
             <CardContent className="space-y-4">
               <VaultDropzone onFiles={() => {}} />
-              {documentsLoading ? (
+              {loading.documents ? (
                 <p className="text-slate-400">Loading documents...</p>
               ) : (
                 documents?.slice(0, 1).map((doc) => (
                   <DocCard
                     key={doc.id}
                     name={doc.filename}
-                    type={doc.type}
+                    type={doc.type ?? 'document'}
                     updatedAt={(doc.updatedAt as any)?.toDate?.().toLocaleDateString() ?? 'N/A'}
                     icon="File"
                     tags={doc.tags}
@@ -183,7 +163,7 @@ export default function DashboardPageContent() {
             </Button>
           </CardHeader>
           <CardContent className="space-y-3">
-            {shoppingListsLoading ? (
+            {loading.shoppingLists ? (
               <p className="text-slate-400">Loading shopping list...</p>
             ) : (
               shoppingListItems.slice(0, 2).map((item) => (
@@ -202,7 +182,7 @@ export default function DashboardPageContent() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {goalsLoading ? (
+        {loading.goals ? (
           <p className="text-slate-400">Loading goals...</p>
         ) : (
           goals?.map((goal) => (

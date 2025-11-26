@@ -6,9 +6,17 @@ import {
   QueueItem,
   ScenarioPreview,
   TimelineEntry,
-} from "../graph/types";
+  BillDoc,
+  GoalDoc,
+  TransactionDoc,
+} from "../schemas";
 import { EventRecord } from "./eventLog";
 import { broadcastProjectionUpdate } from "./sse";
+
+// These would be hydrated from a Firestore query in a real app
+const allBills: BillDoc[] = []; 
+const allGoals: GoalDoc[] = [];
+const allTransactions: TransactionDoc[] = [];
 
 const overviewState: Overview = {
   netWorth: 185000,
@@ -355,9 +363,42 @@ function pushQueueItem(item: QueueItem) {
 }
 
 export function getOverview(): Overview {
-  // This function will now compute the overview from the event log in a real scenario.
-  // For now, we'll just return the mutable state.
-  return overviewState;
+  const now = new Date();
+  const nextBills = allBills
+    .filter((bill) => (bill.dueDate as Date) >= now)
+    .sort((a, b) => (a.dueDate as Date).getTime() - (b.dueDate as Date).getTime());
+
+  const savingsProgress = allGoals.length
+    ? allGoals.reduce((sum, goal) => sum + goal.current, 0) / allGoals.reduce((sum, goal) => sum + goal.target, 0)
+    : 0;
+
+  const topGoals = allGoals
+    .sort((a, b) => b.priority.localeCompare(a.priority))
+    .slice(0, 3)
+    .map((goal) => ({
+      id: goal.id,
+      name: goal.name,
+      percent: Math.round((goal.current / goal.target) * 100),
+      eta: (goal.deadline as Date).toISOString(),
+    }));
+
+  return {
+    netWorth: 185000,
+    cashOnHand: { amount: 42000, runwayDays: 128 },
+    nextBills: {
+      count: nextBills.length,
+      total: nextBills.reduce((sum, bill) => sum + bill.amount, 0),
+      soonest: nextBills[0]?.dueDate.toString() ?? now.toISOString(),
+    },
+    monthlyBurn: { actual: 6400, target: 6000 },
+    savingsProgress: {
+      percent: Math.round(savingsProgress * 100),
+      delta: 3, // placeholder
+    },
+    adherence: { percent30d: 92, onHandDays: 16 },
+    goals: { top: topGoals },
+    pulse: { games: 3, bestValueScore: 7.6 },
+  };
 }
 
 export function getQueue(filter?: string): QueueItem[] {
