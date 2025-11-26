@@ -1,17 +1,5 @@
 {
-  "node": {
-    "40c8861928dd9d483de1d369d0354893eedd622be0": {
-      "workers": {
-        "app/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/forecast-life-scenarios.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/dashboard/page": "action-browser"
-      }
-    }
-  },
+  "node": {},
   "edge": {},
   "encryptionKey": "UIx91onM3tkU/CrPP+1BFFxXbyDITBFBQ9CSX+LwubM="
 }

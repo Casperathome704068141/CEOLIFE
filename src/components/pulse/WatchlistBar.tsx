@@ -46,12 +46,11 @@ export function WatchlistBar({ onSelect }: Props) {
             <span className="text-xs text-muted-foreground">No tracked items yet.</span>
           ) : (
             items.map((item) => (
-              <button
+              <div
                 key={item.id}
-                type="button"
                 onClick={() => onSelect?.(item.id)}
                 className={cn(
-                  "group flex items-center gap-2 rounded-full border border-border/60 bg-background/80 px-3 py-1 text-xs shadow-sm transition",
+                  "group flex items-center gap-2 rounded-full border border-border/60 bg-background/80 px-3 py-1 text-xs shadow-sm transition cursor-pointer",
                   "hover:border-primary/40 hover:text-primary"
                 )}
               >
@@ -67,7 +66,7 @@ export function WatchlistBar({ onSelect }: Props) {
                 >
                   <X className="h-3 w-3" />
                 </Button>
-              </button>
+              </div>
             ))
           )}
         </div>
