@@ -10,33 +10,19 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+import { CashflowData, Asset as PortfolioAsset } from '@/lib/api/finance';
 
 // --- MOCK TYPES FOR CONTEXT ---
 type Transaction = { id: string; merchant: string; amount: number; date: string; category: string; status: 'posted' | 'pending' };
 type Asset = { symbol: string; name: string; balance: number; price: number; allocation: number; type: 'crypto' | 'stock' | 'cash' };
 
-export function CapitalTerminal({ initialData }: { initialData: any }) {
+export function CapitalTerminal({ initialPortfolio, initialCashflow }: { initialPortfolio: PortfolioAsset[], initialCashflow: CashflowData }) {
   const [activeTx, setActiveTx] = useState<string | null>(null);
 
-  // Use initialData, but fallback to mock data if it's not what we expect yet.
-  const transactions: Transaction[] = initialData?.transactions ?? [
-    { id: '1', merchant: 'Stripe Payout', amount: 1250, date: 'Oct 24', category: 'Income', status: 'posted' },
-    { id: '2', merchant: 'AWS Web Services', amount: -64, date: 'Oct 24', category: 'Infra', status: 'posted' },
-    { id: '3', merchant: 'Vercel', amount: -20, date: 'Oct 23', category: 'Infra', status: 'posted' },
-    { id: '4', merchant: 'Linear', amount: -12, date: 'Oct 23', category: 'Software', status: 'posted' },
-    { id: '5', merchant: 'Figma', amount: -45, date: 'Oct 22', category: 'Software', status: 'pending' },
-    { id: '6', merchant: 'Consulting Gig', amount: 2500, date: 'Oct 21', category: 'Income', status: 'posted' },
-  ];
-
-  const assets: Asset[] = initialData?.assets ?? [
-    { symbol: 'BTC', name: 'Bitcoin', price: 64200, balance: 1.2, type: 'crypto', allocation: 45 },
-    { symbol: 'ETH', name: 'Ethereum', price: 3400, balance: 14.5, type: 'crypto', allocation: 25 },
-    { symbol: 'TSLA', name: 'Tesla Inc', price: 180, balance: 50, type: 'stock', allocation: 10 },
-    { symbol: 'USD', name: 'Cash', price: 1, balance: 14000, type: 'cash', allocation: 20 },
-  ];
-
-  const monthlyBurn = initialData?.monthlyBurn ?? 4250;
-  const burnTarget = initialData?.burnTarget ?? 6000;
+  const transactions: Transaction[] = initialCashflow?.transactions ?? [];
+  const assets: Asset[] = initialPortfolio ?? [];
+  const monthlyBurn = initialCashflow?.monthlyBurn ?? 0;
+  const burnTarget = initialCashflow?.burnTarget ?? 6000;
 
 
   return (
