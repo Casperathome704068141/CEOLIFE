@@ -319,7 +319,7 @@ export default function CalendarPage() {
               </div>
             </div>
             <div className="rounded-xl border border-slate-900 bg-slate-950/80 p-3 text-[11px] text-slate-400">
-              If HRV < 60, lower task density and re-run Auto-Fit. Chronos will prompt for recovery windows.
+              If HRV &lt; 60, lower task density and re-run Auto-Fit. Chronos will prompt for recovery windows.
             </div>
           </CardContent>
         </Card>
@@ -529,7 +529,7 @@ export default function CalendarPage() {
             <div className="flex items-center justify-between rounded-xl border border-slate-900 bg-slate-950/80 p-3">
               <div className="space-y-1">
                 <p className="text-[11px] uppercase tracking-[0.25em] text-slate-500">Signal</p>
-                <p className="text-sm text-slate-200">Chronos -> Vault logging</p>
+                <p className="text-sm text-slate-200">Chronos -&gt; Vault logging</p>
                 <p className="text-[12px] text-slate-400">All completed tasks get a Vault record & Corpus tag.</p>
               </div>
               <Button variant="outline" className="rounded-full border-emerald-500/40 bg-emerald-500/10 text-emerald-200">
