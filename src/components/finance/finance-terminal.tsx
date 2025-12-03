@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { Download, Filter, MoreHorizontal, Plus, RefreshCw, Search, ToggleLeft, ToggleRight } from "lucide-react";
-import { calculateUnifiedLifeScore } from "@/lib/hooks/useUnifiedLifeScore";
-import { useBridge } from "@/lib/hooks/useBridge";
+import { useUnifiedLifeScore } from "@/lib/hooks/useUnifiedLifeScore";
 
 const transactions = [
   { id: "tx_01", date: "Today, 09:41", merchant: "AWS Web Services", category: "Infrastructure", amount: -64.2, status: "posted", tag: "biz" },
@@ -21,12 +20,11 @@ const accounts = [
 ];
 
 export function FinanceTerminal() {
-  const { overview, goals, events } = useBridge();
   const [viewMode, setViewMode] = useState<"all" | "income" | "expense">("all");
   const [cashflowMode, setCashflowMode] = useState<"velocity" | "net">("velocity");
   const [reviewMode, setReviewMode] = useState(true);
 
-  const lifeScore = useMemo(() => calculateUnifiedLifeScore({ overview, goals, events }), [overview, goals, events]);
+  const lifeScore = useUnifiedLifeScore();
 
   const filteredTransactions = transactions.filter((tx) => {
     if (viewMode === "income") return tx.amount > 0;

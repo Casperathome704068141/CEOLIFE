@@ -7,6 +7,8 @@ import {
   Bot,
   BrainCircuit,
   Calendar,
+  ChevronLeft,
+  ChevronRight,
   FileText,
   Home,
   Layers,
@@ -15,6 +17,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { href: "/", icon: Home, label: "Mission Control" },
@@ -28,17 +31,32 @@ const navItems = [
   { href: "/pulse", icon: Activity, label: "Pulse" },
 ];
 
-export function CommandRail() {
+type CommandRailProps = {
+  expanded: boolean;
+  onToggle: () => void;
+};
+
+export function CommandRail({ expanded, onToggle }: CommandRailProps) {
   const pathname = usePathname();
 
   return (
-    <aside className="group fixed inset-y-0 left-0 z-40 flex w-16 flex-col border-r border-slate-900/70 bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950/80 shadow-[0_10px_40px_rgba(0,0,0,0.6)] transition-[width] duration-300 hover:w-64">
+    <aside
+      className={cn(
+        "fixed inset-y-0 left-0 z-40 flex flex-col border-r border-slate-900/70 bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950/80 shadow-[0_10px_40px_rgba(0,0,0,0.6)] transition-[width] duration-300",
+        expanded ? "w-64" : "w-16"
+      )}
+    >
       <div className="flex flex-col flex-1 overflow-hidden">
         <div className="flex h-16 items-center gap-3 px-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-300 ring-1 ring-cyan-500/40">
             <Layers className="h-5 w-5" />
           </div>
-          <div className="flex flex-col overflow-hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div
+            className={cn(
+              "flex flex-col overflow-hidden transition-opacity duration-300",
+              expanded ? "opacity-100" : "opacity-0"
+            )}
+          >
             <span className="text-[10px] uppercase tracking-[0.3em] text-slate-500">Life OS</span>
             <span className="text-sm font-semibold text-white">BENO v3.0</span>
           </div>
@@ -67,7 +85,12 @@ export function CommandRail() {
                 >
                   <item.icon className="h-4 w-4" />
                 </span>
-                <span className="truncate opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <span
+                  className={cn(
+                    "truncate transition-opacity duration-300",
+                    expanded ? "opacity-100" : "opacity-0"
+                  )}
+                >
                   {item.label}
                 </span>
               </Link>
@@ -77,13 +100,29 @@ export function CommandRail() {
       </div>
 
       <div className="flex items-center justify-between px-3 pb-4">
-        <div className="flex items-center gap-2 overflow-hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <div
+          className={cn(
+            "flex items-center gap-2 overflow-hidden transition-opacity duration-300",
+            expanded ? "opacity-100" : "opacity-0"
+          )}
+        >
           <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500">Pulse</div>
           <div className="text-xs font-semibold text-green-400">Nominal</div>
         </div>
-        <div className="relative flex h-8 w-8 items-center justify-center">
-          <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-lg" />
-          <div className="h-3 w-3 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
+        <div className="flex items-center gap-2">
+          <div className="relative flex h-8 w-8 items-center justify-center">
+            <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-lg" />
+            <div className="h-3 w-3 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
+          </div>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="h-9 w-9 rounded-xl border border-slate-800 bg-slate-900/80 text-slate-200 hover:border-cyan-500/50 hover:text-white"
+            onClick={onToggle}
+            aria-label={expanded ? "Collapse navigation" : "Expand navigation"}
+          >
+            {expanded ? <ChevronLeft className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+          </Button>
         </div>
       </div>
     </aside>

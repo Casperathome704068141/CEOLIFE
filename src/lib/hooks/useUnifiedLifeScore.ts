@@ -1,7 +1,9 @@
 import { useMemo } from "react";
 import { Overview } from "@/lib/graph/types";
 import { GoalDoc, EventDoc } from "@/lib/schemas";
-import { useBridge } from "@/lib/hooks/useBridge";
+import { useEvents } from "./useEvents";
+import { useGoals } from "./useGoals";
+import { useOverview } from "./useOverview";
 
 export type LifeScoreBreakdown = {
   finance: number;
@@ -76,7 +78,9 @@ export function calculateUnifiedLifeScore({
 }
 
 export function useUnifiedLifeScore(): LifeScoreResult {
-  const { overview, goals, events } = useBridge();
+  const { overview } = useOverview();
+  const { data: goals } = useGoals();
+  const { data: events } = useEvents();
 
   return useMemo(() => calculateUnifiedLifeScore({ overview, goals, events }), [overview, goals, events]);
 }
