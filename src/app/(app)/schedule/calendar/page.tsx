@@ -4,8 +4,7 @@ import { useMemo, useState } from 'react';
 import { Clock4, Flame, Lock, Radar, ShieldCheck, Sparkles, Timer, Zap } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { useBridge } from '@/lib/hooks/useBridge';
-import { calculateUnifiedLifeScore } from '@/lib/hooks/useUnifiedLifeScore';
+import { useUnifiedLifeScore } from '@/lib/hooks/useUnifiedLifeScore';
 
 const hours = Array.from({ length: 12 }, (_, i) => `${String(i + 7).padStart(2, '0')}:00`);
 
@@ -31,17 +30,13 @@ const backlog = {
 };
 
 export default function CalendarPage() {
-  const { overview, goals, events } = useBridge();
   const [energyOverlay, setEnergyOverlay] = useState(true);
   const [autoFitSuggested, setAutoFitSuggested] = useState(false);
   const [scheduledBlocks, setScheduledBlocks] = useState(demoBlocks);
   const [backlogState, setBacklogState] = useState(backlog);
   const [draggingTask, setDraggingTask] = useState<{ id: string; effort: keyof typeof backlog } | null>(null);
 
-  const unifiedScore = useMemo(
-    () => calculateUnifiedLifeScore({ overview, goals, events }),
-    [overview, goals, events]
-  );
+  const unifiedScore = useUnifiedLifeScore();
 
   const energyCurve = useMemo(() => [90, 80, 70, 60, 55, 45, 60, 70, 80, 65, 50, 40], []);
 

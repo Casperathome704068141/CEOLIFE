@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo } from 'react';
-import { useBridge } from '@/lib/hooks/useBridge';
 import { briefingInsights } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -31,9 +30,25 @@ import {
 import { useUIState } from '@/store/ui-store';
 import Link from 'next/link';
 import { calculateUnifiedLifeScore } from '@/lib/hooks/useUnifiedLifeScore';
+import { useOverview } from '@/lib/hooks/useOverview';
+import { useGoals } from '@/lib/hooks/useGoals';
+import { useEvents } from '@/lib/hooks/useEvents';
+import { useDocuments } from '@/lib/hooks/useDocuments';
+import { useShoppingLists } from '@/lib/hooks/useShoppingLists';
 
 export default function DashboardPageContent() {
-  const { overview, goals, events, documents, shoppingLists, loading } = useBridge();
+  const { overview, isLoading: overviewLoading } = useOverview();
+  const { data: goals, loading: goalsLoading } = useGoals();
+  const { data: events, loading: eventsLoading } = useEvents();
+  const { data: documents, loading: documentsLoading } = useDocuments();
+  const { data: shoppingLists, loading: shoppingListsLoading } = useShoppingLists();
+  const loading = {
+    overview: overviewLoading,
+    goals: goalsLoading,
+    events: eventsLoading,
+    documents: documentsLoading,
+    shoppingLists: shoppingListsLoading,
+  };
   const { setCommandPaletteOpen } = useUIState();
 
   const unifiedScore = useMemo(
