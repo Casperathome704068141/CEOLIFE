@@ -44,6 +44,7 @@ const navSections: NavSection[] = [
     heading: "Operations",
     items: [
       { href: "/finance/overview", icon: Wallet, label: "Finance" },
+      { href: "/capital", icon: Wallet, label: "Capital" },
       { href: "/schedule/calendar", icon: Calendar, label: "Schedule" },
       { href: "/household", icon: Users, label: "Household" },
       { href: "/goals", icon: Target, label: "Goals" },
