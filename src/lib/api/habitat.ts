@@ -1,12 +1,10 @@
-import { Car, Shield, UtensilsCrossed, Zap } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+export type HabitatZoneId = "kitchen" | "garage" | "utilities" | "systems";
 
 export type HabitatZone = {
-  id: "kitchen" | "garage" | "utilities" | "systems";
+  id: HabitatZoneId;
   label: string;
   health: number;
   issues: number;
-  icon: LucideIcon;
 };
 
 export type HabitatTicket = {
@@ -54,28 +52,24 @@ export async function getAssetStatus(): Promise<HabitatAssetsResponse> {
         label: "Galley / Kitchen",
         health: 85,
         issues: 2,
-        icon: UtensilsCrossed,
       },
       {
         id: "garage",
         label: "Vehicle Bay",
         health: 100,
         issues: 0,
-        icon: Car,
       },
       {
         id: "utilities",
         label: "Core Systems",
         health: 62,
         issues: 1,
-        icon: Zap,
       },
       {
         id: "systems",
         label: "Network / Server",
         health: 78,
         issues: 1,
-        icon: Shield,
       },
     ],
     tickets: [

@@ -25,7 +25,11 @@ import {
   Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { HabitatAssetsResponse, HabitatInventoryItem } from "@/lib/api/habitat";
+import type {
+  HabitatAssetsResponse,
+  HabitatInventoryItem,
+  HabitatZoneId,
+} from "@/lib/api/habitat";
 
 const healthClass = (value: number) => {
   if (value >= 85) return "bg-emerald-500/20 border-emerald-400/40 text-emerald-200";
@@ -33,11 +37,18 @@ const healthClass = (value: number) => {
   return "bg-rose-500/15 border-rose-400/30 text-rose-200";
 };
 
-type ZoneFilter = HabitatAssetsResponse["zones"][number]["id"] | "all";
+type ZoneFilter = HabitatZoneId | "all";
 
 type InventoryStatus = "critical" | "warning" | "ok";
 
 type PillTone = "emerald" | "cyan" | "amber" | "slate";
+
+const zoneIcons: Record<HabitatZoneId, LucideIcon> = {
+  kitchen: UtensilsCrossed,
+  garage: Car,
+  utilities: Zap,
+  systems: Shield,
+};
 
 type NetworkProfile = {
   id: string;
@@ -268,7 +279,7 @@ export function HabitatInterface({
                                   : "border-rose-400/40 bg-rose-500/10",
                             )}
                           >
-                            <ZoneIcon icon={zone.icon} />
+                            <ZoneIcon icon={zoneIcons[zone.id]} />
                           </div>
                           <div>
                             <div className="text-sm font-semibold text-white">{zone.label}</div>
