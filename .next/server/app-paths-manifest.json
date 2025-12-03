@@ -1,9 +1,11 @@
 {
+  "/(app)/assistant/page": "app/(app)/assistant/page.js",
   "/(app)/finance/overview/page": "app/(app)/finance/overview/page.js",
   "/(app)/goals/page": "app/(app)/goals/page.js",
   "/(app)/household/page": "app/(app)/household/page.js",
   "/(app)/pulse/page": "app/(app)/pulse/page.js",
   "/(app)/schedule/calendar/page": "app/(app)/schedule/calendar/page.js",
+  "/(app)/simulations/scenarios/page": "app/(app)/simulations/scenarios/page.js",
   "/(app)/vault/documents/page": "app/(app)/vault/documents/page.js",
   "/api/bridge/overview/route": "app/api/bridge/overview/route.js",
   "/api/goals/funding-accounts/route": "app/api/goals/funding-accounts/route.js",

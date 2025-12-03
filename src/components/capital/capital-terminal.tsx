@@ -1,257 +1,251 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import {
-  Activity,
-  ArrowDownRight,
-  ArrowRightLeft,
-  ArrowUpRight,
-  DollarSign,
-  PieChart,
-  RefreshCw,
-  ShieldCheck,
-  TrendingUp,
-  Wallet,
-} from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useState } from 'react';
+import { 
+  ResizableHandle, ResizablePanel, ResizablePanelGroup 
+} from "@/components/ui/resizable";
+import { 
+  ArrowRightLeft, TrendingUp, Wallet, 
+  AlertCircle, Check, Search, DollarSign
+} from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
-export type AssetType = "crypto" | "stock" | "cash" | "real_estate";
-export type Asset = {
-  symbol: string;
-  name: string;
-  type: AssetType;
-  balance: number;
-  price: number;
-  delta24h: number;
-  allocation: number;
-};
+// --- MOCK TYPES FOR CONTEXT ---
+type Transaction = { id: string; merchant: string; amount: number; date: string; category: string; status: 'posted' | 'pending' };
+type Asset = { symbol: string; name: string; balance: number; price: number; allocation: number; type: 'crypto' | 'stock' | 'cash' };
 
-type CapitalTerminalProps = {
-  initialPortfolio: Asset[];
-  initialCashflow: { burnRate: number; runwayDays: number; bills: Array<{ id: string; label: string; amount: number }> };
-};
+export function CapitalTerminal({ initialData }: { initialData: any }) {
+  const [activeTx, setActiveTx] = useState<string | null>(null);
 
-export function CapitalTerminal({ initialPortfolio, initialCashflow }: CapitalTerminalProps) {
-  const [activeSector, setActiveSector] = useState<"overview" | "crypto" | "stocks" | "real_estate">("overview");
+  // Use initialData, but fallback to mock data if it's not what we expect yet.
+  const transactions: Transaction[] = initialData?.transactions ?? [
+    { id: '1', merchant: 'Stripe Payout', amount: 1250, date: 'Oct 24', category: 'Income', status: 'posted' },
+    { id: '2', merchant: 'AWS Web Services', amount: -64, date: 'Oct 24', category: 'Infra', status: 'posted' },
+    { id: '3', merchant: 'Vercel', amount: -20, date: 'Oct 23', category: 'Infra', status: 'posted' },
+    { id: '4', merchant: 'Linear', amount: -12, date: 'Oct 23', category: 'Software', status: 'posted' },
+    { id: '5', merchant: 'Figma', amount: -45, date: 'Oct 22', category: 'Software', status: 'pending' },
+    { id: '6', merchant: 'Consulting Gig', amount: 2500, date: 'Oct 21', category: 'Income', status: 'posted' },
+  ];
 
-  const safePortfolio = Array.isArray(initialPortfolio) ? initialPortfolio : [];
+  const assets: Asset[] = initialData?.assets ?? [
+    { symbol: 'BTC', name: 'Bitcoin', price: 64200, balance: 1.2, type: 'crypto', allocation: 45 },
+    { symbol: 'ETH', name: 'Ethereum', price: 3400, balance: 14.5, type: 'crypto', allocation: 25 },
+    { symbol: 'TSLA', name: 'Tesla Inc', price: 180, balance: 50, type: 'stock', allocation: 10 },
+    { symbol: 'USD', name: 'Cash', price: 1, balance: 14000, type: 'cash', allocation: 20 },
+  ];
 
-  const assets: Asset[] = safePortfolio.length
-    ? safePortfolio
-    : [
-        { symbol: "BTC", name: "Bitcoin", type: "crypto", balance: 1.24, price: 64200, delta24h: 2.4, allocation: 45 },
-        { symbol: "ETH", name: "Ethereum", type: "crypto", balance: 14.5, price: 3400, delta24h: -1.2, allocation: 25 },
-        { symbol: "NVDA", name: "NVIDIA", type: "stock", balance: 50, price: 920, delta24h: 5.1, allocation: 20 },
-        { symbol: "USD", name: "Liquidity", type: "cash", balance: 14000, price: 1, delta24h: 0, allocation: 10 },
-      ];
+  const monthlyBurn = initialData?.monthlyBurn ?? 4250;
+  const burnTarget = initialData?.burnTarget ?? 6000;
 
-  const cashflow = initialCashflow ?? {
-    burnRate: 4250,
-    runwayDays: 128,
-    bills: [
-      { id: "bill-aws", label: "AWS Services", amount: -64 },
-      { id: "bill-rent", label: "Launchpad Lease", amount: -1800 },
-      { id: "bill-card", label: "Amex Auto-pay", amount: -940 },
-    ],
-  };
-
-  const filteredAssets = assets.filter((asset) => (activeSector === "overview" ? true : asset.type === activeSector));
 
   return (
-    <div className="grid h-full grid-cols-12 divide-x divide-slate-800 bg-[#050505]">
-      <div className="col-span-3 flex flex-col bg-slate-950/50">
-        <div className="border-b border-slate-800 p-4">
-          <h2 className="mb-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
-            <Wallet className="h-3 w-3" /> Operational Fuel
-          </h2>
-
-          <div className="relative mb-6 rounded-xl border border-slate-800 bg-slate-900/20 py-4 text-center">
-            <span className="absolute left-3 top-2 text-[10px] uppercase text-slate-400">Monthly Burn</span>
-            <div className="text-3xl font-mono text-white">${cashflow.burnRate.toLocaleString()}</div>
-            <div className="mt-1 text-xs text-rose-400">▲ 12% vs Target</div>
-          </div>
-
-          <div className="mb-4 grid grid-cols-2 gap-2">
-            <button className="flex h-8 items-center justify-center gap-2 rounded border border-emerald-500/30 bg-emerald-500/10 text-[10px] font-bold uppercase text-emerald-400 transition hover:bg-emerald-500/20">
-              <ArrowDownRight className="h-3 w-3" /> Deposit
-            </button>
-            <button className="flex h-8 items-center justify-center gap-2 rounded border border-rose-500/30 bg-rose-500/10 text-[10px] font-bold uppercase text-rose-400 transition hover:bg-rose-500/20">
-              <ArrowUpRight className="h-3 w-3" /> Transfer
-            </button>
-          </div>
+    <ResizablePanelGroup direction="horizontal" className="h-full w-full border-t border-slate-800">
+      
+      {/* =====================================================================================
+          PANE 1: LIQUIDITY & BURN (The Inbox)
+          Purpose: Process cashflow. Approve expenses. Monitor runway.
+      ===================================================================================== */}
+      <ResizablePanel defaultSize={25} minSize={20} className="bg-[#080808] flex flex-col border-r border-slate-800">
+        
+        {/* BURN RATE METER */}
+        <div className="p-5 border-b border-slate-800 bg-slate-900/10">
+           <div className="flex justify-between items-end mb-2">
+              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Monthly Burn</span>
+              <span className="text-[10px] text-rose-400">▲ 12% vs Avg</span>
+           </div>
+           <div className="flex items-baseline gap-1">
+              <span className="text-2xl font-mono text-white font-light">${monthlyBurn.toLocaleString()}</span>
+              <span className="text-xs text-slate-500">/ ${burnTarget.toLocaleString()}</span>
+           </div>
+           {/* Progress Bar */}
+           <div className="mt-3 h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+              <div className="h-full bg-rose-500" style={{width: `${(monthlyBurn/burnTarget)*100}%`}} />
+           </div>
         </div>
 
-        <div className="flex-1 space-y-1 overflow-y-auto p-2">
-          {cashflow.bills.map((bill) => (
-            <div
-              key={bill.id}
-              className="group flex cursor-pointer items-center justify-between rounded p-2 hover:bg-slate-900"
-            >
-              <div className="flex items-center gap-3">
-                <div className="h-1.5 w-1.5 rounded-full bg-slate-600 transition-colors group-hover:bg-white" />
-                <div className="flex flex-col">
-                  <span className="text-xs text-slate-300">{bill.label}</span>
-                  <span className="text-[10px] text-slate-500">Infrastructure</span>
-                </div>
+        {/* TRANSACTION FEED */}
+        <div className="flex-1 overflow-y-auto">
+           <div className="sticky top-0 z-10 bg-[#080808] p-2 border-b border-slate-800">
+              <div className="relative">
+                 <Search className="absolute left-2 top-2 h-3 w-3 text-slate-600" />
+                 <input 
+                   className="w-full bg-slate-900/50 border border-slate-800 rounded-md py-1.5 pl-7 pr-2 text-[10px] text-slate-300 focus:outline-none focus:border-slate-600"
+                   placeholder="Filter ledger..."
+                 />
               </div>
-              <span className="text-xs font-mono text-slate-300">{bill.amount > 0 ? "+" : ""}${bill.amount.toFixed(2)}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+           </div>
 
-      <div className="col-span-6 flex flex-col bg-[#080808]">
-        <div className="flex h-12 items-center justify-between border-b border-slate-800 px-4">
-          <div className="flex gap-1 rounded-lg bg-slate-900/50 p-1">
-            {["Overview", "Crypto", "Stocks", "Real Estate"].map((tab) => {
-              const tabValue = tab.toLowerCase() as typeof activeSector;
-              return (
-                <button
-                  key={tab}
-                  onClick={() => setActiveSector(tabValue)}
-                  className={cn(
-                    "px-3 py-1 text-[11px] font-bold uppercase tracking-wide rounded transition-all",
-                    activeSector === tabValue
-                      ? "bg-slate-800 text-white shadow-sm"
-                      : "text-slate-500 hover:text-slate-300",
-                  )}
-                >
-                  {tab}
-                </button>
-              );
-            })}
-          </div>
-          <div className="flex items-center gap-3 text-slate-500">
-            <RefreshCw className="h-3 w-3 cursor-pointer transition-all duration-700 hover:rotate-180 hover:text-white" />
-            <ArrowRightLeft className="h-3 w-3" />
-            <ShieldCheck className="h-3 w-3" />
-          </div>
+           <div className="divide-y divide-slate-900">
+              {transactions.map((tx) => (
+                 <div 
+                    key={tx.id}
+                    onClick={() => setActiveTx(tx.id)}
+                    className={cn(
+                       "group flex items-center justify-between p-3 cursor-pointer transition-all hover:bg-slate-900",
+                       activeTx === tx.id ? "bg-slate-900 border-l-2 border-cyan-500 pl-[10px]" : "pl-3 border-l-2 border-transparent"
+                    )}
+                 >
+                    <div className="flex items-center gap-3">
+                       <div className={cn(
+                          "h-2 w-2 rounded-full",
+                          tx.amount > 0 ? "bg-emerald-500" : "bg-amber-500"
+                       )} />
+                       <div className="flex flex-col">
+                          <span className={cn("text-xs font-medium", activeTx === tx.id ? "text-white" : "text-slate-400 group-hover:text-slate-200")}>
+                             {tx.merchant}
+                          </span>
+                          <span className="text-[10px] text-slate-600">{tx.date} · {tx.category}</span>
+                       </div>
+                    </div>
+                    <span className={cn("font-mono text-xs", tx.amount > 0 ? "text-emerald-400" : "text-slate-300")}>
+                       {tx.amount > 0 ? '+' : '-'}${Math.abs(tx.amount).toFixed(2)}
+                    </span>
+                 </div>
+              ))}
+           </div>
         </div>
 
-        <div className="flex-1 overflow-y-auto p-6">
-          <div className="mb-6 grid grid-cols-2 gap-4">
-            {filteredAssets.map((asset) => (
-              <div
-                key={asset.symbol}
-                className="group relative overflow-hidden rounded-xl border border-slate-800 bg-slate-900/30 p-4 transition-all hover:border-slate-600"
-              >
-                <div className="mb-2 flex items-start justify-between">
-                  <div className="flex items-center gap-2">
-                    <div
-                      className={cn(
-                        "flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white",
-                        asset.type === "crypto" ? "bg-orange-500" : asset.type === "stock" ? "bg-blue-600" : "bg-emerald-600",
-                      )}
-                    >
-                      {asset.symbol.substring(0, 1)}
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-white">{asset.name}</div>
-                      <div className="font-mono text-[10px] text-slate-400">
-                        {asset.balance} {asset.symbol}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-mono text-white">${(asset.balance * asset.price).toLocaleString()}</div>
-                    <div
-                      className={cn(
-                        "text-[10px] font-bold",
-                        asset.delta24h >= 0 ? "text-emerald-500" : "text-rose-500",
-                      )}
-                    >
-                      {asset.delta24h > 0 ? "+" : ""}
-                      {asset.delta24h}%
-                    </div>
-                  </div>
-                </div>
+        {/* QUICK ACTIONS */}
+        <div className="p-3 border-t border-slate-800 grid grid-cols-2 gap-2">
+           <button className="flex items-center justify-center gap-2 h-8 rounded bg-emerald-900/20 border border-emerald-900/50 text-emerald-400 text-[10px] font-bold uppercase hover:bg-emerald-900/40 transition">
+              <Check className="h-3 w-3" /> Approve All
+           </button>
+           <button className="flex items-center justify-center gap-2 h-8 rounded bg-slate-800 border border-slate-700 text-slate-300 text-[10px] font-bold uppercase hover:bg-slate-700 transition">
+              <ArrowRightLeft className="h-3 w-3" /> Transfer
+           </button>
+        </div>
+      </ResizablePanel>
+      
+      <ResizableHandle className="bg-slate-800 hover:bg-cyan-500 w-[1px] transition-colors" />
 
-                <div className="mt-4">
-                  <div className="mb-1 flex justify-between text-[10px] text-slate-500">
-                    <span>Allocation Target</span>
-                    <span>{asset.allocation}%</span>
-                  </div>
-                  <div className="h-1 w-full overflow-hidden rounded-full bg-slate-800">
-                    <div
-                      className={cn(
-                        "h-full rounded-full",
-                        asset.type === "crypto" ? "bg-orange-500" : asset.type === "stock" ? "bg-blue-500" : "bg-emerald-500",
-                      )}
-                      style={{ width: `${asset.allocation}%` }}
-                    />
-                  </div>
-                </div>
-
-                <div className="absolute inset-0 flex items-center justify-center gap-2 bg-black/80 opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100">
-                  <button className="rounded border border-slate-600 bg-slate-900 px-4 py-1.5 text-xs font-bold text-white transition hover:bg-slate-800">
-                    TRADE
+      {/* =====================================================================================
+          PANE 2: ASSET MATRIX (The Portfolio)
+          Purpose: Visual allocation. Rebalancing. Deep dive into holdings.
+      ===================================================================================== */}
+      <ResizablePanel defaultSize={50} className="bg-[#050505] flex flex-col">
+         <div className="h-12 border-b border-slate-800 flex items-center justify-between px-4">
+            <div className="flex gap-2">
+               {['Overview', 'Crypto', 'Equities', 'Real Estate'].map(tab => (
+                  <button key={tab} className="px-3 py-1 text-[10px] font-medium text-slate-400 hover:text-white hover:bg-slate-800 rounded transition">
+                     {tab}
                   </button>
-                  <button className="rounded border border-slate-600 bg-slate-900 px-4 py-1.5 text-xs font-bold text-white transition hover:bg-slate-800">
-                    DETAILS
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+               ))}
+            </div>
+            <div className="text-[10px] text-slate-500 font-mono">LIVE MARKET DATA ●</div>
+         </div>
 
-      <div className="col-span-3 flex flex-col border-l border-slate-800 bg-slate-950/50">
-        <div className="border-b border-slate-800 bg-slate-900/10 p-4">
-          <h2 className="mb-3 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
-            <TrendingUp className="h-3 w-3" /> Trajectory
-          </h2>
-          <p className="text-[11px] leading-relaxed text-slate-400">
-            Current market volatility suggests a <strong>65% chance</strong> of hitting your $2M Net Worth goal by Q3 2026.
-          </p>
-        </div>
+         <div className="flex-1 p-6 overflow-y-auto">
+            {/* ASSET GRID */}
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+               {assets.map((asset) => (
+                  <motion.div 
+                    key={asset.symbol}
+                    layoutId={`asset-${asset.symbol}`}
+                    className="group relative p-4 rounded-xl border border-slate-800 bg-slate-900/20 hover:border-slate-600 hover:bg-slate-900/40 transition-all cursor-pointer">
+                     <div className="flex justify-between items-start mb-4">
+                        <div className="flex items-center gap-3">
+                           <div className={cn(
+                              "h-8 w-8 rounded-full flex items-center justify-center text-[10px] font-bold",
+                              asset.type === 'crypto' ? "bg-amber-500/10 text-amber-500" : 
+                              asset.type === 'stock' ? "bg-blue-500/10 text-blue-500" : 
+                              "bg-emerald-500/10 text-emerald-500"
+                           )}>
+                              {asset.symbol}
+                           </div>
+                           <div>
+                              <div className="text-xs font-bold text-white">{asset.name}</div>
+                              <div className="text-[10px] text-slate-500 font-mono">{asset.balance} UNITS</div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div className="space-y-1">
+                        <div className="text-lg font-mono text-slate-200">${(asset.price * asset.balance).toLocaleString()}</div>
+                        <div className="flex justify-between items-center">
+                           <span className="text-[10px] text-slate-500">Allocation</span>
+                           <span className="text-[10px] text-cyan-400">{asset.allocation}%</span>
+                        </div>
+                        {/* Allocation Bar */}
+                        <div className="h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+                           <div className="h-full bg-cyan-500" style={{width: `${asset.allocation}%`}} />
+                        </div>
+                     </div>
 
-        <div className="space-y-4 p-4">
-          <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-3">
-            <div className="mb-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-emerald-400">
-              <Activity className="h-3 w-3" /> Optimization Available
+                     {/* Hover Action Overlay */}
+                     <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px] flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl">
+                        <button className="h-7 px-3 rounded bg-cyan-600 text-white text-[10px] font-bold uppercase hover:bg-cyan-500">Buy</button>
+                        <button className="h-7 px-3 rounded bg-slate-700 text-white text-[10px] font-bold uppercase hover:bg-slate-600">Sell</button>
+                     </div>
+                  </motion.div>
+               ))}
             </div>
-            <p className="mb-3 text-xs text-slate-300">
-              Your "Emergency Fund" goal is 110% funded. Consider sweeping <strong>$4,000</strong> into BTC while it is down 1.2%.
-            </p>
-            <button className="w-full rounded border border-emerald-500/20 bg-emerald-500/10 py-1.5 text-[10px] font-bold uppercase text-emerald-400 transition hover:bg-emerald-500/20">
-              Execute Sweep
-            </button>
-          </div>
+         </div>
+      </ResizablePanel>
 
-          <div className="rounded-lg border border-dashed border-slate-700 p-3 opacity-70 transition-opacity hover:opacity-100">
-            <div className="mb-2 flex items-center justify-between">
-              <span className="text-xs font-medium text-slate-300">Runway Simulator</span>
-              <PieChart className="h-3 w-3 text-slate-500" />
-            </div>
-            <div className="mb-2 text-[10px] text-slate-500">Stress test your portfolio against a 20% market crash.</div>
-            <Link href="/simulations">
-              <button className="text-[10px] text-blue-400 underline underline-offset-4 transition hover:text-blue-300">
-                Run Scenario →
-              </button>
-            </Link>
-          </div>
+      <ResizableHandle className="bg-slate-800 hover:bg-cyan-500 w-[1px] transition-colors" />
 
-          <div className="rounded-lg border border-slate-800 bg-slate-900/40 p-3">
-            <div className="mb-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-              <DollarSign className="h-3 w-3" /> Liquidity Telemetry
+      {/* =====================================================================================
+          PANE 3: TRAJECTORY (The Future)
+          Purpose: Forecasts. "Time Travel". Runway simulation.
+      ===================================================================================== */}
+      <ResizablePanel defaultSize={25} minSize={20} className="bg-[#080808] flex flex-col border-l border-slate-800">
+         <div className="p-5 border-b border-slate-800">
+            <h2 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4 flex items-center gap-2">
+               <TrendingUp className="h-3 w-3" /> Future Cast
+            </h2>
+
+            {/* RUNWAY PREDICTION */}
+            <div className="relative h-32 w-full border border-dashed border-slate-800 rounded-lg bg-slate-900/20 mb-4 overflow-hidden">
+               {/* Mock Chart Line */}
+               <svg className="absolute inset-0 h-full w-full p-2" viewBox="0 0 100 50" preserveAspectRatio="none">
+                  <path d="M0,40 Q25,35 50,25 T100,10" fill="none" stroke="#10b981" strokeWidth="2" />
+                  <path d="M0,40 Q25,35 50,25 T100,10 V50 H0 Z" fill="url(#grad1)" opacity="0.2" />
+                  <defs>
+                     <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style={{ stopColor: "#10b981", stopOpacity: 1 }} />
+                        <stop offset="100%" style={{ stopColor: "#10b981", stopOpacity: 0 }} />
+                     </linearGradient>
+                  </defs>
+               </svg>
+               <div className="absolute bottom-2 left-2 text-[9px] text-slate-500">TODAY</div>
+               <div className="absolute bottom-2 right-2 text-[9px] text-slate-500">+90 DAYS</div>
             </div>
-            <div className="flex items-center justify-between text-xs text-slate-300">
-              <span>Runway</span>
-              <span className="font-mono text-emerald-400">{cashflow.runwayDays} days</span>
+
+            <div className="flex justify-between items-center mb-2">
+               <span className="text-[10px] text-slate-400">Projected Balance (+30d)</span>
+               <span className="text-sm font-mono text-emerald-400">$18,240</span>
             </div>
-            <div className="flex items-center justify-between text-xs text-slate-300">
-              <span>Next Bill</span>
-              <span className="font-mono text-amber-300">T-36h</span>
+            
+            <div className="p-3 rounded bg-amber-950/20 border border-amber-900/50 flex gap-3">
+               <AlertCircle className="h-4 w-4 text-amber-500 shrink-0" />
+               <div className="text-[10px] text-amber-200/80 leading-relaxed">
+                  <strong>Liquidity Warning:</strong> Large tax payment ($4,500) due in 14 days. Projected cash balance will dip below threshold.
+               </div>
             </div>
-            <div className="flex items-center justify-between text-xs text-slate-300">
-              <span>Utilization</span>
-              <span className="font-mono text-sky-300">41%</span>
+         </div>
+
+         {/* UPCOMING BILLS LIST */}
+         <div className="flex-1 p-4 overflow-y-auto">
+            <h3 className="text-[10px] font-bold text-slate-600 uppercase mb-3">Upcoming Liabilities</h3>
+            <div className="space-y-2">
+               {[
+                  { name: 'Rent / Mortgage', amount: 2400, days: 4 },
+                  { name: 'Car Insurance', amount: 140, days: 12 },
+                  { name: 'Adobe CC', amount: 54, days: 15 },
+               ].map((bill) => (
+                  <div key={bill.name} className="flex justify-between items-center p-2 rounded hover:bg-slate-900/50">
+                     <div className="flex flex-col">
+                        <span className="text-xs text-slate-300">{bill.name}</span>
+                        <span className="text-[10px] text-slate-600">In {bill.days} days</span>
+                     </div>
+                     <span className="text-xs font-mono text-slate-400">-${bill.amount}</span>
+                  </div>
+               ))}
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+         </div>
+      </ResizablePanel>
+
+    </ResizablePanelGroup>
   );
 }
