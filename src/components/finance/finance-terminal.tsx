@@ -19,6 +19,9 @@ const accounts = [
   { name: "Amex Platinum", balance: -1240, type: "credit", change: -0.5 },
 ];
 
+const sanitizeNumber = (value: number | null | undefined, fallback = 0) =>
+  typeof value === "number" && Number.isFinite(value) ? value : fallback;
+
 export function FinanceTerminal() {
   const [viewMode, setViewMode] = useState<"all" | "income" | "expense">("all");
   const [cashflowMode, setCashflowMode] = useState<"velocity" | "net">("velocity");
@@ -96,19 +99,28 @@ export function FinanceTerminal() {
             <MoreHorizontal size={14} className="text-gray-600" />
           </div>
           <div className="space-y-3">
-            {accounts.map((acc) => (
-              <div
-                key={acc.name}
-                className="group relative cursor-pointer overflow-hidden rounded-lg border border-[#1F1F22] bg-[#0F0F10] p-3 transition hover:border-gray-600"
-              >
-                <div className="absolute right-0 top-0 h-full w-1 bg-blue-600 opacity-0 transition group-hover:opacity-100" />
-                <div className="mb-1 text-xs text-gray-400">{acc.name}</div>
-                <div className="mb-1 text-lg font-mono text-white">${acc.balance.toLocaleString()}</div>
-                <div className={`flex items-center gap-1 text-[10px] ${acc.change >= 0 ? "text-green-500" : "text-red-500"}`}>
-                  {acc.change >= 0 ? "▲" : "▼"} {Math.abs(acc.change)}%<span className="text-gray-600">vs last week</span>
-                </div>
+            {accounts.length === 0 && (
+              <div className="rounded-xl border border-dashed border-cyan-500/40 bg-cyan-500/10 p-4 text-center text-xs text-cyan-100">
+                No accounts synced. Link a bank or card to unlock the Finance Terminal.
               </div>
-            ))}
+            )}
+            {accounts.map((acc) => {
+              const safeBalance = sanitizeNumber(acc.balance);
+              const safeChange = sanitizeNumber(acc.change);
+              return (
+                <div
+                  key={acc.name}
+                  className="group relative cursor-pointer overflow-hidden rounded-lg border border-[#1F1F22] bg-[#0F0F10] p-3 transition hover:border-gray-600"
+                >
+                  <div className="absolute right-0 top-0 h-full w-1 bg-blue-600 opacity-0 transition group-hover:opacity-100" />
+                  <div className="mb-1 text-xs text-gray-400">{acc.name}</div>
+                  <div className="mb-1 text-lg font-mono text-white">${safeBalance.toLocaleString()}</div>
+                  <div className={`flex items-center gap-1 text-[10px] ${safeChange >= 0 ? "text-green-500" : "text-red-500"}`}>
+                    {safeChange >= 0 ? "▲" : "▼"} {Math.abs(safeChange)}%<span className="text-gray-600">vs last week</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-8 rounded-lg border border-dashed border-[#27272A] p-4 text-center">
@@ -201,47 +213,50 @@ export function FinanceTerminal() {
           </div>
 
           <div className="flex-1 overflow-y-auto">
-            {filteredTransactions.map((tx) => (
-              <div
-                key={tx.id}
-                className="group grid grid-cols-12 items-center border-b border-[#18181B] px-6 py-3 text-xs transition hover:bg-[#0F0F10]"
-              >
-                <div className="col-span-2 font-mono text-gray-400">{tx.date}</div>
-                <div className="col-span-4 flex items-center gap-3">
-                  <div
-                    className={`h-2 w-2 rounded-full ${
-                      tx.tag === "biz"
-                        ? "bg-purple-500"
-                        : tx.tag === "home"
-                        ? "bg-orange-500"
-                        : tx.tag === "income"
-                        ? "bg-emerald-500"
-                        : "bg-blue-500"
-                    }`}
-                  />
-                  <span className="font-medium text-white">{tx.merchant}</span>
-                </div>
-                <div className="col-span-2">
-                  <span className="rounded-[4px] border border-[#27272A] bg-[#18181B] px-2 py-0.5 text-[10px] text-gray-400">
-                    {tx.category}
-                  </span>
-                </div>
-                <div className={`col-span-2 text-right font-mono ${tx.amount > 0 ? "text-green-500" : "text-white"}`}>
-                  {tx.amount > 0 ? "+" : ""}
-                  {tx.amount.toFixed(2)}
-                  {reviewMode && <span className="ml-2 rounded border border-[#27272A] px-1 text-[10px] text-amber-300">flag</span>}
-                </div>
-                <div className="col-span-2 text-center">
-                  {tx.status === "pending" ? (
-                    <span className="flex items-center justify-center gap-1 text-[10px] text-orange-400">
-                      <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-orange-400" /> PENDING
+            {filteredTransactions.map((tx) => {
+              const safeAmount = sanitizeNumber(tx.amount);
+              return (
+                <div
+                  key={tx.id}
+                  className="group grid grid-cols-12 items-center border-b border-[#18181B] px-6 py-3 text-xs transition hover:bg-[#0F0F10]"
+                >
+                  <div className="col-span-2 font-mono text-gray-400">{tx.date}</div>
+                  <div className="col-span-4 flex items-center gap-3">
+                    <div
+                      className={`h-2 w-2 rounded-full ${
+                        tx.tag === "biz"
+                          ? "bg-purple-500"
+                          : tx.tag === "home"
+                          ? "bg-orange-500"
+                          : tx.tag === "income"
+                          ? "bg-emerald-500"
+                          : "bg-blue-500"
+                      }`}
+                    />
+                    <span className="font-medium text-white">{tx.merchant}</span>
+                  </div>
+                  <div className="col-span-2">
+                    <span className="rounded-[4px] border border-[#27272A] bg-[#18181B] px-2 py-0.5 text-[10px] text-gray-400">
+                      {tx.category}
                     </span>
-                  ) : (
-                    <span className="text-[10px] text-gray-600">CLEARED</span>
-                  )}
+                  </div>
+                  <div className={`col-span-2 text-right font-mono ${safeAmount > 0 ? "text-green-500" : "text-white"}`}>
+                    {safeAmount > 0 ? "+" : ""}
+                    {safeAmount.toFixed(2)}
+                    {reviewMode && <span className="ml-2 rounded border border-[#27272A] px-1 text-[10px] text-amber-300">flag</span>}
+                  </div>
+                  <div className="col-span-2 text-center">
+                    {tx.status === "pending" ? (
+                      <span className="flex items-center justify-center gap-1 text-[10px] text-orange-400">
+                        <div className="h-1.5 w-1.5 animate-pulse rounded-full bg-orange-400" /> PENDING
+                      </span>
+                    ) : (
+                      <span className="text-[10px] text-gray-600">CLEARED</span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

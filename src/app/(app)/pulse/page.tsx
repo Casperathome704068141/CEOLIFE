@@ -1,19 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useQuery } from '@tanstack/react-query';
 import { Bento } from '@/components/pulse/Bento';
 import { HeaderBar } from '@/components/pulse/HeaderBar';
 import { LeagueFilter } from '@/components/pulse/LeagueFilter';
 import { WatchlistBar } from '@/components/pulse/WatchlistBar';
-import { BestPlaysCard } from '@/components/pulse/cards/BestPlaysCard';
-import { LiveScoreCard } from '@/components/pulse/cards/LiveScoreCard';
-import { NewsCard } from '@/components/pulse/cards/NewsCard';
-import { OddsValueCard } from '@/components/pulse/cards/OddsValueCard';
-import { ScheduleCard } from '@/components/pulse/cards/ScheduleCard';
-import { WeatherCard } from '@/components/pulse/cards/WeatherCard';
 import { DisclaimerCard } from '@/components/pulse/cards/DisclaimerCard';
-import { TrendsCard } from '@/components/pulse/cards/TrendsCard';
 import { AlertRuleDialog } from '@/components/pulse/modals/AlertRuleDialog';
 import { CustomizeSourcesDialog } from '@/components/pulse/modals/CustomizeSourcesDialog';
 import { ExplainValueDialog } from '@/components/pulse/modals/ExplainValueDialog';
@@ -22,6 +16,28 @@ import { useWatchlist } from '@/lib/pulse/useWatchlist';
 import type { Game, OddsRow, Play, Preferences } from '@/lib/pulse/types';
 import { useToast } from '@/hooks/use-toast';
 import { addDays, startOfDay, formatISO } from 'date-fns';
+
+const BestPlaysCard = dynamic(() => import('@/components/pulse/cards/BestPlaysCard').then((m) => m.BestPlaysCard), {
+  loading: () => <PulseSkeleton label="Plays" />,
+});
+const LiveScoreCard = dynamic(() => import('@/components/pulse/cards/LiveScoreCard').then((m) => m.LiveScoreCard), {
+  loading: () => <PulseSkeleton label="Live Scores" />,
+});
+const NewsCard = dynamic(() => import('@/components/pulse/cards/NewsCard').then((m) => m.NewsCard), {
+  loading: () => <PulseSkeleton label="News" />,
+});
+const OddsValueCard = dynamic(() => import('@/components/pulse/cards/OddsValueCard').then((m) => m.OddsValueCard), {
+  loading: () => <PulseSkeleton label="Value" />,
+});
+const ScheduleCard = dynamic(() => import('@/components/pulse/cards/ScheduleCard').then((m) => m.ScheduleCard), {
+  loading: () => <PulseSkeleton label="Schedule" />,
+});
+const WeatherCard = dynamic(() => import('@/components/pulse/cards/WeatherCard').then((m) => m.WeatherCard), {
+  loading: () => <PulseSkeleton label="Weather" />,
+});
+const TrendsCard = dynamic(() => import('@/components/pulse/cards/TrendsCard').then((m) => m.TrendsCard), {
+  loading: () => <PulseSkeleton label="Trends" fullWidth />,
+});
 
 export default function PulsePage() {
   const { toast } = useToast();
@@ -44,14 +60,23 @@ export default function PulsePage() {
   const gamesQuery = useQuery<{ games: Game[] }>({
     queryKey: ['pulse', 'games', leagues, dateRange],
     queryFn: () => fetch(`/api/pulse/sports?leagues=${leagues}&from=${formatISO(from)}&to=${formatISO(to)}`).then((res) => res.json()),
+    staleTime: 60_000,
+    retry: 1,
+    onError: () => toast({ title: 'Network jitter', description: 'Sports feed unstable. Retrying...', variant: 'destructive' }),
   });
   const oddsQuery = useQuery<{ odds: OddsRow[] }>({
     queryKey: ['pulse', 'odds', leagues],
     queryFn: () => fetch(`/api/pulse/odds?leagues=${leagues}`).then((res) => res.json()),
+    staleTime: 120_000,
+    retry: 1,
+    onError: () => toast({ title: 'Network jitter', description: 'Odds desk unreachable', variant: 'destructive' }),
   });
   const insightsQuery = useQuery<{ bestPlays: Play[], trends: any }>({
     queryKey: ['pulse', 'insights', leagues],
     queryFn: () => fetch(`/api/pulse/insights?leagues=${leagues}`).then((res) => res.json()),
+    staleTime: 120_000,
+    retry: 1,
+    onError: () => toast({ title: 'Signal degraded', description: 'Insights temporarily offline', variant: 'destructive' }),
   });
   const weatherQuery = useQuery<{ forecasts: any[] }>({
     queryKey: ['pulse', 'weather', leagues],
@@ -78,9 +103,12 @@ export default function PulsePage() {
     <div className="space-y-6">
       <HeaderBar
         onRefresh={() => {
-          gamesQuery.refetch();
-          oddsQuery.refetch();
-          insightsQuery.refetch();
+          Promise.allSettled([gamesQuery.refetch(), oddsQuery.refetch(), insightsQuery.refetch()]).then((results) => {
+            const hadError = results.some((res) => res.status === 'rejected');
+            if (hadError) {
+              toast({ title: 'Network jitter', description: 'Some feeds failed to refresh.' });
+            }
+          });
         }}
         onCustomize={() => setDialog('customize')}
         onViewTrends={() => setDialog('trends')}
@@ -98,15 +126,13 @@ export default function PulsePage() {
           <span className="rounded-full bg-amber-500/20 px-2 py-1 text-amber-100">{dateRange} horizon</span>
         </div>
         <div className="flex items-center justify-end gap-2 text-xs">
-          {hasError ? <span className="text-amber-300">Network jitter - retrying…</span> : <span>Signals live refreshed</span>}
+          {hasError ? <span className="text-amber-300">Network jitter - retrying…</span> : <span className="text-emerald-200">Signals live refreshed</span>}
         </div>
       </div>
       <Bento>
         <div className="col-span-1 space-y-8 lg:col-span-2">
           {isLoading ? (
-            <div className="rounded-2xl border border-border/60 bg-background/60 p-6 text-center text-sm text-muted-foreground">
-              Fetching live lines and weather...
-            </div>
+            <PulseSkeleton label="Schedule" />
           ) : (
             <>
               <ScheduleCard
@@ -146,6 +172,18 @@ export default function PulsePage() {
         </div>
       </Bento>
 
+      {!hasError && !isLoading && games?.length === 0 && (
+        <div className="flex items-center justify-between rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-100">
+          <span>No fixtures match the current filters. Adjust leagues or date range.</span>
+          <button
+            className="rounded-full border border-cyan-500/40 bg-cyan-500/10 px-3 py-1 text-xs uppercase tracking-[0.2em] text-cyan-100"
+            onClick={() => setDialog('customize')}
+          >
+            Tune Filters
+          </button>
+        </div>
+      )}
+
       <AlertRuleDialog
         open={dialog === 'alert'}
         onOpenChange={() => setDialog(null)}
@@ -163,6 +201,26 @@ export default function PulsePage() {
         onOpenChange={() => setExplainContext(null)}
         row={explainContext}
       />
+    </div>
+  );
+}
+
+function PulseSkeleton({ label, fullWidth }: { label: string; fullWidth?: boolean }) {
+  return (
+    <div
+      className={`rounded-2xl border border-slate-900/60 bg-slate-900/40 p-6 text-sm text-slate-500 shadow-[0_10px_50px_rgba(0,0,0,0.35)] ${
+        fullWidth ? 'col-span-full' : ''
+      }`}
+    >
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-xs font-semibold uppercase tracking-[0.25em] text-cyan-200">{label}</span>
+        <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.6)]" />
+      </div>
+      <div className="space-y-3">
+        <div className="h-3 w-3/4 animate-pulse rounded-full bg-slate-700/60" />
+        <div className="h-3 w-2/3 animate-pulse rounded-full bg-slate-800" />
+        <div className="h-3 w-1/2 animate-pulse rounded-full bg-slate-800" />
+      </div>
     </div>
   );
 }

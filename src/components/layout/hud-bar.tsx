@@ -15,9 +15,16 @@ const contextMap: Record<string, string> = {
   "/vault": "CORTEX // KNOWLEDGE TRACE",
   "/pulse": "PULSE // SYSTEM HEALTH",
   "/simulations": "SANDBOX // MODELING",
+  "/household": "HABITAT // HOME NETWORK",
+  "/assistant": "BENO COPILOT // OPS CHAT",
 };
 
-export function HudBar() {
+type HudBarProps = {
+  navExpanded?: boolean;
+  onToggleNav?: () => void;
+};
+
+export function HudBar({ navExpanded, onToggleNav }: HudBarProps) {
   const pathname = usePathname();
   const { setCommandPaletteOpen } = useUIState();
 
@@ -29,6 +36,16 @@ export function HudBar() {
   return (
     <div className="sticky top-0 z-30 flex h-12 items-center gap-4 border-b border-slate-900/80 bg-slate-950/80 px-4 backdrop-blur">
       <CommandMenu />
+      {onToggleNav && (
+        <button
+          type="button"
+          aria-label={navExpanded ? "Collapse navigation" : "Expand navigation"}
+          onClick={onToggleNav}
+          className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-800 bg-slate-900/70 text-slate-200 shadow-[0_0_20px_rgba(59,130,246,0.15)] transition hover:-translate-y-px hover:border-cyan-500/50 hover:text-white"
+        >
+          {navExpanded ? <Timer className="h-4 w-4" /> : <Sparkle className="h-4 w-4" />}
+        </button>
+      )}
       <div className="flex min-w-0 items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-slate-400">
         <span className="whitespace-nowrap">{context}</span>
         <span className="hidden text-slate-600 sm:inline">//</span>

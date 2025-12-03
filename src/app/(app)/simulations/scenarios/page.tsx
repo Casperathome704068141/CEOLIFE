@@ -1,19 +1,39 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/button';
-import { ScenarioEditor } from '@/components/sim/ScenarioEditor';
 import { ScenarioToolbar } from '@/components/sim/ScenarioToolbar';
-import { ScenarioGrid } from '@/components/sim/ScenarioGrid';
-import { AssumptionsDrawer } from '@/components/sim/AssumptionsDrawer';
-import { ShockEventsEditor } from '@/components/sim/ShockEventsEditor';
-import { CompareDrawer } from '@/components/sim/CompareDrawer';
-import { ApplyPlanDrawer } from '@/components/sim/ApplyPlanDrawer';
-import { PresetPickerDialog } from '@/components/sim/PresetPickerDialog';
-import { DebtPayoffPlanner } from '@/components/sim/DebtPayoffPlanner';
-import { ExportShareDialog } from '@/components/sim/ExportShareDialog';
 import { useSimulations } from '@/lib/sim/useSimulations';
 import type { Scenario, ScenarioParameters, ScenarioAssumptions, ShockEvent, SimResult, PlanChangeSummary } from '@/lib/sim/types';
+
+const ScenarioEditor = dynamic(() => import('@/components/sim/ScenarioEditor').then((m) => m.ScenarioEditor), {
+  loading: () => <SimSkeleton title="Configuring scenario" />, ssr: false,
+});
+const ScenarioGrid = dynamic(() => import('@/components/sim/ScenarioGrid').then((m) => m.ScenarioGrid), {
+  loading: () => <SimSkeleton title="Loading scenarios" />, ssr: false,
+});
+const AssumptionsDrawer = dynamic(() => import('@/components/sim/AssumptionsDrawer').then((m) => m.AssumptionsDrawer), {
+  loading: () => <SimSkeleton title="Assumptions" />, ssr: false,
+});
+const ShockEventsEditor = dynamic(() => import('@/components/sim/ShockEventsEditor').then((m) => m.ShockEventsEditor), {
+  loading: () => <SimSkeleton title="Shock events" />, ssr: false,
+});
+const CompareDrawer = dynamic(() => import('@/components/sim/CompareDrawer').then((m) => m.CompareDrawer), {
+  loading: () => <SimSkeleton title="Comparison" />, ssr: false,
+});
+const ApplyPlanDrawer = dynamic(() => import('@/components/sim/ApplyPlanDrawer').then((m) => m.ApplyPlanDrawer), {
+  loading: () => <SimSkeleton title="Apply plan" />, ssr: false,
+});
+const PresetPickerDialog = dynamic(() => import('@/components/sim/PresetPickerDialog').then((m) => m.PresetPickerDialog), {
+  loading: () => <SimSkeleton title="Presets" />, ssr: false,
+});
+const DebtPayoffPlanner = dynamic(() => import('@/components/sim/DebtPayoffPlanner').then((m) => m.DebtPayoffPlanner), {
+  loading: () => <SimSkeleton title="Debt planner" />, ssr: false,
+});
+const ExportShareDialog = dynamic(() => import('@/components/sim/ExportShareDialog').then((m) => m.ExportShareDialog), {
+  loading: () => <SimSkeleton title="Share" />, ssr: false,
+});
 
 const defaultParams: ScenarioParameters = { horizonMonths: 24 };
 const defaultAssumptions: ScenarioAssumptions = { inflationPct: 2.5, returnPct: 4, savingsRatePct: 15 };
@@ -44,6 +64,8 @@ export default function ScenariosPage() {
   const [sensitivity, setSensitivity] = useState<any>();
   const [compareIds, setCompareIds] = useState<string[]>([]);
   const [openDrawer, setOpenDrawer] = useState<string | null>(null);
+
+  const planSummary = useMemo(() => buildPlanSummary(result, params), [result, params]);
 
   const overlays = useMemo(() => {
     return scenarios
@@ -162,13 +184,7 @@ export default function ScenariosPage() {
         onOpenChange={() => setOpenDrawer(null)}
         result={result}
         params={params}
-        summary={
-          {
-            budgets: [{ category: 'Travel', delta: 500 }],
-            automationRules: [],
-            debtSchedule: [],
-          } as PlanChangeSummary
-        }
+        summary={planSummary}
         onApply={applyPlan}
       />
       <PresetPickerDialog
@@ -197,6 +213,38 @@ export default function ScenariosPage() {
         onExport={() => {}}
         onShare={() => {}}
       />
+    </div>
+  );
+}
+
+function buildPlanSummary(result: SimResult | undefined, params: ScenarioParameters): PlanChangeSummary {
+  const finalBalance = result?.monthly.at(-1)?.balance ?? 0;
+  const runway = result?.runwayMonths ?? 0;
+  return {
+    budgets: [
+      { category: 'Ops Reserve', delta: Math.max(100, Math.round(finalBalance * 0.01)) },
+      { category: 'Travel', delta: params.travelBudget ?? 0 },
+    ].filter((item) => Number.isFinite(item.delta)),
+    automationRules: [
+      { id: 'auto-sweep', description: 'Auto-sweep 5% surplus to reserves', enabled: finalBalance > 0 },
+      { id: 'runway-guard', description: 'Hold non-essential spend if runway < 3 months', enabled: runway > 0 },
+    ],
+    debtSchedule: runway < 4 ? [{ month: 'Next cycle', amount: Math.max(0, Math.round(finalBalance * 0.05)) }] : [],
+  };
+}
+
+function SimSkeleton({ title }: { title: string }) {
+  return (
+    <div className="rounded-2xl border border-slate-900/60 bg-slate-900/40 p-4 text-slate-400">
+      <div className="mb-2 flex items-center justify-between text-[11px] uppercase tracking-[0.2em] text-cyan-200">
+        {title}
+        <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+      </div>
+      <div className="space-y-2">
+        <div className="h-3 w-full animate-pulse rounded bg-slate-800" />
+        <div className="h-3 w-2/3 animate-pulse rounded bg-slate-800" />
+        <div className="h-3 w-1/2 animate-pulse rounded bg-slate-800" />
+      </div>
     </div>
   );
 }

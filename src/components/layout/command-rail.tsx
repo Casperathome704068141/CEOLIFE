@@ -42,7 +42,7 @@ export function CommandRail({ expanded, onToggle }: CommandRailProps) {
   return (
     <aside
       className={cn(
-        "fixed inset-y-0 left-0 z-40 flex flex-col border-r border-slate-900/70 bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950/80 shadow-[0_10px_40px_rgba(0,0,0,0.6)] transition-[width] duration-300",
+        "fixed inset-y-0 left-0 z-40 flex flex-col border-r border-slate-900/70 bg-gradient-to-b from-slate-950 via-slate-950/90 to-slate-950/80 shadow-[0_10px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-[width] duration-300",
         expanded ? "w-64" : "w-16"
       )}
     >
@@ -69,18 +69,19 @@ export function CommandRail({ expanded, onToggle }: CommandRailProps) {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "group/item flex items-center gap-3 rounded-2xl px-3 py-2 text-sm font-medium transition",
                   "hover:bg-slate-900/70 hover:text-white",
                   isActive
-                    ? "bg-slate-900/80 text-white ring-1 ring-cyan-500/40"
+                    ? "bg-slate-900/80 text-white ring-1 ring-cyan-500/40 shadow-[0_0_25px_rgba(6,182,212,0.25)]"
                     : "text-slate-400"
                 )}
               >
                 <span
                   className={cn(
                     "flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900/70 text-slate-400",
-                    isActive && "bg-cyan-500/15 text-cyan-300"
+                    isActive && "bg-cyan-500/15 text-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.35)]"
                   )}
                 >
                   <item.icon className="h-4 w-4" />
