@@ -18,46 +18,22 @@ import {
   Calendar,
   FileText,
   Home,
+  LayoutGrid,
   LifeBuoy,
   Settings,
-  ShoppingCart,
-  Target,
-  Users,
+  ShieldHalf,
   Wallet,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
-type NavSection = {
-  heading: string;
-  items: Array<{ href: string; icon: typeof Home; label: string; badge?: string }>;
-};
-
-const navSections: NavSection[] = [
-  {
-    heading: "Command",
-    items: [
-      { href: "/", icon: Home, label: "Mission control" },
-      { href: "/assistant", icon: Bot, label: "BENO copilot" },
-    ],
-  },
-  {
-    heading: "Operations",
-    items: [
-      { href: "/finance/overview", icon: Wallet, label: "Finance" },
-      { href: "/capital", icon: Wallet, label: "Capital" },
-      { href: "/schedule/calendar", icon: Calendar, label: "Schedule" },
-      { href: "/household", icon: Users, label: "Household" },
-      { href: "/goals", icon: Target, label: "Goals" },
-    ],
-  },
-  {
-    heading: "Systems",
-    items: [
-      { href: "/vault/documents", icon: FileText, label: "Vault" },
-      { href: "/simulations/scenarios", icon: BrainCircuit, label: "Simulations" },
-      { href: "/pulse", icon: Activity, label: "Pulse" },
-    ],
-  },
+const navItems = [
+  { href: "/", icon: LayoutGrid, label: "Mission Control" },
+  { href: "/capital", icon: Wallet, label: "Capital" },
+  { href: "/chronos", icon: Calendar, label: "Chronos" },
+  { href: "/habitat", icon: Home, label: "Habitat" },
+  { href: "/pulse", icon: Activity, label: "Vitality" },
+  { href: "/vault", icon: ShieldHalf, label: "Vault" },
+  { href: "/simulations", icon: BrainCircuit, label: "Simulations" },
 ];
 
 export function SidebarNav() {
@@ -79,50 +55,40 @@ export function SidebarNav() {
         </div>
       </SidebarHeader>
       <SidebarContent className="p-2">
-        {navSections.map((section) => (
-          <div key={section.heading} className="space-y-1">
-            <p className="px-3 text-[11px] uppercase tracking-[0.3em] text-slate-500/70">
-              {section.heading}
-            </p>
-            <SidebarMenu>
-              {section.items.map((item) => (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={isActive(item.href)}
-                    tooltip={item.label}
-                    className="group rounded-2xl text-sm font-medium transition hover:border-slate-700/80"
-                  >
-                    <Link href={item.href} className="flex w-full items-center justify-between gap-2">
-                      <span className="flex items-center gap-2">
-                        <span
-                          className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900/60 text-slate-400 transition-colors group-data-[active=true]:bg-cyan-500/15 group-data-[active=true]:text-cyan-300"
-                        >
-                          <item.icon className="h-4 w-4" />
-                        </span>
-                        <span className="text-slate-200 group-data-[active=true]:text-white">{item.label}</span>
+        <div className="space-y-1">
+          <SidebarMenu>
+            {navItems.map((item) => (
+              <SidebarMenuItem key={item.href}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={isActive(item.href)}
+                  tooltip={item.label}
+                  className="group rounded-2xl text-sm font-medium transition hover:border-slate-700/80"
+                >
+                  <Link href={item.href} className="flex w-full items-center justify-between gap-2">
+                    <span className="flex items-center gap-2">
+                      <span
+                        className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-900/60 text-slate-400 transition-colors group-data-[active=true]:bg-cyan-500/15 group-data-[active=true]:text-cyan-300"
+                      >
+                        <item.icon className="h-4 w-4" />
                       </span>
-                      {item.badge ? (
-                        <span className="rounded-full bg-slate-900/60 px-2 py-1 text-[10px] uppercase tracking-wide text-cyan-300/80">
-                          {item.badge}
-                        </span>
-                      ) : null}
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </div>
-        ))}
+                      <span className="text-slate-200 group-data-[active=true]:text-white">{item.label}</span>
+                    </span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </div>
       </SidebarContent>
       <SidebarFooter>
         <SidebarSeparator />
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton asChild tooltip="Onboarding" className="rounded-2xl text-sm">
-              <Link href="/onboarding" className="flex items-center gap-2">
-                <ShoppingCart className="h-4 w-4" />
-                <span>Quick setup</span>
+            <SidebarMenuButton asChild tooltip="Assistant" className="rounded-2xl text-sm">
+              <Link href="/assistant" className="flex items-center gap-2">
+                <Bot className="h-4 w-4" />
+                <span>Assistant</span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

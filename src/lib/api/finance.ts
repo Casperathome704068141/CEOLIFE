@@ -1,3 +1,4 @@
+
 // In a real app, this would fetch from multiple Firestore collections
 // and aggregate the data. For now, we return mock data.
 
@@ -60,7 +61,7 @@ export async function getCashflowData(): Promise<CashflowData> {
 
 export async function getFinancialSnapshot(): Promise<{
   assets: Asset[];
-  transactions: any[];
+  transactions: Transaction[];
   monthlyBurn: number;
   burnTarget: number;
 }> {

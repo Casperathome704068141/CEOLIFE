@@ -1,30 +1,26 @@
+
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { 
   ResizableHandle, ResizablePanel, ResizablePanelGroup 
 } from "@/components/ui/resizable";
 import { 
   ArrowRightLeft, TrendingUp, Wallet, 
-  AlertCircle, Check, Search, DollarSign
+  AlertCircle, Check, X, Search, DollarSign
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
-import { CashflowData, Asset as PortfolioAsset } from '@/lib/api/finance';
+import { Asset, CashflowData, Transaction } from '@/lib/api/finance';
 
-// --- MOCK TYPES FOR CONTEXT ---
-type Transaction = { id: string; merchant: string; amount: number; date: string; category: string; status: 'posted' | 'pending' };
-type Asset = { symbol: string; name: string; balance: number; price: number; allocation: number; type: 'crypto' | 'stock' | 'cash' };
-
-export function CapitalTerminal({ initialPortfolio, initialCashflow }: { initialPortfolio: PortfolioAsset[], initialCashflow: CashflowData }) {
+export function CapitalTerminal({ initialData }: { initialData: { assets: Asset[], transactions: Transaction[], monthlyBurn: number, burnTarget: number } }) {
   const [activeTx, setActiveTx] = useState<string | null>(null);
 
-  const transactions: Transaction[] = initialCashflow?.transactions ?? [];
-  const assets: Asset[] = initialPortfolio ?? [];
-  const monthlyBurn = initialCashflow?.monthlyBurn ?? 0;
-  const burnTarget = initialCashflow?.burnTarget ?? 6000;
-
-
+  const transactions: Transaction[] = initialData?.transactions ?? [];
+  const assets: Asset[] = initialData?.assets ?? [];
+  const monthlyBurn = initialData?.monthlyBurn ?? 0;
+  const burnTarget = initialData?.burnTarget ?? 6000;
+  
   return (
     <ResizablePanelGroup direction="horizontal" className="h-full w-full border-t border-slate-800">
       
@@ -106,7 +102,7 @@ export function CapitalTerminal({ initialPortfolio, initialCashflow }: { initial
       <ResizableHandle className="bg-slate-800 hover:bg-cyan-500 w-[1px] transition-colors" />
 
       {/* =====================================================================================
-          PANE 2: ASSET MATRIX (The Portfolio)
+          PANE 2: ASSET MATRIX (The Payload)
           Purpose: Visual allocation. Rebalancing. Deep dive into holdings.
       ===================================================================================== */}
       <ResizablePanel defaultSize={50} className="bg-[#050505] flex flex-col">

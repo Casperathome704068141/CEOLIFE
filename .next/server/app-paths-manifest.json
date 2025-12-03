@@ -1,4 +1,5 @@
 {
+  "/(app)/capital/page": "app/(app)/capital/page.js",
   "/(app)/finance/overview/page": "app/(app)/finance/overview/page.js",
   "/(app)/page": "app/(app)/page.js",
   "/(app)/schedule/calendar/page": "app/(app)/schedule/calendar/page.js",

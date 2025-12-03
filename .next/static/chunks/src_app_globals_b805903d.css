@@ -1003,6 +1003,10 @@ body {
   height: 100svh;
 }
 
+.h-\[calc\(100vh-4rem\)\] {
+  height: calc(100vh - 4rem);
+}
+
 .max-h-48 {
   max-height: 12rem;
 }

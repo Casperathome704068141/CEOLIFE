@@ -77,96 +77,13 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-function CapitalTerminal({ initialData }) {
+function CapitalTerminal({ initialPortfolio, initialCashflow }) {
     _s();
     const [activeTx, setActiveTx] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
-    // Use initialData, but fallback to mock data if it's not what we expect yet.
-    const transactions = initialData?.transactions ?? [
-        {
-            id: '1',
-            merchant: 'Stripe Payout',
-            amount: 1250,
-            date: 'Oct 24',
-            category: 'Income',
-            status: 'posted'
-        },
-        {
-            id: '2',
-            merchant: 'AWS Web Services',
-            amount: -64,
-            date: 'Oct 24',
-            category: 'Infra',
-            status: 'posted'
-        },
-        {
-            id: '3',
-            merchant: 'Vercel',
-            amount: -20,
-            date: 'Oct 23',
-            category: 'Infra',
-            status: 'posted'
-        },
-        {
-            id: '4',
-            merchant: 'Linear',
-            amount: -12,
-            date: 'Oct 23',
-            category: 'Software',
-            status: 'posted'
-        },
-        {
-            id: '5',
-            merchant: 'Figma',
-            amount: -45,
-            date: 'Oct 22',
-            category: 'Software',
-            status: 'pending'
-        },
-        {
-            id: '6',
-            merchant: 'Consulting Gig',
-            amount: 2500,
-            date: 'Oct 21',
-            category: 'Income',
-            status: 'posted'
-        }
-    ];
-    const assets = initialData?.assets ?? [
-        {
-            symbol: 'BTC',
-            name: 'Bitcoin',
-            price: 64200,
-            balance: 1.2,
-            type: 'crypto',
-            allocation: 45
-        },
-        {
-            symbol: 'ETH',
-            name: 'Ethereum',
-            price: 3400,
-            balance: 14.5,
-            type: 'crypto',
-            allocation: 25
-        },
-        {
-            symbol: 'TSLA',
-            name: 'Tesla Inc',
-            price: 180,
-            balance: 50,
-            type: 'stock',
-            allocation: 10
-        },
-        {
-            symbol: 'USD',
-            name: 'Cash',
-            price: 1,
-            balance: 14000,
-            type: 'cash',
-            allocation: 20
-        }
-    ];
-    const monthlyBurn = initialData?.monthlyBurn ?? 4250;
-    const burnTarget = initialData?.burnTarget ?? 6000;
+    const transactions = initialCashflow?.transactions ?? [];
+    const assets = initialPortfolio ?? [];
+    const monthlyBurn = initialCashflow?.monthlyBurn ?? 0;
+    const burnTarget = initialCashflow?.burnTarget ?? 6000;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$resizable$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ResizablePanelGroup"], {
         direction: "horizontal",
         className: "h-full w-full border-t border-slate-800",
@@ -187,7 +104,7 @@ function CapitalTerminal({ initialData }) {
                                         children: "Monthly Burn"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 40,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -195,13 +112,13 @@ function CapitalTerminal({ initialData }) {
                                         children: "▲ 12% vs Avg"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 41,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 53,
+                                lineNumber: 39,
                                 columnNumber: 12
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -215,7 +132,7 @@ function CapitalTerminal({ initialData }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 58,
+                                        lineNumber: 44,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -226,13 +143,13 @@ function CapitalTerminal({ initialData }) {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 45,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 57,
+                                lineNumber: 43,
                                 columnNumber: 12
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -244,18 +161,18 @@ function CapitalTerminal({ initialData }) {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                    lineNumber: 63,
+                                    lineNumber: 49,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 62,
+                                lineNumber: 48,
                                 columnNumber: 12
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                        lineNumber: 52,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -270,7 +187,7 @@ function CapitalTerminal({ initialData }) {
                                             className: "absolute left-2 top-2 h-3 w-3 text-slate-600"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                            lineNumber: 71,
+                                            lineNumber: 57,
                                             columnNumber: 18
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -278,18 +195,18 @@ function CapitalTerminal({ initialData }) {
                                             placeholder: "Filter ledger..."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                            lineNumber: 72,
+                                            lineNumber: 58,
                                             columnNumber: 18
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 56,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 69,
+                                lineNumber: 55,
                                 columnNumber: 12
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -305,7 +222,7 @@ function CapitalTerminal({ initialData }) {
                                                         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("h-2 w-2 rounded-full", tx.amount > 0 ? "bg-emerald-500" : "bg-amber-500")
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 76,
                                                         columnNumber: 24
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -316,7 +233,7 @@ function CapitalTerminal({ initialData }) {
                                                                 children: tx.merchant
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                                lineNumber: 95,
+                                                                lineNumber: 81,
                                                                 columnNumber: 27
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -328,19 +245,19 @@ function CapitalTerminal({ initialData }) {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                                lineNumber: 98,
+                                                                lineNumber: 84,
                                                                 columnNumber: 27
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                        lineNumber: 94,
+                                                        lineNumber: 80,
                                                         columnNumber: 24
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 75,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -352,24 +269,24 @@ function CapitalTerminal({ initialData }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 101,
+                                                lineNumber: 87,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, tx.id, true, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 67,
                                         columnNumber: 18
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 79,
+                                lineNumber: 65,
                                 columnNumber: 12
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                        lineNumber: 68,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -382,14 +299,14 @@ function CapitalTerminal({ initialData }) {
                                         className: "h-3 w-3"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 98,
                                         columnNumber: 15
                                     }, this),
                                     " Approve All"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 111,
+                                lineNumber: 97,
                                 columnNumber: 12
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -399,33 +316,33 @@ function CapitalTerminal({ initialData }) {
                                         className: "h-3 w-3"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 115,
+                                        lineNumber: 101,
                                         columnNumber: 15
                                     }, this),
                                     " Transfer"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 114,
+                                lineNumber: 100,
                                 columnNumber: 12
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                        lineNumber: 110,
+                        lineNumber: 96,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                lineNumber: 49,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$resizable$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ResizableHandle"], {
                 className: "bg-slate-800 hover:bg-cyan-500 w-[1px] transition-colors"
             }, void 0, false, {
                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                lineNumber: 120,
+                lineNumber: 106,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$resizable$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ResizablePanel"], {
@@ -447,12 +364,12 @@ function CapitalTerminal({ initialData }) {
                                         children: tab
                                     }, tab, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 130,
+                                        lineNumber: 116,
                                         columnNumber: 19
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 128,
+                                lineNumber: 114,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -460,13 +377,13 @@ function CapitalTerminal({ initialData }) {
                                 children: "LIVE MARKET DATA ●"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 135,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                        lineNumber: 127,
+                        lineNumber: 113,
                         columnNumber: 10
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -487,7 +404,7 @@ function CapitalTerminal({ initialData }) {
                                                         children: asset.symbol
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                        lineNumber: 148,
+                                                        lineNumber: 134,
                                                         columnNumber: 28
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -497,7 +414,7 @@ function CapitalTerminal({ initialData }) {
                                                                 children: asset.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                                lineNumber: 157,
+                                                                lineNumber: 143,
                                                                 columnNumber: 31
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -508,24 +425,24 @@ function CapitalTerminal({ initialData }) {
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                                lineNumber: 158,
+                                                                lineNumber: 144,
                                                                 columnNumber: 31
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                        lineNumber: 156,
+                                                        lineNumber: 142,
                                                         columnNumber: 28
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 147,
+                                                lineNumber: 133,
                                                 columnNumber: 25
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                            lineNumber: 146,
+                                            lineNumber: 132,
                                             columnNumber: 22
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -539,7 +456,7 @@ function CapitalTerminal({ initialData }) {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                    lineNumber: 164,
+                                                    lineNumber: 150,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -550,7 +467,7 @@ function CapitalTerminal({ initialData }) {
                                                             children: "Allocation"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                            lineNumber: 166,
+                                                            lineNumber: 152,
                                                             columnNumber: 28
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -561,13 +478,13 @@ function CapitalTerminal({ initialData }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                            lineNumber: 167,
+                                                            lineNumber: 153,
                                                             columnNumber: 28
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                    lineNumber: 165,
+                                                    lineNumber: 151,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -579,18 +496,18 @@ function CapitalTerminal({ initialData }) {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                        lineNumber: 171,
+                                                        lineNumber: 157,
                                                         columnNumber: 28
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                    lineNumber: 170,
+                                                    lineNumber: 156,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                            lineNumber: 163,
+                                            lineNumber: 149,
                                             columnNumber: 22
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -601,7 +518,7 @@ function CapitalTerminal({ initialData }) {
                                                     children: "Buy"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 163,
                                                     columnNumber: 25
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -609,42 +526,42 @@ function CapitalTerminal({ initialData }) {
                                                     children: "Sell"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                    lineNumber: 178,
+                                                    lineNumber: 164,
                                                     columnNumber: 25
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 162,
                                             columnNumber: 22
                                         }, this)
                                     ]
                                 }, asset.symbol, true, {
                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                    lineNumber: 142,
+                                    lineNumber: 128,
                                     columnNumber: 19
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                            lineNumber: 140,
+                            lineNumber: 126,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                        lineNumber: 138,
+                        lineNumber: 124,
                         columnNumber: 10
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                lineNumber: 126,
+                lineNumber: 112,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$resizable$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ResizableHandle"], {
                 className: "bg-slate-800 hover:bg-cyan-500 w-[1px] transition-colors"
             }, void 0, false, {
                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                lineNumber: 186,
+                lineNumber: 172,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$resizable$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ResizablePanel"], {
@@ -662,14 +579,14 @@ function CapitalTerminal({ initialData }) {
                                         className: "h-3 w-3"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 195,
+                                        lineNumber: 181,
                                         columnNumber: 16
                                     }, this),
                                     " Future Cast"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 194,
+                                lineNumber: 180,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -687,7 +604,7 @@ function CapitalTerminal({ initialData }) {
                                                 strokeWidth: "2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 202,
+                                                lineNumber: 188,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
@@ -696,7 +613,7 @@ function CapitalTerminal({ initialData }) {
                                                 opacity: "0.2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 203,
+                                                lineNumber: 189,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("defs", {
@@ -715,7 +632,7 @@ function CapitalTerminal({ initialData }) {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                            lineNumber: 206,
+                                                            lineNumber: 192,
                                                             columnNumber: 25
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
@@ -726,24 +643,24 @@ function CapitalTerminal({ initialData }) {
                                                             }
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                            lineNumber: 207,
+                                                            lineNumber: 193,
                                                             columnNumber: 25
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 191,
                                                     columnNumber: 22
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 204,
+                                                lineNumber: 190,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 201,
+                                        lineNumber: 187,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -751,7 +668,7 @@ function CapitalTerminal({ initialData }) {
                                         children: "TODAY"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 211,
+                                        lineNumber: 197,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -759,13 +676,13 @@ function CapitalTerminal({ initialData }) {
                                         children: "+90 DAYS"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 212,
+                                        lineNumber: 198,
                                         columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 199,
+                                lineNumber: 185,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -776,7 +693,7 @@ function CapitalTerminal({ initialData }) {
                                         children: "Projected Balance (+30d)"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 216,
+                                        lineNumber: 202,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -784,13 +701,13 @@ function CapitalTerminal({ initialData }) {
                                         children: "$18,240"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 217,
+                                        lineNumber: 203,
                                         columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 215,
+                                lineNumber: 201,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -800,7 +717,7 @@ function CapitalTerminal({ initialData }) {
                                         className: "h-4 w-4 text-amber-500 shrink-0"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 221,
+                                        lineNumber: 207,
                                         columnNumber: 16
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -810,26 +727,26 @@ function CapitalTerminal({ initialData }) {
                                                 children: "Liquidity Warning:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 223,
+                                                lineNumber: 209,
                                                 columnNumber: 19
                                             }, this),
                                             " Large tax payment ($4,500) due in 14 days. Projected cash balance will dip below threshold."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 222,
+                                        lineNumber: 208,
                                         columnNumber: 16
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 220,
+                                lineNumber: 206,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                        lineNumber: 193,
+                        lineNumber: 179,
                         columnNumber: 10
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -840,7 +757,7 @@ function CapitalTerminal({ initialData }) {
                                 children: "Upcoming Liabilities"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 230,
+                                lineNumber: 216,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -872,7 +789,7 @@ function CapitalTerminal({ initialData }) {
                                                         children: bill.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 225,
                                                         columnNumber: 25
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -884,13 +801,13 @@ function CapitalTerminal({ initialData }) {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                        lineNumber: 240,
+                                                        lineNumber: 226,
                                                         columnNumber: 25
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 238,
+                                                lineNumber: 224,
                                                 columnNumber: 22
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -901,36 +818,36 @@ function CapitalTerminal({ initialData }) {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                                lineNumber: 242,
+                                                lineNumber: 228,
                                                 columnNumber: 22
                                             }, this)
                                         ]
                                     }, bill.name, true, {
                                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                        lineNumber: 237,
+                                        lineNumber: 223,
                                         columnNumber: 19
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                                lineNumber: 231,
+                                lineNumber: 217,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                        lineNumber: 229,
+                        lineNumber: 215,
                         columnNumber: 10
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/capital/capital-terminal.tsx",
-                lineNumber: 192,
+                lineNumber: 178,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/capital/capital-terminal.tsx",
-        lineNumber: 43,
+        lineNumber: 29,
         columnNumber: 5
     }, this);
 }
